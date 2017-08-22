@@ -18,6 +18,12 @@
 
 - fission nucléaire disponible mais conséquences aléatoire : explosion de centrale, population intoxiquée par déchets, ...
 
+- scénario :
+    - narrateur/guide : conseiller du joueur [Conseil]
+    - joueur : président du monde (Ou ministre de l'énergie et des ressources)
+
+- Mettre une icone : demander Conseil/conseil xD
+
 - carte du monde avec différentes ressources par région:
 
 Région | Augmente CO<sub>2</sub> | Diminue CO<sub>2</sub>
@@ -25,6 +31,29 @@ Région | Augmente CO<sub>2</sub> | Diminue CO<sub>2</sub>
 Amazonie | forêt primaire → palme, bétail, bois | Exploitation durable, consommation de moins de viande
 USA | charbon, pétrole, gaz naturel | 
 Toutes régions | Coupe de bois | Énergie solaire, éoliennes, fission nucléaire (avec conséquences), fusion nucléaire
+
+## Réflexions
+
+- si on joue le président du monde et que c'est nous qui causons le changement climatique, on se rend compte que c'est à chacun de choisir ou non de freiner ce changement
+
+- on demande le nom du joueur pour que celui-ci se sente plus impliqué dans le jeu et qu'il comprenne que lui aussi peut faire la différence
+
+
+
+## Scénario "en gros"
+
+
+## Scénario détaillé
+
+### Tutoriel
+
+- "Bien le bonjour, président! Je me présente : Conseil. Je serai votre guide et conseiller durant toute la durée de votre mandat. C'est moi qui vous informerai des nouvelles du monde, de ses problèmes et qui vous proposerai  des possibles solutions."
+- "Vous présiderez durant... eh bien, si tout se passe bien, 300 ans. Vous prendrez de nombreuses décisions durant votre carrière et certaines d'entre elles auront des conséquences dans un futur plus ou moins lointain. Donc réflechissez lourdement avant de prendre une décision."
+- "Au fait, j'ai une fâcheuse tendance à oublier les prénoms... Vous pourriez me rappeler le votre?"
+- [boite pour entrer son prénom]
+- Excusez-moi, j'nai pas très bien entendu. [prénom] c'est cela ?
+- 
+
 
 
 
