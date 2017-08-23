@@ -27,9 +27,13 @@
 - carte du monde avec différentes ressources par région:
 
 Région | Augmente CO<sub>2</sub> | Diminue CO<sub>2</sub>
--------|------------------------------|-------------------------
-Amazonie | forêt primaire → palme, bétail, bois | Exploitation durable, consommation de moins de viande
-USA | charbon, pétrole, gaz naturel | 
+-------|-------------------------|-------------------------
+Royaume-Uni | charbon | 
+Europe continentale | charbon | barrages hydroélectriques
+Afrique | ? chercher production d'énergie en afrique ? |
+Amérique du nord | charbon, pétrole, gaz naturel | 
+Asie | charbon |
+Amérique du sud | forêt primaire → palme, bétail, bois | Exploitation durable, consommation de moins de viande
 Toutes régions | Coupe de bois | Énergie solaire, éoliennes, fission nucléaire (avec conséquences), fusion nucléaire
 
 ## Réflexions
@@ -41,6 +45,14 @@ Toutes régions | Coupe de bois | Énergie solaire, éoliennes, fission nucléai
 
 
 ## Scénario "en gros"
+
+- (1800-1810) tutoriel
+- (1811) Royaume-Uni
+- (1831) Europe continentale
+- (1851) Amérique du nord
+- (1871) Afrique
+- (1891) Asie
+- (1911) Amérique du sud
 
 
 ## Scénario détaillé
