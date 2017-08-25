@@ -2,7 +2,7 @@
 
 ## Brainstorm
 
-- jeu de gestion de ressources
+- jeu de gestion de ressources (style cookie clicker) 
 
 - débute environ en 1850 (début de la révolution industrielle et de l'utilisation de combustibles fossiles) 
 
@@ -12,9 +12,21 @@
 
 - évènements historiques réels interviennent dans le jeu
 
+- vitesse du temps : 30 s/année de jeu
+
 - onglet avec un graph en temps réel du niveau de CO<sub>2</sub> et de la température par rapport à la période préindustrielle
 
 - investissement dans la recherche dans la fusion nucléaire possible avec centrale disponible vers 2030 selon les investissements
+
+- 2 conseillers : un pro écologique et un pro ressources fossiles avec des points de réputation auprès de ces 2 conseillers
+- une action écologique rapporte des points de réputation auprès de ton conseiller écologique et vice versa 
+
+- carte rapprochée : 
+	- affiche une région 
+	- un certain nombre de sites de production d'énergie 
+	- un certain nombre de sites de production de produits de consommation 
+	- un certain nombre de sites de production de ressources
+	- les deux derniers produisent des $
 
 - fission nucléaire disponible mais conséquences aléatoire : explosion de centrale, population intoxiquée par déchets, ...
 
@@ -24,7 +36,7 @@
 
 - Mettre une icone : demander Conseil/conseil xD
 
-- carte du monde avec différentes ressources par région:
+## Carte du monde avec différentes ressources par région:
 
 Région | Augmente CO<sub>2</sub> | Diminue CO<sub>2</sub>
 -------|-------------------------|-------------------------
@@ -35,6 +47,16 @@ Amérique du nord | charbon, pétrole, gaz naturel |
 Asie | charbon |
 Amérique du sud | forêt primaire → palme, bétail, bois | Exploitation durable, consommation de moins de viande
 Toutes régions | Coupe de bois | Énergie solaire, éoliennes, fission nucléaire (avec conséquences), fusion nucléaire
+
+
+## Production des éléments de jeu
+
+Type | Niveau | Production 
+---------|-------------|-------------------
+Mine de charbon | 1 | 20 kg/jour
+ | 2 | 100 kg/jour
+ 
+
 
 ## Réflexions
 
@@ -47,8 +69,13 @@ Toutes régions | Coupe de bois | Énergie solaire, éoliennes, fission nucléai
 ## Scénario "en gros"
 
 - (1800-1810) tutoriel
+	- début avec 1000$
+	- installation de mine de charbon 1
+	- installation de usine 1
 - (1811) Royaume-Uni
+	- installation de plus de trucs jusqu'à débloquer la suite
 - (1831) Europe continentale
+	
 - (1851) Amérique du nord
 - (1871) Afrique
 - (1891) Asie
