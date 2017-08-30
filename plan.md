@@ -6,7 +6,7 @@
 
 - débute environ en 1850 (début de la révolution industrielle et de l'utilisation de combustibles fossiles) 
 
-- se termine officiellement en 2100 mais peut se terminer plus tôt ou plus tard selon la bonne gestion du joueur (objectif de l'augmentation de moins de 2 degrés celsius fixé par l'accord de Paris)
+- se termine lorsque : le joueur a dépassé une augmentation de 2°C (objectif de l'augmentation de moins de 2 degrés celsius fixé par l'accord de Paris)
 
 - idée pour titre: De Révolution à Evolution
 
@@ -28,13 +28,15 @@
 	- un certain nombre de sites de production de ressources
 	- les deux derniers produisent des $
 
+- les sites de production (voir ci-dessus) nécessitent de l'énergie pour fonctionner
+
 - fission nucléaire disponible mais conséquences aléatoire : explosion de centrale, population intoxiquée par déchets, ...
 
 - scénario :
-    - narrateur/guide : conseiller du joueur [Conseil]
+    - narrateurs/guides : conseiller écologique : Conseil
     - joueur : président du monde (Ou ministre de l'énergie et des ressources)
 
-- Mettre une icone : demander Conseil/conseil xD
+- Mettre une icone : demander Conseil/conseil 
 
 ## Carte du monde avec différentes ressources par région:
 
@@ -51,11 +53,10 @@ Toutes régions | Coupe de bois | Énergie solaire, éoliennes, fission nucléai
 
 ## Production des éléments de jeu
 
-Type | Niveau | Production 
----------|-------------|-------------------
+Type | Niveau | Production | Prix | Production de CO<sub>2</sub>
+-----|--------|------------|------|-------------------------
 Mine de charbon | 1 | 20 kg/jour
- | 2 | 100 kg/jour
- 
+	| 2 et suivants | *2
 
 
 ## Réflexions
@@ -64,6 +65,13 @@ Mine de charbon | 1 | 20 kg/jour
 
 - on demande le nom du joueur pour que celui-ci se sente plus impliqué dans le jeu et qu'il comprenne que lui aussi peut faire la différence
 
+- Conseil est humble et reflète la sagesse
+- Nemo représente la "science sans conscience" et le renfermement (pas sûr)
+
+
+## Points de vues techniques
+
+- déterminer comment rendre les régions clickables
 
 
 ## Scénario "en gros"
