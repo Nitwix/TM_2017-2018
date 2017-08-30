@@ -71,7 +71,7 @@ Mine de charbon | 1 | 20 kg/jour
 
 ## Points de vues techniques
 
-- déterminer comment rendre les régions clickables
+- déterminer comment rendre les régions clickables [idée : chaque région est un polygone](http://phaser.io/examples/v2/geometry/polygon-contains)
 
 
 ## Scénario "en gros"
