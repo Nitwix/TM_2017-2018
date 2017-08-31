@@ -38,6 +38,8 @@
 
 - Mettre une icone : demander Conseil/conseil 
 
+- La carte du monde est sur la table du président et les boutons du l'UI se trouvent "sur la table"
+
 ## Carte du monde avec différentes ressources par région:
 
 Région | Augmente CO<sub>2</sub> | Diminue CO<sub>2</sub>
@@ -72,6 +74,7 @@ Mine de charbon | 1 | 20 kg/jour
 ## Points de vues techniques
 
 - déterminer comment rendre les régions clickables [idée : chaque région est un polygone](http://phaser.io/examples/v2/geometry/polygon-contains)
+- carte de base possible des régions: ![lien](http://www.worldometers.info/img/7-continents-of-the-world.gif)
 
 
 ## Scénario "en gros"
