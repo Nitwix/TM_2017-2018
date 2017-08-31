@@ -12,7 +12,12 @@
 
 - évènements historiques réels interviennent dans le jeu
 
-- vitesse du temps : 30 s/année de jeu
+- vitesse du temps : ~30 s/année de jeu
+
+- cycle économique:
+	- de l'énergie est produite
+	- l'énergie est utilisée pour produire des ressources → de l'argent
+	- l'argent peut être investit dans des usines ou dans des centrales de production d'énergie
 
 - onglet avec un graph en temps réel du niveau de CO<sub>2</sub> et de la température par rapport à la période préindustrielle
 
@@ -40,9 +45,9 @@
 
 - La carte du monde est sur la table du président et les boutons du l'UI se trouvent "sur la table"
 
-## Carte du monde avec différentes ressources par région:
+## Différentes ressources par région:
 
-Région | Augmente CO<sub>2</sub> | Diminue CO<sub>2</sub>
+Région | Augmente CO<sub>2</sub> | N'augmente pas le CO<sub>2</sub>
 -------|-------------------------|-------------------------
 Royaume-Uni | charbon | 
 Europe continentale | charbon | barrages hydroélectriques
@@ -57,8 +62,20 @@ Toutes régions | Coupe de bois | Énergie solaire, éoliennes, fission nucléai
 
 Type | Niveau | Production | Prix | Production de CO<sub>2</sub>
 -----|--------|------------|------|-------------------------
-Mine de charbon | 1 | 20 kg/jour
-	| 2 et suivants | *2
+Mine de charbon | 1 | 20 kg/jour | 200$ | 1 kg/jour
+ _ | 2 et suivants | *2 | 400$ | *3
+
+
+ ## Investissments dans la recherche de nouvelles énergies
+
+ - chaque "jour de jeu", il y a une probabilité que l'on débloque une nouvelle façon de produire de l'énergie
+ - plus on investit dans la recherche d'une technologie, plus on augmente la probabilité de "découvrir" cette façon de produire de l'énergie
+ - une fois qu'on a découvert la méthode, on peut commencer à l'installer dans les régions compatibles
+ - on ne peut commencer à investir dans la recherche qu'à partir d'une certaine année
+ 	- centrales thermiques : ~1880
+ 	- centrales nucléaires : ~1940
+ 	- etc...
+
 
 
 ## Réflexions
@@ -85,8 +102,7 @@ Mine de charbon | 1 | 20 kg/jour
 	- installation de usine 1
 - (1811) Royaume-Uni
 	- installation de plus de trucs jusqu'à débloquer la suite
-- (1831) Europe continentale
-	
+- (1831) Europe continentale	
 - (1851) Amérique du nord
 - (1871) Afrique
 - (1891) Asie
@@ -110,3 +126,5 @@ Mine de charbon | 1 | 20 kg/jour
 ## Sources
 - [Ressources aux USA](https://fr.wikipedia.org/wiki/%C3%89tats-Unis#Situation_g.C3.A9n.C3.A9rale)
 - [Fôret amazonienne, explication](https://www.notre-planete.info/actualites/actu_891_causes_solutions_deforestation.php)
+- [Premières centrales nucléaires à fission](https://fr.wikipedia.org/wiki/Centrale_nucl%C3%A9aire#Ann.C3.A9es_1950_:_premi.C3.A8res_centrales)
+- [Centrales thermiques](https://fr.wikipedia.org/wiki/Centrale_thermique#Centrales_.C3.A0_turbines_.C3.A0_combustion)
