@@ -97,16 +97,12 @@ Mine de charbon | 1 | 20 kg/jour | 200$ | 1 kg/jour
 ## Scénario "en gros"
 
 - (1800-1810) tutoriel
-	- début avec 1000$
+	- début avec (assez pour tuto)$
+	- déblocage d'un site de production d'énergie et d'un site de production de ressources 
 	- installation de mine de charbon 1
 	- installation de usine 1
-- (1811) Royaume-Uni
-	- installation de plus de trucs jusqu'à débloquer la suite
-- (1831) Europe continentale	
-- (1851) Amérique du nord
-- (1871) Afrique
-- (1891) Asie
-- (1911) Amérique du sud
+- le déblocage de sites de production coûte de l'argent 
+- des évènements aléatoires se produisent durant la partie
 
 
 ## Scénario détaillé
