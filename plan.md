@@ -2,9 +2,11 @@
 
 ## Brainstorm
 
-- jeu de gestion de ressources (style cookie clicker) 
+- jeu de gestion de ressources
 
-- débute environ en 1850 (début de la révolution industrielle et de l'utilisation de combustibles fossiles) 
+- monnaie : le Mondio (M)
+
+- débute environ en 1800 (début de la révolution industrielle et de l'utilisation de combustibles fossiles) et se termine en 2100
 
 - se termine lorsque : le joueur a dépassé une augmentation de 2°C (objectif de l'augmentation de moins de 2 degrés celsius fixé par l'accord de Paris)
 
@@ -18,6 +20,7 @@
 	- de l'énergie est produite
 	- l'énergie est utilisée pour produire des ressources → de l'argent
 	- l'argent peut être investit dans des usines ou dans des centrales de production d'énergie
+    - certaines centrales produisent des ressources soit 1) vendues ou 2) consommées dans les centrales à production d'énergie (uranium -> centrales nucléaires, charbon -> centrales thermiques)
 
 - onglet avec un graph en temps réel du niveau de CO<sub>2</sub> et de la température par rapport à la période préindustrielle
 
@@ -28,10 +31,11 @@
 
 - carte rapprochée : 
 	- affiche une région 
-	- un certain nombre de sites de production d'énergie 
-	- un certain nombre de sites de production de produits de consommation 
-	- un certain nombre de sites de production de ressources
-	- les deux derniers produisent des $
+    - un certain nombre de sites de production:
+	   - d'énergie 
+	   - produits de consommation 
+	   - ressources
+	- les deux derniers produisent des mondios
 
 - les sites de production (voir ci-dessus) nécessitent de l'énergie pour fonctionner
 
@@ -62,8 +66,8 @@ Toutes régions | Coupe de bois | Énergie solaire, éoliennes, fission nucléai
 
 Type | Niveau | Production | Prix | Production de CO<sub>2</sub>
 -----|--------|------------|------|-------------------------
-Mine de charbon | 1 | 20 kg/jour | 200$ | 1 kg/jour
- _ | 2 et suivants | *2 | 400$ | *3
+Mine de charbon | 1 | 20 kg/jour | 200M | 1 kg/jour
+ _ | 2 et suivants | *2 | 400M | *3
 
 
  ## Investissments dans la recherche de nouvelles énergies
@@ -74,7 +78,7 @@ Mine de charbon | 1 | 20 kg/jour | 200$ | 1 kg/jour
  - on ne peut commencer à investir dans la recherche qu'à partir d'une certaine année
  	- centrales thermiques : ~1880
  	- centrales nucléaires : ~1940
- 	- etc...
+ 	- centrales à fusion : ~1970
 
 
 
@@ -97,7 +101,7 @@ Mine de charbon | 1 | 20 kg/jour | 200$ | 1 kg/jour
 ## Scénario "en gros"
 
 - (1800-1810) tutoriel
-	- début avec (assez pour tuto)$
+	- début avec (assez pour tuto)M
 	- déblocage d'un site de production d'énergie et d'un site de production de ressources 
 	- installation de mine de charbon 1
 	- installation de usine 1
