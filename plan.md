@@ -12,11 +12,9 @@
 
 - idée pour titre: De Révolution à Evolution
 
-- évènements historiques réels interviennent dans le jeu
+- évènements historiques réels interviennent dans le jeu (journal jeté sur la table avec news)
 
 - vitesse du temps : ~30 s/année de jeu
-
-
 
 - onglet avec un graph en temps réel du niveau de CO<sub>2</sub> et de la température par rapport à la période préindustrielle
 
@@ -27,13 +25,7 @@
 
 - carte rapprochée : 
 	- affiche une région 
-    - un certain nombre de sites de production:
-	   - d'énergie 
-	   - produits de consommation 
-	   - ressources (qui serviront à produire des ressources)
-	- les deux derniers produisent des mondios
-
-- les sites de production (voir ci-dessus) nécessitent de l'énergie pour fonctionner
+    - plusieurs emplacements disponibles pour sites de production
 
 - fission nucléaire disponible mais conséquences aléatoire : explosion de centrale, population intoxiquée par déchets, ...
 
@@ -52,13 +44,13 @@
 
 - 2 types de sites:
     - Les sites de production **d'énergie** (mines, éoliennes, panneaux solaires,...)
-    - Les sites de production de resssources (montres, chocolat, fromage, mines de diamant, ...)
+    - Les sites de production de marchandises (montres, chocolat, fromage, mines de diamant, ...)
 - Les sites de production d'énergie produisent directement de l'énergie
 - Les sites de production de ressources consomment cette énergie et produisent des Mondio
 - Les Mondio sont réinvestits pour produire plus
 
 
-### Deuxième alternative:
+<!-- ### Deuxième alternative:
 
 - 3 types de sites:
     - Les sites de production de **ressources énergétiques** (mines, ...)
@@ -66,9 +58,9 @@
     - Les sites de production de produits finis (acier, tissus, voitures, ...)
 - Les sites de production de ressources énergétiques produisent du combustible qui peut être vendu ou utilisé pour produire de l'énergie (par défaut: énergie)
 - Les sites de production de matières premières nécessitent de l'énergie
-- Les sites de production produits finis utilisent des matières premières pour produire des produits finis
+- Les sites de production produits finis utilisent des matières premières pour produire des produits finis 
 
-==> TROP COMPLIQUÉ
+==> TROP COMPLIQUÉ -->
 
 ## Différentes ressources par région:
 
@@ -88,20 +80,19 @@ Toutes régions | Coupe de bois | Énergie solaire, éoliennes, fission nucléai
 Type | Niveau | Production | Prix | Production de CO<sub>2</sub>
 -----|--------|------------|------|-------------------------
 Mine de charbon | 1 | 20 kg/jour | 200M | 1 kg/jour
- _ | 2 et suivants | *2 | 400M | *3
+ - | 2 et suivants | *2 | 400M | *3
 
 
- ## Investissments dans la recherche de nouvelles énergies
+## Investissments dans la recherche de nouvelles énergies
 
- - chaque "jour de jeu", il y a une probabilité que l'on débloque une nouvelle façon de produire de l'énergie
- - plus on investit dans la recherche d'une technologie, plus on augmente la probabilité de "découvrir" cette façon de produire de l'énergie
- - une fois qu'on a découvert la méthode, on peut commencer à l'installer dans les régions compatibles
- - on ne peut commencer à investir dans la recherche qu'à partir d'une certaine année
- 	- centrales thermiques : ~1880
+- chaque "jour de jeu", il y a une probabilité que l'on débloque une nouvelle façon de produire de l'énergie
+- plus on investit dans la recherche d'une technologie, plus on augmente la probabilité de "découvrir" cette façon de produire de l'énergie
+- une fois qu'on a découvert la méthode, on peut commencer à l'installer dans les régions compatibles
+- on ne peut commencer à investir dans la recherche qu'à partir d'une certaine année
     - éoliennes : ~1900
- 	- centrales nucléaires : ~1940
-    - panneaux solaires : ~1960
- 	- centrales à fusion : ~1970
+    - panneaux solaires photovoltaïques : ~1905
+    - centrales nucléaires : ~1930
+    - centrales à fusion : ~1970
 
 
 
@@ -141,9 +132,6 @@ Mine de charbon | 1 | 20 kg/jour | 200M | 1 kg/jour
 - "Au fait, j'ai une fâcheuse tendance à oublier les prénoms... Vous pourriez me rappeler le votre?"
 - [boite pour entrer son prénom]
 - Excusez-moi, j'nai pas très bien entendu. [prénom] c'est cela ?
-- 
-
-
 
 
 ## Sources
@@ -151,3 +139,4 @@ Mine de charbon | 1 | 20 kg/jour | 200M | 1 kg/jour
 - [Fôret amazonienne, explication](https://www.notre-planete.info/actualites/actu_891_causes_solutions_deforestation.php)
 - [Premières centrales nucléaires à fission](https://fr.wikipedia.org/wiki/Centrale_nucl%C3%A9aire#Ann.C3.A9es_1950_:_premi.C3.A8res_centrales)
 - [Centrales thermiques](https://fr.wikipedia.org/wiki/Centrale_thermique#Centrales_.C3.A0_turbines_.C3.A0_combustion)
+- [Effet photoélectrique (panneaux photovolaïques)](https://fr.wikipedia.org/wiki/Effet_photo%C3%A9lectrique#Histoire)
