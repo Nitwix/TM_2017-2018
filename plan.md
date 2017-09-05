@@ -6,9 +6,9 @@
 
 - monnaie : le Mondio (M)
 
-- débute environ en 1800 (début de la révolution industrielle et de l'utilisation de combustibles fossiles) et se termine en 2100
+- débute environ en 1800 (début de la révolution industrielle et de l'utilisation de combustibles fossiles)
 
-- se termine lorsque : le joueur a dépassé une augmentation de 2°C (objectif de l'augmentation de moins de 2 degrés celsius fixé par l'accord de Paris)
+- se termine lorsque : le joueur a dépassé une augmentation de 2°C (objectif de l'augmentation de moins de 2 degrés celsius fixé par l'accord de Paris) ou l'année > 2100
 
 - idée pour titre: De Révolution à Evolution
 
@@ -16,11 +16,7 @@
 
 - vitesse du temps : ~30 s/année de jeu
 
-- cycle économique:
-	- de l'énergie est produite
-	- l'énergie est utilisée pour produire des ressources → de l'argent
-	- l'argent peut être investit dans des usines ou dans des centrales de production d'énergie
-    - certaines centrales produisent des ressources soit 1) vendues ou 2) consommées dans les centrales à production d'énergie (uranium -> centrales nucléaires, charbon -> centrales thermiques)
+
 
 - onglet avec un graph en temps réel du niveau de CO<sub>2</sub> et de la température par rapport à la période préindustrielle
 
@@ -34,7 +30,7 @@
     - un certain nombre de sites de production:
 	   - d'énergie 
 	   - produits de consommation 
-	   - ressources
+	   - ressources (qui serviront à produire des ressources)
 	- les deux derniers produisent des mondios
 
 - les sites de production (voir ci-dessus) nécessitent de l'énergie pour fonctionner
@@ -49,16 +45,41 @@
 
 - La carte du monde est sur la table du président et les boutons du l'UI se trouvent "sur la table"
 
+
+## Cycle économique
+
+### Première alternative:
+
+- 2 types de sites:
+    - Les sites de production **d'énergie** (mines, éoliennes, panneaux solaires,...)
+    - Les sites de production de resssources (montres, chocolat, fromage, mines de diamant, ...)
+- Les sites de production d'énergie produisent directement de l'énergie
+- Les sites de production de ressources consomment cette énergie et produisent des Mondio
+- Les Mondio sont réinvestits pour produire plus
+
+
+### Deuxième alternative:
+
+- 3 types de sites:
+    - Les sites de production de **ressources énergétiques** (mines, ...)
+    - Les sites de production de matières premières (or, fer, diamant, cotton, ...)
+    - Les sites de production de produits finis (acier, tissus, voitures, ...)
+- Les sites de production de ressources énergétiques produisent du combustible qui peut être vendu ou utilisé pour produire de l'énergie (par défaut: énergie)
+- Les sites de production de matières premières nécessitent de l'énergie
+- Les sites de production produits finis utilisent des matières premières pour produire des produits finis
+
+==> TROP COMPLIQUÉ
+
 ## Différentes ressources par région:
 
 Région | Augmente CO<sub>2</sub> | N'augmente pas le CO<sub>2</sub>
 -------|-------------------------|-------------------------
 Royaume-Uni | charbon | 
 Europe continentale | charbon | barrages hydroélectriques
-Afrique | ? chercher production d'énergie en afrique ? |
+Afrique | diamant, uranium |
 Amérique du nord | charbon, pétrole, gaz naturel | 
 Asie | charbon |
-Amérique du sud | forêt primaire → palme, bétail, bois | Exploitation durable, consommation de moins de viande
+Amérique du sud | forêt primaire → palme, bétail, bois | Exploitation durable (produit moins)
 Toutes régions | Coupe de bois | Énergie solaire, éoliennes, fission nucléaire (avec conséquences), fusion nucléaire
 
 
@@ -77,7 +98,9 @@ Mine de charbon | 1 | 20 kg/jour | 200M | 1 kg/jour
  - une fois qu'on a découvert la méthode, on peut commencer à l'installer dans les régions compatibles
  - on ne peut commencer à investir dans la recherche qu'à partir d'une certaine année
  	- centrales thermiques : ~1880
+    - éoliennes : ~1900
  	- centrales nucléaires : ~1940
+    - panneaux solaires : ~1960
  	- centrales à fusion : ~1970
 
 
