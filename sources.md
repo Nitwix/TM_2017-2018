@@ -12,4 +12,4 @@
 
 ## Ressources utilisées
 
-- [police de caractère utilisée](https://www.fontstock.net/14975/berkelium-bitmap.html)
+- [police de caractère utilisée](https://github.com/photonstorm/phaser-examples/tree/master/examples/assets/fonts/bitmapFonts)
