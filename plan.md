@@ -18,8 +18,6 @@
 
 - onglet avec un graph en temps réel du niveau de CO<sub>2</sub> et de la température par rapport à la période préindustrielle
 
-- investissement dans la recherche dans la fusion nucléaire possible avec centrale disponible vers 2030 selon les investissements
-
 - 2 conseillers : un pro écologique et un pro ressources fossiles avec des points de réputation auprès de ces 2 conseillers
 - une action écologique rapporte des points de réputation auprès de ton conseiller écologique et vice versa 
 
@@ -80,7 +78,7 @@ Toutes régions | Coupe de bois | Énergie solaire, éoliennes, fission nucléai
 Type | Niveau | Production | Prix | Production de CO<sub>2</sub>
 -----|--------|------------|------|-------------------------
 Mine de charbon | 1 | 20 kg/jour | 200M | 1 kg/jour
- - | 2 et suivants | *2 | 400M | *3
+ &nbsp; | 2 et suivants | *2 | 400M | *3
 
 
 ## Investissments dans la recherche de nouvelles énergies
