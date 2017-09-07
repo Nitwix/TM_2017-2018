@@ -21,7 +21,7 @@ preloadState.create = function(){
 	this.earth.x = game.width - this.earth.width/2 - margin;
 	this.earth.y = game.height - this.earth.height/2 - margin;
 
-	this.chargement = game.add.bitmapText(0,0,"carrier_command","chargement...", 10); //x,y,font,text,size
+	this.chargement = game.add.bitmapText(0,0,"carrier_command","chargement...", 14); //x,y,font,text,size
 	this.chargement.anchor.setTo(0.5);
 	this.chargement.x = game.world.centerX;
 	this.chargement.y = game.world.centerY;
