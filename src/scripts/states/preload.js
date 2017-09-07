@@ -4,12 +4,17 @@ var preloadState = {
 };
 
 preloadState.preload = function(){
+
+	//racourcis de chemins de fichiers
+	var sprites = "assets/sprites/";
+
 	// pour l'écran de chargement
-	game.load.image("earthLogo","assets/sprites/preload/earth.png");
+	game.load.image("earthLogo",`${sprites}preload/earth.png`);
 	game.load.bitmapFont('carrier_command', 'assets/fonts/carrier_command.png', 'assets/fonts/carrier_command.xml');
 
 	//pour le menu principal
-	game.load.image("earthMap","assets/sprites/earthMap/earthMap.png");
+	game.load.image("earthMap",`${sprites}earthMap/earthMap.png`);
+	game.load.image("bureau",`${sprites}bureau/bureau.png`);
 
 };
 
