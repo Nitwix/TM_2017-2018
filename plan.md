@@ -27,6 +27,8 @@
 
 - fission nucléaire disponible mais conséquences aléatoire : explosion de centrale, population intoxiquée par déchets, ...
 
+- les graphismes du bureau évoluent au cours du temps
+
 - scénario :
     - narrateurs/guides : conseiller écologique : Conseil
     - joueur : président du monde (Ou ministre de l'énergie et des ressources)
