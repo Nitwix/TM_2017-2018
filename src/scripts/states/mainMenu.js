@@ -15,5 +15,10 @@ mainMenuState.create = function(){
 
 	this.earthMap = game.add.image(0,0,"earthMap");
 	this.earthMap.scale.setTo(1.4);
-	centerImg(this.earthMap); //voir utils/img_pos.js
+	centerObj(this.earthMap); //voir utils/img_pos.js
+
+	var fsButt = game.add.button(0,0,"buttons",null,this,3,4,5,3);
+	fsButt.scale.setTo(6);
+	cornerObj(fsButt, 8, "sw");
+	
 }

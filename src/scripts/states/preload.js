@@ -16,6 +16,9 @@ preloadState.preload = function(){
 	game.load.image("earthMap",`${sprites}earthMap/earthMap.png`);
 	game.load.image("bureau",`${sprites}bureau/bureau.png`);
 
+	//pour l'UI
+	game.load.spritesheet("buttons", `${sprites}/UI/buttons.png`, 32, 32);
+
 };
 
 preloadState.create = function(){
