@@ -17,8 +17,17 @@ mainMenuState.create = function(){
 	this.earthMap.scale.setTo(1.4);
 	centerObj(this.earthMap); //voir utils/img_pos.js
 
-	var fsButt = game.add.button(0,0,"buttons",null,this,3,4,5,3);
-	fsButt.scale.setTo(6);
-	cornerObj(fsButt, 8, "sw");
+	//mode de plein écran (utilisé dans mainMenu.js et plus tard)
+	game.scale.fullScreenScaleMode = Phaser.ScaleManager.SHOW_ALL;
+
+	var fsButt = game.add.button(0,0,"buttons",function(){
+		if(game.scale.isFullScreen){
+			game.scale.stopFullScreen();
+		}else{
+			game.scale.startFullScreen();
+		}
+	},this,3,4,5,3);
+	fsButt.scale.setTo(2);
+	cornerObj(fsButt, 8, "se");
 	
 }

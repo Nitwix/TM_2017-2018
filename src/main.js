@@ -11,8 +11,11 @@ var config = {
 
 var game = new Phaser.Game(config);
 
+
+
 //ajout des states du jeu
+game.state.add("boot", bootState);
 game.state.add("preload", preloadState);
 game.state.add("mainMenu", mainMenuState);
 
-game.state.start("preload");
+game.state.start("boot");
