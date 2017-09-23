@@ -66,8 +66,7 @@
 
 Région | Augmente CO<sub>2</sub> | N'augmente pas le CO<sub>2</sub>
 -------|-------------------------|-------------------------
-Royaume-Uni | charbon | 
-Europe continentale | charbon | barrages hydroélectriques
+Europe | charbon | barrages hydroélectriques
 Afrique | diamant, uranium |
 Amérique du nord | charbon, pétrole, gaz naturel | 
 Asie | charbon |
