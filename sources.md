@@ -12,5 +12,5 @@
 
 ## Ressources utilisées
 
-- [police de caractère utilisée](https://github.com/photonstorm/phaser-examples/tree/master/examples/assets/fonts/bitmapFonts) (06.09.2017)
+- [police de caractère utilisée](https://www.searchfreefonts.com/font/advancedpixel-7.htm) (23.09.2017)
 - [image de base pour la carte de la terre](https://minecraftworld.files.wordpress.com/2011/05/earth_flat_map.jpg) (06.09.2017)
