@@ -3,10 +3,6 @@ var mainMenuState = {
 	bureau: {},
 };
 
-mainMenuState.preload = function(){
-
-};
-
 mainMenuState.create = function(){
 	setupBureau(); //voir utils/setup.js
     setupUI();

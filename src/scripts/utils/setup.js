@@ -7,9 +7,6 @@ function setupBureau(){
 	this.earthMap = game.add.image(0,0,"earthMap");
 	this.earthMap.scale.setTo(1.4);
 	centerObj(this.earthMap); //voir utils/img_pos.js
-
-
-
 }
 
 function setupUI(){
@@ -20,6 +17,6 @@ function setupUI(){
 			game.scale.startFullScreen();
 		}
 	},this,3,4,5,3);
-	fsButt.scale.setTo(2);
-	cornerObj(fsButt, 8, "se");
+	fsButt.scale.setTo(1.5);
+	cornerObj(fsButt, 8, "ne");
 }

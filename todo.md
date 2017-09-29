@@ -3,7 +3,7 @@
 - dessiner la carte du monde
 - faire la musique du jeu + les effets sonores
 - faire les différentes cartes rapprochées
-- faire le système de dialogue avec Conseil
+- faire le système de dialogues
 - dessiner Conseil
 - faire que les régions soient cliquables
 
