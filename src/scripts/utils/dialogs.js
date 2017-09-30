@@ -21,14 +21,16 @@ class Dialog{
 	    this._bmpText.maxWidth = this._dialBox.width + 2*offset;
 	    this._bmpText.tint = 0xedddae; //couleur du texte
 
-	    
-    	var text = this._texts[textCount];
-    	var letterCount = 0;
-    	this._bmpText.text = "";
-    	game.time.events.repeat(50, text.length -1, function(){
-    		this._bmpText.text += text[letterCount];
-    		letterCount++;
-    	},this);
-	    
+	    for(let textCount in this._texts){
+	    	var text = this._texts[textCount];
+	    	var letterCount = 0;
+	    	this._bmpText.text = "";
+	    	game.time.events.repeat(50, text.length -1, function(){
+	    		this._bmpText.text += text[letterCount];
+	    		letterCount++;
+	    	},this);
+	    }
+
+	    //TODO : transition entre les textes et corriger le fait que le texte dépasse
 	}
 }
