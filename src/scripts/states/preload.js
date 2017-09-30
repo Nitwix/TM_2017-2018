@@ -20,6 +20,9 @@ preloadState.preload = function(){
 	game.load.spritesheet("buttons", `${sprites}/UI/buttons.png`, 32, 32);
     game.load.spritesheet("wide_buttons", `${sprites}/UI/wide_buttons.png`, 64, 32);
 
+    //pour le jeu
+    game.load.image("dialogBox", `${sprites}dialogs/dialogBox.png`);
+
 };
 
 preloadState.create = function(){
@@ -40,6 +43,6 @@ preloadState.update = function(){
 	this.earth.rotation += 0.01;
 
 	if(game.load.hasLoaded){
-		game.state.start("mainMenu");
+		game.state.start("game");
 	}
 };
