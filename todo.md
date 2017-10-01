@@ -3,7 +3,6 @@
 - dessiner la carte du monde
 - faire la musique du jeu + les effets sonores
 - faire les différentes cartes rapprochées
-- faire le système de dialogues
 - dessiner Conseil
 - faire que les régions soient cliquables
 
@@ -14,3 +13,4 @@
 - faire une police d'écriture (trouvé : 23.09.2017)
 - faire le bouton "Jouer" (26.09.2017)
 - dessiner les boutons de l'ui (26.09.2017)
+- faire le système de dialogues (01.10.2017)
