@@ -6,7 +6,7 @@ gameState.create = function(){
     setupBureau();
     setupUI();
 
-    this.dialog = new Dialog(tutoText); //voir utils/dialogs.js et utils/dialogsTexts.js
+    this.dialog = new Dialog(tutoTexts); //voir utils/dialogs.js et utils/dialogsTexts.js
     this.dialog.start();
 };
 
