@@ -32,21 +32,30 @@ globReg.update = function(){
 	for(let poly of this.polys){
 		if(poly.contains(game.input.x, game.input.y) && this.canZoom){
 			var mp = poly.midPoint();
-			console.log(mp);
-			var scale = 4;
+			var scale = 2;
+			var d = {
+				x: -(mp.x - game.world.centerX),
+				y: mp.y - game.world.centerY
+			};
+			var D = {
+				x: scale * d.x,
+				y: scale * d.y
+			};
+
+			console.log(gameEls.earthMap.height);
+			
 
 			this.zoom.to({
-				x: scale, y: scale
-			});
-			this.move.to({
-				x: (2**.5)*(game.world.width - mp.x),
-				y: (2**.5)*(game.world.height - mp.y)
-			});
-			console.log(game.world.width - mp.x, game.world.height - mp.y);
+				x: game.world.centerX + D.x,
+				y: game.world.centerY + D.y,
+				width: gameEls.earthMap.width*scale,
+				height: gameEls.earthMap.height*scale
+			}, 3000);
+
 
 			this.zoom.start();
 			this.zoom.onComplete.add(function(){
-				this.move.start()
+				//
 			}, this);
 
 			this.canZoom = false;

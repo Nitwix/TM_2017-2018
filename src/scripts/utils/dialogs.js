@@ -88,7 +88,7 @@ class Dialog{
 	}
 
 	_launchNext(lastText){
-		game.input.keyboard.enabled = false; //on ne peut pas cliquer lorsque le texte est en train de s'afficher
+		game.input.keyboard.enabled = false; //on ne peut pas appuyer lorsque le texte est en train de s'afficher
 
 		this._bmpText.text = "";
 		this._timer.resume();
