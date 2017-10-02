@@ -96,6 +96,7 @@ class Dialog{
 
 		if(lastText){
 			this._stop(); //si c'est le dernier texte qui est affiché, on stoppe le dialogue
+			game.input.keyboard.enabled = true; //réactive le clavier
 		}
 	}
 }

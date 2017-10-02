@@ -3,15 +3,19 @@ var gameState = {
 };
 
 gameState.create = function(){
-    setupBureau();
-    setupUI();
+    gameEls.setup.bureau();
+    gameEls.setup.UI();
 
-    this.dialog = new Dialog(tutoTexts); //voir utils/dialogs.js et utils/dialogsTexts.js
-    this.dialog.start();
+    //console.log(gameEls.bureau.width);
+
+    //this.dialog = new Dialog(tutoTexts); //voir utils/dialogs.js et utils/dialogsTexts.js
+    //this.dialog.start();
+
+    globReg.init(); //voir utils/globReg.js
 };
 
 gameState.update = function(){
-	
+	globReg.update(); 
 }
 
 
