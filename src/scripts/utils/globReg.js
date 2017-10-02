@@ -11,16 +11,17 @@ globReg.init = function(){
 	
 	/*this.regGraphics.beginFill(0xff33ff);
 	this.regGraphics.drawPolygon(this.euroPoly.points);
-	this.regGraphics.endFill();
+	this.regGraphics.endFill();*/
 
 	this.regGraphics.beginFill(0x000000);
 	var cEur = this.euroPoly.midPoint();
 	this.regGraphics.drawCircle(cEur.x,cEur.y, 5);
-	this.regGraphics.endFill();*/
+	this.regGraphics.endFill();
 
 
 	this.canZoom = true;
-	this.zoom = game.add.tween(gameEls.earthMap);
+	this.zoom = game.add.tween(gameEls.earthMap.scale);
+	this.move = game.add.tween(gameEls.earthMap);
 
 	this.zoom.onComplete.add(function(){
 		//globReg.canZoom = true; ben non !
@@ -30,13 +31,24 @@ globReg.init = function(){
 globReg.update = function(){
 	for(let poly of this.polys){
 		if(poly.contains(game.input.x, game.input.y) && this.canZoom){
+			var mp = poly.midPoint();
+			console.log(mp);
+			var scale = 4;
+
 			this.zoom.to({
-				width:4*gameEls.earthMap.width,
-				height: 4*gameEls.earthMap.height,
-				x: poly.midPoint().x,
-				y: poly.midPoint().y
+				x: scale, y: scale
 			});
+			this.move.to({
+				x: (2**.5)*(game.world.width - mp.x),
+				y: (2**.5)*(game.world.height - mp.y)
+			});
+			console.log(game.world.width - mp.x, game.world.height - mp.y);
+
 			this.zoom.start();
+			this.zoom.onComplete.add(function(){
+				this.move.start()
+			}, this);
+
 			this.canZoom = false;
 			console.log("zoomed");
 		}
