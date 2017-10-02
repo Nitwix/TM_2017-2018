@@ -5,6 +5,7 @@
 - faire les différentes cartes rapprochées
 - dessiner Conseil
 - faire que les régions soient cliquables
+- faire les transitions entre la carte globale et la région
 
 
 # Fait
