@@ -3,9 +3,9 @@ var globReg = {};
 globReg.init = function(){
 	this.regGraphics = game.add.graphics(0,0);
 
-	this.regions = []; //array contenant les polygones des différentes régions
+	this.regions = []; //array contenant les différentes régions
 
-	this.europe = new Region("Europe", [[382,163], [355,106], [455,98], [443, 132], [464, 157]]);
+	this.europe = new Region("Europe", 6, [[382,163], [355,106], [455,98], [443, 132], [464, 157]]); //voir définition ci-dessous
 
 	this.regions.push(this.europe);
 	
@@ -27,14 +27,14 @@ globReg.init = function(){
 globReg.update = function(){
 	for(let region of this.regions){
 		if(region.poly.contains(game.input.x, game.input.y) && this.canZoom && game.input.activePointer.isDown){
-			var mp = region.poly.midPoint();
+			let mp = region.poly.midPoint();
 
-			var scale = 6;
-			var d = {
+			let scale = region.scale;
+			let d = {
 				x: -(mp.x - game.world.centerX),
 				y: -(mp.y - game.world.centerY)
 			};
-			var D = {
+			let D = {
 				x: scale * d.x,
 				y: scale * d.y
 			};
@@ -52,7 +52,8 @@ globReg.update = function(){
 
 			this.zoom.start();
 			this.zoom.onComplete.add(function(){
-				//
+				var dial = new Dialog([`Bienvenue en ${region.name}`]);
+				dial.start();
 			}, this);
 
 			this.canZoom = false;
@@ -89,9 +90,10 @@ Phaser.Polygon.prototype.midPoint = function(){
 }
 
 class Region{
-	constructor(name, points){
+	constructor(name, scale, points){
 		this._name = name;
 		this._poly = globReg._makePoly(points);
+		this._scale = scale;
 	}
 
 	get name(){
@@ -100,5 +102,9 @@ class Region{
 
 	get poly(){
 		return this._poly;
+	}
+
+	get scale(){
+		return this._scale;
 	}
 }
