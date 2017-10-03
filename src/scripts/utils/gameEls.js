@@ -22,5 +22,5 @@ gameEls.setup.UI = function(){
 		}
 	},this,3,4,5,3);
 	fsButt.scale.setTo(2);
-	cornerObj(fsButt, 4, "ne");
+	cornerObj(fsButt, globals.UI.buttonOffset, "ne");
 }
