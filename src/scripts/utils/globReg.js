@@ -3,39 +3,36 @@ var globReg = {};
 globReg.init = function(){
 	this.regGraphics = game.add.graphics(0,0);
 
-	this.polys = []; //array contenant les polygones des différentes régions
+	this.regions = []; //array contenant les polygones des différentes régions
 
-	this.euroPoly = this._makePoly([[382,163], [355,106], [455,98], [443, 132], [464, 157]]);
-	//console.log(this.euroPoly.points);
-	this.polys.push(this.euroPoly);
+	this.europe = new Region("Europe", [[382,163], [355,106], [455,98], [443, 132], [464, 157]]);
+
+	this.regions.push(this.europe);
 	
 	/*this.regGraphics.beginFill(0xff33ff);
 	this.regGraphics.drawPolygon(this.euroPoly.points);
 	this.regGraphics.endFill();*/
 
-	this.regGraphics.beginFill(0x000000);
+	/*this.regGraphics.beginFill(0x000000);
 	var cEur = this.euroPoly.midPoint();
 	this.regGraphics.drawCircle(cEur.x,cEur.y, 5);
-	this.regGraphics.endFill();
+	this.regGraphics.endFill();*/
 
 
 	this.canZoom = true;
-	this.zoom = game.add.tween(gameEls.earthMap.scale);
-	this.move = game.add.tween(gameEls.earthMap);
+	this.zoom = game.add.tween(gameEls.earthMap);
 
-	this.zoom.onComplete.add(function(){
-		//globReg.canZoom = true; ben non !
-	}, this);
 }
 
 globReg.update = function(){
-	for(let poly of this.polys){
-		if(poly.contains(game.input.x, game.input.y) && this.canZoom){
-			var mp = poly.midPoint();
-			var scale = 2;
+	for(let region of this.regions){
+		if(region.poly.contains(game.input.x, game.input.y) && this.canZoom && game.input.activePointer.isDown){
+			var mp = region.poly.midPoint();
+
+			var scale = 6;
 			var d = {
 				x: -(mp.x - game.world.centerX),
-				y: mp.y - game.world.centerY
+				y: -(mp.y - game.world.centerY)
 			};
 			var D = {
 				x: scale * d.x,
@@ -50,7 +47,7 @@ globReg.update = function(){
 				y: game.world.centerY + D.y,
 				width: gameEls.earthMap.width*scale,
 				height: gameEls.earthMap.height*scale
-			}, 3000);
+			}, 1000, "Quad.easeIn");
 
 
 			this.zoom.start();
@@ -59,7 +56,6 @@ globReg.update = function(){
 			}, this);
 
 			this.canZoom = false;
-			console.log("zoomed");
 		}
 	}
 	
@@ -90,4 +86,19 @@ Phaser.Polygon.prototype.midPoint = function(){
 	var my = sy / this.points.length;
 
 	return {x:mx, y:my};
+}
+
+class Region{
+	constructor(name, points){
+		this._name = name;
+		this._poly = globReg._makePoly(points);
+	}
+
+	get name(){
+		return this._name;
+	}
+
+	get poly(){
+		return this._poly;
+	}
 }
