@@ -68,9 +68,9 @@ globReg.goto.world = function(region){
 	}, 1000, "Quad");
 
 	this.unzoom.start();
-	region.uninit();
+	
 	this.unzoom.onComplete.add(function(){
-		
+		region.uninit();
 	}, this);
 }
 
@@ -117,7 +117,7 @@ class Region{
 		this._D = {
 			x: scale * this.d.x,
 			y: scale * this.d.y
-		};		
+		};
 	}
 
 	get d(){
@@ -151,5 +151,6 @@ class Region{
 	uninit(){
 		//TODO : réussir à faire disparaître ce bouton
 		this._worldButton.destroy();
+        console.log(this._worldButton);
 	}
 }
