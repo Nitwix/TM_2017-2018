@@ -1,3 +1,4 @@
+"use strict";
 var globReg = {};
 
 globReg.init = function(){
@@ -60,18 +61,21 @@ globReg.goto.world = function(region){
 	this.unzoom = game.add.tween(gameEls.earthMap);
 
 	let scale = region.scale;
+    
 	this.unzoom.to({
 		x: game.world.centerX,
 		y: game.world.centerY,
-		width: gameEls.earthMap.width/scale,
-		height: gameEls.earthMap.height/scale
+		width: gameEls.earthMap.width/scale - 1, //à corriger: le scale ne revient pas exactement à son état d'origine
+		height: gameEls.earthMap.height/scale -1
 	}, 1000, "Quad");
-
-	this.unzoom.start();
-	
-	this.unzoom.onComplete.add(function(){
-		region.uninit();
+    
+    this.unzoom.onComplete.add(function(){
+		//
 	}, this);
+    
+	this.unzoom.start();
+    
+    region.uninit();
 }
 
 /*fonction interne pour créer des polygones
@@ -150,7 +154,6 @@ class Region{
 
 	uninit(){
 		//TODO : réussir à faire disparaître ce bouton
-		this._worldButton.destroy();
-        console.log(this._worldButton);
+        this._worldButton.pendingDestroy = true;
 	}
 }

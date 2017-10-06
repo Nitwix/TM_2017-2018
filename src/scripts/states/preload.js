@@ -17,8 +17,8 @@ preloadState.preload = function(){
 	game.load.image("bureau",`${sprites}bureau/bureau.png`);
 
 	//pour l'UI
-	game.load.spritesheet("buttons", `${sprites}UI/buttons.png`, 32, 32);
-    game.load.spritesheet("wide_buttons", `${sprites}UI/wide_buttons.png`, 64, 32);
+	game.load.spritesheet("buttons", `${sprites}UI/buttons/buttons.png`, 32, 32);
+    game.load.spritesheet("wide_buttons", `${sprites}UI/buttons/wide_buttons.png`, 64, 32);
 
     //pour les dialogues
     game.load.image("dialogBox", `${sprites}dialogs/dialogBox.png`);

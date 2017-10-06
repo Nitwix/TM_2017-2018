@@ -5,4 +5,4 @@ var globals = {};
 
 globals.UI = {};
 
-globals.UI.buttonOffset = 4;
+globals.UI.buttonOffset = 3;
