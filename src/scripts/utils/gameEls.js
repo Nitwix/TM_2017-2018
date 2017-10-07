@@ -9,8 +9,6 @@ gameEls.setup.bureau = function(){
 	gameEls.earthMap = game.add.image(0,0,"earthMap");
 	gameEls.earthMap.scale.setTo(2**.5);
 	centerObj(gameEls.earthMap); //voir utils/img_pos.js
-
-
 }
 
 gameEls.setup.UI = function(){
@@ -24,3 +22,4 @@ gameEls.setup.UI = function(){
 	fsButt.scale.setTo(2);
 	cornerObj(fsButt, globals.UI.buttonOffset, "ne");
 }
+

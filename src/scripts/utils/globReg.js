@@ -1,159 +1,83 @@
-"use strict";
 var globReg = {};
 
 globReg.init = function(){
-	this.regGraphics = game.add.graphics(0,0);
+    this.regGraphics = game.add.graphics(0,0);
 
-	this.regions = []; //array contenant les différentes régions
+    globals.regions.europe = new Region("Europe", 6, [[382,163], [355,106], [455,98], [443, 132], [464, 157]]); //voir définition ci-dessus
+    
+    globals.regions.africa = new Region("Afrique", 3, [[343, 164], [436, 354], [513, 233], [454, 165]]);
+    
+    globals.regions.southAmerica = new Region("Amérique du Sud", 3, [[269, 237], [348, 229], [270, 343], [233, 231]]);
 
-	this.europe = new Region("Europe", 6, [[382,163], [355,106], [455,98], [443, 132], [464, 157]]); //voir définition ci-dessous
-
-	this.regions.push(this.europe);
-	
-	/*this.regGraphics.beginFill(0xff33ff);
+    /*this.regGraphics.beginFill(0xff33ff);
 	this.regGraphics.drawPolygon(this.euroPoly.points);
 	this.regGraphics.endFill();*/
 
-	/*this.regGraphics.beginFill(0x000000);
+    /*this.regGraphics.beginFill(0x000000);
 	var cEur = this.euroPoly.midPoint();
 	this.regGraphics.drawCircle(cEur.x,cEur.y, 5);
 	this.regGraphics.endFill();*/
-	this.canZoom = true;
+    this.canZoom = true;
 }
 
 globReg.update = function(){
-	for(let region of this.regions){
-		if(region.poly.contains(game.input.x, game.input.y) && this.canZoom && game.input.activePointer.isDown){
-			this.goto.region(region);
-		}
-	}
+    for(let region in globals.regions){
+        let regionObj = globals.regions[region];
+        //pour parcourir seulement les propriétés ajoutées à la classe Object
+        if (!globals.regions.hasOwnProperty(region)) {
+            continue;
+        }
+        if(regionObj.poly.contains(game.input.x, game.input.y) && this.canZoom && game.input.activePointer.isDown){
+            this.goto.region(regionObj);
+        }
+    }
 }
 
 globReg.goto = {};
 
 globReg.goto.region = function(region){
 
-	this.zoom = game.add.tween(gameEls.earthMap);
+    this.zoom = game.add.tween(gameEls.earthMap);
 
-	let mp = region.poly.midPoint();
+    let mp = region.poly.midPoint();
 
-	let scale = region.scale;
-	let d = region.d;
-	let D = region.D;	
+    let scale = region.scale;
+    let d = region.d;
+    let D = region.D;	
 
-	this.zoom.to({
-		x: game.world.centerX + D.x,
-		y: game.world.centerY + D.y,
-		width: gameEls.earthMap.width*scale,
-		height: gameEls.earthMap.height*scale
-	}, 1000, "Quad.easeIn");
+    this.zoom.to({
+        x: game.world.centerX + D.x,
+        y: game.world.centerY + D.y,
+        width: gameEls.earthMap.width*scale,
+        height: gameEls.earthMap.height*scale
+    }, 1000, "Quad.easeIn");
 
 
-	this.zoom.start();
-	this.zoom.onComplete.add(function(){
-		region.init();
-	}, this);
+    this.zoom.start();
+    this.zoom.onComplete.add(function(){
+        region.init();
+    }, this);
 
-	this.canZoom = false;
+    this.canZoom = false;
 }
 
 globReg.goto.world = function(region){
-	this.unzoom = game.add.tween(gameEls.earthMap);
+    this.unzoom = game.add.tween(gameEls.earthMap);
 
-	let scale = region.scale;
-    
-	this.unzoom.to({
-		x: game.world.centerX,
-		y: game.world.centerY,
-		width: gameEls.earthMap.width/scale - 1, //à corriger: le scale ne revient pas exactement à son état d'origine
-		height: gameEls.earthMap.height/scale -1
-	}, 1000, "Quad");
-    
+    let scale = region.scale;
+
+    this.unzoom.to({
+        x: game.world.centerX,
+        y: game.world.centerY,
+        width: gameEls.earthMap.width/scale - 1, //à corriger: le scale ne revient pas exactement à son état d'origine
+        height: gameEls.earthMap.height/scale -1
+    }, 1000, "Quad");
+
     this.unzoom.onComplete.add(function(){
-		//
-	}, this);
-    
-	this.unzoom.start();
-    
+        //
+    }, this);
+
+    this.unzoom.start();
+
     region.uninit();
-}
-
-/*fonction interne pour créer des polygones
-	points : array de points
-*/
-globReg._makePoly = function(points){
-	var polyString = "[";
-	for(let point of points){
-		polyString += `new Phaser.Point(${point[0]},${point[1]}),`;
-	}
-	polyString = polyString.substr(0,polyString.length -1) + "]";
-	var poly = new Phaser.Polygon(eval(polyString));
-	return poly;
-}
-
-/*prototype de Phaser.Polygon permettant de calculer le point central d'un polygone*/
-Phaser.Polygon.prototype.midPoint = function(){
-	var sx = 0, sy = 0;
-	for(let point of this.points){
-		sx += point.x;
-		sy += point.y;
-	}
-
-	var mx = sx / this.points.length;
-	var my = sy / this.points.length;
-
-	return {x:mx, y:my};
-}
-
-class Region{
-	constructor(name, scale, points){
-		this._name = name;
-		this._poly = globReg._makePoly(points);
-		this._scale = scale;
-
-		let mp = this._poly.midPoint();
-
-		//d et D sont des vecteurs directions pour le zoom
-		this._d = {
-		x: -(mp.x - game.world.centerX),
-		y: -(mp.y - game.world.centerY)
-		};
-		this._D = {
-			x: scale * this.d.x,
-			y: scale * this.d.y
-		};
-	}
-
-	get d(){
-		return this._d;
-	}
-
-	get D(){
-		return this._D;
-	}
-
-	get name(){
-		return this._name;
-	}
-
-	get poly(){
-		return this._poly;
-	}
-
-	get scale(){
-		return this._scale;
-	}
-
-	init(){
-		this._worldButton = game.add.button(0,0,"buttons", function(){
-			globReg.goto.world(this);
-		}, this, 6,7,8,6);
-		this._worldButton.scale.setTo(2);
-		cornerObj(this._worldButton, globals.UI.buttonOffset, "se");
-	}
-
-	uninit(){
-		//TODO : réussir à faire disparaître ce bouton
-        this._worldButton.pendingDestroy = true;
-	}
 }
