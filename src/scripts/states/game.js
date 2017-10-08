@@ -18,7 +18,7 @@ gameState.update = function(){
 	globReg.update(); 
     
     if(game.input.activePointer.isDown){
-        console.log(game.input.x, game.input.y);
+        //console.log(game.input.x, game.input.y);
     }
 }
 

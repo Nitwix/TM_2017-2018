@@ -24,9 +24,11 @@ globReg.update = function(){
     for(let region in globals.regions){
         let regionObj = globals.regions[region];
         //pour parcourir seulement les propriétés ajoutées à la classe Object
-        if (!globals.regions.hasOwnProperty(region)) {
+        if (!regionObj instanceof Region) {
+            delete regionObj;
             continue;
         }
+        
         if(regionObj.poly.contains(game.input.x, game.input.y) && this.canZoom && game.input.activePointer.isDown){
             this.goto.region(regionObj);
         }
@@ -50,7 +52,7 @@ globReg.goto.region = function(region){
         y: game.world.centerY + D.y,
         width: gameEls.earthMap.width*scale,
         height: gameEls.earthMap.height*scale
-    }, 1000, "Quad.easeIn");
+    }, region.zoomDuration, "Quad.easeIn");
 
 
     this.zoom.start();
@@ -58,7 +60,7 @@ globReg.goto.region = function(region){
         region.init();
     }, this);
 
-    this.canZoom = false;
+    globReg.canZoom = false;
 }
 
 globReg.goto.world = function(region){
@@ -69,12 +71,12 @@ globReg.goto.world = function(region){
     this.unzoom.to({
         x: game.world.centerX,
         y: game.world.centerY,
-        width: gameEls.earthMap.width/scale - 1, //à corriger: le scale ne revient pas exactement à son état d'origine
-        height: gameEls.earthMap.height/scale -1
-    }, 1000, "Quad");
+        width: gameEls.earthMap.width/scale,
+        height: gameEls.earthMap.height/scale
+    }, region.zoomDuration, "Quad");
 
     this.unzoom.onComplete.add(function(){
-        //
+        globReg.canZoom = true;
     }, this);
 
     this.unzoom.start();

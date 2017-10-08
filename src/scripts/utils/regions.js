@@ -20,7 +20,7 @@ Phaser.Polygon.prototype.midPoint = function(){
 	var mx = sx / this.points.length;
 	var my = sy / this.points.length;
 
-	return {x:mx, y:my};
+	return {x: mx, y: my};
 }
 
 class Region{
@@ -33,8 +33,8 @@ class Region{
 
         //d et D sont des vecteurs directions pour le zoom
         this._d = {
-            x: -(mp.x - game.world.centerX),
-            y: -(mp.y - game.world.centerY)
+            x: game.world.centerX - mp.x,
+            y: game.world.centerY - mp.y 
         };
         this._D = {
             x: scale * this.d.x,
@@ -60,6 +60,10 @@ class Region{
 
     get scale(){
         return this._scale;
+    }
+    
+    get zoomDuration(){
+        return this._scale * 200;
     }
 
     init(){
