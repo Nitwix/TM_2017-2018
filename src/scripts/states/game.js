@@ -17,8 +17,8 @@ gameState.create = function(){
 gameState.update = function(){
 	globReg.update(); 
     
-    if(game.input.activePointer.isDown){
-        //console.log(game.input.x, game.input.y);
+    if(game.input.activePointer.isDown && game.time.now % 100 == 0){
+        console.log(game.input.x, game.input.y);
     }
 }
 

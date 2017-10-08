@@ -3,20 +3,33 @@ var globReg = {};
 globReg.init = function(){
     this.regGraphics = game.add.graphics(0,0);
 
-    globals.regions.europe = new Region("Europe", 6, [[382,163], [355,106], [455,98], [443, 132], [464, 157]]); //voir définition ci-dessus
-    
-    globals.regions.africa = new Region("Afrique", 3, [[343, 164], [436, 354], [513, 233], [454, 165]]);
-    
-    globals.regions.southAmerica = new Region("Amérique du Sud", 3, [[269, 237], [348, 229], [270, 343], [233, 231]]);
+    globals.regions.europe = new Region("Europe", 6, [[382,163], [355,106], [455,98], [443, 132], [464, 157]], [[100,100], [200, 200]]); //voir définition ci-dessus
 
-    /*this.regGraphics.beginFill(0xff33ff);
-	this.regGraphics.drawPolygon(this.euroPoly.points);
-	this.regGraphics.endFill();*/
+    /*globals.regions.africa = new Region("Afrique", 3, [[343, 164], [436, 354], [513, 233], [454, 165]]);
 
-    /*this.regGraphics.beginFill(0x000000);
-	var cEur = this.euroPoly.midPoint();
-	this.regGraphics.drawCircle(cEur.x,cEur.y, 5);
-	this.regGraphics.endFill();*/
+    globals.regions.southAmerica = new Region("Amérique du Sud", 3, [[269, 197], [348, 229], [270, 363], [233, 231]]);
+    
+    globals.regions.northAmerica = new Region("Amérique du Nord", 3, [[111, 107], [383, 76], [268, 195], [158, 197]]);*/
+
+    for(let region in globals.regions){
+        let regionObj = globals.regions[region];
+        //pour parcourir seulement les propriétés ajoutées à la classe Object
+        if (!regionObj instanceof Region) {
+            delete regionObj;
+            continue;
+        }
+        continue;
+        this.regGraphics.beginFill(0xff33ff);
+        this.regGraphics.drawPolygon(regionObj.poly.points);
+        this.regGraphics.endFill();
+
+        this.regGraphics.beginFill(0x000000);
+        var cEur = regionObj.poly.midPoint();
+        this.regGraphics.drawCircle(cEur.x,cEur.y, 5);
+        this.regGraphics.endFill();
+    }
+
+
     this.canZoom = true;
 }
 
@@ -28,7 +41,7 @@ globReg.update = function(){
             delete regionObj;
             continue;
         }
-        
+
         if(regionObj.poly.contains(game.input.x, game.input.y) && this.canZoom && game.input.activePointer.isDown){
             this.goto.region(regionObj);
         }

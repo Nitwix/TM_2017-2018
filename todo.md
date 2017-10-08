@@ -3,6 +3,7 @@
 - dessiner la carte du monde
 - faire la musique du jeu + les effets sonores
 - dessiner Conseil
+- implémenter le système de site de production
 
 
 # Fait

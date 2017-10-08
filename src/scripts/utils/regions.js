@@ -1,53 +1,60 @@
 //fonction utilitaire pour transformer un array de points en Phaser.Polygon
 function makePoly(points){
     var polyString = "[";
-	for(let point of points){
-		polyString += `new Phaser.Point(${point[0]},${point[1]}),`;
-	}
-	polyString = polyString.substr(0,polyString.length -1) + "]";
-	var poly = new Phaser.Polygon(eval(polyString));
-	return poly;
+    for(let point of points){
+        polyString += `new Phaser.Point(${point[0]},${point[1]}),`;
+    }
+    polyString = polyString.substr(0,polyString.length -1) + "]";
+    var poly = new Phaser.Polygon(eval(polyString));
+    return poly;
 }
 
 /*prototype de Phaser.Polygon permettant de calculer le point central d'un polygone*/
 Phaser.Polygon.prototype.midPoint = function(){
-	var sx = 0, sy = 0;
-	for(let point of this.points){
-		sx += point.x;
-		sy += point.y;
-	}
+    var sx = 0, sy = 0;
+    for(let point of this.points){
+        sx += point.x;
+        sy += point.y;
+    }
 
-	var mx = sx / this.points.length;
-	var my = sy / this.points.length;
+    var mx = sx / this.points.length;
+    var my = sy / this.points.length;
 
-	return {x: mx, y: my};
+    return {x: mx, y: my};
 }
 
 class Region{
-    constructor(name, scale, points){
+    constructor(name, scale, regPoints, prodPoints){
         this._name = name;
-        this._poly = makePoly(points);
+        this._poly = makePoly(regPoints);
         this._scale = scale;
+
+        this._prod = {};
+        this._prod.sites = {};
+        
+        //finish this !!!
+        for(let p in prodPoints){
+            let point = prodPoints[p];
+            this._prod.sites["s"+globals.production.index] = {};
+            let site = this._prod.sites["s"+globals.production.index];
+            site.pos = new Phaser.Point(point[0], point[1]);
+
+            globals.production.index++;
+        }
+        
+        console.log(this._prod);
 
         let mp = this._poly.midPoint();
 
         //d et D sont des vecteurs directions pour le zoom
-        this._d = {
+        this.d = {
             x: game.world.centerX - mp.x,
             y: game.world.centerY - mp.y 
         };
-        this._D = {
+        this.D = {
             x: scale * this.d.x,
             y: scale * this.d.y
         };
-    }
-
-    get d(){
-        return this._d;
-    }
-
-    get D(){
-        return this._D;
     }
 
     get name(){
@@ -61,7 +68,7 @@ class Region{
     get scale(){
         return this._scale;
     }
-    
+
     get zoomDuration(){
         return this._scale * 200;
     }
