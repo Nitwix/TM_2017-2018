@@ -10,5 +10,7 @@ globals.UI.buttonOffset = 3;
 //voir utils/regions.js
 globals.regions = {}; //array contenant les instances de la classe Region
 
-globals.production = {};
-globals.production.index = 0;
+//contient des variable en rapport avec les sites de production
+globals.sites = {};
+globals.sites.index = 0; //index unique pour chaque site de production (voir utils/regions.js)
+globals.sites.maxLevel = 3;

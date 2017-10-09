@@ -29,21 +29,6 @@ class Region{
         this._poly = makePoly(regPoints);
         this._scale = scale;
 
-        this._prod = {};
-        this._prod.sites = {};
-        
-        //finish this !!!
-        for(let p in prodPoints){
-            let point = prodPoints[p];
-            this._prod.sites["s"+globals.production.index] = {};
-            let site = this._prod.sites["s"+globals.production.index];
-            site.pos = new Phaser.Point(point[0], point[1]);
-
-            globals.production.index++;
-        }
-        
-        console.log(this._prod);
-
         let mp = this._poly.midPoint();
 
         //d et D sont des vecteurs directions pour le zoom
@@ -55,6 +40,54 @@ class Region{
             x: scale * this.d.x,
             y: scale * this.d.y
         };
+        
+        //objet contenant les sites de production
+        this.sites = {};
+
+        //crée les sites de production (ne les ajoute pas encore au game)
+        for(let p in prodPoints){
+            let point = prodPoints[p];
+
+            //ce site de production (par exemple s1,s2,s3,...)
+            let site = this.sites["s"+globals.sites.index] = {};
+
+            //position du site
+            site.pos = new Phaser.Point(point[0], point[1]);
+            //ressource du site
+            site.res = new Resource("coal", 1); //voir utils/resources.js
+            //ajoute le site au game
+            site.add = function(){
+                let icon;
+                switch(site.res.type){
+                    case "empty":
+                        icon = site.res.level; //0 : empty, 1: locked
+                        break;
+                    case "coal":
+                        icon = globals.sites.maxLevel + site.res.level;
+                        break;
+                    //ajouter les autres types de resources ici
+                    default:
+                        console.log("Resource not found in utils/regions.js");
+                }
+
+                site.button = game.add.button(site.pos.x,
+                                              site.pos.y,
+                                              "resources", 
+                                              function(){
+                    console.log(site.res.type);
+                },
+                                              this,icon, icon, icon, icon);
+                site.button.anchor.setTo(.5);
+            };
+            //détruis le bouton du site de production
+            site.del = function(){
+                site.button.destroy();
+            };
+
+            globals.sites.index++;
+        }
+
+        console.log(this);
     }
 
     get name(){
@@ -79,11 +112,20 @@ class Region{
         }, this, 6,7,8,6);
         this._worldButton.scale.setTo(2);
         cornerObj(this._worldButton, globals.UI.buttonOffset, "se");
+
+        //affiche les sites de production
+        for(let s in this.sites){
+            this.sites[s].add();
+        }
     }
 
     uninit(){
         //TODO : réussir à faire disparaître ce bouton
         this._worldButton.destroy();
+
+        for(let s in this.sites){
+            this.sites[s].del();
+        }
     }
 }
 
