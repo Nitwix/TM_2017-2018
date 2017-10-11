@@ -49,40 +49,7 @@ class Region{
             let point = prodPoints[p];
 
             //ce site de production (par exemple s1,s2,s3,...)
-            let site = this.sites["s"+globals.sites.index] = {};
-
-            //position du site
-            site.pos = new Phaser.Point(point[0], point[1]);
-            //ressource du site
-            site.res = new Resource("coal", 1); //voir utils/resources.js
-            //ajoute le site au game
-            site.add = function(){
-                let icon;
-                switch(site.res.type){
-                    case "empty":
-                        icon = site.res.level; //0 : empty, 1: locked
-                        break;
-                    case "coal":
-                        icon = globals.sites.maxLevel + site.res.level;
-                        break;
-                    //ajouter les autres types de resources ici
-                    default:
-                        console.log("Resource not found in utils/regions.js");
-                }
-
-                site.button = game.add.button(site.pos.x,
-                                              site.pos.y,
-                                              "resources", 
-                                              function(){
-                    console.log(site.res.type);
-                },
-                                              this,icon, icon, icon, icon);
-                site.button.anchor.setTo(.5);
-            };
-            //détruis le bouton du site de production
-            site.del = function(){
-                site.button.destroy();
-            };
+            this.sites["s"+globals.sites.index] = new Site(point[0],point[1], "notUsed", 1);
 
             globals.sites.index++;
         }
