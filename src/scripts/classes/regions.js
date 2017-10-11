@@ -49,7 +49,7 @@ class Region{
             let point = prodPoints[p];
 
             //ce site de production (par exemple s1,s2,s3,...)
-            this.sites["s"+globals.sites.index] = new Site(point[0],point[1], "notUsed", 1);
+            this.sites["s"+globals.sites.index] = new Site(point[0],point[1], "notUsed", 1); //voir classes/sites.js
 
             globals.sites.index++;
         }
@@ -78,7 +78,8 @@ class Region{
             globReg.goto.world(this);
         }, this, 6,7,8,6);
         this._worldButton.scale.setTo(2);
-        cornerObj(this._worldButton, globals.UI.buttonOffset, "se");
+        this._worldButton.alignTo(gameEls.fsButt, Phaser.BOTTOM_CENTER, 0, globals.UI.buttonOffset);
+        //cornerObj(this._worldButton, globals.UI.buttonOffset, "se");
 
         //affiche les sites de production
         for(let s in this.sites){

@@ -4,8 +4,8 @@ var mainMenuState = {
 };
 
 mainMenuState.create = function(){
-	setupBureau(); //voir utils/setup.js
-    setupUI();
+	gameEls.setup.bureau(); //voir utils/setup.js
+    gameEls.setup.UI();
 
 	var playButt = game.add.button(0,0,"wide_buttons", function(){
         game.state.start("game");

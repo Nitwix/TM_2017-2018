@@ -12,14 +12,14 @@ gameEls.setup.bureau = function(){
 }
 
 gameEls.setup.UI = function(){
-    var fsButt = game.add.button(0,0,"buttons",function(){
+    gameEls.fsButt = game.add.button(0,0,"buttons",function(){
 		if(game.scale.isFullScreen){
 			game.scale.stopFullScreen();
 		}else{
 			game.scale.startFullScreen();
 		}
 	},this,3,4,5,3);
-	fsButt.scale.setTo(2);
-	cornerObj(fsButt, globals.UI.buttonOffset, "ne");
+	gameEls.fsButt.scale.setTo(2);
+	cornerObj(gameEls.fsButt, globals.UI.buttonOffset, "ne");
 }
 
