@@ -3,7 +3,7 @@ var globReg = {};
 globReg.init = function(){
     this.regGraphics = game.add.graphics(0,0);
 
-    globals.regions.europe = new Region("Europe", 6, [[382,163], [355,106], [455,98], [443, 132], [464, 157]], [[240,184], [273, 239]]); //voir définition dans utils/regions.js
+    globals.regions.europe = new Region("Europe", 6, [[382,163], [355,106], [455,98], [443, 132], [464, 157]], [[240,184], [273, 239], [349,257]]); //voir définition dans utils/regions.js
 
     /*globals.regions.africa = new Region("Afrique", 3, [[343, 164], [436, 354], [513, 233], [454, 165]]);
 

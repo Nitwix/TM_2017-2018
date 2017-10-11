@@ -13,4 +13,4 @@
 - faire le bouton "Jouer" (26.09.2017)
 - dessiner les boutons de l'ui (26.09.2017)
 - faire le système de dialogues (01.10.2017)
-- faire les transitions entre la carte globale et la région (03.10.2017)
+- faire les transitions entre la carte globale et les régions (03.10.2017)
