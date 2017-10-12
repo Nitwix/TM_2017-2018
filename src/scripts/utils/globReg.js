@@ -5,11 +5,11 @@ globReg.init = function(){
 
     globals.regions.europe = new Region("Europe", 6, [[382,163], [355,106], [455,98], [443, 132], [464, 157]], [[240,184], [273, 239], [349,257]]); //voir définition dans utils/regions.js
 
-    /*globals.regions.africa = new Region("Afrique", 3, [[343, 164], [436, 354], [513, 233], [454, 165]]);
+    globals.regions.africa = new Region("Afrique", 3, [[343, 164], [436, 354], [513, 233], [454, 165]], []);
 
-    globals.regions.southAmerica = new Region("Amérique du Sud", 3, [[269, 197], [348, 229], [270, 363], [233, 231]]);
+    globals.regions.southAmerica = new Region("Amérique du Sud", 3, [[269, 197], [348, 229], [270, 363], [233, 231]], []);
     
-    globals.regions.northAmerica = new Region("Amérique du Nord", 3, [[111, 107], [383, 76], [268, 195], [158, 197]]);*/
+    globals.regions.northAmerica = new Region("Amérique du Nord", 3, [[111, 107], [383, 76], [268, 195], [158, 197]], []);
 
     for(let region in globals.regions){
         let regionObj = globals.regions[region];
