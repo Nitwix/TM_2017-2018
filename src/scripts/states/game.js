@@ -9,7 +9,7 @@ gameState.create = function(){
     //console.log(gameEls.bureau.width);
 
     this.dialog = new Dialog(tutoTexts); //voir utils/dialogs.js et utils/dialogsTexts.js
-    //this.dialog.start();
+    this.dialog.start();
 
     globReg.init(); //voir utils/globReg.js
 };

@@ -70,7 +70,7 @@ class Region{
     }
 
     get zoomDuration(){
-        return this._scale * 200;
+        return this._scale * 150;
     }
 
     init(){
@@ -79,7 +79,6 @@ class Region{
         }, this, 6,7,8,6);
         this._worldButton.scale.setTo(2);
         this._worldButton.alignTo(gameEls.fsButt, Phaser.BOTTOM_CENTER, 0, globals.UI.buttonOffset);
-        //cornerObj(this._worldButton, globals.UI.buttonOffset, "se");
 
         //affiche les sites de production
         for(let s in this.sites){
@@ -96,4 +95,3 @@ class Region{
         }
     }
 }
-
