@@ -8,7 +8,7 @@ gameEls.setup.bureau = function(){
 
 	gameEls.earthMap = game.add.image(0,0,"earthMap");
 	gameEls.earthMap.scale.setTo(2**.5);
-	centerObj(gameEls.earthMap); //voir utils/img_pos.js
+	centerObj(gameEls.earthMap); //voir utils/pos.js
 }
 
 gameEls.setup.UI = function(){
@@ -21,5 +21,7 @@ gameEls.setup.UI = function(){
 	},this,3,4,5,3);
 	gameEls.fsButt.scale.setTo(2);
 	cornerObj(gameEls.fsButt, globals.UI.buttonOffset, "ne");
+    
+    //autres éléments permanents de l'UI...
 }
 

@@ -1,12 +1,9 @@
-var preloadState = {
-	earth: {}, //logo de la terre
-	chargement : {} //text bmp de chargement
-};
+var preloadState = {};
 
 preloadState.preload = function(){
 
 	//racourcis de chemins de fichiers
-	var sprites = "assets/sprites/";
+	let sprites = "assets/sprites/";
 
 	// pour l'écran de chargement
 	game.load.image("earthLogo",`${sprites}preload/earth.png`);
@@ -34,17 +31,16 @@ preloadState.create = function(){
 	let margin = 20;
 	this.earth.x = game.width - this.earth.width/2 - margin;
 	this.earth.y = game.height - this.earth.height/2 - margin;
+    //on ne peut pas utiliser cornerObj(...) car l'anchor est au centre
 
 	this.chargement = game.add.bitmapText(0,0,"pixel_font","Chargement...", 60); //x,y,font,text,size
-	this.chargement.anchor.setTo(0.5);
-	this.chargement.x = game.world.centerX;
-	this.chargement.y = game.world.centerY;
+    centerObj(this.chargement);
 };
 
 preloadState.update = function(){
 	this.earth.rotation += 0.01;
 
 	if(game.load.hasLoaded){
-		game.state.start("game");
+		game.state.start("mainMenu");
 	}
 };

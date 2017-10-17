@@ -1,3 +1,4 @@
+//globReg s'occupe de la gestion des transitions entre l'état "vue globale" et l'état "vue régionale" 
 var globReg = {};
 
 globReg.init = function(){
@@ -18,7 +19,7 @@ globReg.init = function(){
             delete regionObj;
             continue;
         }
-        continue;
+        continue; //commenter cette ligne pour voir les polygones définissant les régions
         this.regGraphics.beginFill(0xff33ff);
         this.regGraphics.drawPolygon(regionObj.poly.points);
         this.regGraphics.endFill();

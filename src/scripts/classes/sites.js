@@ -18,7 +18,7 @@ class Site{
             default:
                 console.log("Resource not found in classes/sites.js");
         }
-        icon--; //pour que les indices passe de HR à CR
+        icon--; //pour que les indices passe de "Human readable" à "Computer readable"
         this.button = game.add.button(this.pos.x,
                                       this.pos.y,
                                       "resources", 

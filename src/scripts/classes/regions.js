@@ -87,9 +87,9 @@ class Region{
     }
 
     uninit(){
-        //TODO : réussir à faire disparaître ce bouton
         this._worldButton.destroy();
 
+        //détruit l'affichage des sites de production
         for(let s in this.sites){
             this.sites[s].del();
         }
