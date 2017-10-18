@@ -5,22 +5,24 @@ preloadState.preload = function(){
 	//racourcis de chemins de fichiers
 	let sprites = "assets/sprites/";
 
-	// pour l'écran de chargement
+	//chargement de l'écran de chargement
 	game.load.image("earthLogo",`${sprites}preload/earth.png`);
 	game.load.bitmapFont('pixel_font', 'assets/fonts/font.png', 'assets/fonts/font.fnt');
 
-	//pour le menu principal
+	//chargement de le menu principal
 	game.load.image("earthMap",`${sprites}earthMap/earthMap.png`);
 	game.load.image("bureau",`${sprites}bureau/bureau.png`);
 
-	//pour l'UI
+	//chargement de l'UI
 	game.load.spritesheet("buttons", `${sprites}UI/buttons/buttons.png`, 32, 32);
     game.load.spritesheet("wide_buttons", `${sprites}UI/buttons/wide_buttons.png`, 64, 32);
     game.load.spritesheet("resources", `${sprites}UI/sites/resources.png`, 32, 32);
+    game.load.image("unUpBox", `${sprites}UI/unlock_upgrade/box.png`); //fond de la boîte permettant de déverouiller ou d'améliorer qqch
 
-    //pour les dialogues
+    //chargement de les dialogues
     game.load.image("dialogBox", `${sprites}dialogs/dialogBox.png`);
     game.load.spritesheet("nextButton", `${sprites}dialogs/nextButton.png`, 16, 16);
+    
 
 };
 

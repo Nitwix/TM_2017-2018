@@ -19,7 +19,7 @@ gameEls.setup.UI = function(){
 			game.scale.startFullScreen();
 		}
 	},this,3,4,5,3);
-	gameEls.fsButt.scale.setTo(2);
+	gameEls.fsButt.scale.setTo(globals.UI.smallButtonScale);
 	cornerObj(gameEls.fsButt, globals.UI.buttonOffset, "ne");
     
     //autres éléments permanents de l'UI...

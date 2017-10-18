@@ -77,7 +77,7 @@ class Region{
         this._worldButton = game.add.button(0,0,"buttons", function(){
             globReg.goto.world(this);
         }, this, 6,7,8,6);
-        this._worldButton.scale.setTo(2);
+        this._worldButton.scale.setTo(globals.UI.smallButtonScale);
         this._worldButton.alignTo(gameEls.fsButt, Phaser.BOTTOM_CENTER, 0, globals.UI.buttonOffset);
 
         //affiche les sites de production
