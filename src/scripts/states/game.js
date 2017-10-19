@@ -5,7 +5,7 @@ gameState.create = function(){
     gameEls.setup.UI();
 
     this.dialog = new Dialog(tutoTexts); //voir utils/dialogs.js et others/dialogsTexts.js
-    this.dialog.start();
+    //this.dialog.start();
 
     globReg.init(); //voir utils/globReg.js
 };

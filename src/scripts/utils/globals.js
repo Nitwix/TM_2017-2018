@@ -15,3 +15,5 @@ globals.regions = {}; //array contenant les instances de la classe Region
 globals.sites = {};
 globals.sites.index = 0; //index unique pour chaque site de production (voir utils/regions.js)
 globals.sites.maxLevel = 3;
+
+globals.sites.dialogDisplayed = false; //permet de n'afficher qu'une seule boîte de dialogue de 'unlock' ou de 'upgrade' à la fois

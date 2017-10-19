@@ -18,6 +18,7 @@ preloadState.preload = function(){
     game.load.spritesheet("wide_buttons", `${sprites}UI/buttons/wide_buttons.png`, 64, 32);
     game.load.spritesheet("resources", `${sprites}UI/sites/resources.png`, 32, 32);
     game.load.image("unUpBox", `${sprites}UI/unlock_upgrade/box.png`); //fond de la boîte permettant de déverouiller ou d'améliorer qqch
+    game.load.spritesheet("closeButton", `${sprites}/UI/buttons/close.png`, 16, 16);
 
     //chargement de les dialogues
     game.load.image("dialogBox", `${sprites}dialogs/dialogBox.png`);
@@ -43,6 +44,6 @@ preloadState.update = function(){
 	this.earth.rotation += 0.01;
 
 	if(game.load.hasLoaded){
-		game.state.start("mainMenu");
+		game.state.start("game");
 	}
 };
