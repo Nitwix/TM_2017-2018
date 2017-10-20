@@ -4,17 +4,18 @@ var globReg = {};
 globReg.init = function(){
     this.regGraphics = game.add.graphics(0,0);
 
-    globals.regions.europe = new Region("Europe", 6, 
+    globals.regions.europe = new Region("europe", 6, 
         [[382,163], [355,106], [455,98], [443, 132], [464, 157]], 
         [[240,184], [273, 239], [349,257]]); //voir définition dans utils/regions.js
 
-    globals.regions.africa = new Region("Afrique", 3, 
+    globals.regions.africa = new Region("africa", 3, 
         [[343, 164], [436, 354], [513, 233], [454, 165]], 
         [[246,120], [459, 200]]);
 
-    globals.regions.southAmerica = new Region("Amérique du Sud", 3, [[269, 197], [348, 229], [270, 363], [233, 231]], []);
+    globals.regions.southAmerica = new Region("southAmerica", 3, 
+        [[269, 197], [348, 229], [270, 363], [233, 231]], []);
     
-    globals.regions.northAmerica = new Region("Amérique du Nord", 3, [[111, 107], [383, 76], [268, 195], [158, 197]], []);
+    globals.regions.northAmerica = new Region("northAmerica", 3, [[111, 107], [383, 76], [268, 195], [158, 197]], []);
 
     for(let region in globals.regions){
         let regionObj = globals.regions[region];
@@ -56,7 +57,8 @@ globReg.update = function(){
 globReg.goto = {};
 
 globReg.goto.region = function(region){
-
+    globals.currentRegion = region.name; 
+    
     this.zoom = game.add.tween(gameEls.earthMap);
 
     let mp = region.poly.midPoint();
@@ -82,6 +84,8 @@ globReg.goto.region = function(region){
 }
 
 globReg.goto.world = function(region){
+    globals.currentRegion = "";
+    
     this.unzoom = game.add.tween(gameEls.earthMap);
 
     let scale = region.scale;

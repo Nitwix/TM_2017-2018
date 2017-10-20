@@ -24,9 +24,10 @@ class Region{
             let point = prodPoints[p];
 
             //ce site de production (par exemple s1,s2,s3,...)
-            this.sites["s"+globals.sites.index] = new Site(point[0],point[1], "notUsed", 0); //voir classes/sites.js
+            let id = "s"+globals.sites.id;
+            this.sites[id] = new Site(id, point[0],point[1], "notUsed", 0); //voir classes/sites.js
 
-            globals.sites.index++;
+            globals.sites.id++;
         }
     }
 
