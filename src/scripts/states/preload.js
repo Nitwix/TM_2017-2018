@@ -9,7 +9,7 @@ preloadState.preload = function(){
 	game.load.image("earthLogo",`${sprites}preload/earth.png`);
 	game.load.bitmapFont('pixel_font', 'assets/fonts/font.png', 'assets/fonts/font.fnt');
 
-	//chargement de le menu principal
+	//chargement du menu principal
 	game.load.image("earthMap",`${sprites}earthMap/earthMap.png`);
 	game.load.image("bureau",`${sprites}bureau/bureau.png`);
 
@@ -17,10 +17,10 @@ preloadState.preload = function(){
 	game.load.spritesheet("buttons", `${sprites}UI/buttons/buttons.png`, 32, 32);
     game.load.spritesheet("wide_buttons", `${sprites}UI/buttons/wide_buttons.png`, 64, 32);
     game.load.spritesheet("resources", `${sprites}UI/sites/resources.png`, 32, 32);
-    game.load.image("unUpBox", `${sprites}UI/unlock_upgrade/box.png`); //fond de la boîte permettant de déverouiller ou d'améliorer qqch
+    game.load.spritesheet("unUpBox", `${sprites}UI/unlock_upgrade/box.png`, 128, 64); //fond de la boîte permettant de déverouiller ou d'améliorer qqch
     game.load.spritesheet("closeButton", `${sprites}/UI/buttons/close.png`, 16, 16);
 
-    //chargement de les dialogues
+    //chargement des dialogues
     game.load.image("dialogBox", `${sprites}dialogs/dialogBox.png`);
     game.load.spritesheet("nextButton", `${sprites}dialogs/nextButton.png`, 16, 16);
     

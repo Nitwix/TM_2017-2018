@@ -12,22 +12,21 @@ class Site{
             case "notUsed":
                 icon = this.res.level; //0: locked, 1: not used
                 break;
-            case "coal":
+                case "coal":
                 icon = globals.sites.maxLevel + this.res.level;
                 break;
                 //ajouter les autres types de resources ici
-            default:
+                default:
                 console.warn("Resource not found in classes/sites.js");
+            }
+            this.siteButton = game.add.button(this.pos.x,
+              this.pos.y,
+              "resources", 
+              () => {
+                this._dialogBox();
+            }, this,icon, icon, icon, icon);
+            this.siteButton.anchor.setTo(.5);
         }
-        this.siteButton = game.add.button(this.pos.x,
-                                          this.pos.y,
-                                          "resources", 
-                                          function(){
-            this._unlockDialog();
-        },
-                                          this,icon, icon, icon, icon);
-        this.siteButton.anchor.setTo(.5);
-    }
 
 
     //détruis le bouton du site de production
@@ -35,39 +34,80 @@ class Site{
         this.siteButton.destroy(); 
     }
 
-    //affiche la boîte qui permet de déverouiller le site de production
-    _unlockDialog(){
+    //affiche la boîte qui permet de déverouiller le site de production ou de l'améliorer
+    _dialogBox(){
         if(globals.sites.dialogDisplayed != ""){
             let cR = globals.regions[globals.currentRegion];
-            cR.sites[globals.sites.dialogDisplayed]._closeUnlockDialog();
+            cR.sites[globals.sites.dialogDisplayed]._closeDialogBox();
         }
         
         globals.sites.dialogDisplayed = this.id;
-        this.unlockDialog = game.add.group();
 
-        //todo : dessiner plusieurs boîtes de dialogue avec plusieurs orientations pour que ça rentre tjs dans le canvas
-        let box = game.make.image(0,0,"unUpBox");
+        this.dialog = game.add.group();
+
+        //sélection de quel sprite de la spritesheet selon l'endroit du site
+        let cX = game.world.centerX;
+        let cY = game.world.centerY;
+
+        let x = this.pos.x;
+        let y = this.pos.y;
+
+        console.log(x, cX, y, cY);
+
+        let posProps = {}; //propriétés de la boîte de dialogue dépendant de l'emplacement du site de production
+        //propriétés par default: celle du quadrant 0
+        posProps.quad = 0;
+        posProps.anch = {x: 12/128, y: 0};
+        posProps.bOff = 16; //décallage de base de la bôite de dialogue
+        posProps.offY = posProps.bOff;
+        posProps.btnsOffY = 22;
+        
+
+        if(x > cX){
+            if(y > cY){
+                posProps.quad = 3;
+                posProps.anch = {x: 1 - 12/128, y: 1};
+                posProps.offY = - posProps.bOff;
+                posProps.btnsOffY = 6;            
+            }else{
+                posProps.quad = 1;
+                posProps.anch = {x: 1 - 12/128, y: 0};
+                //rien à modifier pour offY et btnsOffY
+            }
+        }else{
+            if(y > cY){
+                posProps.quad = 2;
+                posProps.anch = {x: 12/128, y: 1};
+                posProps.offY = - posProps.bOff;
+                posProps.btnsOffY = 6;
+            }
+            //pas de 'else' parce que ça serait les props par défault
+        }
+
+        
+        let box = game.make.sprite(0,0,"unUpBox", posProps.quad);
         box.scale.setTo(2);
-        box.anchor.setTo(12/128, 1); // met l'ancre au bout de la pointe de la boîte
+        box.anchor.setTo(posProps.anch.x, posProps.anch.y); // met l'ancre au bout de la pointe de la boîte
         box.x = this.pos.x;
-        box.y = this.pos.y - 16;
-        this.unlockDialog.add(box);
+        box.y = this.pos.y + posProps.offY;
+        this.dialog.add(box);
 
         let close = game.make.button(0,0, "closeButton", () => {
-            this._closeUnlockDialog();
+            this._closeDialogBox();
         }, this, 0,1,2,0);
+        close.anchor.setTo(.5);
         let ofs = -6;
-        close.alignIn(box, Phaser.TOP_RIGHT, ofs, ofs);
+        close.alignIn(box, Phaser.TOP_RIGHT, ofs, -posProps.btnsOffY);
 
-        this.unlockDialog.add(close);
+        this.dialog.add(close);
 
     }
-    _closeUnlockDialog(){
+    _closeDialogBox(){
         globals.sites.dialogDisplayed = "";
 
-        this.unlockDialog.callAll("destroy");
-        this.unlockDialog.children[0].pendingDestroy = true; //petit 'trick' pour détruire le bouton qui permet de fermer la fenêtre d'upgrade
-        this.unlockDialog.destroy();
+        this.dialog.callAll("destroy");
+        this.dialog.children[0].pendingDestroy = true; //petit 'trick' pour détruire le bouton qui permet de fermer la fenêtre d'upgrade
+        this.dialog.destroy();
     }
 
 }
