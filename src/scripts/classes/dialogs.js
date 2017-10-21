@@ -15,9 +15,6 @@ class Dialog{
 		this._dialBox.alpha = 0.9;
 		cornerObj(this._dialBox, 10, "se");
 
-        //this.conseilRect = new Phaser.Rectangle(0, 0, 98, 140);
-
-
 		var offset = -15;
 
 	    //affiches les textes des dialogues
