@@ -71,7 +71,7 @@ Afrique | diamant, uranium |
 Amérique du nord | charbon, pétrole, gaz naturel | 
 Asie | charbon |
 Amérique du sud | forêt primaire → palme, bétail, bois | Exploitation durable (produit moins)
-Toutes régions | Coupe de bois | Énergie solaire, éoliennes, fission nucléaire (avec conséquences), fusion nucléaire
+Toutes régions | Coupe de bois | Énergie solaire, éoliennes, fission nucléaire (avec conséquences), fusion nucléaire, géothermie
 
 
 ## Production des éléments de jeu
