@@ -52,11 +52,9 @@ class Site{
         let x = this.pos.x;
         let y = this.pos.y;
 
-        console.log(x, cX, y, cY);
-
         let posProps = {}; //propriétés de la boîte de dialogue dépendant de l'emplacement du site de production
         
-        posProps.bOff = 16; //décallage de base de la bôite de dialogue
+        posProps.bOff = 16; //hauteur de la 'flèche' de la boîte de dialogue
         
         /* Les quadrants sont définis de la manière suivante:
             0 | 1
@@ -85,38 +83,38 @@ class Site{
             posProps.quad = 2;
         }
 
-
+        let q01YOff = -22, q23YOff = -6;
         switch(posProps.quad){
             case 0:
                 posProps.anch = {x: 12/128, y: 0};
                 posProps.offY = posProps.bOff;
-                posProps.cntOffY = 22;
+                posProps.cntOffY = q01YOff;
                 break;
 
             case 1:
                 posProps.anch = {x: 1 - 12/128, y: 0};
                 posProps.offY = posProps.bOff;
-                posProps.cntOffY = 22;  
+                posProps.cntOffY = q01YOff;  
                 break;
 
             case 2:
                 posProps.anch = {x: 12/128, y: 1};
                 posProps.offY = - posProps.bOff;
-                posProps.cntOffY = 6;
+                posProps.cntOffY = q23YOff;
                 break;
 
             case 3:
                 posProps.anch = {x: 1 - 12/128, y: 1};
                 posProps.offY = - posProps.bOff;
-                posProps.cntOffY = 6;
+                posProps.cntOffY = q23YOff;
                 break;
 
             default:
-                console.warn("No proper quadrant in classes/sites.js");
+                console.warn(`${posProps.quad} is not a proper quadrant in classes/sites.js`);
         }
 
         let box = game.make.sprite(0,0,"unUpBox", posProps.quad);
-        box.scale.setTo(2);
+        box.scale.setTo(scl);
         box.anchor.setTo(posProps.anch.x, posProps.anch.y); // met l'ancre au bout de la pointe de la boîte
         box.x = this.pos.x;
         box.y = this.pos.y + posProps.offY;
@@ -127,10 +125,40 @@ class Site{
         }, this, 0,1,2,0);
         close.anchor.setTo(.5);
         let ofs = -6;
-        close.alignIn(box, Phaser.TOP_RIGHT, ofs, -posProps.cntOffY);
-
+        close.alignIn(box, Phaser.TOP_RIGHT, ofs, posProps.cntOffY);
         this.dialog.add(close);
 
+        let txt = {};
+        let dType = ""; //type de boîte de dialogue (unlocking || upgrading)
+        if(this.res.type == "notUsed" && this.res.level == 0){ //si le site de production est verouillé
+            dType = "unlock";
+
+            txt.title = "Déverouiller?";
+            txt.bPoints = ["Vous pourrez ainsi installer une usine sur ce site."];
+        }else{
+            dType = "upgrade";
+
+            txt.title = "Améliorer?";
+        }
+
+        let title = game.make.bitmapText(0,0,"pixel_font",txt.title, 30); //x,y,font,text,size
+        title.alignIn(box, Phaser.TOP_LEFT, 2*ofs, posProps.cntOffY - 4);
+        this.dialog.add(title);
+
+        let unlEls = {}; //éléments spécifiques au déverouillage
+        let upgEls = {}; //éléments spécifiques à l'amélioration
+        if(dType == "unlock"){
+            unlEls.btn = game.make.button(0,0, "pos_neg", () => {
+                console.log("unlocked");
+            }, this, 0,1,2,0);
+            unlEls.btn.scale.setTo(2);
+            unlEls.btn.alignIn(box, Phaser.BOTTOM_RIGHT, ofs + 2, posProps.cntOffY + posProps.offY);
+            this.dialog.add(unlEls.btn);
+
+            unlEls.price = game.make.bitmapText(0,0,"pixel_font", "50K M", 26);
+            unlEls.price.alignIn(unlEls.btn, Phaser.CENTER, 1, -4);
+            this.dialog.add(unlEls.price);
+        }
     }
 
     _closeDialogBox(){
