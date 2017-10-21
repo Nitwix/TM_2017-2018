@@ -10,7 +10,7 @@ globReg.init = function(){
 
     globals.regions.africa = new Region("africa", 3, 
         [[343, 164], [436, 354], [513, 233], [454, 165]], 
-        [[50, 50], [50, 400], [750, 50], [750, 400]]);
+        [[50, 50], [50, 400], [550, 50], [750, 400]]);
 
     globals.regions.southAmerica = new Region("southAmerica", 3, 
         [[269, 197], [348, 229], [270, 363], [233, 231]], []);

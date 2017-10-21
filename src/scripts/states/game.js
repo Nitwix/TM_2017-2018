@@ -5,11 +5,11 @@ gameState.create = function(){
     gameEls.setup.UI();
 
     this.dialog = new Dialog(tutoTexts); //voir utils/dialogs.js et others/dialogsTexts.js
-    this.dialog.start();
+    //this.dialog.start();
 
     globReg.init(); //voir utils/globReg.js
-    this.conseilRect = new Phaser.Rectangle(0, 0, 96, 128);
-    cornerObj(this.conseilRect, 10, "sw");
+    /*this.conseilRect = new Phaser.Rectangle(0, 0, 96, 128);
+    cornerObj(this.conseilRect, 10, "sw");*/
 
 };
 
@@ -26,6 +26,6 @@ gameState.update = function(){
 
 gameState.render = function(){
     //game.debug.inputInfo(10,10);
-    game.debug.geom(this.conseilRect);
+    //game.debug.geom(this.conseilRect);
     
 }

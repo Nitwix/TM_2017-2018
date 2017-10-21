@@ -55,36 +55,66 @@ class Site{
         console.log(x, cX, y, cY);
 
         let posProps = {}; //propriétés de la boîte de dialogue dépendant de l'emplacement du site de production
-        //propriétés par default: celle du quadrant 0
-        posProps.quad = 0;
-        posProps.anch = {x: 12/128, y: 0};
-        posProps.bOff = 16; //décallage de base de la bôite de dialogue
-        posProps.offY = posProps.bOff;
-        posProps.btnsOffY = 22;
         
+        posProps.bOff = 16; //décallage de base de la bôite de dialogue
+        
+        /* Les quadrants sont définis de la manière suivante:
+            0 | 1
+           ---|---
+            2 | 3
+            */
 
-        if(x > cX){
-            if(y > cY){
+        if(y > cY){
+            if(x > cX){
                 posProps.quad = 3;
-                posProps.anch = {x: 1 - 12/128, y: 1};
-                posProps.offY = - posProps.bOff;
-                posProps.btnsOffY = 6;            
             }else{
-                posProps.quad = 1;
-                posProps.anch = {x: 1 - 12/128, y: 0};
-                //rien à modifier pour offY et btnsOffY
+                posProps.quad = 2;
             }
         }else{
-            if(y > cY){
-                posProps.quad = 2;
-                posProps.anch = {x: 12/128, y: 1};
-                posProps.offY = - posProps.bOff;
-                posProps.btnsOffY = 6;
+            if(x > cX){
+                posProps.quad = 1;
+            }else{
+                posProps.quad = 0;
             }
-            //pas de 'else' parce que ça serait les props par défault
         }
 
-        
+        //met l'a boîte du quadrant par défault si possible
+        let mOff = 10, bW = 128, bH = 64, scl = 2;
+        let cRect = new Phaser.Rectangle(mOff+12*scl, mOff+bH*scl, cX*2 - 116*scl, cY*2 - (bH*scl + mOff));
+        if(cRect.contains(x,y)){
+            posProps.quad = 2;
+        }
+
+
+        switch(posProps.quad){
+            case 0:
+                posProps.anch = {x: 12/128, y: 0};
+                posProps.offY = posProps.bOff;
+                posProps.cntOffY = 22;
+                break;
+
+            case 1:
+                posProps.anch = {x: 1 - 12/128, y: 0};
+                posProps.offY = posProps.bOff;
+                posProps.cntOffY = 22;  
+                break;
+
+            case 2:
+                posProps.anch = {x: 12/128, y: 1};
+                posProps.offY = - posProps.bOff;
+                posProps.cntOffY = 6;
+                break;
+
+            case 3:
+                posProps.anch = {x: 1 - 12/128, y: 1};
+                posProps.offY = - posProps.bOff;
+                posProps.cntOffY = 6;
+                break;
+
+            default:
+                console.warn("No proper quadrant in classes/sites.js");
+        }
+
         let box = game.make.sprite(0,0,"unUpBox", posProps.quad);
         box.scale.setTo(2);
         box.anchor.setTo(posProps.anch.x, posProps.anch.y); // met l'ancre au bout de la pointe de la boîte
@@ -97,11 +127,12 @@ class Site{
         }, this, 0,1,2,0);
         close.anchor.setTo(.5);
         let ofs = -6;
-        close.alignIn(box, Phaser.TOP_RIGHT, ofs, -posProps.btnsOffY);
+        close.alignIn(box, Phaser.TOP_RIGHT, ofs, -posProps.cntOffY);
 
         this.dialog.add(close);
 
     }
+
     _closeDialogBox(){
         globals.sites.dialogDisplayed = "";
 
@@ -109,5 +140,4 @@ class Site{
         this.dialog.children[0].pendingDestroy = true; //petit 'trick' pour détruire le bouton qui permet de fermer la fenêtre d'upgrade
         this.dialog.destroy();
     }
-
 }
