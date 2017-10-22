@@ -43,9 +43,11 @@ class Site{
         
         globals.sites.dialogDisplayed = this.id;
 
+        //TODO: Remplacer par this.dialog = new SmallDialog(...)
         this.dialog = game.add.group();
-
+        
         //sélection de quel sprite de la spritesheet selon l'endroit du site
+        
         let cX = game.world.centerX;
         let cY = game.world.centerY;
 
@@ -61,7 +63,7 @@ class Site{
            ---|---
             2 | 3
             */
-
+        
         if(y > cY){
             if(x > cX){
                 posProps.quad = 3;
@@ -164,6 +166,8 @@ class Site{
     _closeDialogBox(){
         globals.sites.dialogDisplayed = "";
 
+        //TODO: utiliser this.dialog.close();
+        
         this.dialog.callAll("destroy");
         this.dialog.children[0].pendingDestroy = true; //petit 'trick' pour détruire le bouton qui permet de fermer la fenêtre d'upgrade
         this.dialog.destroy();
