@@ -12,22 +12,21 @@ class Site{
             case "notUsed":
                 icon = this.res.level; //0: locked, 1: not used
                 break;
-                case "coal":
+            case "coal":
                 icon = globals.sites.maxLevel + this.res.level;
                 break;
                 //ajouter les autres types de resources ici
-                default:
+            default:
                 console.warn("Resource not found in classes/sites.js");
-            }
-            this.siteButton = game.add.button(this.pos.x,
-              this.pos.y,
-              "resources", 
-              () => {
-                this._dialogBox();
-            }, this,icon, icon, icon, icon);
-            this.siteButton.anchor.setTo(.5);
         }
-
+        this.siteButton = game.add.button(this.pos.x,
+                                          this.pos.y,
+                                          "resources", 
+                                          () => {
+            this._dialogBox();
+        }, this,icon, icon, icon, icon);
+        this.siteButton.anchor.setTo(.5);
+    }
 
     //détruis le bouton du site de production
     del(){
@@ -40,136 +39,45 @@ class Site{
             let cR = globals.regions[globals.currentRegion];
             cR.sites[globals.sites.dialogDisplayed]._closeDialogBox();
         }
-        
+
         globals.sites.dialogDisplayed = this.id;
 
-        //TODO: Remplacer par this.dialog = new SmallDialog(...)
-        this.dialog = game.add.group();
-        
-        //sélection de quel sprite de la spritesheet selon l'endroit du site
-        
-        let cX = game.world.centerX;
-        let cY = game.world.centerY;
-
-        let x = this.pos.x;
-        let y = this.pos.y;
-
-        let posProps = {}; //propriétés de la boîte de dialogue dépendant de l'emplacement du site de production
-        
-        posProps.bOff = 16; //hauteur de la 'flèche' de la boîte de dialogue
-        
-        /* Les quadrants sont définis de la manière suivante:
-            0 | 1
-           ---|---
-            2 | 3
-            */
-        
-        if(y > cY){
-            if(x > cX){
-                posProps.quad = 3;
-            }else{
-                posProps.quad = 2;
-            }
-        }else{
-            if(x > cX){
-                posProps.quad = 1;
-            }else{
-                posProps.quad = 0;
-            }
-        }
-
-        //met l'a boîte du quadrant par défault si possible
-        let mOff = 10, bW = 128, bH = 64, scl = 2;
-        let cRect = new Phaser.Rectangle(mOff+12*scl, mOff+bH*scl, cX*2 - 116*scl, cY*2 - (bH*scl + mOff));
-        if(cRect.contains(x,y)){
-            posProps.quad = 2;
-        }
-
-        let q01YOff = -22, q23YOff = -6;
-        switch(posProps.quad){
-            case 0:
-                posProps.anch = {x: 12/128, y: 0};
-                posProps.offY = posProps.bOff;
-                posProps.cntOffY = q01YOff;
-                break;
-
-            case 1:
-                posProps.anch = {x: 1 - 12/128, y: 0};
-                posProps.offY = posProps.bOff;
-                posProps.cntOffY = q01YOff;  
-                break;
-
-            case 2:
-                posProps.anch = {x: 12/128, y: 1};
-                posProps.offY = - posProps.bOff;
-                posProps.cntOffY = q23YOff;
-                break;
-
-            case 3:
-                posProps.anch = {x: 1 - 12/128, y: 1};
-                posProps.offY = - posProps.bOff;
-                posProps.cntOffY = q23YOff;
-                break;
-
-            default:
-                console.warn(`${posProps.quad} is not a proper quadrant in classes/sites.js`);
-        }
-
-        let box = game.make.sprite(0,0,"unUpBox", posProps.quad);
-        box.scale.setTo(scl);
-        box.anchor.setTo(posProps.anch.x, posProps.anch.y); // met l'ancre au bout de la pointe de la boîte
-        box.x = this.pos.x;
-        box.y = this.pos.y + posProps.offY;
-        this.dialog.add(box);
-
-        let close = game.make.button(0,0, "closeButton", () => {
-            this._closeDialogBox();
-        }, this, 0,1,2,0);
-        close.anchor.setTo(.5);
-        let ofs = -6;
-        close.alignIn(box, Phaser.TOP_RIGHT, ofs, posProps.cntOffY);
-        this.dialog.add(close);
-
         let txt = {};
-        let dType = ""; //type de boîte de dialogue (unlocking || upgrading)
+        let dType = ""; //type de boîte de dialogue (unlock || upgrade)
         if(this.res.type == "notUsed" && this.res.level == 0){ //si le site de production est verouillé
             dType = "unlock";
 
             txt.title = "Déverouiller?";
             txt.bPoints = ["Vous pourrez ainsi installer une usine sur ce site."];
+            txt.price = "100K M";
         }else{
             dType = "upgrade";
 
             txt.title = "Améliorer?";
         }
 
-        let title = game.make.bitmapText(0,0,"pixel_font",txt.title, 30); //x,y,font,text,size
-        title.alignIn(box, Phaser.TOP_LEFT, 2*ofs, posProps.cntOffY - 4);
-        this.dialog.add(title);
-
-        let unlEls = {}; //éléments spécifiques au déverouillage
-        let upgEls = {}; //éléments spécifiques à l'amélioration
+        let x = this.pos.x;
+        let y = this.pos.y;
+        
+        dType = "upgrade";
         if(dType == "unlock"){
-            unlEls.btn = game.make.button(0,0, "pos_neg", () => {
-                console.log("unlocked");
-            }, this, 0,1,2,0);
-            unlEls.btn.scale.setTo(2);
-            unlEls.btn.alignIn(box, Phaser.BOTTOM_RIGHT, ofs + 2, posProps.cntOffY + posProps.offY);
-            this.dialog.add(unlEls.btn);
-
-            unlEls.price = game.make.bitmapText(0,0,"pixel_font", "50K M", 26);
-            unlEls.price.alignIn(unlEls.btn, Phaser.CENTER, 1, -4);
-            this.dialog.add(unlEls.price);
+            this._dialog = new SmallDialog(x, y, txt.title, txt.bPoints, txt.price, () => {
+                console.log("Unlock callback called");
+            });
+        }else if(dType == "upgrade"){
+            this._dialog = new SmallDialog(x, y, txt.title, txt.bPoints, txt.price, () => {
+                console.log("Unlock callback called");
+            }, "negText", () => {
+                console.log("Negative callback called");
+            });
         }
+
+        this._dialog.open();
     }
 
     _closeDialogBox(){
         globals.sites.dialogDisplayed = "";
 
-        //TODO: utiliser this.dialog.close();
-        
-        this.dialog.callAll("destroy");
-        this.dialog.children[0].pendingDestroy = true; //petit 'trick' pour détruire le bouton qui permet de fermer la fenêtre d'upgrade
-        this.dialog.destroy();
+        this._dialog.close();
     }
 }
