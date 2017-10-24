@@ -48,24 +48,24 @@ class Site{
             dType = "unlock";
 
             txt.title = "Déverouiller?";
-            txt.bPoints = ["Vous pourrez ainsi installer une usine sur ce site."];
+            txt.descr = "Ceci vous permettra d'installer un bâtiment sur cet emplacement.";
             txt.price = "100K M";
         }else{
             dType = "upgrade";
 
             txt.title = "Améliorer?";
+            txt.descr = "Votre usine aura telle et telle caractéristique améliorée";
         }
 
         let x = this.pos.x;
         let y = this.pos.y;
         
-        dType = "upgrade";
         if(dType == "unlock"){
-            this._dialog = new SmallDialog(x, y, txt.title, txt.bPoints, txt.price, () => {
+            this._dialog = new SmallDialog(x, y, txt.title, txt.descr, txt.price, () => {
                 console.log("Unlock callback called");
             });
         }else if(dType == "upgrade"){
-            this._dialog = new SmallDialog(x, y, txt.title, txt.bPoints, txt.price, () => {
+            this._dialog = new SmallDialog(x, y, txt.title, txt.descr, txt.price, () => {
                 console.log("Unlock callback called");
             }, "negText", () => {
                 console.log("Negative callback called");

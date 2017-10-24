@@ -1,8 +1,8 @@
 class SmallDialog{
-    constructor(x, y, title, bPoints, posTxt, posCallback, negTxt, negCallback){
+    constructor(x, y, title, descr, posTxt, posCallback, negTxt, negCallback){
         this._pos = new Phaser.Point(x,y);
         this._title = title;
-        this._bPoints = bPoints;
+        this._descr = descr;
         this._posTxt = posTxt;
         this._posCB = posCallback;
         this._negTxt = negTxt;
@@ -81,7 +81,7 @@ class SmallDialog{
                 console.warn(`${this._posProps.quad} is not a proper quadrant in classes/SmallDialog.js`);
         }
 
-        this._box = game.make.sprite(0,0,"unUpBox", this._posProps.quad);
+        this._box = game.make.sprite(0,0,"smallDBox", this._posProps.quad);
         this._box.scale.setTo(scl);
         this._box.anchor.setTo(this._posProps.anch.x, this._posProps.anch.y); // met l'ancre au bout de la pointe de la boîte
         this._box.x = this._pos.x;
@@ -92,28 +92,43 @@ class SmallDialog{
             this.close();
         }, this, 0,1,2,0);
         closeBtn.anchor.setTo(.5);
-        this._posProps.ofs = -6;
-        closeBtn.alignIn(this._box, Phaser.TOP_RIGHT, this._posProps.ofs, this._posProps.cntOffY);
+        this._posProps.cntOffX = -6;
+        closeBtn.alignIn(this._box, Phaser.TOP_RIGHT, this._posProps.cntOffX, this._posProps.cntOffY);
         this._dialog.add(closeBtn);
 
 
         let title = game.make.bitmapText(0,0,"pixel_font",this._title, 30); //x,y,font,text,size
-        title.alignIn(this._box, Phaser.TOP_LEFT, 2*this._posProps.ofs, this._posProps.cntOffY - 4);
+        title.alignIn(this._box, Phaser.TOP_LEFT, 2*this._posProps.cntOffX, this._posProps.cntOffY - 4);
         this._dialog.add(title);
 
-        if(this._posTxt !== undefined && this._negTxt == undefined){ //si que bouton vert
+        if(this._posTxt != undefined && this._negTxt == undefined){ //si que bouton vert
             this._addPosBtn(false);    
-        }else{
-            this._addNegBtn(false);
+        }else{ //bouton vert et rouge
             this._addPosBtn(true);
+            this._addNegBtn(false);
         }
-        
+
+        this._addDescr();
+
         //TODO (maybe): ajouter la possibilité de n'avoir qu'un seul bouton négatif
     }
 
-    _mkBtn(onTop, isNeg, callback){
-        if(onTop){
-            this._posProps.offY -= 32;
+    _addDescr(){
+        if(this._descr.length > 68){
+            console.warn("Text pourrait être trop long dans classes/smallDialog.js");
+        }
+        let descr = game.make.bitmapText(0,0, "pixel_font", this._descr, 20);
+        
+        descr.maxWidth = this._box.width - 112;
+        descr.alignIn(this._box, Phaser.TOP_LEFT, this._posProps.cntOffX - 6, this._posProps.cntOffY - 32);
+        
+        this._dialog.add(descr);
+    }
+
+    _mkBtn(above, isNeg, callback){
+        let offY = this._posProps.offY;
+        if(above){
+            offY -= 32;
         }
         let idx = 0;
         if(isNeg){
@@ -123,28 +138,28 @@ class SmallDialog{
             callback();
         }, this, idx, 1 + idx,2 + idx, idx);
         btn.scale.setTo(2);
-        btn.alignIn(this._box, Phaser.BOTTOM_RIGHT, this._posProps.ofs + 2, this._posProps.cntOffY + this._posProps.offY);
+        btn.alignIn(this._box, Phaser.BOTTOM_RIGHT, this._posProps.cntOffX + 2, this._posProps.cntOffY + offY);
         return btn;
     }
-    
+
     _mkTxt(txt, btn){
         let bmTxt = game.make.bitmapText(0,0,"pixel_font", txt, 26);
         bmTxt.alignIn(btn, Phaser.CENTER, 1, -4);
         return bmTxt;
     }
 
-    _addPosBtn(onTop){
+    _addPosBtn(above){
         let posBtn = {};
-        posBtn.btn = this._mkBtn(onTop, false, this._posCB);
+        posBtn.btn = this._mkBtn(above, false, this._posCB);
         this._dialog.add(posBtn.btn);
 
         posBtn.txt = this._mkTxt(this._posTxt, posBtn.btn);
         this._dialog.add(posBtn.txt);
     }
-    
-    _addNegBtn(onTop){
+
+    _addNegBtn(above){
         let negBtn = {};
-        negBtn.btn = this._mkBtn(onTop, true, this._negCB);
+        negBtn.btn = this._mkBtn(above, true, this._negCB);
         this._dialog.add(negBtn.btn);
 
         negBtn.txt = this._mkTxt(this._negTxt, negBtn.btn);
@@ -156,9 +171,7 @@ class SmallDialog{
         if(this._dialog.children.length > 0){
             this._dialog.children[0].pendingDestroy = true; //petit 'trick' pour détruire le bouton qui permet de fermer la fenêtre d'upgrade
         }
-        
+
         this._dialog.destroy();
     }
-
-
 }
