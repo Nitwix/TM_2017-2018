@@ -1,19 +1,29 @@
 // Script d'entrée
 
-// configuration de Phaser.Game
-var config = {
+// importe electron
+const electron = require("electron");
+
+const app = electron.app;
+
+const BrowserWindow = electron.BrowserWindow;
+let mainWindow;
+
+
+app.on("ready", () => {
+  let config = {
     width: 800,
-    height: 450, // w/h = 1.777... pour une résolution standard
-    renderer: Phaser.CANVAS,
-    antialias: false // pour que les pixel art ne soient pas floutés
-};
+    height: 450,
+    center: true,
+    resizable: false,
+    fullscreenable: true
+  };
+  mainWindow = new BrowserWindow(config);
 
-var game = new Phaser.Game(config);
+  mainWindow.loadURL(`file://${__dirname}/index.html`);
 
-//ajout des states du jeu
-game.state.add("boot", bootState);
-game.state.add("preload", preloadState);
-game.state.add("mainMenu", mainMenuState);
-game.state.add("game", gameState);
+  mainWindow.on("closed", () => {
+    mainWindow = null;
+  });
 
-game.state.start("boot");
+  exports.mainWindow = mainWindow;
+});

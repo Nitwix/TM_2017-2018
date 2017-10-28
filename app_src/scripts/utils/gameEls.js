@@ -1,3 +1,5 @@
+const {mainWindow} = require("electron").remote;
+console.log(mainWindow);
 var gameEls = {};
 gameEls.setup = {};
 
@@ -13,15 +15,14 @@ gameEls.setup.bureau = function(){
 
 gameEls.setup.UI = function(){
     gameEls.fsButt = game.add.button(0,0,"buttons",function(){
-		if(game.scale.isFullScreen){
-			game.scale.stopFullScreen();
+		if(mainWindow.isFullScreen()){
+			mainWindow.setFullScreen(false);
 		}else{
-			game.scale.startFullScreen();
+			mainWindow.setFullScreen(true);
 		}
 	},this,3,4,5,3);
 	gameEls.fsButt.scale.setTo(globals.UI.smallButtonScale);
 	cornerObj(gameEls.fsButt, globals.UI.buttonOffset, "ne");
-    
+
     //autres éléments permanents de l'UI...
 }
-
