@@ -16,10 +16,10 @@ gameEls.setup.bureau = function(){
 
 gameEls.setup.UI = function(){
   gameEls.fsButt = game.add.button(0,0,"buttons",() => {
-        console.log(mainWindow.isFullScreen());
+        // console.log(mainWindow.isFullScreen());
 		if(mainWindow.isFullScreen()){
 			mainWindow.setFullScreen(false);
-            game.state.stopFullScreen();
+            game.scale.stopFullScreen();
 		}else{
 			mainWindow.setFullScreen(true);
             game.scale.startFullScreen();

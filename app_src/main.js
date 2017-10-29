@@ -1,5 +1,7 @@
 // Script d'entrée
 
+const path = require("path");
+
 // importe electron
 const electron = require("electron");
 
@@ -9,18 +11,21 @@ const BrowserWindow = electron.BrowserWindow;
 
 let mainWindow;
 app.on("ready", () => {
-  let config = {
-    width: 800,
-    height: 450,
-    center: true,
-    resizable: true
-  };
-  mainWindow = new BrowserWindow(config);
+    // l'icon ne s'affiche pas correctement (sur ubuntu en tout cas)
+    let config = {
+        width: 800,
+        height: 450,
+        center: true,
+        resizable: true,
+        icon: `${__dirname}/assets/sprites/preload/earth.png`
+    };
+    // console.log(__dirname);
+    mainWindow = new BrowserWindow(config);
 
-  mainWindow.loadURL(`file://${__dirname}/index.html`);
+    mainWindow.loadURL(`file://${__dirname}/index.html`);
 
-  mainWindow.on("closed", () => {
-    mainWindow = null;
-  });
+    mainWindow.on("closed", () => {
+        mainWindow = null;
+    });
 
 });
