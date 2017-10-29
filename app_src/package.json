@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/Nitwix/TM_2017-2018#readme",
   "devDependencies": {
-    "electron": "1.7.9"
+    "electron": "1.7.9",
+    "electron-prebuilt": "^1.4.13"
   }
 }
