@@ -13,8 +13,7 @@ app.on("ready", () => {
     width: 800,
     height: 450,
     center: true,
-    resizable: false,
-    fullscreenable: true
+    resizable: true
   };
   mainWindow = new BrowserWindow(config);
 
@@ -24,5 +23,4 @@ app.on("ready", () => {
     mainWindow = null;
   });
 
-  exports.mainWindow = mainWindow;
 });

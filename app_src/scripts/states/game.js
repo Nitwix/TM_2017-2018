@@ -1,6 +1,5 @@
 var gameState = {};
 
-let gameEls = require("./scripts/utils/gameEls.js").gameEls;
 gameState.create = function(){
     gameEls.setup.bureau(); //voir utils/gameEls.js
     gameEls.setup.UI();
