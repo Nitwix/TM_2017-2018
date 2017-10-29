@@ -1,5 +1,8 @@
 var gameState = {};
 
+const fs = require("fs");
+const path = require("path");
+
 gameState.create = function(){
     gameEls.setup.bureau(); //voir utils/gameEls.js
     gameEls.setup.UI();
@@ -12,15 +15,27 @@ gameState.create = function(){
     cornerObj(this.conseilRect, 10, "sw");*/
     let testDial = new SmallDialog(50,50,"Title", "Description that is not too long", "Expensive", () => {});
     testDial.open();
+
+    // fs.writeFile(path.join(__dirname, "saved_content/points.txt"), "", function (err) {
+    //     if (err) throw err;
+    //     console.log('Cleared points.txt');
+    // });
 };
 
 gameState.update = function(){
-	globReg.update();
+    globReg.update();
     //console.log(globals.currentRegion);
-    /* Permet d'obtenir le x et y quand on clique
-    if(game.input.activePointer.isDown && game.time.now % 100 == 0){
-        console.log(game.input.x, game.input.y);
-    }*/
+    // Permet d'obtenir le x et y quand on clique
+    // if(game.input.activePointer.isDown){ //  && game.time.now % 100 == 0
+    //     let x = game.input.x;
+    //     let y = game.input.y;
+    //     console.log(x,y);
+    //     // console.log(__dirname);
+    //     fs.appendFile(path.join(__dirname, "saved_content/points.txt"), `x: ${x}; y: ${y} \n`, function (err) {
+    //         if (err) throw err;
+    //         console.log('Updated!');
+    //     });
+    // }
 }
 
 
