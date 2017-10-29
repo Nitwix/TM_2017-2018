@@ -13,8 +13,6 @@ gameState.create = function(){
     globReg.init(); //voir utils/globReg.js
     /*this.conseilRect = new Phaser.Rectangle(0, 0, 96, 128);
     cornerObj(this.conseilRect, 10, "sw");*/
-    let testDial = new SmallDialog(50,50,"Title", "Description that is not too long", "Expensive", () => {});
-    testDial.open();
 
     // fs.writeFile(path.join(__dirname, "saved_content/points.txt"), "", function (err) {
     //     if (err) throw err;
