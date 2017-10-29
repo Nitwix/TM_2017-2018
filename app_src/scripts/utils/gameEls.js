@@ -1,10 +1,9 @@
 const {mainWindow} = require("electron").remote;
-console.log(mainWindow);
 var gameEls = {};
 gameEls.setup = {};
 
 gameEls.setup.bureau = function(){
-    gameEls.bureau = game.add.image(0,0,"bureau");
+  gameEls.bureau = game.add.image(0,0,"bureau");
 	gameEls.bureau.width = game.width;
 	gameEls.bureau.height = game.height;
 
@@ -26,3 +25,5 @@ gameEls.setup.UI = function(){
 
     //autres éléments permanents de l'UI...
 }
+
+module.exports.gameEls = gameEls;

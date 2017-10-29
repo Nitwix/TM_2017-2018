@@ -6,9 +6,8 @@ const electron = require("electron");
 const app = electron.app;
 
 const BrowserWindow = electron.BrowserWindow;
+
 let mainWindow;
-
-
 app.on("ready", () => {
   let config = {
     width: 800,

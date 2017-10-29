@@ -1,5 +1,6 @@
 var gameState = {};
 
+let gameEls = require("./scripts/utils/gameEls.js").gameEls;
 gameState.create = function(){
     gameEls.setup.bureau(); //voir utils/gameEls.js
     gameEls.setup.UI();
@@ -22,7 +23,6 @@ gameState.update = function(){
         console.log(game.input.x, game.input.y);
     }*/
 }
-
 
 
 gameState.render = function(){
