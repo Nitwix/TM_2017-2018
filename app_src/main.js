@@ -17,10 +17,17 @@ app.on("ready", () => {
         height: 450,
         center: true,
         resizable: true,
-        icon: `${__dirname}/assets/sprites/preload/earth.png`
+        icon: `${__dirname}/assets/sprites/preload/earth_large.png`
     };
     // console.log(__dirname);
+
+
     mainWindow = new BrowserWindow(config);
+
+    if(process.platform == "win32"){
+      mainWindow.setMenu(null);
+      mainWindow.setSize(816, 489);
+    }
 
     mainWindow.loadURL(`file://${__dirname}/index.html`);
 
