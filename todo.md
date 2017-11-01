@@ -3,7 +3,10 @@
 - dessiner la carte du monde
 - faire la musique du jeu + les effets sonores
 - dessiner Conseil
-- dialogue de déverouillage/amélioration des sites de production
+- déverouillage des sites de production
+- amélioration des sites de production
+- classe MoneyMgr
+- classe TimeMgr
 
 
 # Fait
@@ -14,3 +17,4 @@
 - dessiner les boutons de l'ui (26.09.2017)
 - faire le système de dialogues (01.10.2017)
 - faire les transitions entre la carte globale et les régions (03.10.2017)
+- SmallDialog terminé (24.10.2017)

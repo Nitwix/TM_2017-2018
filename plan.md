@@ -19,10 +19,10 @@
 - onglet avec un graph en temps réel du niveau de CO<sub>2</sub> et de la température par rapport à la période préindustrielle
 
 - 2 conseillers : un pro écologique et un pro ressources fossiles avec des points de réputation auprès de ces 2 conseillers
-- une action écologique rapporte des points de réputation auprès de ton conseiller écologique et vice versa 
+- une action écologique rapporte des points de réputation auprès de ton conseiller écologique et vice versa
 
-- carte rapprochée : 
-	- affiche une région 
+- carte rapprochée :
+	- affiche une région
     - plusieurs emplacements disponibles pour sites de production
 
 - fission nucléaire disponible mais conséquences aléatoire : explosion de centrale, population intoxiquée par déchets, ...
@@ -33,9 +33,11 @@
     - narrateurs/guides : conseiller écologique : Conseil
     - joueur : président du monde (Ou ministre de l'énergie et des ressources)
 
-- Mettre une icone : demander Conseil/conseil 
+- Mettre une icone : demander Conseil/conseil
 
 - La carte du monde est sur la table du président et les boutons du l'UI se trouvent "sur la table"
+
+- pouvoir accélérer / ralentir le temps 
 
 
 ## Cycle économique
@@ -48,6 +50,7 @@
 - Les sites de production d'énergie produisent directement de l'énergie
 - Les sites de production de ressources consomment cette énergie et produisent des Mondio
 - Les Mondio sont réinvestits pour produire plus
+- Il serait peut-être possible de prendre un emprunt à la banque
 
 
 <!-- ### Deuxième alternative:
@@ -58,7 +61,7 @@
     - Les sites de production de produits finis (acier, tissus, voitures, ...)
 - Les sites de production de ressources énergétiques produisent du combustible qui peut être vendu ou utilisé pour produire de l'énergie (par défaut: énergie)
 - Les sites de production de matières premières nécessitent de l'énergie
-- Les sites de production produits finis utilisent des matières premières pour produire des produits finis 
+- Les sites de production produits finis utilisent des matières premières pour produire des produits finis
 
 ==> TROP COMPLIQUÉ -->
 
@@ -68,7 +71,7 @@ Région | Augmente CO<sub>2</sub> | N'augmente pas le CO<sub>2</sub>
 -------|-------------------------|-------------------------
 Europe | charbon | barrages hydroélectriques
 Afrique | diamant, uranium |
-Amérique du nord | charbon, pétrole, gaz naturel | 
+Amérique du nord | charbon, pétrole, gaz naturel |
 Asie | charbon |
 Amérique du sud | forêt primaire → palme, bétail, bois | Exploitation durable (produit moins)
 Toutes régions | Coupe de bois | Énergie solaire, éoliennes, fission nucléaire (avec conséquences), fusion nucléaire, géothermie
@@ -79,7 +82,7 @@ Toutes régions | Coupe de bois | Énergie solaire, éoliennes, fission nucléai
 Type | Niveau | Production | Prix | Production de CO<sub>2</sub>
 -----|--------|------------|------|-------------------------
 Mine de charbon | 1 | 20 kg/jour | 200M | 1 kg/jour
- &nbsp; | 2 et suivants | *2 | 400M | *3
+ &nbsp; | 2 et suivants | x2 | 400M | x3
 
 
 ## Investissments dans la recherche de nouvelles énergies
@@ -115,10 +118,10 @@ Mine de charbon | 1 | 20 kg/jour | 200M | 1 kg/jour
 
 - (1800-1810) tutoriel
 	- début avec (assez pour tuto)M
-	- déblocage d'un site de production d'énergie et d'un site de production de ressources 
+	- déblocage d'un site de production d'énergie et d'un site de production de ressources
 	- installation de mine de charbon 1
 	- installation de usine 1
-- le déblocage de sites de production coûte de l'argent 
+- le déblocage de sites de production coûte de l'argent
 - des évènements aléatoires se produisent durant la partie
 
 

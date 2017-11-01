@@ -3,6 +3,7 @@ class MoneyMgr{
         this.val = initVal;
     }
 
+    //TODO: afficher tjs le même nombre de chiffres
     prettyStr(){
         if(this.val < 1000){
             return this.val;
@@ -12,4 +13,11 @@ class MoneyMgr{
             return (this.val / 10**6).toFixed(1) + "M";
         }
     }
+
+    mkGroup(x, y, txtSize){
+        let group = game.make.group();
+    }
+
+
+
 }
