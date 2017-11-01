@@ -10,8 +10,11 @@ gameState.create = function(){
     globReg.init(); //voir utils/globReg.js
     /*this.conseilRect = new Phaser.Rectangle(0, 0, 96, 128);
     cornerObj(this.conseilRect, 10, "sw");*/
-    let testDial = new SmallDialog(50,50,"Title", "Description that is not too long", "Expensive", () => {});
-    testDial.open();
+    // let testDial = new SmallDialog(50,50,"Title", "Description that is not too long", "Expensive", () => {});
+    // testDial.open();
+
+    globals.moneyMgr = new MoneyMgr(1634355);
+    console.log(globals.moneyMgr.prettyStr());
 };
 
 gameState.update = function(){
