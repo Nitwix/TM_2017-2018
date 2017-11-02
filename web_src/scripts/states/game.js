@@ -14,7 +14,10 @@ gameState.create = function(){
     // testDial.open();
 
     globals.moneyMgr = new MoneyMgr(1634355);
-    console.log(globals.moneyMgr.prettyStr());
+
+    // size, mondioCol, objToAlignIn, alignPos, offX, offY
+    let totMoneyObj = globals.moneyMgr.display(32, "green", game.world, Phaser.TOP_LEFT, -10, -10);
+    console.log(globals.moneyMgr.prettyStr);
 };
 
 gameState.update = function(){

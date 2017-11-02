@@ -20,6 +20,8 @@ preloadState.preload = function(){
     game.load.spritesheet("smallDBox", `${sprites}UI/smallDialog/box.png`, 128, 64); //fond de la boîte permettant de déverouiller ou d'améliorer qqch
     game.load.spritesheet("closeButton", `${sprites}UI/buttons/close.png`, 16, 16);
     game.load.spritesheet("pos_neg", `${sprites}UI/buttons/pos_neg.png`, 48, 16);
+	game.load.spritesheet("mondioLogo", `${sprites}UI/mondio/icon.png`, 32, 16);
+	game.load.image("mondioBox", `${sprites}UI/mondio/displayBox.png`);
 
     //chargement des dialogues
     game.load.image("dialogBox", `${sprites}dialogs/dialogBox.png`);
