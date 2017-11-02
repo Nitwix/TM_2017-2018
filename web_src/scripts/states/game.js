@@ -18,7 +18,7 @@ gameState.create = function(){
 
 gameState.update = function(){
 	globReg.update();
-    globals.moneyMgr.totVal += 10000;
+    // globals.moneyMgr.totVal += 10;
     // console.log(globals.moneyMgr.totVal);
 
     /* Permet d'obtenir le x et y quand on clique

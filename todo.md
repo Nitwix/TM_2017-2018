@@ -7,6 +7,8 @@
 - amélioration des sites de production
 - classe MoneyMgr
 - classe TimeMgr
+- (maybe) afficher l'icone Mondio dans smallDialog quand on veut acheter qqch
+- trouver une structure pour définir le prix de déverouillage de base des sites de production
 
 
 # Fait

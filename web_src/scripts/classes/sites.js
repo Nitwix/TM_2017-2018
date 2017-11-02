@@ -2,7 +2,7 @@ class Site{
     constructor(id, x, y, resType, resLvl){
         this.id = id;
         this.pos = new Phaser.Point(x, y);
-        this.res = new Resource(resType, resLvl); //voir utils/resources.js
+        this.res = new Factory(resType, resLvl); //voir classes/factory.js
     }
 
     //ajoute le site au game
@@ -21,7 +21,7 @@ class Site{
         }
         this.siteButton = game.add.button(this.pos.x,
                                           this.pos.y,
-                                          "resources", 
+                                          "resources",
                                           () => {
             this._dialogBox();
         }, this,icon, icon, icon, icon);
@@ -30,7 +30,7 @@ class Site{
 
     //détruis le bouton du site de production
     del(){
-        this.siteButton.destroy(); 
+        this.siteButton.destroy();
     }
 
     //affiche la boîte qui permet de déverouiller le site de production ou de l'améliorer
@@ -49,7 +49,8 @@ class Site{
 
             txt.title = "Déverouiller?";
             txt.descr = "Ceci vous permettra d'installer un bâtiment sur cet emplacement.";
-            txt.price = "100K M";
+            let prc = new MoneyDisplay(1000000);
+            txt.price = prc.prettyStr(prc.val);
         }else{
             dType = "upgrade";
 
@@ -59,7 +60,7 @@ class Site{
 
         let x = this.pos.x;
         let y = this.pos.y;
-        
+
         if(dType == "unlock"){
             this._dialog = new SmallDialog(x, y, txt.title, txt.descr, txt.price, () => {
                 console.log("Unlock callback called");
