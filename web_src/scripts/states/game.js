@@ -13,16 +13,14 @@ gameState.create = function(){
     // let testDial = new SmallDialog(50,50,"Title", "Description that is not too long", "Expensive", () => {});
     // testDial.open();
 
-    globals.moneyMgr = new MoneyMgr(1634355);
-
-    // size, mondioCol, objToAlignIn, alignPos, offX, offY
-    let totMoneyObj = globals.moneyMgr.display(32, "green", game.world, Phaser.TOP_LEFT, -10, -10);
-    console.log(globals.moneyMgr.prettyStr);
+    globals.moneyMgr = new MoneyMgr(1);
 };
 
 gameState.update = function(){
 	globReg.update();
-    //console.log(globals.currentRegion);
+    globals.moneyMgr.totVal += 10000;
+    // console.log(globals.moneyMgr.totVal);
+
     /* Permet d'obtenir le x et y quand on clique
     if(game.input.activePointer.isDown && game.time.now % 100 == 0){
         console.log(game.input.x, game.input.y);
