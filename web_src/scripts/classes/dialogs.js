@@ -21,7 +21,7 @@ class Dialog{
 	    this._bmpText = game.add.bitmapText(0,0,"pixel_font", "", 26);
 	    this._bmpText.alignIn(this._dialBox, Phaser.TOP_LEFT, offset, offset);
 	    this._bmpText.maxWidth = this._dialBox.width + 3*offset;
-	    this._bmpText.tint = 0xedddae; //couleur du texte
+	    // this._bmpText.tint = 0xedddae; //couleur du texte
 
 	    this._displayTexts(this._texts, 0);
 	}
@@ -57,7 +57,7 @@ class Dialog{
 	    },this);
 
 		//quand tous les mots du string on été affichés, on passe au suivant dans l'array
-	    this._timer.onComplete.add(function(){ 
+	    this._timer.onComplete.add(function(){
 	    	if(index + 1 < texts.length){
 	    		this._displayTexts(texts, index + 1);
 	    	}else{

@@ -19,12 +19,9 @@ class Site{
             default:
                 console.warn("Resource not found in classes/sites.js");
         }
-        this.siteButton = game.add.button(this.pos.x,
-                                          this.pos.y,
-                                          "resources",
-                                          () => {
+        this.siteButton = game.add.button(this.pos.x, this.pos.y, "factories", () => {
             this._dialogBox();
-        }, this,icon, icon, icon, icon);
+        }, this, icon, icon, icon, icon);
         this.siteButton.anchor.setTo(.5);
     }
 
@@ -49,8 +46,7 @@ class Site{
 
             txt.title = "Déverouiller?";
             txt.descr = "Ceci vous permettra d'installer un bâtiment sur cet emplacement.";
-            let prc = new MoneyDisplay(1000000);
-            txt.price = prc.prettyStr(prc.val);
+            txt.price = new MoneyDisplay(10000);
         }else{
             dType = "upgrade";
 
@@ -62,8 +58,12 @@ class Site{
         let y = this.pos.y;
 
         if(dType == "unlock"){
-            this._dialog = new SmallDialog(x, y, txt.title, txt.descr, txt.price, () => {
+            this._dialog = new SmallDialog(x, y, txt.title, txt.descr, txt.price.prettyStr(txt.price.val), () => {
                 console.log("Unlock callback called");
+                globals.moneyMgr.buy(txt.price.val, () => {
+                    console.log("Site unlocked");
+                    // this.siteButton.frame++; dans l'idée c'est ça
+                });
             });
         }else if(dType == "upgrade"){
             this._dialog = new SmallDialog(x, y, txt.title, txt.descr, txt.price, () => {

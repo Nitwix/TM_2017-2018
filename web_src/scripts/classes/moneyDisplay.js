@@ -1,4 +1,5 @@
-//fonctionne au mieux dans un espace de 96*32 px
+// fonctionne au mieux dans un espace de 96*32 px
+// bug de décallage en y quand val = 0
 class MoneyDisplay{
     constructor(val, size, mondioCol, inABox, objToAlignIn, alignPos, offX, offY){
         this._val = val;
@@ -17,7 +18,7 @@ class MoneyDisplay{
 
         this._text = game.make.bitmapText(0,0,"pixel_font",this.prettyStr(val), size);
         // text.tint = 0x999999;
-        this._text.alignIn(box, Phaser.LEFT_CENTER, -8, -6);
+        this._text.alignIn(box, Phaser.LEFT_CENTER, -8, -4);
         this.group.add(this._text);
 
         let id;
@@ -59,6 +60,8 @@ class MoneyDisplay{
     }
 
     updateVal(newVal){
+        //TODO: (maybe) tweener la valeur au lieu de la modifier brusquement
+
         // modifie le text
         this._text.text = this.prettyStr(newVal);
 

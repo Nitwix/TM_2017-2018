@@ -13,12 +13,12 @@ gameState.create = function(){
     // let testDial = new SmallDialog(50,50,"Title", "Description that is not too long", "Expensive", () => {});
     // testDial.open();
 
-    globals.moneyMgr = new MoneyMgr(1);
+    globals.moneyMgr = new MoneyMgr(10500);
 };
 
 gameState.update = function(){
 	globReg.update();
-    // globals.moneyMgr.totVal += 10;
+    // globals.moneyMgr.totVal += 10000;
     // console.log(globals.moneyMgr.totVal);
 
     /* Permet d'obtenir le x et y quand on clique

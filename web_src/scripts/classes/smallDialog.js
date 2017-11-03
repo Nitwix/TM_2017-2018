@@ -62,7 +62,7 @@ class SmallDialog{
             case 1:
                 this._posProps.anch = {x: 1 - 12/128, y: 0};
                 this._posProps.offY = this._posProps.bOff;
-                this._posProps.cntOffY = q01YOff;  
+                this._posProps.cntOffY = q01YOff;
                 break;
 
             case 2:
@@ -102,7 +102,7 @@ class SmallDialog{
         this._dialog.add(title);
 
         if(this._posTxt != undefined && this._negTxt == undefined){ //si que bouton vert
-            this._addPosBtn(false);    
+            this._addPosBtn(false);
         }else{ //bouton vert et rouge
             this._addPosBtn(true);
             this._addNegBtn(false);
@@ -118,10 +118,10 @@ class SmallDialog{
             console.warn("Text pourrait être trop long dans classes/smallDialog.js");
         }
         let descr = game.make.bitmapText(0,0, "pixel_font", this._descr, 20);
-        
+
         descr.maxWidth = this._box.width - 112;
         descr.alignIn(this._box, Phaser.TOP_LEFT, this._posProps.cntOffX - 6, this._posProps.cntOffY - 32);
-        
+
         this._dialog.add(descr);
     }
 
@@ -136,6 +136,7 @@ class SmallDialog{
         }
         let btn = game.make.button(0,0, "pos_neg", () => {
             callback();
+            this.close(); //ferme cette instance de SmallDialog
         }, this, idx, 1 + idx,2 + idx, idx);
         btn.scale.setTo(2);
         btn.alignIn(this._box, Phaser.BOTTOM_RIGHT, this._posProps.cntOffX + 2, this._posProps.cntOffY + offY);
