@@ -11,4 +11,12 @@ class Factory{
     get level(){
         return this._level;
     }
+
+    set level(l){
+        this._level = l;
+    }
+
+    set type(t){
+        this._type = t;
+    }
 }

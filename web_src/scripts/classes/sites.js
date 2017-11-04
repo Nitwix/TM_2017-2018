@@ -1,28 +1,34 @@
 class Site{
-    constructor(id, x, y, resType, resLvl){
+    constructor(id, x, y, facType, facLvl){
         this.id = id;
         this.pos = new Phaser.Point(x, y);
-        this.res = new Factory(resType, resLvl); //voir classes/factory.js
+        this.fac = new Factory(facType, facLvl); //voir classes/factory.js
     }
 
     //ajoute le site au game
     add(){
-        let icon;
-        switch(this.res.type){
-            case "notUsed":
-                icon = this.res.level; //0: locked, 1: not used
-                break;
-            case "coal":
-                icon = globals.sites.maxLevel + this.res.level;
-                break;
-                //ajouter les autres types de resources ici
-            default:
-                console.warn("Resource not found in classes/sites.js");
-        }
         this.siteButton = game.add.button(this.pos.x, this.pos.y, "factories", () => {
             this._dialogBox();
-        }, this, icon, icon, icon, icon);
+        }, this);
+        this.updateBtnFrames();
         this.siteButton.anchor.setTo(.5);
+    }
+
+    updateBtnFrames(){
+        this.siteButton.setFrames(this.iconIndex, this.iconIndex, this.iconIndex, this.iconIndex);
+
+    }
+
+    get iconIndex(){
+        switch(this.fac.type){
+            case "notUsed":
+                return this.fac.level; //0: locked, 1: not used
+            case "coal":
+                return globals.sites.maxLevel + this.fac.level;
+                //ajouter les autres types de resources ici
+            default:
+                console.warn("facource not found in classes/sites.js");
+        }
     }
 
     //détruis le bouton du site de production
@@ -41,7 +47,7 @@ class Site{
 
         let txt = {};
         let dType = ""; //type de boîte de dialogue (unlock || upgrade)
-        if(this.res.type == "notUsed" && this.res.level == 0){ //si le site de production est verouillé
+        if(this.fac.type == "notUsed" && this.fac.level == 0){ //si le site de production est verouillé
             dType = "unlock";
 
             txt.title = "Déverouiller?";
@@ -62,7 +68,8 @@ class Site{
                 console.log("Unlock callback called");
                 globals.moneyMgr.buy(txt.price.val, () => {
                     console.log("Site unlocked");
-                    // this.siteButton.frame++; dans l'idée c'est ça
+                    this.fac.level++;
+                    this.updateBtnFrames();
                 });
             });
         }else if(dType == "upgrade"){

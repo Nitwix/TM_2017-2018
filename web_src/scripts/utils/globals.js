@@ -18,3 +18,5 @@ globals.sites.id = 0; //identifiant unique pour chaque site de production (voir 
 globals.sites.maxLevel = 3;
 
 globals.sites.dialogDisplayed = ""; //"" quand en 'world view' et 's...' si box d'unlock/upgrade ouverte
+
+globals.dialogDisplayed = false;

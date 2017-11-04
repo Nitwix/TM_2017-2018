@@ -4,6 +4,11 @@ class Dialog{
 	texts : array of strings: chaque string est une 'phase' du dialogue qui nécessite que le joueur fasse qqch
 	*/
 	constructor(texts){
+
+		//TODO: Dans les scripts où j'instatie des Dialog, ne pas ouvrir si globals.dialogDisplayed
+
+		globals.dialogDisplayed = true;
+
 		this._texts = texts;
 	}
 
@@ -30,12 +35,14 @@ class Dialog{
 	_stop(){
 		this._bmpText.destroy();
 		this._dialBox.destroy();
+
+		globals.dialogDisplayed = false;
 	}
 
 
 	//texts as array
 	_displayTexts(texts, index){
-
+		debugger;
 		var text = texts[index].split(" ");
 		var wordCount = 0;
 
