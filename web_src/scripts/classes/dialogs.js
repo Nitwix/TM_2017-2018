@@ -42,7 +42,6 @@ class Dialog{
 
 	//texts as array
 	_displayTexts(texts, index){
-		debugger;
 		var text = texts[index].split(" ");
 		var wordCount = 0;
 

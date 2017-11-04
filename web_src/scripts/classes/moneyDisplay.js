@@ -43,6 +43,11 @@ class MoneyDisplay{
     }
 
     prettyStr(val){
+        //permet d'avoir un prettyStr à partir de this.val
+        if(val == undefined){
+            val = this.val;
+        }
+
         let kilo = "k", Mega = "M", Giga = "G", Tera = "T";
         if(val < 10**4){
             return val;

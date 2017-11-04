@@ -15,21 +15,10 @@ class Site{
     }
 
     updateBtnFrames(){
-        this.siteButton.setFrames(this.iconIndex, this.iconIndex, this.iconIndex, this.iconIndex);
-
+        this.siteButton.setFrames(this.fac.iconIndex, this.fac.iconIndex, this.fac.iconIndex, this.fac.iconIndex);
     }
 
-    get iconIndex(){
-        switch(this.fac.type){
-            case "notUsed":
-                return this.fac.level; //0: locked, 1: not used
-            case "coal":
-                return globals.sites.maxLevel + this.fac.level;
-                //ajouter les autres types de resources ici
-            default:
-                console.warn("facource not found in classes/sites.js");
-        }
-    }
+
 
     //détruis le bouton du site de production
     del(){
@@ -43,40 +32,34 @@ class Site{
             cR.sites[globals.sites.dialogDisplayed]._closeDialogBox();
         }
 
+        //permet de pouvoir switcher d'un smallDialog à un autre sans devoir refermer le précédent
         globals.sites.dialogDisplayed = this.id;
-
-        let txt = {};
-        let dType = ""; //type de boîte de dialogue (unlock || upgrade)
-        if(this.fac.type == "notUsed" && this.fac.level == 0){ //si le site de production est verouillé
-            dType = "unlock";
-
-            txt.title = "Déverouiller?";
-            txt.descr = "Ceci vous permettra d'installer un bâtiment sur cet emplacement.";
-            txt.price = new MoneyDisplay(10000);
-        }else{
-            dType = "upgrade";
-
-            txt.title = "Améliorer?";
-            txt.descr = "Votre usine aura telle et telle caractéristique améliorée";
-        }
 
         let x = this.pos.x;
         let y = this.pos.y;
 
-        if(dType == "unlock"){
-            this._dialog = new SmallDialog(x, y, txt.title, txt.descr, txt.price.prettyStr(txt.price.val), () => {
-                console.log("Unlock callback called");
+        let txt = {};
+        if(this.fac.type == "notUsed" && this.fac.level == 0){ //si le site de production est verouillé
+            txt.title = "Déverouiller?";
+            txt.descr = "Ceci vous permettra d'installer un bâtiment sur cet emplacement.";
+            txt.price = new MoneyDisplay(10000);
+
+            this._dialog = new SmallDialog(x, y, txt.title, txt.descr, txt.price.prettyStr(), () => {
+                // console.log("Unlock callback called");
                 globals.moneyMgr.buy(txt.price.val, () => {
-                    console.log("Site unlocked");
                     this.fac.level++;
                     this.updateBtnFrames();
                 });
             });
-        }else if(dType == "upgrade"){
-            this._dialog = new SmallDialog(x, y, txt.title, txt.descr, txt.price, () => {
-                console.log("Unlock callback called");
+        }else{
+            txt.title = "Améliorer?";
+            txt.descr = "Votre usine aura telle et telle caractéristique améliorée";
+            txt.price = new MoneyDisplay(500);
+
+            this._dialog = new SmallDialog(x, y, txt.title, txt.descr, txt.price.prettyStr(), () => {
+                console.log("Upgrade factory callback called");
             }, "negText", () => {
-                console.log("Negative callback called");
+                console.log("Destroy factory callback called");
             });
         }
 

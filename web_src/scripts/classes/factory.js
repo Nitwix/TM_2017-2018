@@ -19,4 +19,16 @@ class Factory{
     set type(t){
         this._type = t;
     }
+
+    get iconIndex(){
+        switch(this.type){
+            case "notUsed":
+                return this.level; //0: locked, 1: not used
+            case "coal":
+                return globals.sites.maxLevel + this.level;
+                //ajouter les autres types de resources ici
+            default:
+                console.warn("factory not found in classes/factory.js");
+        }
+    }
 }

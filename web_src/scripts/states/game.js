@@ -4,7 +4,7 @@ gameState.create = function(){
     gameEls.setup.bureau(); //voir utils/gameEls.js
     gameEls.setup.UI();
 
-    this.dialog = new Dialog(tutoTexts); //voir utils/dialogs.js et others/dialogsTexts.js
+    //this.dialog = new Dialog(tutoTexts); //voir utils/dialogs.js et others/dialogsTexts.js
     //this.dialog.start();
 
     globReg.init(); //voir utils/globReg.js
@@ -30,7 +30,7 @@ gameState.update = function(){
 
 
 gameState.render = function(){
-    //game.debug.inputInfo(10,10);
+    // game.debug.inputInfo(10,10);
     //game.debug.geom(this.conseilRect);
 
 }

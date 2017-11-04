@@ -3,7 +3,7 @@ class MoneyMgr{
         this._totVal = initVal;
 
         //voir moneyDisplay.js
-        this.totMoneyDisplay = new MoneyDisplay(this._totVal, 32, "green", true, game.world, Phaser.TOP_LEFT, -10, -10);
+        this.totMoneyDisplay = new MoneyDisplay(this._totVal, 32, "green", true, game.world, Phaser.TOP_LEFT, -5, -5);
     }
 
     set totVal(v){
@@ -19,11 +19,11 @@ class MoneyMgr{
         if(price <= this.totVal){
             this.totVal -= price;
             boughtCallback();
-        }else{
-            // BUG: si on appuie plusieurs fois sur le bouton poour dévouriller, il y plusieurs boîtes de dialogue
+        }else if (!globals.dialogDisplayed){
             let NEMDialog = new Dialog(["Désolé monsieur, nos finances ne nous permettent pas cet achat."]);
             NEMDialog.start();
         }
+        //debugger;
     }
 
 }
