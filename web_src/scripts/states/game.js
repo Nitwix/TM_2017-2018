@@ -14,6 +14,10 @@ gameState.create = function(){
     // testDial.open();
 
     globals.moneyMgr = new MoneyMgr(10500);
+
+    let npTest = game.add.image(0,0, "newspaper");
+    npTest.scale.setTo(4);
+    npTest.alignIn(game.world, Phaser.CENTER, 12);
 };
 
 gameState.update = function(){
