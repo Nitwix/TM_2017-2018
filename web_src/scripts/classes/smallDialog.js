@@ -9,7 +9,7 @@ class SmallDialog{
         this._negCB = negCallback;
     }
 
-    open(){
+    start(){
         //TODO: terminer de refactorer ce code !
         this._dialog = game.add.group();
 
@@ -89,7 +89,7 @@ class SmallDialog{
         this._dialog.add(this._box);
 
         let closeBtn = game.make.button(0,0, "closeButton", () => {
-            this.close();
+            this.stop();
         }, this, 0,1,2,0);
         closeBtn.anchor.setTo(.5);
         this._posProps.cntOffX = -6;
@@ -136,7 +136,7 @@ class SmallDialog{
         }
         let btn = game.make.button(0,0, "pos_neg", () => {
             callback();
-            this.close(); //ferme cette instance de SmallDialog
+            this.stop(); //ferme cette instance de SmallDialog
         }, this, idx, 1 + idx,2 + idx, idx);
         btn.scale.setTo(2);
         btn.alignIn(this._box, Phaser.BOTTOM_RIGHT, this._posProps.cntOffX + 2, this._posProps.cntOffY + offY);
@@ -167,8 +167,8 @@ class SmallDialog{
         this._dialog.add(negBtn.txt);
     }
 
-    close(){
-        this._dialog.callAll("destroy");
+    stop(){
+        this._dialog.destroy();
         if(this._dialog.children.length > 0){
             this._dialog.children[0].pendingDestroy = true; //petit 'trick' pour détruire le bouton qui permet de fermer la fenêtre d'upgrade
         }

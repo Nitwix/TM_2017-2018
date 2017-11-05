@@ -1,7 +1,8 @@
 var gameState = {};
 
 gameState.create = function(){
-    gameEls.setup.bureau(); //voir utils/gameEls.js
+    gameEls.setup.background(); //voir utils/gameEls.js
+    gameEls.setup.earthMap();
     gameEls.setup.UI();
 
     //this.dialog = new Dialog(tutoTexts); //voir utils/dialogs.js et others/dialogsTexts.js
@@ -15,20 +16,23 @@ gameState.create = function(){
 
     globals.moneyMgr = new MoneyMgr(10500);
 
-    let npTest = game.add.image(0,0, "newspaper");
-    npTest.scale.setTo(4);
-    npTest.alignIn(game.world, Phaser.CENTER, 12);
+    let npTest = new Newspaper("This is a title", false);
+    npTest.start();
 };
 
 gameState.update = function(){
-	globReg.update();
+    //on ne peut que cliquer sur les régions lorsqu'il n'y a pas de newspaper
+    if(gameEls.newspaper == undefined){
+        globReg.update();
+    }
+
     // globals.moneyMgr.totVal += 10000;
     // console.log(globals.moneyMgr.totVal);
 
-    /* Permet d'obtenir le x et y quand on clique
-    if(game.input.activePointer.isDown && game.time.now % 100 == 0){
-        console.log(game.input.x, game.input.y);
-    }*/
+    //Permet d'obtenir le x et y quand on clique
+    if(game.input.activePointer.isDown){
+        // console.log(game.input.x, game.input.y);
+    }
 }
 
 

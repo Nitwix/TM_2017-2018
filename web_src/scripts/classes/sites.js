@@ -63,12 +63,12 @@ class Site{
             });
         }
 
-        this._dialog.open();
+        this._dialog.start();
     }
 
     _closeDialogBox(){
         globals.sites.dialogDisplayed = "";
 
-        this._dialog.close();
+        this._dialog.stop();
     }
 }

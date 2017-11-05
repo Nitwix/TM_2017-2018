@@ -1,20 +1,20 @@
-//globReg s'occupe de la gestion des transitions entre l'état "vue globale" et l'état "vue régionale" 
+//globReg s'occupe de la gestion des transitions entre l'état "vue globale" et l'état "vue régionale"
 var globReg = {};
 
 globReg.init = function(){
     this.regGraphics = game.add.graphics(0,0);
 
-    globals.regions.europe = new Region("europe", 6, 
-        [[382,163], [355,106], [455,98], [443, 132], [464, 157]], 
+    globals.regions.europe = new Region("europe", 6,
+        [[382,163], [355,106], [455,98], [443, 132], [464, 157]],
         [[240,184], [273, 239], [349,257]]); //voir définition dans utils/regions.js
 
-    globals.regions.africa = new Region("africa", 3, 
-        [[343, 164], [436, 354], [513, 233], [454, 165]], 
+    globals.regions.africa = new Region("africa", 3,
+        [[343, 164], [436, 354], [513, 233], [454, 165]],
         [[50, 50], [50, 400], [550, 50], [750, 400]]);
 
-    globals.regions.southAmerica = new Region("southAmerica", 3, 
+    globals.regions.southAmerica = new Region("southAmerica", 3,
         [[269, 197], [348, 229], [270, 363], [233, 231]], []);
-    
+
     globals.regions.northAmerica = new Region("northAmerica", 3, [[111, 107], [383, 76], [268, 195], [158, 197]], []);
 
     for(let region in globals.regions){
@@ -57,15 +57,15 @@ globReg.update = function(){
 globReg.goto = {};
 
 globReg.goto.region = function(region){
-    globals.currentRegion = region.name; 
-    
+    globals.currentRegion = region.name;
+
     this.zoom = game.add.tween(gameEls.earthMap);
 
     let mp = region.poly.midPoint();
 
     let scale = region.scale;
     let d = region.d;
-    let D = region.D;	
+    let D = region.D;
 
     this.zoom.to({
         x: game.world.centerX + D.x,
@@ -78,9 +78,13 @@ globReg.goto.region = function(region){
     this.zoom.start();
     this.zoom.onComplete.add(function(){
         region.init();
+        // let npTest = new Newspaper("This is a title", false);
+        // npTest.start();
     }, this);
 
     globReg.canZoom = false;
+
+
 }
 
 globReg.goto.world = function(region){
@@ -88,7 +92,7 @@ globReg.goto.world = function(region){
         region.sites[globals.sites.dialogDisplayed]._closeDialogBox();
     }
     globals.currentRegion = "";
-    
+
     this.unzoom = game.add.tween(gameEls.earthMap);
 
     let scale = region.scale;
@@ -107,4 +111,9 @@ globReg.goto.world = function(region){
     this.unzoom.start();
 
     region.uninit();
+
+    //ferme le newspaper si on click pour revenir à la worldview
+    if(gameEls.newspaper != undefined){
+        gameEls.newspaper.stop();
+    }
 }

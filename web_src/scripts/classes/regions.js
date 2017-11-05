@@ -9,13 +9,13 @@ class Region{
         //d et D sont des vecteurs directions pour le zoom
         this.d = {
             x: game.world.centerX - mp.x,
-            y: game.world.centerY - mp.y 
+            y: game.world.centerY - mp.y
         };
         this.D = {
             x: scale * this.d.x,
             y: scale * this.d.y
         };
-        
+
         //objet contenant les sites de production
         this.sites = {};
 
@@ -47,12 +47,14 @@ class Region{
         return this._scale * 150;
     }
 
-    init(){
-        this._worldButton = game.add.button(0,0,"buttons", function(){
-            globReg.goto.world(this);
-        }, this, 6,7,8,6);
-        this._worldButton.scale.setTo(globals.UI.smallButtonScale);
-        this._worldButton.alignTo(gameEls.fsButt, Phaser.BOTTOM_CENTER, 0, globals.UI.buttonOffset);
+    init(onlySites){
+        if(onlySites != true){
+            this._worldButton = game.add.button(0,0,"buttons", function(){
+                globReg.goto.world(this);
+            }, this, 6,7,8,6);
+            this._worldButton.scale.setTo(globals.UI.smallButtonScale);
+            this._worldButton.alignTo(gameEls.fsButt, Phaser.BOTTOM_CENTER, 0, globals.UI.buttonOffset);
+        }
 
         //affiche les sites de production
         for(let s in this.sites){
@@ -60,8 +62,10 @@ class Region{
         }
     }
 
-    uninit(){
-        this._worldButton.destroy();
+    uninit(onlySites){
+        if(onlySites != true){
+            this._worldButton.destroy();
+        }
 
         //détruit l'affichage des sites de production
         for(let s in this.sites){

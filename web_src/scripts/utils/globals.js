@@ -10,7 +10,7 @@ globals.UI.smallButtonScale = 2;
 
 //voir utils/regions.js
 globals.regions = {}; //array contenant les instances de la classe Region
-globals.currentRegion = "";
+globals.currentRegion = ""; //"" quand en worldview et la key de la région sinon
 
 //contient des variable en rapport avec les sites de production
 globals.sites = {};
