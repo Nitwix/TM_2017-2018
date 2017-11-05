@@ -5,7 +5,6 @@
 - dessiner Conseil
 - déverouillage des sites de production
 - amélioration des sites de production
-- classe MoneyMgr
 - classe TimeMgr
 - (maybe) afficher l'icone Mondio dans smallDialog quand on veut acheter qqch
 - trouver une structure pour définir le prix de déverouillage de base des sites de production
@@ -20,3 +19,4 @@
 - faire le système de dialogues (01.10.2017)
 - faire les transitions entre la carte globale et les régions (03.10.2017)
 - SmallDialog terminé (24.10.2017)
+- classe MoneyMgr (04.11.2017)
