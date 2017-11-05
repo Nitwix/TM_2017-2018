@@ -3,7 +3,12 @@
 - dessiner la carte du monde
 - faire la musique du jeu + les effets sonores
 - dessiner Conseil
-- implémenter le système de site de production
+- déverouillage des sites de production
+- amélioration des sites de production
+- classe MoneyMgr
+- classe TimeMgr
+- (maybe) afficher l'icone Mondio dans smallDialog quand on veut acheter qqch
+- trouver une structure pour définir le prix de déverouillage de base des sites de production
 
 
 # Fait
@@ -14,3 +19,4 @@
 - dessiner les boutons de l'ui (26.09.2017)
 - faire le système de dialogues (01.10.2017)
 - faire les transitions entre la carte globale et les régions (03.10.2017)
+- SmallDialog terminé (24.10.2017)
