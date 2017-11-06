@@ -1,38 +1,42 @@
 class Newspaper{
     /**
-    * @param {string} title - Titre du journal
-    * @param {boolean} empty - Afficher les traits des sections ou pas?
+    * @param {string} template - Type de newspaper
+    * @param {object} data - Contenu du newspaper
     */
-    constructor(title, empty){
+    constructor(template, data){
         if(gameEls.newspaper != undefined){
             gameEls.newspaper.stop();
         }
 
         gameEls.newspaper = this;
 
-        this._title = title;
-        this._empty = empty;
+        switch (template) {
+            case "smallSections":
+                this._template = 0;
+                break;
+            case "firstPage":
+                this._template = 1;
+                break;
+            default:
+
+        }
+
+        this._data = data;
 
         //groupe d'éléments
         this._els = game.add.group();
     }
 
     start(){
-        //TODO: supprimer earthMap, les boutons des sites de production
+        //supprime l'affichage des sites de production si on est en vue "region" et rend la map invisible
         if(globals.currentRegion != ""){
             globals.regions[globals.currentRegion].uninit(true);
-        }else{
-            gameEls.earthMap.visible = false;
         }
 
+        gameEls.earthMap.visible = false;
 
-        let imgIndex;
-        if(!this._empty){
-            imgIndex = 0;
-        }else{
-            imgIndex = 1;
-        }
-        let newspaper = game.make.image(0,0, "newspaper", imgIndex);
+
+        let newspaper = game.make.image(0,0, "newspaper", this._template);
         newspaper.scale.setTo(4);
         newspaper.alignIn(game.world, Phaser.CENTER, 12);
         this._els.add(newspaper);
@@ -44,9 +48,14 @@ class Newspaper{
         closeBtn.alignIn(newspaper, Phaser.TOP_RIGHT, -18, -10);
         this._els.add(closeBtn);
 
-        let title = game.make.bitmapText(0,0,"pixel_font",this._title, 40); //x,y,font,text,size
+        let title = game.make.bitmapText(0,0,"pixel_font",this._data.title, 80); //x,y,font,text,size
+        if(this._template == 0){
+            title.size = 40;
+        }else if (this._template == 1) {
+            title.size = 60;
+        }
         title.tint = 0x55472f;
-        title.alignIn(newspaper, Phaser.TOP_CENTER, 0, -12);
+        title.alignIn(newspaper, Phaser.TOP_CENTER, 0, -48);
         this._els.add(title);
     }
 
@@ -54,10 +63,10 @@ class Newspaper{
         this._els.destroy();
         gameEls.newspaper = undefined;
 
-        if(globals.currentRegion == ""){
-            gameEls.earthMap.visible = true;
-        }else{
+        gameEls.earthMap.visible = true;
+        if(globals.currentRegion != ""){
             globals.regions[globals.currentRegion].init();
         }
+
     }
 }
