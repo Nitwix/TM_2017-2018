@@ -59,7 +59,7 @@ class Site{
                 spritesheet: "factories",
                 els: [
                         {
-                            imgCache: 3,
+                            spriteIndex: 3,
                             title: "Centrale à charbon",
                             descr: "Cette centrale à charbon vous permettra de produire 600 MW",
                             posCB: () => {console.log("Centrale à charbon achetée")}
