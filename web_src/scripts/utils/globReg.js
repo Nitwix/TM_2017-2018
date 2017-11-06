@@ -78,8 +78,6 @@ globReg.goto.region = function(region){
     this.zoom.start();
     this.zoom.onComplete.add(function(){
         region.init();
-        let npTest = new Newspaper("This is a title", false);
-        npTest.start();
     }, this);
 
     globReg.canZoom = false;

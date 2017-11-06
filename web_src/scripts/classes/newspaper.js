@@ -4,6 +4,21 @@ class Newspaper{
     * @param {object} data - Contenu du newspaper
     */
     constructor(template, data){
+        // let dataSmallSections = {
+        //     title: "",
+        //     spritesheet: "",
+        //     els: [
+        //         {imgCache: 0, title: "", descr: "", posCB: () => {}}
+        //     ]
+        // }
+        //
+        // let dataFirstPage = {
+        //     title: "",
+        //     els: [
+        //         {descr: ""}
+        //     ]
+        // }
+
         if(gameEls.newspaper != undefined){
             gameEls.newspaper.stop();
         }
@@ -35,7 +50,6 @@ class Newspaper{
 
         gameEls.earthMap.visible = false;
 
-
         let newspaper = game.make.image(0,0, "newspaper", this._template);
         newspaper.scale.setTo(4);
         newspaper.alignIn(game.world, Phaser.CENTER, 12);
@@ -48,24 +62,45 @@ class Newspaper{
         closeBtn.alignIn(newspaper, Phaser.TOP_RIGHT, -18, -10);
         this._els.add(closeBtn);
 
-        let title = game.make.bitmapText(0,0,"pixel_font",this._data.title, 80); //x,y,font,text,size
+        let title = game.make.bitmapText(0,0,"pixel_font",this._data.title); //x,y,font,text,size
+
+        //ATTENTION: data de title.data n'a rien à voir avec this._data
+        title.data.offY;
         if(this._template == 0){
-            title.size = 40;
+            title.fontSize = 40;
+            title.data.offY = -12;
         }else if (this._template == 1) {
-            title.size = 60;
+            title.fontSize = 80;
+            title.data.offY = -48;
         }
         title.tint = 0x55472f;
-        title.alignIn(newspaper, Phaser.TOP_CENTER, 0, -48);
+        title.alignIn(newspaper, Phaser.TOP_CENTER, 0, title.data.offY);
         this._els.add(title);
+
+        for(let el of this._data.els){
+
+        }
     }
 
+    //TODO: faire la fonction pour ajouter une section (horizontale) au newspaper
+    _addSection(){
+
+    }
+
+    //TODO: faire la fonction pour ajouter une colonne au newspaper
+    _addColumn(){
+
+    }
+
+
     stop(){
+        //BUG: lorsqu'on dézoom après avoir ouvert le newspaper pour acheter une usine, les sites de production ne disparaissent pas
         this._els.destroy();
         gameEls.newspaper = undefined;
 
         gameEls.earthMap.visible = true;
         if(globals.currentRegion != ""){
-            globals.regions[globals.currentRegion].init();
+            globals.regions[globals.currentRegion].init(true);
         }
 
     }

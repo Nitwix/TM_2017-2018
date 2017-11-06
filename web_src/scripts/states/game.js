@@ -16,8 +16,8 @@ gameState.create = function(){
 
     globals.moneyMgr = new MoneyMgr(10500);
 
-    let npTest = new Newspaper("firstPage", {title:"France enters war!"});
-    npTest.start();
+    // let npTest = new Newspaper("firstPage", {title:"France enters war!"});
+    // npTest.start();
 };
 
 gameState.update = function(){

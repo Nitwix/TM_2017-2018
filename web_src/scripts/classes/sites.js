@@ -51,19 +51,25 @@ class Site{
                     this.updateBtnFrames();
                 });
             });
-        }else{
-            txt.title = "Améliorer?";
-            txt.descr = "Votre usine aura telle et telle caractéristique améliorée";
-            txt.price = new MoneyDisplay(500);
 
-            this._dialog = new SmallDialog(x, y, txt.title, txt.descr, txt.price.prettyStr(), () => {
-                console.log("Upgrade factory callback called");
-            }, "negText", () => {
-                console.log("Destroy factory callback called");
-            });
+            this._dialog.start();
+        }else{
+            let data = {
+                title: "À vendre",
+                spritesheet: "factories",
+                els: [
+                        {
+                            imgCache: 3,
+                            title: "Centrale à charbon",
+                            descr: "Cette centrale à charbon vous permettra de produire 600 MW",
+                            posCB: () => {console.log("Centrale à charbon achetée")}
+                        }
+                ]
+            }
+            this._newspaper = new Newspaper("smallSections", data);
+            this._newspaper.start();
         }
 
-        this._dialog.start();
     }
 
     _closeDialogBox(){
