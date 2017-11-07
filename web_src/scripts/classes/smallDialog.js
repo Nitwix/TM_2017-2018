@@ -144,7 +144,7 @@ class SmallDialog{
     }
 
     _mkTxt(txt, btn){
-        let bmTxt = game.make.bitmapText(0,0,"pixel_font", txt, 26);
+        let bmTxt = game.make.bitmapText(0,0,"pixel_font", txt, globals.UI.posBtnFontSize);
         bmTxt.alignIn(btn, Phaser.CENTER, 1, -4);
         return bmTxt;
     }

@@ -18,6 +18,10 @@ gameState.create = function(){
 
     // let npTest = new Newspaper("firstPage", {title:"France enters war!"});
     // npTest.start();
+
+
+    this._newspaper = new Newspaper("smallSections", globals.data.factories);
+    this._newspaper.start();
 };
 
 gameState.update = function(){

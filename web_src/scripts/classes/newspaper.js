@@ -38,11 +38,15 @@ class Newspaper{
 
         this._data = data;
 
-        //groupe d'éléments
-        this._els = game.add.group();
+        //éléments de base qui restent entre les changements de page
+        this._baseEls = game.add.group();
+        //éléments qui changent lorsqu'on change de page
+        this._contentEls = game.add.group();
 
         //contient toutes les propriétés liées au positionnement des éléments
         this._posProps = {};
+
+        this._fontTint = 0x55472f;
     }
 
     start(){
@@ -56,14 +60,14 @@ class Newspaper{
         this._newspaper = game.make.image(0,0, "newspaper", this._template);
         this._newspaper.scale.setTo(4);
         this._newspaper.alignIn(game.world, Phaser.CENTER, 12);
-        this._els.add(this._newspaper);
+        this._baseEls.add(this._newspaper);
 
         let closeBtn = game.make.button(0,0, "closeButton", () => {
             this.stop();
         }, this, 0,1,2,0);
         closeBtn.scale.setTo(2);
         closeBtn.alignIn(this._newspaper, Phaser.TOP_RIGHT, -18, -10);
-        this._els.add(closeBtn);
+        this._baseEls.add(closeBtn);
 
         let title = game.make.bitmapText(0,0,"pixel_font",this._data.title); //x,y,font,text,size
 
@@ -72,9 +76,9 @@ class Newspaper{
             this._posProps.titleOffY = -12;
 
             //TODO: ajuster ces constantes
-            this._posProps.headOffY = -48;
-            this._posProps.sectionHeight = 25;
-            this._posProps.offX = -16;
+            this._posProps.headOffY = -64;
+            this._posProps.sectionHeight = 100;
+            this._posProps.offX = -32;
 
             for(let index in this._data.els){
                 let el = this._data.els[index];
@@ -91,9 +95,9 @@ class Newspaper{
             }
 
         }
-        title.tint = 0x55472f;
+        title.tint = this._fontTint;
         title.alignIn(this._newspaper, Phaser.TOP_CENTER, 0, this._posProps.titleOffY);
-        this._els.add(title);
+        this._baseEls.add(title);
 
 
 
@@ -108,7 +112,29 @@ class Newspaper{
         let factIcon = game.make.image(0,0,this._data.spritesheet, el.spriteIndex);
         factIcon.scale.setTo(2);
         factIcon.alignIn(this._newspaper, Phaser.TOP_LEFT, offX, offY);
-        this._els.add(factIcon);
+        this._contentEls.add(factIcon);
+
+        let sectionTitle = game.make.bitmapText(0,0,"pixel_font", el.title, 32);
+        sectionTitle.alignTo(factIcon, Phaser.TOP_RIGHT, sectionTitle.width + 15, -4);
+        sectionTitle.tint = this._fontTint;
+        this._contentEls.add(sectionTitle);
+
+        let descr = game.make.bitmapText(0,0,"pixel_font", el.descr, 20);
+        descr.alignTo(sectionTitle, Phaser.BOTTOM_LEFT, 0, 16);
+        descr.tint = this._fontTint;
+        descr.maxWidth = 350;
+        this._contentEls.add(descr);
+
+        let posBtn = game.make.button(0,0,"pos_neg", () => {
+            el.posCB();
+        }, this, 0,1,2,0);
+        posBtn.alignTo(factIcon, Phaser.BOTTOM_RIGHT, descr.maxWidth + 64, -24);
+        posBtn.scale.setTo(2);
+        this._contentEls.add(posBtn);
+
+        let posTxt = game.make.bitmapText(0,0,"pixel_font", el.posTxt, globals.UI.posBtnFontSize);
+        posTxt.alignIn(posBtn, Phaser.CENTER, 1, -3);
+        this._contentEls.add(posTxt);
     }
 
     //TODO: faire la fonction pour ajouter une colonne au newspaper
@@ -119,7 +145,9 @@ class Newspaper{
 
     stop(){
         //BUG: lorsqu'on dézoom après avoir ouvert le newspaper pour acheter une usine, les sites de production ne disparaissent pas
-        this._els.destroy();
+        this._baseEls.destroy();
+        this._contentEls.destroy();
+
         gameEls.newspaper = undefined;
 
         gameEls.earthMap.visible = true;

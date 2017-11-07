@@ -3,10 +3,12 @@
 var globals = {};
 
 
-globals.UI = {};
+globals.UI = {
+    buttonOffset: 3,
+    smallButtonScale: 2,
 
-globals.UI.buttonOffset = 3;
-globals.UI.smallButtonScale = 2;
+    posBtnFontSize: 26
+};
 
 //voir utils/regions.js
 globals.regions = {}; //array contenant les instances de la classe Region
@@ -20,3 +22,5 @@ globals.sites.maxLevel = 3;
 globals.sites.dialogDisplayed = ""; //"" quand en 'world view' et 's...' si box d'unlock/upgrade ouverte
 
 globals.dialogDisplayed = false;
+
+globals.data = {}; //voir scripts/data/

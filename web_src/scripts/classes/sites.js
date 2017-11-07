@@ -18,8 +18,6 @@ class Site{
         this.siteButton.setFrames(this.fac.iconIndex, this.fac.iconIndex, this.fac.iconIndex, this.fac.iconIndex);
     }
 
-
-
     //détruis le bouton du site de production
     del(){
         this.siteButton.destroy();
@@ -54,20 +52,9 @@ class Site{
 
             this._dialog.start();
         }else{
-            let data = {
-                title: "À vendre",
-                spritesheet: "factories",
-                els: [
-                        {
-                            spriteIndex: 3,
-                            title: "Centrale à charbon",
-                            descr: "Cette centrale à charbon vous permettra de produire 600 MW",
-                            posCB: () => {console.log("Centrale à charbon achetée")}
-                        }
-                ]
-            }
-            this._newspaper = new Newspaper("smallSections", data);
-            this._newspaper.start();
+
+            // this._newspaper = new Newspaper("smallSections", globals.data.factories);
+            // this._newspaper.start();
         }
 
     }
