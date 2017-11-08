@@ -1,15 +1,16 @@
 class SmallDialog{
-    constructor(x, y, title, descr, posTxt, posCallback, negTxt, negCallback){
-        this._pos = new Phaser.Point(x,y);
-        this._title = title;
-        this._descr = descr;
-        this._posTxt = posTxt;
-        this._posCB = posCallback;
-        this._negTxt = negTxt;
-        this._negCB = negCallback;
+    constructor(data){
+        this._data = data;
+        this._data.pos = new Phaser.Point(data.x,data.y);
+
+        if(gameEls.smallDialog != undefined){
+            gameEls.smallDialog.stop();
+        }
     }
 
     start(){
+        gameEls.smallDialog = this;
+
         //TODO: terminer de refactorer ce code !
         this._dialog = game.add.group();
 
@@ -17,8 +18,8 @@ class SmallDialog{
         let cX = game.world.centerX;
         let cY = game.world.centerY;
 
-        let x = this._pos.x;
-        let y = this._pos.y;
+        let x = this._data.pos.x;
+        let y = this._data.pos.y;
 
         this._posProps = {}; //propriétés de la boîte de dialogue dépendant de l'emplacement du site de production
 
@@ -84,8 +85,8 @@ class SmallDialog{
         this._box = game.make.sprite(0,0,"smallDBox", this._posProps.quad);
         this._box.scale.setTo(scl);
         this._box.anchor.setTo(this._posProps.anch.x, this._posProps.anch.y); // met l'ancre au bout de la pointe de la boîte
-        this._box.x = this._pos.x;
-        this._box.y = this._pos.y + this._posProps.offY;
+        this._box.x = this._data.pos.x;
+        this._box.y = this._data.pos.y + this._posProps.offY;
         this._dialog.add(this._box);
 
         let closeBtn = game.make.button(0,0, "closeButton", () => {
@@ -97,11 +98,11 @@ class SmallDialog{
         this._dialog.add(closeBtn);
 
 
-        let title = game.make.bitmapText(0,0,"pixel_font",this._title, 30); //x,y,font,text,size
+        let title = game.make.bitmapText(0,0,"pixel_font",this._data.title, 30); //x,y,font,text,size
         title.alignIn(this._box, Phaser.TOP_LEFT, 2*this._posProps.cntOffX, this._posProps.cntOffY - 4);
         this._dialog.add(title);
 
-        if(this._posTxt != undefined && this._negTxt == undefined){ //si que bouton vert
+        if(this._data.posTxt != undefined && this._data.negTxt == undefined){ //si que bouton vert
             this._addPosBtn(false);
         }else{ //bouton vert et rouge
             this._addPosBtn(true);
@@ -114,10 +115,10 @@ class SmallDialog{
     }
 
     _addDescr(){
-        if(this._descr.length > 68){
+        if(this._data.descr.length > 68){
             console.warn("Text pourrait être trop long dans classes/smallDialog.js");
         }
-        let descr = game.make.bitmapText(0,0, "pixel_font", this._descr, 20);
+        let descr = game.make.bitmapText(0,0, "pixel_font", this._data.descr, 20);
 
         descr.maxWidth = this._box.width - 112;
         descr.alignIn(this._box, Phaser.TOP_LEFT, this._posProps.cntOffX - 6, this._posProps.cntOffY - 32);
@@ -151,23 +152,25 @@ class SmallDialog{
 
     _addPosBtn(above){
         let posBtn = {};
-        posBtn.btn = this._mkBtn(above, false, this._posCB);
+        posBtn.btn = this._mkBtn(above, false, this._data.posCB);
         this._dialog.add(posBtn.btn);
 
-        posBtn.txt = this._mkTxt(this._posTxt, posBtn.btn);
+        posBtn.txt = this._mkTxt(this._data.posTxt, posBtn.btn);
         this._dialog.add(posBtn.txt);
     }
 
     _addNegBtn(above){
         let negBtn = {};
-        negBtn.btn = this._mkBtn(above, true, this._negCB);
+        negBtn.btn = this._mkBtn(above, true, this._data.negCB);
         this._dialog.add(negBtn.btn);
 
-        negBtn.txt = this._mkTxt(this._negTxt, negBtn.btn);
+        negBtn.txt = this._mkTxt(this._data.negTxt, negBtn.btn);
         this._dialog.add(negBtn.txt);
     }
 
     stop(){
+        gameEls.smallDialog = undefined;
+        
         this._dialog.destroy();
         if(this._dialog.children.length > 0){
             this._dialog.children[0].pendingDestroy = true; //petit 'trick' pour détruire le bouton qui permet de fermer la fenêtre d'upgrade

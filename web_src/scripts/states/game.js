@@ -14,14 +14,14 @@ gameState.create = function(){
     // let testDial = new SmallDialog(50,50,"Title", "Description that is not too long", "Expensive", () => {});
     // testDial.open();
 
-    globals.moneyMgr = new MoneyMgr(10500);
+    globals.moneyMgr = new MoneyMgr(9500);
 
     // let npTest = new Newspaper("firstPage", {title:"France enters war!"});
     // npTest.start();
 
 
-    this._newspaper = new Newspaper("smallSections", globals.data.factories);
-    this._newspaper.start();
+    let newspaper = new Newspaper("smallSections", globals.data.factories);
+    //newspaper.start();
 };
 
 gameState.update = function(){

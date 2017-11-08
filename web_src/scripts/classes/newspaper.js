@@ -23,7 +23,6 @@ class Newspaper{
             gameEls.newspaper.stop();
         }
 
-        gameEls.newspaper = this;
 
         switch (template) {
             case "smallSections":
@@ -50,6 +49,9 @@ class Newspaper{
     }
 
     start(){
+        //attribue l'objet newspaper à gameEls.newspaper
+        gameEls.newspaper = this;
+
         //supprime l'affichage des sites de production si on est en vue "region" et rend la map invisible
         if(globals.currentRegion != ""){
             globals.regions[globals.currentRegion].uninit(true);

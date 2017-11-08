@@ -86,8 +86,8 @@ globReg.goto.region = function(region){
 }
 
 globReg.goto.world = function(region){
-    if(globals.sites.dialogDisplayed != ""){
-        region.sites[globals.sites.dialogDisplayed]._closeDialogBox();
+    if(gameEls.smallDialog != undefined){
+        gameEls.smallDialog.stop();
     }
     globals.currentRegion = "";
 

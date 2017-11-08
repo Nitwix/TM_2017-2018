@@ -5,38 +5,45 @@ class Dialog{
 	*/
 	constructor(texts){
 
-		//TODO: Dans les scripts où j'instatie des Dialog, ne pas ouvrir si globals.dialogDisplayed
-
-		globals.dialogDisplayed = true;
-
+		//TODO: Dans les scripts où j'instatie des Dialog, ne pas ouvrir si gameEls.dialog != undefined
 		this._texts = texts;
+
+		//groupe Phaser contenant les éléments du dialog
+		this._group = game.add.group();
 	}
 
 	//démarre le dialogue
 	start(){
+		gameEls.dialog = this;
+
 		//ajoute la boîte de dialogue sur l'écran
-		this._dialBox = game.add.image(0,0, "dialogBox");
-		this._dialBox.scale.setTo(3);
-		this._dialBox.alpha = 0.9;
-		cornerObj(this._dialBox, 10, "se");
+		let dialBox = game.make.image(0,0, "dialogBox");
+		dialBox.scale.setTo(3);
+		dialBox.alpha = 0.9;
+		cornerObj(dialBox, 10, "se");
+
+		this._group.add(dialBox);
+		this._dialBox = dialBox;
 
 		var offset = -15;
 
 	    //affiches les textes des dialogues
-	    this._bmpText = game.add.bitmapText(0,0,"pixel_font", "", 26);
-	    this._bmpText.alignIn(this._dialBox, Phaser.TOP_LEFT, offset, offset);
-	    this._bmpText.maxWidth = this._dialBox.width + 3*offset;
-	    // this._bmpText.tint = 0xedddae; //couleur du texte
+	    let bmpText = game.make.bitmapText(0,0,"pixel_font", "", 26);
+	    bmpText.alignIn(dialBox, Phaser.TOP_LEFT, offset, offset);
+	    bmpText.maxWidth = dialBox.width + 3*offset;
+
+		this._group.add(bmpText);
+		this._bmpText = bmpText;
+	    // bmpTex.tint = 0xedddae; //couleur du texte
 
 	    this._displayTexts(this._texts, 0);
 	}
 
 	//arrête le dialogue et supprime la boîte de dialogue
-	_stop(){
-		this._bmpText.destroy();
-		this._dialBox.destroy();
+	stop(){
+		this._group.destroy();
 
-		globals.dialogDisplayed = false;
+		gameEls.dialog = undefined;
 	}
 
 
@@ -76,12 +83,15 @@ class Dialog{
 
 	_waitForNext(lastText){
 		//ajoute un bouton pour afficher la partie suivante du texte
-		this._nextButton = game.add.button(0,0,"nextButton", function(){
+		let nextButton = game.make.button(0,0,"nextButton", function(){
 			this._launchNext(lastText);
 		}, this, 0,1,2,0);
 
-		this._nextButton.alignIn(this._dialBox, Phaser.BOTTOM_RIGHT, -15, -20);
-		this._nextButton.scale.setTo(2);
+		nextButton.alignIn(this._dialBox, Phaser.BOTTOM_RIGHT, -15, -20);
+		nextButton.scale.setTo(2);
+
+		this._group.add(nextButton);
+		this._nextButton = nextButton;
 
 		//permet d'appuyer sur n'importe quelle touche du clavier pour passer au prochain texte
 		game.input.keyboard.enabled = true;
@@ -98,7 +108,7 @@ class Dialog{
 		this._nextButton.destroy();
 
 		if(lastText){
-			this._stop(); //si c'est le dernier texte qui est affiché, on stoppe le dialogue
+			this.stop(); //si c'est le dernier texte qui est affiché, on stoppe le dialogue
 			game.input.keyboard.enabled = true; //réactive le clavier
 		}
 	}

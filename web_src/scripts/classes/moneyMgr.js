@@ -19,7 +19,10 @@ class MoneyMgr{
         if(price <= this.totVal){
             this.totVal -= price;
             boughtCallback();
-        }else if (!globals.dialogDisplayed){
+        }else{
+            if(gameEls.dialog != undefined){
+                gameEls.dialog.stop();
+            }
             let NEMDialog = new Dialog(["Désolé monsieur, nos finances ne nous permettent pas cet achat."]);
             NEMDialog.start();
         }

@@ -28,5 +28,11 @@ gameEls.setup.UI = function(){
     //autres éléments permanents de l'UI...
 }
 
+/** @type {(Dialog|undefined)} */
+gameEls.dialog = undefined;
+
 /** @type {(Newspaper|undefined)} */
 gameEls.newspaper = undefined;
+
+/** @type {(SmallDialog|undefined)} */
+gameEls.smallDialog = undefined;
