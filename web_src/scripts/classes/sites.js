@@ -29,6 +29,11 @@ class Site{
         this.updateBtnFrames();
     }
 
+    upgradeFac(){
+        this.fac.upgrade();
+        this.updateBtnFrames();
+    }
+
     //affiche la boîte qui permet de déverouiller le site de production ou de l'améliorer
     _dialogBox(){
         //pour qu'une seule boîte de dialog soit affichée
@@ -43,16 +48,14 @@ class Site{
         if(this.fac.type == "notUsed" && this.fac.level == 0){ //si le site de production est verouillé
             let price = 10000;
             let dialDat = {
-                x: x,
-                y: y,
+                x: x, y: y,
                 title: "Déverouiller?",
                 descr: "Ceci vous permettra d'installer un bâtiment sur cet emplacement.",
                 posTxt:(new MoneyDisplay(price)).prettyStr(),
                 posCB: () => {
                     // console.log("Unlock callback called");
                     globals.moneyMgr.buy(price, () => {
-                        this.fac.level++;
-                        this.updateBtnFrames();
+                        this.upgradeFac();
                     })
                 }
             };
@@ -63,7 +66,28 @@ class Site{
             this._newspaper = new Newspaper("smallSections", globals.data.factories, this);
             this._newspaper.start();
         }else{
-            //upgrade dialog
+            let price = 50000;
+            let dialDat = {
+                x:x, y:y,
+                title: "Améliorer?",
+                descr: "Votre usine produira plus.",
+                posTxt: (new MoneyDisplay(price)).prettyStr(),
+                posCB: () => {
+                    globals.moneyMgr.buy(price, () => {
+                        this.upgradeFac();
+                    });
+                }
+            };
+
+            if(!this.fac.canUpgrade){
+                dialDat.title = "Erreur";
+                dialDat.descr = "Vous ne pouvez pas améliorer cette usine d'avantage";
+                dialDat.posTxt = undefined;
+                dialDat.posCB = undefined;
+            }
+
+            this._dialog = new SmallDialog(dialDat);
+            this._dialog.start();
         }
 
     }

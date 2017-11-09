@@ -102,25 +102,28 @@ class SmallDialog{
         title.alignIn(this._box, Phaser.TOP_LEFT, 2*this._posProps.cntOffX, this._posProps.cntOffY - 4);
         this._dialog.add(title);
 
-        if(this._data.posTxt != undefined && this._data.negTxt == undefined){ //si que bouton vert
-            this._addPosBtn(false);
-        }else{ //bouton vert et rouge
+        let descrWidth = this._box.width - 112;
+        if(this._data.posTxt != undefined && this._data.negTxt != undefined){
             this._addPosBtn(true);
             this._addNegBtn(false);
+        }else if(this._data.posTxt != undefined){
+            this._addPosBtn(false);
+        }else{
+            descrWidth = this._box.width - 16;
         }
 
-        this._addDescr();
+        this._addDescr(descrWidth);
 
         //TODO (maybe): ajouter la possibilité de n'avoir qu'un seul bouton négatif
     }
 
-    _addDescr(){
+    _addDescr(descrWidth){
         if(this._data.descr.length > 68){
             console.warn("Text pourrait être trop long dans classes/smallDialog.js");
         }
         let descr = game.make.bitmapText(0,0, "pixel_font", this._data.descr, 20);
 
-        descr.maxWidth = this._box.width - 112;
+        descr.maxWidth = descrWidth;
         descr.alignIn(this._box, Phaser.TOP_LEFT, this._posProps.cntOffX - 6, this._posProps.cntOffY - 32);
 
         this._dialog.add(descr);
@@ -170,7 +173,7 @@ class SmallDialog{
 
     stop(){
         gameEls.smallDialog = undefined;
-        
+
         this._dialog.destroy();
         if(this._dialog.children.length > 0){
             this._dialog.children[0].pendingDestroy = true; //petit 'trick' pour détruire le bouton qui permet de fermer la fenêtre d'upgrade

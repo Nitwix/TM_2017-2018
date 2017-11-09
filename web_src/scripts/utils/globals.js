@@ -17,7 +17,9 @@ globals.currentRegion = ""; //"" quand en worldview et la key de la région sino
 //contient des variable en rapport avec les sites de production
 globals.sites = {};
 globals.sites.id = 0; //identifiant unique pour chaque site de production (voir utils/regions.js)
-globals.sites.maxLevel = 3;
+
+globals.factories = {};
+globals.factories.maxLevel = 3;
 
 // globals.sites.dialogDisplayed = ""; //"" quand en 'world view' et 's...' si box d'unlock/upgrade ouverte
 // remplacé par gameEls.smallDialog

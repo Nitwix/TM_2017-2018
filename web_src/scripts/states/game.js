@@ -12,10 +12,12 @@ gameState.create = function(){
     /*this.conseilRect = new Phaser.Rectangle(0, 0, 96, 128);
     cornerObj(this.conseilRect, 10, "sw");*/
 
-    globals.moneyMgr = new MoneyMgr(52500);
+    globals.moneyMgr = new MoneyMgr(155500);
 
     //let newspaper = new Newspaper("smallSections", globals.data.factories);
     //newspaper.start();
+
+
 };
 
 gameState.update = function(){
@@ -24,7 +26,7 @@ gameState.update = function(){
         globReg.update();
     }
 
-    globals.moneyMgr.totVal += 10000;
+    // globals.moneyMgr.totVal += 10000;
     // console.log(globals.moneyMgr.totVal);
 
     //Permet d'obtenir le x et y quand on clique

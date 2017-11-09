@@ -25,12 +25,24 @@ class Factory{
             case "notUsed":
                 return this.level; //0: locked, 1: not used
             case "coalCentral":
-                return globals.sites.maxLevel + this.level;
+                return globals.factories.maxLevel + this.level;
                 //ajouter les autres types de resources ici
             case "textileFactory":
-                return 2*globals.sites.maxLevel + this.level;
+                return 2*globals.factories.maxLevel + this.level;
             default:
                 console.warn("factory not found in classes/factory.js");
         }
+    }
+
+    get canUpgrade(){
+        if((this.level + 1) % globals.factories.maxLevel == 0){
+            return false;
+        }else{
+            return true;
+        }
+    }
+
+    upgrade(){
+        this.level++;
     }
 }
