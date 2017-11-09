@@ -23,6 +23,12 @@ class Site{
         this.siteButton.destroy();
     }
 
+    setFac(facObj){
+        //TODO: terminer ceci
+        this.fac = facObj;
+        this.updateBtnFrames();
+    }
+
     //affiche la boîte qui permet de déverouiller le site de production ou de l'améliorer
     _dialogBox(){
         //pour qu'une seule boîte de dialog soit affichée
@@ -53,10 +59,11 @@ class Site{
             this._dialog = new SmallDialog(dialDat);
 
             this._dialog.start();
+        }else if(this.fac.type == "notUsed" && this.fac.level == 1){
+            this._newspaper = new Newspaper("smallSections", globals.data.factories, this);
+            this._newspaper.start();
         }else{
-
-            // this._newspaper = new Newspaper("smallSections", globals.data.factories);
-            // this._newspaper.start();
+            //upgrade dialog
         }
 
     }

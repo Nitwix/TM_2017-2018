@@ -11,16 +11,10 @@ gameState.create = function(){
     globReg.init(); //voir utils/globReg.js
     /*this.conseilRect = new Phaser.Rectangle(0, 0, 96, 128);
     cornerObj(this.conseilRect, 10, "sw");*/
-    // let testDial = new SmallDialog(50,50,"Title", "Description that is not too long", "Expensive", () => {});
-    // testDial.open();
 
-    globals.moneyMgr = new MoneyMgr(9500);
+    globals.moneyMgr = new MoneyMgr(52500);
 
-    // let npTest = new Newspaper("firstPage", {title:"France enters war!"});
-    // npTest.start();
-
-
-    let newspaper = new Newspaper("smallSections", globals.data.factories);
+    //let newspaper = new Newspaper("smallSections", globals.data.factories);
     //newspaper.start();
 };
 
@@ -30,7 +24,7 @@ gameState.update = function(){
         globReg.update();
     }
 
-    // globals.moneyMgr.totVal += 10000;
+    globals.moneyMgr.totVal += 10000;
     // console.log(globals.moneyMgr.totVal);
 
     //Permet d'obtenir le x et y quand on clique

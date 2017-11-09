@@ -1,30 +1,18 @@
 globals.data.factories = {
     title: "À vendre",
     spritesheet: "factories",
-    els: [
-            {
-                spriteIndex: 3,
-                title: "Centrale à charbon niveau 1",
+    els: {
+            coalCentral: {
+                factoryType: "coalCentral",
+                title: "Centrale à charbon",
                 descr: "Cette centrale à charbon vous permettra de produire 600 MW. Le désavantage étant qu'elle produit également 600 kg de CO2 par jour.",
-                posTxt: (new MoneyDisplay(100000)).prettyStr(),
-                posCB: () => {
-                    globals.moneyMgr.buy(1000, () => {
-                        console.log("Centrale à charbon achetée");
-                    });
-                }
+                price: 10000
             },
-            {
-                spriteIndex: 4,
-                title: "Centrale à charbon niveau 2",
-                descr: "Cette centrale à charbon vous permettra de produire 600 MW",
-                posCB: () => {console.log("Centrale à charbon achetée")}
+            textileFactory: {
+                factoryType: "textileFactory",
+                title: "Usine de textile",
+                descr: "Cette usine de textile vous rapportera des mondios.",
+                price: 50000
             },
-            {
-                spriteIndex: 5,
-                title: "Centrale à charbon niveau 3",
-                descr: "Cette centrale à charbon vous permettra de produire 600 MW",
-                posCB: () => {console.log("Centrale à charbon achetée")}
-            }
-
-    ]
+        }
 }

@@ -3,12 +3,12 @@ class Newspaper{
     * @param {string} template - Type de newspaper
     * @param {object} data - Contenu du newspaper
     */
-    constructor(template, data){
+    constructor(template, data, comingFrom){
         // let dataSmallSections = {
         //     title: "",
         //     spritesheet: "",
         //     els: [
-        //         {imgCache: 0, title: "", descr: "", posCB: () => {}}
+        //         {(factoryType: "" | spriteIndex: 0), title: "", descr: "", posCB: () => {}}
         //     ]
         // }
         //
@@ -36,6 +36,9 @@ class Newspaper{
         }
 
         this._data = data;
+
+        //l'objet d'où vient la requête du newspaper
+        this._comingFrom = comingFrom;
 
         //éléments de base qui restent entre les changements de page
         this._baseEls = game.add.group();
@@ -82,9 +85,16 @@ class Newspaper{
             this._posProps.sectionHeight = 100;
             this._posProps.offX = -32;
 
-            for(let index in this._data.els){
-                let el = this._data.els[index];
+            let index = 0;
+            for(let key in this._data.els){
+                //pas sûr si c'est utile. Check si c'est une propriété
+                if(!this._data.els.hasOwnProperty(key)){
+                    console.log(key);
+                    continue;
+                }
+                let el = this._data.els[key];
                 this._addSection(index, el);
+                index++;
             }
 
         }else if (this._template == 1) {
@@ -105,8 +115,24 @@ class Newspaper{
 
     }
 
-    //TODO: faire la fonction pour ajouter une section (horizontale) au newspaper
+    //TODO: faire la fonction pour ajouter une section (horizontale) au newspaper.
     _addSection(index, el){
+
+        //éléments spécifiques à la page d'achat des usines
+        if(this._data.spritesheet == "factories"){
+            let fac = new Factory(el.factoryType, 0); //affiche tjs une image de niveau 1
+            el.spriteIndex = fac.iconIndex;
+
+            el.posTxt = (new MoneyDisplay(el.price)).prettyStr();
+            el.posCB = () => {
+                globals.moneyMgr.buy(el.price, () => {
+                    gameEls.newspaper.stop();
+                    this._comingFrom.setFac(fac);
+                });
+            }
+        }
+
+
         //positionnement par raport au TOP_LEFT
         let offY = this._posProps.headOffY - index * this._posProps.sectionHeight;
         let offX = this._posProps.offX;
