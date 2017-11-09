@@ -172,7 +172,11 @@ class Newspaper{
 
 
     stop(){
-        //BUG: lorsqu'on dézoom après avoir ouvert le newspaper pour acheter une usine, les sites de production ne disparaissent pas
+        //ferme un éventuel dialog qui serait resté ouvert
+        if(gameEls.dialog != undefined){
+            gameEls.dialog.stop();
+        }
+
         this._baseEls.destroy();
         this._contentEls.destroy();
 

@@ -11,7 +11,6 @@ class SmallDialog{
     start(){
         gameEls.smallDialog = this;
 
-        //TODO: terminer de refactorer ce code !
         this._dialog = game.add.group();
 
         //sélection de quel sprite de la spritesheet selon l'endroit du site
