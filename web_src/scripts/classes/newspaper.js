@@ -49,7 +49,7 @@ class Newspaper{
         this._posProps = {}
 
         this._tweenProps = {
-            lDur: 1200, //long duration
+            lDur: 800, //long duration
             sDur: 500 //short duration
         };
 
@@ -72,7 +72,7 @@ class Newspaper{
 
         this._newspaper = game.add.image(0,0, "newspaper", this._template);
         this._newspaper.scale.setTo(8);
-        this._newspaper.angle = game.rnd.between(160,180);
+        this._newspaper.angle = game.rnd.between(10,20);
         this._newspaper.anchor.setTo(.5);
         this._newspaper.alpha = .8;
         this._newspaper.alignIn(game.world, Phaser.CENTER, 12);
@@ -169,11 +169,34 @@ class Newspaper{
             let CETween = game.add.tween(this._contentEls);
             CETween.to({alpha:1}, this._tweenProps.sDur);
             CETween.start();
+        }else{
+            // let BETween = game.add.tween(this._baseEls);
+            // BETween.to({alpha:0}, this._tweenProps.sDur/2);
+            // BETween.start();
+            //
+            // BETween.onComplete.addOnce(() => {
+            //     this._baseEls.destroy();
+            // }, this);
+            //
+            // let CETween = game.add.tween(this._contentEls);
+            // CETween.to({alpha:0}, this._tweenProps.sDur/2);
+            // CETween.start();
+            //
+            // CETween.onComplete.addOnce(() => {
+            //     this._baseEls.destroy();
+            // }, this);
+            let NPTween = game.add.tween(this._newspaper);
+            NPTween.to({alpha:0}, this._tweenProps.sDur);
+            NPTween.start();
+
+            NPTween.onComplete.addOnce(() => {
+                this._newspaper.destroy();
+            }, this);
+
         }
 
     }
 
-    //TODO: faire la fonction pour ajouter une section (horizontale) au newspaper.
     _addSection(index, el){
 
         //éléments spécifiques à la page d'achat des usines
@@ -238,7 +261,8 @@ class Newspaper{
         //TODO: appeler des fonction pour fade out les éléments joliments
         this._baseEls.destroy();
         this._contentEls.destroy();
-        this._newspaper.destroy();
+        this._fade(false);
+        // this._newspaper.destroy();
 
         gameEls.newspaper = undefined;
 
