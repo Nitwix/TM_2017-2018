@@ -26,11 +26,11 @@ class Newspaper{
 
         switch (template) {
             case "smallSections":
-                this._template = 0;
-                break;
+            this._template = 0;
+            break;
             case "firstPage":
-                this._template = 1;
-                break;
+            this._template = 1;
+            break;
             default:
 
         }
@@ -46,7 +46,12 @@ class Newspaper{
         this._contentEls = game.add.group();
 
         //contient toutes les propriétés liées au positionnement des éléments
-        this._posProps = {};
+        this._posProps = {}
+
+        this._tweenProps = {
+            lDur: 1200, //long duration
+            sDur: 500 //short duration
+        };
 
         this._fontTint = 0x55472f;
     }
@@ -60,13 +65,46 @@ class Newspaper{
             globals.regions[globals.currentRegion].uninit(true);
         }
 
-        gameEls.earthMap.visible = false;
+        let EMTween = game.add.tween(gameEls.earthMap);
+        EMTween.to({alpha:0}, this._tweenProps.lDur);
+        EMTween.start();
+        //gameEls.earthMap.visible = false;
 
-        this._newspaper = game.make.image(0,0, "newspaper", this._template);
-        this._newspaper.scale.setTo(4);
+        this._newspaper = game.add.image(0,0, "newspaper", this._template);
+        this._newspaper.scale.setTo(8);
+        this._newspaper.angle = game.rnd.between(160,180);
+        this._newspaper.anchor.setTo(.5);
+        this._newspaper.alpha = .8;
         this._newspaper.alignIn(game.world, Phaser.CENTER, 12);
-        this._baseEls.add(this._newspaper);
 
+        //TODO: (peut-être) : trouver un moyen d'avoir une plus grande rotation
+        //newspaper scale tween
+        let NPSTween = game.add.tween(this._newspaper.scale);
+        NPSTween.to({x:4, y:4}, this._tweenProps.lDur);
+        //newspaper tween
+        let NPTween = game.add.tween(this._newspaper);
+        NPTween.to({angle:0, alpha:1}, this._tweenProps.lDur, "Quad.easeIn");
+
+        NPTween.start();
+        NPSTween.start();
+
+        NPSTween.onComplete.addOnce(() => {
+            this._addBaseEls();
+            this._addContentEls();
+
+            game.world.bringToTop(this._baseEls);
+            game.world.bringToTop(this._contentEls);
+
+            this._fade(true);
+        }, this);
+
+        //this._baseEls.add(this._newspaper);
+
+
+    }
+
+    _addBaseEls(){
+        console.log("callled");
         let closeBtn = game.make.button(0,0, "closeButton", () => {
             this.stop();
         }, this, 0,1,2,0);
@@ -80,11 +118,25 @@ class Newspaper{
             title.fontSize = 40;
             this._posProps.titleOffY = -12;
 
-            //TODO: ajuster ces constantes
             this._posProps.headOffY = -64;
             this._posProps.sectionHeight = 100;
             this._posProps.offX = -32;
+        }else if (this._template == 1) {
+            title.fontSize = 80;
+            this._posProps.titleOffY = -48;
+        }
 
+        title.tint = this._fontTint;
+        title.alignIn(this._newspaper, Phaser.TOP_CENTER, 0, this._posProps.titleOffY);
+        this._baseEls.add(title);
+
+        //pour pouvoir tweener plus tard
+        this._baseEls.alpha = 0;
+    }
+
+    _addContentEls(){
+        //TODO: ajouter le code pour ajouter les éléments de contenus
+        if(this._template == 0){
             let index = 0;
             for(let key in this._data.els){
                 //pas sûr si c'est utile. Check si c'est une propriété
@@ -96,22 +148,28 @@ class Newspaper{
                 this._addSection(index, el);
                 index++;
             }
-
-        }else if (this._template == 1) {
-            title.fontSize = 80;
-            this._posProps.titleOffY = -48;
-
+        }else{
             for(let index in this._data.els){
                 let el = this._data.els[index];
                 this._addColumn(index, el);
             }
-
         }
-        title.tint = this._fontTint;
-        title.alignIn(this._newspaper, Phaser.TOP_CENTER, 0, this._posProps.titleOffY);
-        this._baseEls.add(title);
 
+        //pour pouvoir tweener plus tard
+        this._contentEls.alpha = 0;
+    }
 
+    //fade les éléments des différents groupes
+    _fade(fadeIn){
+        if(fadeIn){
+            let BETween = game.add.tween(this._baseEls);
+            BETween.to({alpha:1}, this._tweenProps.sDur);
+            BETween.start();
+
+            let CETween = game.add.tween(this._contentEls);
+            CETween.to({alpha:1}, this._tweenProps.sDur);
+            CETween.start();
+        }
 
     }
 
@@ -177,12 +235,18 @@ class Newspaper{
             gameEls.dialog.stop();
         }
 
+        //TODO: appeler des fonction pour fade out les éléments joliments
         this._baseEls.destroy();
         this._contentEls.destroy();
+        this._newspaper.destroy();
 
         gameEls.newspaper = undefined;
 
-        gameEls.earthMap.visible = true;
+        // gameEls.earthMap.visible = true;
+        let EMTween = game.add.tween(gameEls.earthMap);
+        EMTween.to({alpha:1}, 500);
+        EMTween.start();
+
         if(globals.currentRegion != ""){
             globals.regions[globals.currentRegion].init(true);
         }
