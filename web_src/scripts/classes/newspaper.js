@@ -50,7 +50,7 @@ class Newspaper{
 
         this._tweenProps = {
             lDur: 800, //long duration
-            sDur: 500 //short duration
+            sDur: 300 //short duration
         };
 
         this._fontTint = 0x55472f;
@@ -72,7 +72,8 @@ class Newspaper{
 
         this._newspaper = game.add.image(0,0, "newspaper", this._template);
         this._newspaper.scale.setTo(8);
-        this._newspaper.angle = game.rnd.between(10,20);
+        let mult = (Math.random() >= .5) ? 1 : -1;
+        this._newspaper.angle = game.rnd.between(165,180) * mult;
         this._newspaper.anchor.setTo(.5);
         this._newspaper.alpha = .8;
         this._newspaper.alignIn(game.world, Phaser.CENTER, 12);
@@ -170,21 +171,6 @@ class Newspaper{
             CETween.to({alpha:1}, this._tweenProps.sDur);
             CETween.start();
         }else{
-            // let BETween = game.add.tween(this._baseEls);
-            // BETween.to({alpha:0}, this._tweenProps.sDur/2);
-            // BETween.start();
-            //
-            // BETween.onComplete.addOnce(() => {
-            //     this._baseEls.destroy();
-            // }, this);
-            //
-            // let CETween = game.add.tween(this._contentEls);
-            // CETween.to({alpha:0}, this._tweenProps.sDur/2);
-            // CETween.start();
-            //
-            // CETween.onComplete.addOnce(() => {
-            //     this._baseEls.destroy();
-            // }, this);
             let NPTween = game.add.tween(this._newspaper);
             NPTween.to({alpha:0}, this._tweenProps.sDur);
             NPTween.start();
@@ -262,18 +248,20 @@ class Newspaper{
         this._baseEls.destroy();
         this._contentEls.destroy();
         this._fade(false);
-        // this._newspaper.destroy();
 
         gameEls.newspaper = undefined;
 
         // gameEls.earthMap.visible = true;
         let EMTween = game.add.tween(gameEls.earthMap);
-        EMTween.to({alpha:1}, 500);
+        EMTween.to({alpha:1}, this._tweenProps.sDur);
         EMTween.start();
+        EMTween.onComplete.addOnce(() => {
+            if(globals.currentRegion != ""){
+                globals.regions[globals.currentRegion].init(true);
+            }
+        }, this);
 
-        if(globals.currentRegion != ""){
-            globals.regions[globals.currentRegion].init(true);
-        }
+
 
     }
 }
