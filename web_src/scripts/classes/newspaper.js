@@ -49,8 +49,8 @@ class Newspaper{
         this._posProps = {}
 
         this._tweenProps = {
-            lDur: 800, //long duration
-            sDur: 300 //short duration
+            lDur: globals.UI.longTweenDur, //long duration
+            sDur: globals.UI.shortTweenDur //short duration
         };
 
         this._fontTint = 0x55472f;
@@ -105,7 +105,6 @@ class Newspaper{
     }
 
     _addBaseEls(){
-        console.log("callled");
         let closeBtn = game.make.button(0,0, "closeButton", () => {
             this.stop();
         }, this, 0,1,2,0);
