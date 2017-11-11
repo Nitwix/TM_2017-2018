@@ -193,7 +193,7 @@ class Newspaper{
             el.posCB = () => {
                 globals.moneyMgr.buy(el.price, () => {
                     gameEls.newspaper.stop();
-                    this._comingFrom.setFac(fac);
+                    this._comingFrom.fac = fac;
                 });
             }
         }
