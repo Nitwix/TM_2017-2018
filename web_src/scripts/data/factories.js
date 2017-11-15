@@ -1,3 +1,5 @@
+//TODO: class FactoryData
+
 globals.data.factories = {
     title: "À vendre",
     spritesheet: "factories",

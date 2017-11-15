@@ -34,8 +34,8 @@
 
 - scénario :
     - narrateurs/guides : conseiller écologique : Conseil
-    <!-- - joueur : président du monde (Ou ministre de l'énergie et des ressources) pas adapté -->
-	- joueur : président d'une compagnie électrique
+    - joueur : président du monde (Ou ministre de l'énergie et des ressources) 
+	<!-- - joueur : président d'une compagnie électrique //voir Réflexions-->
 
 - Mettre une icone : demander Conseil/conseil
 
@@ -127,6 +127,9 @@ Centrale géothermique | 150k | 6.000M | x1 | 1 | 1.75
 - on demande le nom du joueur pour que celui-ci se sente plus impliqué dans le jeu et qu'il comprenne que lui aussi peut faire la différence
 
 - Conseil est humble et reflète la sagesse
+
+- devrait-on plutôt jouer le président du monde ou le directeur d'une compagnie énergétique?
+	- il serait mieux de jouer le président pour pas que le message soit "les méchantes entreprises détruisent la terre" et pour qu'on puisse conseiller nos concitoyens
 <!-- - Nemo représente la "science sans conscience" et le renfermement (pas sûr) -->
 
 
