@@ -90,21 +90,20 @@ Toutes régions | Coupe de bois | Énergie solaire, éoliennes, fission nucléai
 ==> Peut-être à mettre mais compliqué -->
 
 ## Centrales de production d'énergie
-- -> c.a. = coefficient d'amélioration
 - pour l'instant les valeurs sont fixées de manière arbitraires. Il faudra les corriger par la suite
+- le coefficient d'amélioration sert de puissance pour le calcul **newValue = oldValue ^ coeff** //pas sûr
+- la production de CO<sub>2</sub> pour les énergies n'en produisent pas durant leur exploitation permet de compter l'énergie grise
 
-Type | Production d'énergie [W] | Prix de construction | Prix de démantèlement | Production de CO<sub>2</sub> en tonne/année
+Type | Production d'énergie [W] | Prix de construction | Prix de démantèlement (par rapport au prix de construction) | Production de CO<sub>2</sub> [tonne/année] | coeff. d'upgrade
 -----|--------|------------|------|------------|-------------
-Centrale à charbon | 0.5k | 50.00k | 100.0k | 5
--> c.a. | x2 | x2 | x2 | x3
-Centrale à pétrole | 1.5k |250.0k | 300.0k | 35
--> c.a | x2 | x2 | x1.5 | x3
-Centrale à gaz | 2k | 300.0k | 350.0k | 15
--> c.a | x2 | x3 | x1.5 | x2
-Centrale nucléaire | 2M | 3.000G | 10.00G | 1
--> c.a | x2 | x1.5 | x3 | x1
-Champ d'éoliennes |  100k | 500.0M | 
-
+Centrale à charbon | 50k | 5.000M | x1 | 10 | 2
+Centrale à pétrole | 150k | 8.000M | x1 | 35 | 1.75
+Centrale hydrauliques | 500k | 500M | x2 | 1 | 1.25
+Centrale à gaz | 200k | 12.00M | x1.5 | 15 | 1.5
+Centrale nucléaire | 2M | 3.000G | x3 | 1 | 2
+Champ d'éoliennes | 100k | 15.00M | x1 | 1 | 2
+Champ de panneaux photovoltaïques | 25k | 5.000M | x0.25 | 1 | 2
+Centrale géothermique | 150k | 6.000M | x1 | 1 | 1.75
 
 
 ## Investissments dans la recherche de nouvelles énergies
