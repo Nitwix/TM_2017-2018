@@ -14,7 +14,7 @@
 
 - évènements historiques réels interviennent dans le jeu (journal jeté sur la table avec news)
 
-- vitesse du temps : ~30 s/année de jeu
+- vitesse du temps : 32 s/année de jeu de base (possibilité d'accélérer)
 
 - onglet avec un graph en temps réel du niveau de CO<sub>2</sub> et de la température par rapport à la période préindustrielle
 
@@ -37,12 +37,12 @@
 
 - La carte du monde est sur la table du président et les boutons du l'UI se trouvent "sur la table"
 
-- pouvoir accélérer / ralentir le temps 
+- pouvoir accélérer / ralentir le temps
 
 
 ## Cycle économique
 
-### Première alternative:
+<!-- ### Première alternative:
 
 - 2 types de sites:
     - Les sites de production **d'énergie** (mines, éoliennes, panneaux solaires,...)
@@ -51,7 +51,7 @@
 - Les sites de production de ressources consomment cette énergie et produisent des Mondio
 - Les Mondio sont réinvestits pour produire plus
 - Il serait peut-être possible de prendre un emprunt à la banque
-
+==> Ne transmets pas le message voulu -->
 
 <!-- ### Deuxième alternative:
 
@@ -65,7 +65,15 @@
 
 ==> TROP COMPLIQUÉ -->
 
-## Différentes ressources par région:
+### Troisième alternative
+
+- Les usines de production d'énergie produisent de l'énergie qui est comptabilisée mais convertie instantanemment en mondios
+- Les mondios permettent d'acheter des nouvelles usines
+- Les évènements aléatoires (avec réponse) influencent la demande énergetique et la production de CO<sub>2</sub>
+- Il faut satisfaire la demande énergétique globale
+- Le but final est d'atteindre une demande énergétique stable (et donc un arrêt de la croissance)
+
+<!-- ## Différentes ressources par région:
 
 Région | Augmente CO<sub>2</sub> | N'augmente pas le CO<sub>2</sub>
 -------|-------------------------|-------------------------
@@ -76,13 +84,14 @@ Asie | charbon |
 Amérique du sud | forêt primaire → palme, bétail, bois | Exploitation durable (produit moins)
 Toutes régions | Coupe de bois | Énergie solaire, éoliennes, fission nucléaire (avec conséquences), fusion nucléaire, géothermie
 
+==> Peut-être à mettre mais compliqué -->
 
-## Production des éléments de jeu
+## Centrales de production d'énergie
 
-Type | Niveau | Production | Prix | Production de CO<sub>2</sub>
+Type | Niveau | Production d'énergie [W] | Prix | Production de CO<sub>2</sub> en tonne/année
 -----|--------|------------|------|-------------------------
-Mine de charbon | 1 | 20 kg/jour | 200M | 1 kg/jour
- &nbsp; | 2 et suivants | x2 | 400M | x3
+Centrale à charbon | 1 | 500 W | 50.00k | 5
+ &nbsp; | ++ | x2 | x2 | x3
 
 
 ## Investissments dans la recherche de nouvelles énergies
