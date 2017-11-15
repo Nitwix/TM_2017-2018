@@ -7,7 +7,10 @@ globals.UI = {
     buttonOffset: 3,
     smallButtonScale: 2,
 
-    posBtnFontSize: 26
+    posBtnFontSize: 26,
+
+    shortTweenDur: 300,
+    longTweenDur: 800
 };
 
 //voir utils/regions.js

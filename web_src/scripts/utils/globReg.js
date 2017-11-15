@@ -16,7 +16,7 @@ globReg.init = function(){
         [[269, 197], [348, 229], [270, 363], [233, 231]], []);
 
     globals.regions.northAmerica = new Region("northAmerica", 3, [[111, 107], [383, 76], [268, 195], [158, 197]],
-    [[200, 150], [400, 350]]);
+    [[200, 132], [400, 350]]);
 
     for(let region in globals.regions){
         let regionObj = globals.regions[region];

@@ -49,8 +49,8 @@ class Newspaper{
         this._posProps = {}
 
         this._tweenProps = {
-            lDur: 1200, //long duration
-            sDur: 500 //short duration
+            lDur: globals.UI.longTweenDur, //long duration
+            sDur: globals.UI.shortTweenDur //short duration
         };
 
         this._fontTint = 0x55472f;
@@ -72,7 +72,8 @@ class Newspaper{
 
         this._newspaper = game.add.image(0,0, "newspaper", this._template);
         this._newspaper.scale.setTo(8);
-        this._newspaper.angle = game.rnd.between(160,180);
+        let mult = (Math.random() >= .5) ? 1 : -1;
+        this._newspaper.angle = game.rnd.between(165,180) * mult;
         this._newspaper.anchor.setTo(.5);
         this._newspaper.alpha = .8;
         this._newspaper.alignIn(game.world, Phaser.CENTER, 12);
@@ -104,7 +105,6 @@ class Newspaper{
     }
 
     _addBaseEls(){
-        console.log("callled");
         let closeBtn = game.make.button(0,0, "closeButton", () => {
             this.stop();
         }, this, 0,1,2,0);
@@ -169,11 +169,19 @@ class Newspaper{
             let CETween = game.add.tween(this._contentEls);
             CETween.to({alpha:1}, this._tweenProps.sDur);
             CETween.start();
+        }else{
+            let NPTween = game.add.tween(this._newspaper);
+            NPTween.to({alpha:0}, this._tweenProps.sDur);
+            NPTween.start();
+
+            NPTween.onComplete.addOnce(() => {
+                this._newspaper.destroy();
+            }, this);
+
         }
 
     }
 
-    //TODO: faire la fonction pour ajouter une section (horizontale) au newspaper.
     _addSection(index, el){
 
         //éléments spécifiques à la page d'achat des usines
@@ -185,7 +193,7 @@ class Newspaper{
             el.posCB = () => {
                 globals.moneyMgr.buy(el.price, () => {
                     gameEls.newspaper.stop();
-                    this._comingFrom.setFac(fac);
+                    this._comingFrom.fac = fac;
                 });
             }
         }
@@ -238,18 +246,21 @@ class Newspaper{
         //TODO: appeler des fonction pour fade out les éléments joliments
         this._baseEls.destroy();
         this._contentEls.destroy();
-        this._newspaper.destroy();
+        this._fade(false);
 
         gameEls.newspaper = undefined;
 
         // gameEls.earthMap.visible = true;
         let EMTween = game.add.tween(gameEls.earthMap);
-        EMTween.to({alpha:1}, 500);
+        EMTween.to({alpha:1}, this._tweenProps.sDur);
         EMTween.start();
+        EMTween.onComplete.addOnce(() => {
+            if(globals.currentRegion != ""){
+                globals.regions[globals.currentRegion].init(true);
+            }
+        }, this);
 
-        if(globals.currentRegion != ""){
-            globals.regions[globals.currentRegion].init(true);
-        }
+
 
     }
 }

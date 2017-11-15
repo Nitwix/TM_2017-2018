@@ -2,7 +2,7 @@ class Site{
     constructor(id, x, y, facType, facLvl){
         this.id = id;
         this.pos = new Phaser.Point(x, y);
-        this.fac = new Factory(facType, facLvl); //voir classes/factory.js
+        this._fac = new Factory(facType, facLvl); //voir classes/factory.js
     }
 
     //ajoute le site au game
@@ -23,10 +23,14 @@ class Site{
         this.siteButton.destroy();
     }
 
-    setFac(facObj){
-        //TODO: terminer ceci
-        this.fac = facObj;
-        this.updateBtnFrames();
+    // NOTE: ce setter n'appelle pas updateBtnFrames car sinon ça crée un bug lorsqu'on achète une usine depuis newspaper.js
+    // la méthode updateBtnFrames serait appelée avant que les boutons des usines soient crées
+    set fac(facObj){
+        this._fac = facObj;
+    }
+
+    get fac(){
+        return this._fac;
     }
 
     upgradeFac(){

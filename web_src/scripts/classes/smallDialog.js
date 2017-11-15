@@ -3,12 +3,13 @@ class SmallDialog{
         this._data = data;
         this._data.pos = new Phaser.Point(data.x,data.y);
 
-        if(gameEls.smallDialog != undefined){
-            gameEls.smallDialog.stop();
-        }
+
     }
 
     start(){
+        if(gameEls.smallDialog != undefined){
+            gameEls.smallDialog.stop();
+        }
         gameEls.smallDialog = this;
 
         this._dialog = game.add.group();
@@ -45,7 +46,7 @@ class SmallDialog{
         }
 
         //met l'a boîte du quadrant par défault si possible
-        let mOff = 10, bW = 128, bH = 64, scl = 2;
+        let mOff = 16, bW = 128, bH = 64, scl = 2;
         let cRect = new Phaser.Rectangle(mOff+12*scl, mOff+bH*scl, cX*2 - 116*scl, cY*2 - (bH*scl + mOff));
         if(cRect.contains(x,y)){
             this._posProps.quad = 2;
@@ -114,6 +115,11 @@ class SmallDialog{
         this._addDescr(descrWidth);
 
         //TODO (maybe): ajouter la possibilité de n'avoir qu'un seul bouton négatif
+
+        this._dialog.alpha = 0;
+        let SDTween = game.add.tween(this._dialog);
+        SDTween.to({alpha:1}, globals.UI.shortTweenDur);
+        SDTween.start();
     }
 
     _addDescr(descrWidth){
@@ -171,13 +177,22 @@ class SmallDialog{
     }
 
     stop(){
-        gameEls.smallDialog = undefined;
+        // TODO: faire le fade out quand on ferme le SmallDialog
+        // BUG: lorsqu'on ferme le SmallDialog, le tween prend du temps et fait bugger l'apparition d'une nouvelle boîte
+        // let SDTween = game.add.tween(this._dialog);
+        // SDTween.to({alpha:0}, globals.UI.shortTweenDur);
+        // SDTween.start();
+        // SDTween.onComplet.addOnce(() => {
+        //     this._dialog.destroy();
+        //     gameEls.smallDialog = undefined;
+        // }, this);
 
         this._dialog.destroy();
+        gameEls.smallDialog = undefined;
+
+
         if(this._dialog.children.length > 0){
             this._dialog.children[0].pendingDestroy = true; //petit 'trick' pour détruire le bouton qui permet de fermer la fenêtre d'upgrade
         }
-
-        this._dialog.destroy();
     }
 }
