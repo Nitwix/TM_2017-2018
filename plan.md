@@ -10,16 +10,19 @@
 
 - se termine lorsque : le joueur a dépassé une augmentation de 2°C (objectif de l'augmentation de moins de 2 degrés celsius fixé par l'accord de Paris) ou l'année > 2100
 
-- idée pour titre: De Révolution à Evolution
+- idées pour titre:
+	- De Révolution à Evolution
+	- 1800 à 2100, une histoire de l'énergie
 
 - évènements historiques réels interviennent dans le jeu (journal jeté sur la table avec news)
 
 - vitesse du temps : 32 s/année de jeu de base (possibilité d'accélérer)
+- pouvoir accélérer / ralentir le temps
 
 - onglet avec un graph en temps réel du niveau de CO<sub>2</sub> et de la température par rapport à la période préindustrielle
 
-- 2 conseillers : un pro écologique et un pro ressources fossiles avec des points de réputation auprès de ces 2 conseillers
-- une action écologique rapporte des points de réputation auprès de ton conseiller écologique et vice versa
+<!-- - 2 conseillers : un pro écologique et un pro ressources fossiles avec des points de réputation auprès de ces 2 conseillers
+- une action écologique rapporte des points de réputation auprès de ton conseiller écologique et vice versa -->
 
 - carte rapprochée :
 	- affiche une région
@@ -31,13 +34,13 @@
 
 - scénario :
     - narrateurs/guides : conseiller écologique : Conseil
-    - joueur : président du monde (Ou ministre de l'énergie et des ressources)
+    <!-- - joueur : président du monde (Ou ministre de l'énergie et des ressources) pas adapté -->
+	- joueur : président d'une compagnie électrique
 
 - Mettre une icone : demander Conseil/conseil
 
 - La carte du monde est sur la table du président et les boutons du l'UI se trouvent "sur la table"
 
-- pouvoir accélérer / ralentir le temps
 
 
 ## Cycle économique
@@ -87,11 +90,21 @@ Toutes régions | Coupe de bois | Énergie solaire, éoliennes, fission nucléai
 ==> Peut-être à mettre mais compliqué -->
 
 ## Centrales de production d'énergie
+- -> c.a. = coefficient d'amélioration
+- pour l'instant les valeurs sont fixées de manière arbitraires. Il faudra les corriger par la suite
 
-Type | Niveau | Production d'énergie [W] | Prix | Production de CO<sub>2</sub> en tonne/année
------|--------|------------|------|-------------------------
-Centrale à charbon | 1 | 500 W | 50.00k | 5
- &nbsp; | ++ | x2 | x2 | x3
+Type | Production d'énergie [W] | Prix de construction | Prix de démantèlement | Production de CO<sub>2</sub> en tonne/année
+-----|--------|------------|------|------------|-------------
+Centrale à charbon | 0.5k | 50.00k | 100.0k | 5
+-> c.a. | x2 | x2 | x2 | x3
+Centrale à pétrole | 1.5k |250.0k | 300.0k | 35
+-> c.a | x2 | x2 | x1.5 | x3
+Centrale à gaz | 2k | 300.0k | 350.0k | 15
+-> c.a | x2 | x3 | x1.5 | x2
+Centrale nucléaire | 2M | 3.000G | 10.00G | 1
+-> c.a | x2 | x1.5 | x3 | x1
+Champ d'éoliennes |  100k | 500.0M | 
+
 
 
 ## Investissments dans la recherche de nouvelles énergies
@@ -109,12 +122,13 @@ Centrale à charbon | 1 | 500 W | 50.00k | 5
 
 ## Réflexions
 
-- si on joue le président du monde et que c'est nous qui causons le changement climatique, on se rend compte que c'est à chacun de choisir ou non de freiner ce changement
+<!-- - si on joue le président du monde et que c'est nous qui causons le changement climatique, on se rend compte que c'est à chacun de choisir ou non de freiner ce changement -->
+- nos choix influencent l'avenir
 
 - on demande le nom du joueur pour que celui-ci se sente plus impliqué dans le jeu et qu'il comprenne que lui aussi peut faire la différence
 
 - Conseil est humble et reflète la sagesse
-- Nemo représente la "science sans conscience" et le renfermement (pas sûr)
+<!-- - Nemo représente la "science sans conscience" et le renfermement (pas sûr) -->
 
 
 ## Points de vues techniques
