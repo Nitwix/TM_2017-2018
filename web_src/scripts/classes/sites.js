@@ -10,6 +10,7 @@ class Site{
         this.siteButton = game.add.button(this.pos.x, this.pos.y, "factories", () => {
             this._dialogBox();
         }, this);
+        this.siteButton.scale.setTo(2);
         this.updateBtnFrames();
         this.siteButton.anchor.setTo(.5);
     }

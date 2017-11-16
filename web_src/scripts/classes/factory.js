@@ -27,8 +27,10 @@ class Factory{
             case "coalCentral":
                 return globals.factories.maxLevel + this.level;
                 //ajouter les autres types de resources ici
-            case "textileFactory":
+            case "oilCentral":
                 return 2*globals.factories.maxLevel + this.level;
+            case "gasCentral":
+                return 3*globals.factories.maxLevel + this.level;
             default:
                 console.warn("factory not found in classes/factory.js");
         }

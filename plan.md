@@ -34,7 +34,7 @@
 
 - scénario :
     - narrateurs/guides : conseiller écologique : Conseil
-    - joueur : président du monde (Ou ministre de l'énergie et des ressources) 
+    - joueur : président du monde (Ou ministre de l'énergie et des ressources)
 	<!-- - joueur : président d'une compagnie électrique //voir Réflexions-->
 
 - Mettre une icone : demander Conseil/conseil
@@ -94,16 +94,17 @@ Toutes régions | Coupe de bois | Énergie solaire, éoliennes, fission nucléai
 - le coefficient d'amélioration sert de puissance pour le calcul **newValue = oldValue ^ coeff** //pas sûr
 - la production de CO<sub>2</sub> pour les énergies n'en produisent pas durant leur exploitation permet de compter l'énergie grise
 
-Type | Production d'énergie [W] | Prix de construction | Prix de démantèlement (par rapport au prix de construction) | Production de CO<sub>2</sub> [tonne/année] | coeff. d'upgrade
------|--------|------------|------|------------|-------------
-Centrale à charbon | 50k | 5.000M | x1 | 10 | 2
-Centrale à pétrole | 150k | 8.000M | x1 | 35 | 1.75
-Centrale hydrauliques | 500k | 500M | x2 | 1 | 1.25
-Centrale à gaz | 200k | 12.00M | x1.5 | 15 | 1.5
-Centrale nucléaire | 2M | 3.000G | x3 | 1 | 2
-Champ d'éoliennes | 100k | 15.00M | x1 | 1 | 2
-Champ de panneaux photovoltaïques | 25k | 5.000M | x0.25 | 1 | 2
-Centrale géothermique | 150k | 6.000M | x1 | 1 | 1.75
+Type | Production d'énergie [W] | Prix de construction | Prix de démantèlement (par rapport au prix de construction) | Production de CO<sub>2</sub> [tonne/année] | Energie grise de construction [tonne de CO<sub>2</sub>] | coeff. d'upgrade
+-----|--------|------------|------|------------|-------|------
+Centrale à charbon | 50k | 5.000M | x1 | 10 | 150 |2
+Centrale à pétrole | 150k | 8.000M | x1 | 35 |  | 1.75
+Centrale à gaz | 200k | 12.00M | x1.5 | 15 |  |1.5
+Centrale hydrauliques | 500k | 500M | x2 | 0 |  | 1.25
+Centrale nucléaire (fission) | 2M | 3.000G | x3 | 0 |  | 2
+Champ d'éoliennes | 100k | 15.00M | x1 | 0 |  | 2
+Champ de panneaux photovoltaïques | 25k | 5.000M | x0.25 | 0 |  | 2
+Centrale géothermique | 150k | 6.000M | x1 | 0 |  |1.75
+Centrale nucléaire (fusion) | 10M | 3.000G | x2 | 0 | 10k | 1.5
 
 
 ## Investissments dans la recherche de nouvelles énergies

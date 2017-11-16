@@ -10,11 +10,17 @@ globals.data.factories = {
                 descr: "Cette centrale à charbon vous permettra de produire 600 MW. Le désavantage étant qu'elle produit également 600 kg de CO2 par jour.",
                 price: 10000
             },
-            textileFactory: {
-                factoryType: "textileFactory",
-                title: "Usine de textile",
-                descr: "Cette usine de textile vous rapportera des mondios.",
+            oilCentral: {
+                factoryType: "oilCentral",
+                title: "Centrale à pétrole",
+                descr: "Cette centrale produira de l'énergie que vous pourrez revendre ensuite.",
                 price: 50000
+            },
+            gasCentral: {
+                factoryType: "gasCentral",
+                title: "Centrale à gaz",
+                descr: "Cette centrale produira de l'énergie que vous pourrez revendre ensuite.",
+                price: 100000
             },
         }
 }
