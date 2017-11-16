@@ -94,7 +94,7 @@ Toutes régions | Coupe de bois | Énergie solaire, éoliennes, fission nucléai
 - le coefficient d'amélioration sert de puissance pour le calcul **newValue = oldValue ^ coeff** //pas sûr
 - la production de CO<sub>2</sub> pour les énergies n'en produisent pas durant leur exploitation permet de compter l'énergie grise
 
-Type | Production d'énergie [W] | Prix de construction | Prix de démantèlement (par rapport au prix de construction) | Production de CO<sub>2</sub> [tonne/année] | Energie grise de construction [tonne de CO<sub>2</sub>] | coeff. d'upgrade
+Type | Production d'énergie de base [W] | Prix de construction | Prix de démantèlement (par rapport au prix de construction) | Production de CO<sub>2</sub> [tonne/année] | Energie grise de construction [tonne de CO<sub>2</sub>] | coeff. d'upgrade
 -----|--------|------------|------|------------|-------|------
 Centrale à charbon | 50k | 5.000M | x1 | 10 | 150 |2
 Centrale à pétrole | 150k | 8.000M | x1 | 35 |  | 1.75

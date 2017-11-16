@@ -2,8 +2,6 @@ class SmallDialog{
     constructor(data){
         this._data = data;
         this._data.pos = new Phaser.Point(data.x,data.y);
-
-
     }
 
     start(){
@@ -111,6 +109,8 @@ class SmallDialog{
         }else{
             descrWidth = this._box.width - 16;
         }
+        // debugger;
+
 
         this._addDescr(descrWidth);
 

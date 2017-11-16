@@ -32,7 +32,7 @@ class Newspaper{
             this._template = 1;
             break;
             default:
-
+                console.warn("template not found in classes/newspaper.js");
         }
 
         this._data = data;
@@ -137,16 +137,9 @@ class Newspaper{
     _addContentEls(){
         //TODO: ajouter le code pour ajouter les éléments de contenus
         if(this._template == 0){
-            let index = 0;
-            for(let key in this._data.els){
-                //pas sûr si c'est utile. Check si c'est une propriété
-                if(!this._data.els.hasOwnProperty(key)){
-                    console.log(key);
-                    continue;
-                }
-                let el = this._data.els[key];
-                this._addSection(index, el);
-                index++;
+            for(let i in this._data.els){
+                let el = this._data.els[i];
+                this._addSection(parseInt(i), el);
             }
         }else{
             for(let index in this._data.els){
@@ -186,14 +179,16 @@ class Newspaper{
 
         //éléments spécifiques à la page d'achat des usines
         if(this._data.spritesheet == "factories"){
-            let fac = new Factory(el.factoryType, 0); //affiche tjs une image de niveau 1
-            el.spriteIndex = fac.iconIndex;
-
-            el.posTxt = (new MoneyDisplay(el.price)).prettyStr();
+            //TODO: modifier pour passer tous les arguments nécessaires à classes/factory.js
+            // let fac = new Factory(el.factoryType, 0); //affiche tjs une image de niveau 1
+            el.spriteIndex = el.fac.iconIndex;
+            console.log(typeof el);
+            //debugger;
+            el.posTxt = el.constructionPrice.toReadableStr();
             el.posCB = () => {
-                globals.moneyMgr.buy(el.price, () => {
+                globals.moneyMgr.buy(el.constructionPrice, () => {
                     gameEls.newspaper.stop();
-                    this._comingFrom.fac = fac;
+                    this._comingFrom.fac = el.fac;
                 });
             }
         }

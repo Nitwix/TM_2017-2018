@@ -10,7 +10,7 @@ class Site{
         this.siteButton = game.add.button(this.pos.x, this.pos.y, "factories", () => {
             this._dialogBox();
         }, this);
-        this.siteButton.scale.setTo(2);
+        // this.siteButton.scale.setTo(2);
         this.updateBtnFrames();
         this.siteButton.anchor.setTo(.5);
     }
@@ -56,7 +56,7 @@ class Site{
                 x: x, y: y,
                 title: "Déverouiller?",
                 descr: "Ceci vous permettra d'installer un bâtiment sur cet emplacement.",
-                posTxt:(new MoneyDisplay(price)).prettyStr(),
+                posTxt: price.toReadableStr(),
                 posCB: () => {
                     // console.log("Unlock callback called");
                     globals.moneyMgr.buy(price, () => {
@@ -71,12 +71,14 @@ class Site{
             this._newspaper = new Newspaper("smallSections", globals.data.factories, this);
             this._newspaper.start();
         }else{
-            let price = 50000;
+            let price = this._fac.upgradePrice;
+            let tmp = price.toReadableStr();
+            debugger;
             let dialDat = {
                 x:x, y:y,
                 title: "Améliorer?",
                 descr: "Votre usine produira plus.",
-                posTxt: (new MoneyDisplay(price)).prettyStr(),
+                posTxt: price.toReadableStr(),
                 posCB: () => {
                     globals.moneyMgr.buy(price, () => {
                         this.upgradeFac();

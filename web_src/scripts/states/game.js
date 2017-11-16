@@ -12,7 +12,7 @@ gameState.create = function(){
     /*this.conseilRect = new Phaser.Rectangle(0, 0, 96, 128);
     cornerObj(this.conseilRect, 10, "sw");*/
 
-    globals.moneyMgr = new MoneyMgr(155500);
+    globals.moneyMgr = new MoneyMgr(15550050);
 
     // let newspaper = new Newspaper("smallSections", globals.data.factories);
     // newspaper.start();

@@ -4,6 +4,7 @@ class MoneyDisplay{
     constructor(val, size, mondioCol, inABox, objToAlignIn, alignPos, offX, offY){
         this._val = val;
         if(arguments.length == 1){
+            console.warn("This method of getting a human readable text is deprecated.\nPrefer using Number.toReadableStr()");
             return;
         }
 
@@ -48,20 +49,7 @@ class MoneyDisplay{
             val = this.val;
         }
 
-        let kilo = "k", Mega = "M", Giga = "G", Tera = "T";
-        if(val < 10**4){
-            return val;
-        }else if (val < 10**5) {
-            return (val / 10**3).toFixed(2) + kilo;
-        }else if (val < 10**6) {
-            return (val / 10**3).toFixed(1) + kilo;
-        }else if (val < 10**7) {
-            return (val / 10**6).toFixed(3) + Mega;
-        }else if (val < 10**8) {
-            return (val / 10**6).toFixed(2) + Mega;
-        }else if (val < 10**9) {
-            return (val / 10**6).toFixed(1) + Mega;
-        }
+        return val.toReadableStr();
     }
 
     updateVal(newVal){
