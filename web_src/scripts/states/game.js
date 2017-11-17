@@ -14,8 +14,8 @@ gameState.create = function(){
 
     globals.moneyMgr = new MoneyMgr(15550050);
 
-    // let newspaper = new Newspaper("smallSections", globals.data.factories);
-    // newspaper.start();
+    let newspaper = new Newspaper("smallSections", globals.data.factories);
+    newspaper.start();
 
 
 };

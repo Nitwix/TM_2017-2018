@@ -83,7 +83,7 @@ class Dialog{
 
 	_waitForNext(lastText){
 		//ajoute un bouton pour afficher la partie suivante du texte
-		let nextButton = game.make.button(0,0,"nextButton", function(){
+		let nextButton = game.make.button(0,0,"arrows", function(){
 			this._launchNext(lastText);
 		}, this, 0,1,2,0);
 

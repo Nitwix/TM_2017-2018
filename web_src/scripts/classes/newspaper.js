@@ -121,6 +121,10 @@ class Newspaper{
             this._posProps.headOffY = -64;
             this._posProps.sectionHeight = 100;
             this._posProps.offX = -32;
+
+            this._addChangePageBtn(true);
+            this._addChangePageBtn(false);
+
         }else if (this._template == 1) {
             title.fontSize = 80;
             this._posProps.titleOffY = -48;
@@ -132,6 +136,25 @@ class Newspaper{
 
         //pour pouvoir tweener plus tard
         this._baseEls.alpha = 0;
+    }
+
+    _addChangePageBtn(next){
+        let btn = game.make.button(0,0, "arrows", () => {
+            this._changePage(next);
+        }, this, 0, 1, 2, 0);
+        btn.scale.setTo(2);
+        let offX = -16, offY = -16, alignPos = Phaser.BOTTOM_RIGHT;
+        if(!next){
+            btn.angle = 180;
+            btn.anchor.setTo(.5);
+            alignPos = Phaser.BOTTOM_LEFT;
+        }
+        btn.alignIn(this._newspaper, alignPos, offX, offY);
+        this._baseEls.add(btn);
+    }
+
+    _changePage(next){
+        console.log(next);
     }
 
     _addContentEls(){

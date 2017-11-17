@@ -32,7 +32,7 @@ preloadState.preload = function(){
 
     //chargement des dialogues
     game.load.image("dialogBox", `${sprites}dialogs/dialogBox.png`);
-    game.load.spritesheet("nextButton", `${sprites}dialogs/nextButton.png`, 16, 16);
+    game.load.spritesheet("arrows", `${sprites}buttons/arrows.png`, 16, 16);
     //TODO: charger l'animation de Conseil
 
 };

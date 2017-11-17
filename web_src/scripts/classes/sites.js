@@ -72,8 +72,6 @@ class Site{
             this._newspaper.start();
         }else{
             let price = this._fac.upgradePrice;
-            let tmp = price.toReadableStr();
-            debugger;
             let dialDat = {
                 x:x, y:y,
                 title: "Améliorer?",
