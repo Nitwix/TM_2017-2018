@@ -4,10 +4,12 @@ globals.data.factories = {
     title: "À vendre",
     spritesheet: "factories",
     els: [
-        (new Factory("coalCentral", 0, "Centrale à charbon", 50*10**3, 5*10**6, 1, 10, 150, 1.5, "Ceci est une description supplémentaire")).dataObj,
-        (new Factory("fuelCentral", 0, "Centrale au fioul", 80*10**3, 7*10**4, 1, 10, 150, 1.5, "Ceci est une description supplémentaire")).dataObj,
-        (new Factory("gasCentral", 0, "Centrale à gaz", 120*10**3, 9*10**4, 1, 10, 150, 1.5, "Ceci est une description supplémentaire")).dataObj,
-
+        (new Factory("coalPlant", 0, "Centrale à charbon", 50*10**3, 5*10**6, 1, 10, 150, 1.5, "Ceci est une description supplémentaire")).dataObj,
+        (new Factory("fuelPlant", 0, "Centrale au fioul", 80*10**3, 7*10**4, 1, 10, 150, 1.5, "Ceci est une description supplémentaire")).dataObj,
+        (new Factory("gasPlant", 0, "Centrale à gaz", 120*10**3, 9*10**4, 1, 10, 150, 1.5, "Ceci est une description supplémentaire")).dataObj,
+        (new Factory("dam", 0, "Barrage", 120*10**3, 9*10**4, 1, 10, 150, 1.5, "Ce barrage produira de l'énergie de façon écologique.")).dataObj,
+        (new Factory("fissionPlant", 0, "Centrale nucléaire à fission", 120*10**3, 9*10**4, 1, 10, 150, 1.5, "Cette centrale risque d'exploser.")).dataObj,
+        (new Factory("windTurbines", 0, "Champ d'éoliennes", 120*10**3, 9*10**4, 1, 10, 150, 1.5, "Ce type d'énergie est très écologique.")).dataObj,
     ]
             // coalCentral: {
             //     factoryType: "coalCentral",

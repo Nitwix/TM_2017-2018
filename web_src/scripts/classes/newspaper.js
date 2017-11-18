@@ -26,10 +26,13 @@ class Newspaper{
 
         switch (template) {
             case "smallSections":
-            this._template = 0;
+                this._template = 0;
+                this._pageIndex = 0;
+                this._elsPerPage = 3;
+                this._maxPageIndex = Math.floor(data.els.length / this._elsPerPage) - 1; //parce que la numérotation commence à 0
             break;
             case "firstPage":
-            this._template = 1;
+                this._template = 1;
             break;
             default:
                 console.warn("template not found in classes/newspaper.js");
@@ -123,8 +126,11 @@ class Newspaper{
             this._posProps.offX = -32;
 
             this._addChangePageBtn(true);
-            this._addChangePageBtn(false);
 
+            this._pageNumber = game.make.bitmapText(0,0,"pixel_font", this._pageIndex+1, 24);
+            this._pageNumber.alignIn(this._newspaper, Phaser.BOTTOM_CENTER, 0, -32);
+            this._pageNumber.tint = this._fontTint;
+            this._baseEls.add(this._pageNumber);
         }else if (this._template == 1) {
             title.fontSize = 80;
             this._posProps.titleOffY = -48;
@@ -145,24 +151,51 @@ class Newspaper{
         btn.scale.setTo(2);
         let offX = -16, offY = -16, alignPos = Phaser.BOTTOM_RIGHT;
         if(!next){
-            btn.angle = 180;
+            // btn.angle = 180;
             btn.anchor.setTo(.5);
             alignPos = Phaser.BOTTOM_LEFT;
+            btn.setFrames(3,4,5,3);
+
+            this._prevPageBtn = btn;
+        }else{
+            this._nextPageBtn = btn;
         }
         btn.alignIn(this._newspaper, alignPos, offX, offY);
-        this._baseEls.add(btn);
+        this._contentEls.add(btn); //simplifie la logique de changement de page
     }
 
     _changePage(next){
-        console.log(next);
+        this._contentEls.removeAll(true);
+        if(next){
+            this._pageIndex++;
+        }else{
+            this._pageIndex--;
+        }
+
+        if(this._pageIndex == this._maxPageIndex){
+            this._addChangePageBtn(false);
+
+        }else if (this._pageIndex == 0) {
+            this._addChangePageBtn(true);
+        }else{
+            this._addChangePageBtn(false);
+            this._addChangePageBtn(true);
+        }
+
+        this._pageNumber.text = this._pageIndex + 1;
+
+        this._addContentEls();
+        this._contentEls.alpha = 1;
     }
 
     _addContentEls(){
-        //TODO: ajouter le code pour ajouter les éléments de contenus
         if(this._template == 0){
-            for(let i in this._data.els){
+            let i=this._pageIndex*this._elsPerPage;
+            let max = this._elsPerPage+this._pageIndex*this._elsPerPage;
+            for(i; i<max; i++){
+                // debugger;
                 let el = this._data.els[i];
-                this._addSection(parseInt(i), el);
+                this._addSection(parseInt(i%this._elsPerPage), el);
             }
         }else{
             for(let index in this._data.els){
@@ -205,8 +238,7 @@ class Newspaper{
             //TODO: modifier pour passer tous les arguments nécessaires à classes/factory.js
             // let fac = new Factory(el.factoryType, 0); //affiche tjs une image de niveau 1
             el.spriteIndex = el.fac.iconIndex;
-            console.log(typeof el);
-            //debugger;
+            // debugger;
             el.posTxt = el.constructionPrice.toReadableStr();
             el.posCB = () => {
                 globals.moneyMgr.buy(el.constructionPrice, () => {

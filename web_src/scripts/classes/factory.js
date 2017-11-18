@@ -51,15 +51,24 @@ class Factory{
     }
 
     get iconIndex(){
+        let maxLvl = globals.factories.maxLevel;
         switch(this.type){
             case "notUsed":
                 return this.level; //0: locked, 1: not used
-            case "coalCentral":
-                return globals.factories.maxLevel + this.level;
-            case "fuelCentral":
-                return 2*globals.factories.maxLevel + this.level;
-            case "gasCentral":
-                return 3*globals.factories.maxLevel + this.level;
+            case "coalPlant":
+                return maxLvl + this.level;
+            case "fuelPlant":
+                return 2*maxLvl + this.level;
+            case "gasPlant":
+                return 3*maxLvl + this.level;
+            case "dam":
+                return 4*maxLvl + this.level;
+            case "fissionPlant":
+                return 5*maxLvl + this.level;
+            case "windTurbines":
+                return 6*maxLvl + this.level;
+            case "solarPanels":
+                return 7*maxLvl + this.level;
             default:
             console.warn("factory not found in classes/factory.js");
         }
