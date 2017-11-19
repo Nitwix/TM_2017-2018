@@ -15,6 +15,11 @@ class Factory{
         this._addDescr = addDescr; //ajout à la description de base
     }
 
+    //pour avoir une copie parfaite de l'objet actuel (utilisé dans newspaper.js)
+    copy(){
+        return (new Factory(this._type, this._level, this._title, this._energyProduction, this._constructionPrice, this._destructionPrice / this._constructionPrice, this._CO2Production, this._grayCO2, this._upgradeCoeff, this._addDescr));
+    }
+
     get type(){
         return this._type;
     }

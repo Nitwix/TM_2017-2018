@@ -23,7 +23,6 @@ class Newspaper{
             gameEls.newspaper.stop();
         }
 
-
         switch (template) {
             case "smallSections":
                 this._template = 0;
@@ -243,7 +242,7 @@ class Newspaper{
             el.posCB = () => {
                 globals.moneyMgr.buy(el.constructionPrice, () => {
                     gameEls.newspaper.stop();
-                    this._comingFrom.fac = el.fac;
+                    this._comingFrom.fac = el.fac.copy();
                 });
             }
         }
