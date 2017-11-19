@@ -29,7 +29,6 @@ class Site{
     set fac(facObj){
         this._fac = facObj;
         globals.productionMgr.energyProduction += facObj.energyProduction;
-        debugger;
     }
 
     get fac(){
@@ -38,6 +37,11 @@ class Site{
 
     upgradeFac(){
         this.fac.upgrade();
+        this.updateBtnFrames();
+    }
+
+    unlockSite(){
+        this.fac.level++;
         this.updateBtnFrames();
     }
 
@@ -62,7 +66,7 @@ class Site{
                 posCB: () => {
                     // console.log("Unlock callback called");
                     globals.moneyMgr.buy(price, () => {
-                        this.upgradeFac();
+                        this.unlockSite();
                     })
                 }
             };

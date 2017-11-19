@@ -47,6 +47,7 @@ class MoneyDisplay{
         //TODO: (maybe) tweener la valeur au lieu de la modifier brusquement
 
         // modifie le text
+        // console.log(newVal);
         this._text.text = newVal.toReadableStr();
     }
 

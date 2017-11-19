@@ -32,6 +32,11 @@ class Factory{
         return this._energyProduction;
     }
 
+    set energyProduction(e){
+        globals.productionMgr.energyProduction += e - this._energyProduction;
+        this._energyProduction = e;
+    }
+
     set level(l){
         this._level = l;
     }
@@ -94,5 +99,8 @@ class Factory{
 
     upgrade(){
         this.level++;
+
+        this.energyProduction = this._energyProduction * this._upgradeCoeff;
+        globals.productionMgr.energy += 0;
     }
 }

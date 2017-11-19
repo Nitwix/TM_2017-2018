@@ -4,12 +4,14 @@ globals.data.factories = {
     title: "À vendre",
     spritesheet: "factories",
     els: [
-        (new Factory("coalPlant", 0, "Centrale à charbon", 50*10**3, 5e4, 1, 10, 150, 1.5, "Ceci est une description supplémentaire")).dataObj,
-        (new Factory("fuelPlant", 0, "Centrale au fioul", 80*10**3, 7*10**4, 1, 10, 150, 1.5, "Ceci est une description supplémentaire")).dataObj,
-        (new Factory("gasPlant", 0, "Centrale à gaz", 120*10**3, 9*10**4, 1, 10, 150, 1.5, "Ceci est une description supplémentaire")).dataObj,
-        (new Factory("dam", 0, "Barrage", 120*10**3, 9*10**4, 1, 10, 150, 1.5, "Ce barrage produira de l'énergie de façon écologique.")).dataObj,
-        (new Factory("fissionPlant", 0, "Centrale nucléaire à fission", 120*10**3, 9*10**4, 1, 10, 150, 1.5, "Cette centrale risque d'exploser.")).dataObj,
-        (new Factory("windTurbines", 0, "Champ d'éoliennes", 120*10**3, 9*10**4, 1, 10, 150, 1.5, "Ce type d'énergie est très écologique.")).dataObj,
+        (new Factory("coalPlant", 0, "Centrale à charbon", 5e2, 15e3, 1, 10, 150, 1.15, "Ceci est une description supplémentaire")).dataObj,
+        (new Factory("fuelPlant", 0, "Centrale au fioul", 7e2, 20e3, 1, 10, 150, 1.2, "Ceci est une description supplémentaire")).dataObj,
+        (new Factory("gasPlant", 0, "Centrale à gaz", 10e2, 30e3, 1, 10, 150, 1.25, "Ceci est une description supplémentaire")).dataObj,
+        (new Factory("dam", 0, "Barrage", 33e2, 100e3, 1, 10, 150, 1.25, "Ce barrage produira de l'énergie de façon écologique.")).dataObj,
+        (new Factory("fissionPlant", 0, "Centrale nucléaire à fission", 160e2, 500e3, 1, 10, 150, 1.1, "Cette centrale risque d'exploser.")).dataObj,
+        (new Factory("windTurbines", 0, "Champ d'éoliennes", 33e2, 100e3, 1, 10, 150, 1.25, "Ce type d'énergie est très écologique.")).dataObj,
+        (new Factory("solarPanels", 0, "Champ de panneaux solaires", 35e3, 25e3, 1, 10, 150, 1.3, "Ce type d'énergie est très écologique.")).dataObj,
+
     ]
             // coalCentral: {
             //     factoryType: "coalCentral",

@@ -7,8 +7,8 @@ class MoneyMgr{
     }
 
     set totVal(v){
-        this._totVal = v;
-        this.totMoneyDisplay.updateVal(v);
+        this._totVal = parseInt(v);
+        this.totMoneyDisplay.updateVal(parseInt(v));
     }
 
     get totVal(){
