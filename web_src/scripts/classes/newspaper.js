@@ -207,29 +207,6 @@ class Newspaper{
         this._contentEls.alpha = 0;
     }
 
-    //fade les éléments des différents groupes
-    _fade(fadeIn){
-        if(fadeIn){
-            let BETween = game.add.tween(this._baseEls);
-            BETween.to({alpha:1}, this._tweenProps.sDur);
-            BETween.start();
-
-            let CETween = game.add.tween(this._contentEls);
-            CETween.to({alpha:1}, this._tweenProps.sDur);
-            CETween.start();
-        }else{
-            let NPTween = game.add.tween(this._newspaper);
-            NPTween.to({alpha:0}, this._tweenProps.sDur);
-            NPTween.start();
-
-            NPTween.onComplete.addOnce(() => {
-                this._newspaper.destroy();
-            }, this);
-
-        }
-
-    }
-
     _addSection(index, el){
 
         //éléments spécifiques à la page d'achat des usines
@@ -285,6 +262,28 @@ class Newspaper{
 
     }
 
+    //fade les éléments des différents groupes
+    _fade(fadeIn){
+        if(fadeIn){
+            let BETween = game.add.tween(this._baseEls);
+            BETween.to({alpha:1}, this._tweenProps.sDur);
+            BETween.start();
+
+            let CETween = game.add.tween(this._contentEls);
+            CETween.to({alpha:1}, this._tweenProps.sDur);
+            CETween.start();
+        }else{
+            let NPTween = game.add.tween(this._newspaper);
+            NPTween.to({alpha:0}, this._tweenProps.sDur);
+            NPTween.start();
+
+            NPTween.onComplete.addOnce(() => {
+                this._newspaper.destroy();
+            }, this);
+
+        }
+
+    }
 
     stop(){
         //ferme un éventuel dialog qui serait resté ouvert

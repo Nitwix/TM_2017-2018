@@ -28,6 +28,10 @@ class Factory{
         return this._level;
     }
 
+    get energyProduction(){
+        return this._energyProduction;
+    }
+
     set level(l){
         this._level = l;
     }
@@ -41,7 +45,8 @@ class Factory{
     }
 
     get upgradePrice(){
-        return this._constructionPrice ** this._upgradeCoeff;
+        let prc = (this._constructionPrice*(this._level+1)) ** this._upgradeCoeff;
+        return prc;
     }
 
     get dataObj(){

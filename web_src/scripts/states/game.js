@@ -14,17 +14,29 @@ gameState.create = function(){
 
     globals.moneyMgr = new MoneyMgr(1e8);
 
-    let newspaper = new Newspaper("smallSections", globals.data.factories);
-    newspaper.start();
+    globals.productionMgr = new ProductionMgr();
+
+    globals.timeMgr = new TimeMgr(32e3, [
+        () => {
+            globals.productionMgr.update();
+        }
+    ]);
+    globals.timeMgr.startUpdate();
+
+
+
+    // let newspaper = new Newspaper("smallSections", globals.data.factories);
+    // newspaper.start();
 
 
 };
-
+let counter = 1;
 gameState.update = function(){
     //on ne peut que cliquer sur les régions lorsqu'il n'y a pas de newspaper
     if(gameEls.newspaper == undefined){
         globReg.update();
     }
+
 
     // globals.moneyMgr.totVal += 10000;
     // console.log(globals.moneyMgr.totVal);

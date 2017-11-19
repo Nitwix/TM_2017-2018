@@ -28,6 +28,8 @@ class Site{
     // la méthode updateBtnFrames serait appelée avant que les boutons des usines soient crées
     set fac(facObj){
         this._fac = facObj;
+        globals.productionMgr.energyProduction += facObj.energyProduction;
+        debugger;
     }
 
     get fac(){

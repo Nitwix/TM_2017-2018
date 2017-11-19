@@ -17,7 +17,7 @@ class MoneyDisplay{
             this.group.add(box);
         }
 
-        this._text = game.make.bitmapText(0,0,"pixel_font",this.prettyStr(val), size);
+        this._text = game.make.bitmapText(0,0,"pixel_font",val.toReadableStr(), size);
         // text.tint = 0x999999;
         this._text.alignIn(box, Phaser.LEFT_CENTER, -8, -4);
         this.group.add(this._text);
@@ -43,25 +43,11 @@ class MoneyDisplay{
         return this._val;
     }
 
-    prettyStr(val){
-        //permet d'avoir un prettyStr à partir de this.val
-        if(val == undefined){
-            val = this.val;
-        }
-
-        return val.toReadableStr();
-    }
-
     updateVal(newVal){
         //TODO: (maybe) tweener la valeur au lieu de la modifier brusquement
 
         // modifie le text
-        this._text.text = this.prettyStr(newVal);
-
-        // met à jour la position du logo mondio
-        // this._mondioLogo.alignTo(this._text, Phaser.RIGHT_CENTER, 6, 6);
-
-        // debugger;
+        this._text.text = newVal.toReadableStr();
     }
 
 
