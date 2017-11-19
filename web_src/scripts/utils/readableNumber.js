@@ -1,5 +1,5 @@
 Number.prototype.toReadableStr = function(){
-    let val = this;
+    let val = Math.floor(this);
     let kilo = "k", Mega = "M", Giga = "G", Tera = "T";
     let decimals = 1;
 
@@ -13,7 +13,8 @@ Number.prototype.toReadableStr = function(){
         if(val < 1e8){
             decimals = (val < 1e7) ? 3 : 2;
         }
-        return (val / 1e6).toFixed(decimals) + Mega;
+        //BUG: lorsque val=999'990'000, ça retourn 1000.0M à cause d'une erreur d'arrondi
+        return (val / (1e6)).toFixed(decimals) + Mega;
 
     }else if (val < 1e12) {
         if(val < 1e11){
@@ -26,6 +27,6 @@ Number.prototype.toReadableStr = function(){
             decimals = (val < 1e13) ? 3 : 2;
         }
         return (val / 1e12).toFixed(decimals) + Tera;
-        
+
     }
 }
