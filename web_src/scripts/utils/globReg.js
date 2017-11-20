@@ -10,7 +10,7 @@ globReg.init = function(){
 
     globals.regions.africa = new Region("africa", 3,
         [[343, 164], [436, 354], [513, 233], [454, 165]],
-        [[50, 50], [50, 400], [550, 50], [750, 400]]);
+        [[268, 44], [510, 57], [494, 169], [419, 370], [366, 226]]);
 
     globals.regions.southAmerica = new Region("southAmerica", 3,
         [[269, 197], [348, 229], [270, 363], [233, 231]], []);
@@ -18,10 +18,14 @@ globReg.init = function(){
     globals.regions.northAmerica = new Region("northAmerica", 3, [[111, 107], [383, 76], [268, 195], [158, 197]],
     [[200, 132], [400, 350]]);
 
+    globals.regions.asia = new Region("asia", 3, [[444,131], [457, 97], [712, 89], [703, 207], [523, 224]], []);
+
+    globals.regions.oceania = new Region("oceania", 4, [[523, 229], [700, 212], [708, 312], [511, 307]], []);
+
     for(let region in globals.regions){
         let regionObj = globals.regions[region];
         //pour parcourir seulement les propriétés ajoutées à la classe Object
-        if (!regionObj instanceof Region) {
+        if (!(regionObj instanceof Region)) {
             delete regionObj;
             continue;
         }

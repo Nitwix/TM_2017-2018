@@ -11,7 +11,7 @@ class ProductionMgr{
     }
 
     get mondioProduction(){
-        console.log(this._energyProduction , this._energyToMondio)
+        // console.log(this._energyProduction , this._energyToMondio)
         return this._energyProduction * this._energyToMondio;
     }
 
