@@ -1,8 +1,9 @@
 class Site{
-    constructor(id, x, y, facType, facLvl){
+    constructor(id, x, y, facType, facLvl, unlockPrice){
         this.id = id;
         this.pos = new Phaser.Point(x, y);
         this._fac = new Factory(facType, facLvl); //voir classes/factory.js
+        this._unlockPrice = unlockPrice;
     }
 
     //ajoute le site au game
@@ -57,15 +58,14 @@ class Site{
 
         let txt = {};
         if(this.fac.type == "notUsed" && this.fac.level == 0){ //si le site de production est verouillé
-            let price = 10000;
             let dialDat = {
                 x: x, y: y,
                 title: "Déverouiller?",
                 descr: "Ceci vous permettra d'installer un bâtiment sur cet emplacement.",
-                posTxt: price.toReadableStr(),
+                posTxt: this._unlockPrice.toReadableStr(),
                 posCB: () => {
                     // console.log("Unlock callback called");
-                    globals.moneyMgr.buy(price, () => {
+                    globals.moneyMgr.buy(this._unlockPrice, () => {
                         this.unlockSite();
                     })
                 }

@@ -7,13 +7,13 @@ class Region{
         let mp = this._poly.midPoint();
 
         //d et D sont des vecteurs directions pour le zoom
-        this.d = {
+        let d = {
             x: game.world.centerX - mp.x,
             y: game.world.centerY - mp.y
         };
-        this.D = {
-            x: scale * this.d.x,
-            y: scale * this.d.y
+        this.zoomVector = {
+            x: scale * d.x,
+            y: scale * d.y
         };
 
         //objet contenant les sites de production
@@ -25,7 +25,9 @@ class Region{
 
             //ce site de production (par exemple s1,s2,s3,...)
             let id = "s"+globals.sites.id;
-            this.sites[id] = new Site(id, point[0],point[1], "notUsed", 0); //voir classes/sites.js
+            let unlockPrice = ((globals.sites.id*10+21))**3; //NOTE: à inclure dans le rapport écrit et expliquer pourquoi j'ai fait ce choix
+            // console.log(`${id} unlockPrice: ${unlockPrice}`);
+            this.sites[id] = new Site(id, point[0], point[1], "notUsed", 0, unlockPrice); //voir classes/sites.js
 
             globals.sites.id++;
         }

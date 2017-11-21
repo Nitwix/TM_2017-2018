@@ -30,7 +30,6 @@ gameState.create = function(){
 
 
 };
-let counter = 1;
 gameState.update = function(){
     //on ne peut que cliquer sur les régions lorsqu'il n'y a pas de newspaper
     if(gameEls.newspaper == undefined){

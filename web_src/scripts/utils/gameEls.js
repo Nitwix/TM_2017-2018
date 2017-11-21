@@ -28,6 +28,20 @@ gameEls.setup.UI = function(){
     //autres éléments permanents de l'UI...
 }
 
+//ferme les éléments qui sont décrits ci-dessous
+gameEls.stopTmpEls = function(){
+    //ferme le newspaper si on click pour revenir à la worldview
+    if(gameEls.dialog != undefined){
+        gameEls.dialog.stop();
+    }
+    if(gameEls.newspaper != undefined){
+        gameEls.newspaper.stop();
+    }
+    if(gameEls.smallDialog != undefined){
+        gameEls.smallDialog.stop();
+    }
+}
+
 /** @type {(Dialog|undefined)} */
 gameEls.dialog = undefined;
 

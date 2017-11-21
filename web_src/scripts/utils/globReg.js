@@ -62,6 +62,8 @@ globReg.update = function(){
 globReg.goto = {};
 
 globReg.goto.region = function(region){
+    gameEls.stopTmpEls();
+
     globals.currentRegion = region.name;
 
     this.zoom = game.add.tween(gameEls.earthMap);
@@ -69,12 +71,11 @@ globReg.goto.region = function(region){
     let mp = region.poly.midPoint();
 
     let scale = region.scale;
-    let d = region.d;
-    let D = region.D;
+    let zoomVector = region.zoomVector;
 
     this.zoom.to({
-        x: game.world.centerX + D.x,
-        y: game.world.centerY + D.y,
+        x: game.world.centerX + zoomVector.x,
+        y: game.world.centerY + zoomVector.y,
         width: gameEls.earthMap.width*scale,
         height: gameEls.earthMap.height*scale
     }, region.zoomDuration, "Quad.easeIn");
@@ -86,14 +87,11 @@ globReg.goto.region = function(region){
     }, this);
 
     globReg.canZoom = false;
-
-
 }
 
 globReg.goto.world = function(region){
-    if(gameEls.smallDialog != undefined){
-        gameEls.smallDialog.stop();
-    }
+    gameEls.stopTmpEls(); //voir utils/gameEls.js
+
     globals.currentRegion = "";
 
     this.unzoom = game.add.tween(gameEls.earthMap);
@@ -114,9 +112,4 @@ globReg.goto.world = function(region){
     this.unzoom.start();
 
     region.uninit();
-
-    //ferme le newspaper si on click pour revenir à la worldview
-    if(gameEls.newspaper != undefined){
-        gameEls.newspaper.stop();
-    }
 }
