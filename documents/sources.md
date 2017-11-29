@@ -8,7 +8,8 @@
 - [Centrales thermiques](https://fr.wikipedia.org/wiki/Centrale_thermique#Centrales_.C3.A0_turbines_.C3.A0_combustion) (06.09.2017)
 - [Effet photoélectrique (panneaux photovolaïques)](https://fr.wikipedia.org/wiki/Effet_photo%C3%A9lectrique#Histoire) (06.09.2017)
 - [Types de centrales électriques](https://fr.wikipedia.org/wiki/Centrale_%C3%A9lectrique#Types_de_production_d.E2.80.99.C3.A9lectricit.C3.A9) (15.11.2017)
-
+- [évolution de la concentration de CO2 dans l'atmosphère](https://en.wikipedia.org/wiki/Carbon_dioxide_in_Earth%27s_atmosphere) (29.11.2017)
+- [mesures de la temperature globale annuelle et de la concentration de CO2](https://climate.nasa.gov/vital-signs) (29.11.2017)
 
 
 ## Ressources utilisées

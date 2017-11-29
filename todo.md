@@ -11,6 +11,8 @@
     - affiche un newspaper
     - fait diminuer la population
     - le site de production sur lequel la centrale se trouvait coûte **très** cher à décontaminer/redébloquer
+- faire des recherche concernant le taux de carbon dans l'atmosphère et son évolution
+- ajouter une tint à la camera en fonction de la concentration de CO<sub>2</sub> dans l'atmosphère
 
 ## Grands objectifs
 - commencer la rédaction du document écrit
