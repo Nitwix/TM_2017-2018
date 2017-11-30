@@ -37,6 +37,10 @@ class Factory{
         this._energyProduction = e;
     }
 
+    get destructionPrice(){
+        return this._destructionPrice;
+    }
+
     set level(l){
         this._level = l;
     }

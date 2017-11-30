@@ -41,6 +41,11 @@ class Site{
         this.updateBtnFrames();
     }
 
+    destroyFac(){
+        this.fac = new Factory("notUsed", 1, "empty", -this.fac.energyProduction); //production negative pour diminuer la production d'énergie
+        this.updateBtnFrames();
+    }
+
     unlockSite(){
         this.fac.level++;
         this.updateBtnFrames();
@@ -68,7 +73,7 @@ class Site{
                     globals.moneyMgr.buy(this._unlockPrice, () => {
                         this.unlockSite();
                     })
-                }
+                },
             };
             this._dialog = new SmallDialog(dialDat);
 
@@ -77,15 +82,22 @@ class Site{
             this._newspaper = new Newspaper("smallSections", globals.data.factories, this);
             this._newspaper.start();
         }else{
-            let price = this._fac.upgradePrice;
+            let upgPrc = this._fac.upgradePrice;
+            let desPrc = this._fac.destructionPrice;
             let dialDat = {
                 x:x, y:y,
                 title: "Améliorer?",
                 descr: "Votre usine produira plus.",
-                posTxt: price.toReadableStr(),
+                posTxt: upgPrc.toReadableStr(),
                 posCB: () => {
-                    globals.moneyMgr.buy(price, () => {
+                    globals.moneyMgr.buy(upgPrc, () => {
                         this.upgradeFac();
+                    });
+                },
+                negTxt: desPrc.toReadableStr(),
+                negCB: () => {
+                    globals.moneyMgr.buy(desPrc, () => {
+                        this.destroyFac();
                     });
                 }
             };
