@@ -4,6 +4,8 @@ class Site{
         this.pos = new Phaser.Point(x, y);
         this._fac = new Factory(facType, facLvl); //voir classes/factory.js
         this._unlockPrice = unlockPrice;
+
+        globals.sites.instances.push(this);
     }
 
     //ajoute le site au game
@@ -29,7 +31,6 @@ class Site{
     // la méthode updateBtnFrames serait appelée avant que les boutons des usines soient crées
     set fac(facObj){
         this._fac = facObj;
-        globals.productionMgr.energyProduction += facObj.energyProduction;
     }
 
     get fac(){
@@ -42,7 +43,7 @@ class Site{
     }
 
     destroyFac(){
-        this.fac = new Factory("notUsed", 1, "empty", -this.fac.energyProduction); //production negative pour diminuer la production d'énergie
+        this.fac = new Factory("notUsed", 1); //production negative pour diminuer la production d'énergie
         this.updateBtnFrames();
     }
 

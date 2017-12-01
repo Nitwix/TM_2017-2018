@@ -12,7 +12,7 @@ gameState.create = function(){
     /*this.conseilRect = new Phaser.Rectangle(0, 0, 96, 128);
     cornerObj(this.conseilRect, 10, "sw");*/
 
-    globals.moneyMgr = new MoneyMgr(25e4);
+    globals.moneyMgr = new MoneyMgr(25e3);
 
     globals.productionMgr = new ProductionMgr();
 
@@ -27,6 +27,11 @@ gameState.create = function(){
 
     // let newspaper = new Newspaper("smallSections", globals.data.factories);
     // newspaper.start();
+
+    let aspirateurAPoules = {};
+    aspirateurAPoules.activer = function(){
+        alert("C'est cruel!");
+    };
 
 
 };

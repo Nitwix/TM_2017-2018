@@ -5,8 +5,11 @@ class ProductionMgr{
     }
 
     update(){
-        // console.log(this.mondioProduction)
-        // debugger;
+        let totProd = 0;
+        for(let s of globals.sites.instances){
+            totProd += (s.fac.energyProduction != undefined) ? s.fac.energyProduction : 0;
+        }
+        this.energyProduction = totProd;
         globals.moneyMgr.totVal += this.mondioProduction;
     }
 
