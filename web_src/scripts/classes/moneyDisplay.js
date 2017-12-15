@@ -10,7 +10,7 @@ class MoneyDisplay{
 
         this.group = game.add.group();
 
-        let box = game.make.image(0,0,"mondioBox");
+        let box = game.make.image(0,0,"smallDisplayBox");
         box.alignIn(objToAlignIn, alignPos, offX, offY);
         box.scale.setTo(2);
         if(inABox){ // affiche la box seulement si inABox == true

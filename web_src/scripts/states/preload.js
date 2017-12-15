@@ -25,7 +25,7 @@ preloadState.preload = function(){
 
 	//chargement des mondios
 	game.load.spritesheet("mondioLogo", `${sprites}mondio/icon.png`, 32, 16);
-	game.load.image("mondioBox", `${sprites}mondio/displayBox.png`);
+	game.load.image("smallDisplayBox", `${sprites}mondio/displayBox.png`);
 
 	//chargement des éléments de Newspaper
 	game.load.spritesheet("newspaper", `${sprites}newspaper/newspaper.png`, 150, 100)

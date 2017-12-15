@@ -106,6 +106,8 @@ class SmallDialog{
             this._addNegBtn(false);
         }else if(this._data.posTxt != undefined){
             this._addPosBtn(false);
+        }else if(this._data.negTxt != undefined){
+            this._addNegBtn(false);
         }else{
             descrWidth = this._box.width - 16;
         }
@@ -113,8 +115,6 @@ class SmallDialog{
 
 
         this._addDescr(descrWidth);
-
-        //TODO (maybe): ajouter la possibilité de n'avoir qu'un seul bouton négatif
 
         this._dialog.alpha = 0;
         let SDTween = game.add.tween(this._dialog);

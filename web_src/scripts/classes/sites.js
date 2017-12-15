@@ -104,10 +104,18 @@ class Site{
             };
 
             if(!this.fac.canUpgrade){
-                dialDat.title = "Erreur";
-                dialDat.descr = "Vous ne pouvez pas améliorer cette usine d'avantage";
+                dialDat.title = "Amélioration impossible";
+                dialDat.descr = "Voulez-vouz détruire cette usine?";
+
                 dialDat.posTxt = undefined;
                 dialDat.posCB = undefined;
+
+                dialDat.negTxt = desPrc.toReadableStr();
+                dialDat.negCB = () => {
+                        globals.moneyMgr.buy(desPrc, () => {
+                            this.destroyFac();
+                        });
+                };
             }
 
             this._dialog = new SmallDialog(dialDat);

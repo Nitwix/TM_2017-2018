@@ -105,6 +105,5 @@ class Factory{
         this.level++;
 
         this.energyProduction = this._energyProduction * this._upgradeCoeff;
-        globals.productionMgr.energy += 0;
     }
 }

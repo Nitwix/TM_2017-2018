@@ -3,7 +3,6 @@
 - dessiner la carte du monde
 - dessiner Conseil
 - (maybe) afficher l'icone Mondio dans smallDialog quand on veut acheter qqch
-- ajouter la possibilité de détruire une centrale (coûte de l'argent)
 - ajouter un compteur de population
 - ajouter une mesure de la production de CO<sub>2</sub> de la population
 - ajouter des évènements historiques affichés dans un newspaper
@@ -66,3 +65,4 @@
 - ajouter la méthode "upgrade" à la classe Site qui permettra de d'améliorer le site de production (19.11.2017)
     - fera apelle à ProductionMgr pour mettre à jour la production par rapport au niveau de l'usine
     - mettra à jour l'affichage du site du bouton
+- ajouter la possibilité de détruire une centrale (coûte de l'argent) (30.11.2017)
