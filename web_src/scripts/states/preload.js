@@ -16,7 +16,8 @@ preloadState.preload = function(){
 	//chargement de l'UI
 	game.load.spritesheet("buttons", `${sprites}buttons/buttons.png`, 32, 32);
     game.load.spritesheet("wide_buttons", `${sprites}buttons/wide_buttons.png`, 64, 32);
-    game.load.spritesheet("factories", `${sprites}factories/factories.png`, 32, 32);
+	game.load.spritesheet("factories", `${sprites}factories/factories.png`, 32, 32);
+	game.load.spritesheet("speed", `${sprites}buttons/speed.png`, 14, 11);
 
 	//chargement des éléments utilisés dans SmallDialog
     game.load.spritesheet("smallDBox", `${sprites}smallDialog/box.png`, 128, 64); //fond de la boîte permettant de déverouiller ou d'améliorer qqch
