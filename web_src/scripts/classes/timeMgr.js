@@ -33,8 +33,6 @@ class TimeMgr{
                 this._yearUpdate();
                 this._lastYUSec = curSec;
                 console.log("yearUpdate called");
-            }else{
-                // console.log(Math.floor(this._timer.seconds) , (this._yearDuration/1000));
             }
         }, this);
         this._timer.start();
@@ -69,9 +67,9 @@ class TimeMgr{
         this._callbacks.push(callback);
     }
 
-    //TODO
+    //Works! :)
     set yearDuration(d){
         this._yearDuration = d;
-
+        this._timerLoop.delay = this._delay;
     }
 }
