@@ -6,27 +6,35 @@ class TimeMgr{
             secYearDuration: 32
         };
 
-        this._yearDuration = 8000;//yearDuration;
+        this._yearDuration = 2000;//yearDuration;
         this._timer = game.time.create();
 
         this._callbacks = callbacks; //array de callbacks
 
-        this._year = 1800;
+        this._year = 1799;
+        this._lastYUSec = -1;
+    }
+
+    get _delay(){
+        let delay = this._yearDuration / (2*this._CONSTANTS.secYearDuration);
+        return delay; //donc le delay de base est de 500ms (pour un yearDuration de 32s)
     }
 
     startUpdate(){
-        let delay = this._yearDuration / (2*this._CONSTANTS.msYearDuration);
-        delay *= 1000; //donc le delay de base est de 500ms (pour un yearDuration de 32s)
-        delay = Math.floor(delay);
-        debugger;
-        this._timer.loop(delay, () => {
+        let delay = this._delay;
+        this._timerLoop = this._timer.loop(delay, () => {
             for(let c of this._callbacks){
                 c();
             }
 
-            if(Math.floor(this._timer.seconds) % (this._yearDuration*1000) === 0){
+            let curSec = Math.floor(this._timer.seconds);
+
+            if(Math.floor(this._timer.seconds) % (this._yearDuration/1000) === 0 && this._lastYUSec != curSec){
                 this._yearUpdate();
+                this._lastYUSec = curSec;
                 console.log("yearUpdate called");
+            }else{
+                // console.log(Math.floor(this._timer.seconds) , (this._yearDuration/1000));
             }
         }, this);
         this._timer.start();
@@ -63,6 +71,7 @@ class TimeMgr{
 
     //TODO
     set yearDuration(d){
+        this._yearDuration = d;
 
     }
 }
