@@ -87,7 +87,7 @@ class TimeMgr{
     _showTimeScale(){
         let scaleText = game.add.bitmapText(0,0,"pixel_font", `x${this._timeScale}`, 64);
         scaleText.alpha = 0;
-        scaleText.alignIn(game.world, Phaser.CENTER);
+        scaleText.alignIn(game.world, Phaser.CENTER, 0, -16);
 
         let textTween = game.add.tween(scaleText);
         textTween.to({alpha:1}, 500, Phaser.Easing.Bounce.lnOut, true, 0, 0, true);

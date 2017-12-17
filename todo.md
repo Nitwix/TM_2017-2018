@@ -12,14 +12,10 @@
     - le site de production sur lequel la centrale se trouvait coûte **très** cher à décontaminer/redébloquer
 - faire des recherche concernant le taux de carbon dans l'atmosphère et son évolution
 - ajouter une tint à la camera en fonction de la concentration de CO<sub>2</sub> dans l'atmosphère
-- modifier le système de management de la production d'énergie (array des factory)
 
 ## Grands objectifs
 - commencer la rédaction du document écrit
 - classe TimeMgr
-    <!-- - appelle le ProductionMgr tous les 1/32 de yearTime (32s) -->
-    - yearTime peut être accéléré ou ralenti
-    - afficher l'année
     - _maybe_ mettre un résumé des productions de l'année à la fin de chaque année
 - faire la musique du jeu + les effets sonores
 - faire des recherches concernant les centrales; trouver :
