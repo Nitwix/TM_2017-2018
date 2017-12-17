@@ -66,3 +66,6 @@
     - fera apelle à ProductionMgr pour mettre à jour la production par rapport au niveau de l'usine
     - mettra à jour l'affichage du site du bouton
 - ajouter la possibilité de détruire une centrale (coûte de l'argent) (30.11.2017)
+- classe TimeMgr (17.12.2017)
+    - yearTime peut être accéléré ou ralenti
+    - afficher l'année

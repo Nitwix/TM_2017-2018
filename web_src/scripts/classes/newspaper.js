@@ -78,7 +78,7 @@ class Newspaper{
         this._newspaper.angle = game.rnd.between(165,180) * mult;
         this._newspaper.anchor.setTo(.5);
         this._newspaper.alpha = .8;
-        this._newspaper.alignIn(game.world, Phaser.CENTER, 12);
+        this._newspaper.alignIn(game.world, Phaser.CENTER, 0, 18);
 
         //TODO: (peut-être) : trouver un moyen d'avoir une plus grande rotation
         //newspaper scale tween

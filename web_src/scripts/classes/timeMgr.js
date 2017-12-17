@@ -13,6 +13,8 @@ class TimeMgr{
 
         this._year = 1799;
         this._lastYUSec = -1;
+
+        this._timeScale = 1;
     }
 
     get _delay(){
@@ -59,18 +61,36 @@ class TimeMgr{
         this._yearDisplayGroup.add(this._yearText);
 
         //TODO: afficher un text qui fadein et fadeout avec l'échelle de temps chaque fois qu'on clique sur un des boutons
-        //TODO: limiter l'échelle de temps à un range de [1/8, 8]
+        //TODO: limiter l'échelle de temps à un range de [1/4, 4]
         let slowDown = game.make.button(0,0,"speed", () => {
-            this.yearDuration *= 2;
+            if(this._timeScale > 1/4){
+                this.yearDuration *= 2;
+                this._timeScale /= 2;
+            }
+            this._showTimeScale();
         }, this,0,0,0,0);
         slowDown.alignIn(box, Phaser.LEFT_CENTER, -6);
         this._yearDisplayGroup.add(slowDown);
 
         let speedUp = game.make.button(0, 0, "speed", () => {
-            this.yearDuration /= 2;
+            if(this._timeScale < 4){
+                this.yearDuration /= 2;
+                this._timeScale *= 2;
+            }
+            this._showTimeScale();
+
         }, this, 1, 1, 1, 1);
         speedUp.alignIn(box, Phaser.RIGHT_CENTER, -6);
         this._yearDisplayGroup.add(speedUp);
+    }
+
+    _showTimeScale(){
+        let scaleText = game.add.bitmapText(0,0,"pixel_font", `x${this._timeScale}`, 64);
+        scaleText.alpha = 0;
+        scaleText.alignIn(game.world, Phaser.CENTER);
+
+        let textTween = game.add.tween(scaleText);
+        textTween.to({alpha:1}, 500, Phaser.Easing.Bounce.lnOut, true, 0, 0, true);
     }
 
     _updateYearDisplay(){
