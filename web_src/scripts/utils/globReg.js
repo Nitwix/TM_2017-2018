@@ -13,14 +13,16 @@ globReg.init = function(){
         [[268, 44], [510, 57], [494, 169], [419, 370], [366, 226]]);
 
     globals.regions.southAmerica = new Region("southAmerica", 3,
-        [[269, 197], [348, 229], [270, 363], [233, 231]], []);
+        [[269, 197], [348, 229], [270, 363], [233, 231]], [[432, 110], [535, 179], [409, 238], [398, 347]]);
 
     globals.regions.northAmerica = new Region("northAmerica", 3, [[111, 107], [383, 76], [268, 195], [158, 197]],
-    [[200, 132], [400, 350]]);
+    [[200, 132], [400, 350], [484, 273], [417, 286], [424, 207], [278, 239]]);
 
-    globals.regions.asia = new Region("asia", 3, [[444,131], [457, 97], [712, 89], [703, 207], [523, 224]], []);
+    globals.regions.asia = new Region("asia", 3, [[444,131], [457, 97], [712, 89], [703, 207], [523, 224]], 
+    [[583, 134], [507, 305], [445, 373], [392, 297], [634, 258], [304, 355], [204, 181]]);
 
-    globals.regions.oceania = new Region("oceania", 4, [[523, 229], [700, 212], [708, 312], [511, 307]], []);
+    globals.regions.oceania = new Region("oceania", 4, [[523, 229], [700, 212], [708, 312], [511, 307]], 
+    [[567, 102], [360, 76], [613, 234], [390, 284]]);
 
     for(let region in globals.regions){
         let regionObj = globals.regions[region];

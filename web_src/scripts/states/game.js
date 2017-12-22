@@ -47,14 +47,14 @@ gameState.update = function(){
 
     //Permet d'obtenir le x et y quand on clique
     if(game.input.activePointer.isDown){
-        // console.log(game.input.x, game.input.y);
+        console.log(game.input.x, game.input.y);
     }
 }
 
 
 
 gameState.render = function(){
-    // game.debug.inputInfo(10,10);
+    //game.debug.inputInfo(10,10);
     //game.debug.geom(this.conseilRect);
 
 }
