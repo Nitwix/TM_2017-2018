@@ -3,7 +3,10 @@ class TimeMgr{
     constructor(yearDuration, callbacks){
         this._CONSTANTS = {
             msYearDuration: 32000,
-            secYearDuration: 32
+            secYearDuration: 32,
+
+            maxTimeScale: 8,
+            minTimeScale: 1/8
         };
 
         this._yearDuration = yearDuration;
@@ -31,7 +34,7 @@ class TimeMgr{
 
             let curSec = Math.floor(this._timer.seconds);
 
-            //BUG: la yearUpdate s'effectue au maximum une fois par seconde 
+            //BUG: la yearUpdate s'effectue au maximum une fois par seconde
             if(Math.floor(this._timer.seconds) % (this._yearDuration/1000) === 0 && this._lastYUSec != curSec){
                 this._yearUpdate();
                 this._lastYUSec = curSec;
@@ -63,7 +66,7 @@ class TimeMgr{
         //TODO: afficher un text qui fadein et fadeout avec l'échelle de temps chaque fois qu'on clique sur un des boutons
         //TODO: limiter l'échelle de temps à un range de [1/4, 4]
         let slowDown = game.make.button(0,0,"speed", () => {
-            if(this._timeScale > 1/4){
+            if(this._timeScale > this._CONSTANTS.minTimeScale){
                 this.yearDuration *= 2;
                 this._timeScale /= 2;
             }
@@ -73,7 +76,7 @@ class TimeMgr{
         this._yearDisplayGroup.add(slowDown);
 
         let speedUp = game.make.button(0, 0, "speed", () => {
-            if(this._timeScale < 4){
+            if(this._timeScale < this._CONSTANTS.maxTimeScale){
                 this.yearDuration /= 2;
                 this._timeScale *= 2;
             }
@@ -103,7 +106,7 @@ class TimeMgr{
     }
 
     get yearDuration(){
-        return this._yearDuration; 
+        return this._yearDuration;
     }
     //Works! :)
     set yearDuration(d){

@@ -67,7 +67,7 @@ class Site{
             let dialDat = {
                 x: x, y: y,
                 title: "Déverouiller?",
-                descr: "Ceci vous permettra d'installer un bâtiment sur cet emplacement.",
+                descr: "Ceci vous permettra d'installer une centrale sur cet emplacement.",
                 posTxt: this._unlockPrice.toReadableStr(),
                 posCB: () => {
                     // console.log("Unlock callback called");
@@ -88,7 +88,7 @@ class Site{
             let dialDat = {
                 x:x, y:y,
                 title: "Améliorer?",
-                descr: "Votre usine produira plus.",
+                descr: "Votre usine produira plus. Vous pouvez également la détruire.",
                 posTxt: upgPrc.toReadableStr(),
                 posCB: () => {
                     globals.moneyMgr.buy(upgPrc, () => {

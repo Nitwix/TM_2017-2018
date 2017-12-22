@@ -28,12 +28,6 @@ gameState.create = function(){
     // let newspaper = new Newspaper("smallSections", globals.data.factories);
     // newspaper.start();
 
-    let aspirateurAPoules = {};
-    aspirateurAPoules.activer = function(){
-        alert("C'est cruel!");
-    };
-
-
 };
 gameState.update = function(){
     //on ne peut que cliquer sur les régions lorsqu'il n'y a pas de newspaper

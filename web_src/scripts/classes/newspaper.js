@@ -28,7 +28,7 @@ class Newspaper{
                 this._template = 0;
                 this._pageIndex = 0;
                 this._elsPerPage = 3;
-                this._maxPageIndex = Math.floor(data.els.length / this._elsPerPage) - 1; //parce que la numérotation commence à 0
+                this._maxPageIndex = Math.floor(data.els.length / this._elsPerPage); //parce que la numérotation commence à 0
             break;
             case "firstPage":
                 this._template = 1;

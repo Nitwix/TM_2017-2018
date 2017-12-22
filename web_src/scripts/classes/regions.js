@@ -55,7 +55,8 @@ class Region{
                 globReg.goto.world(this);
             }, this, 6,7,8,6);
             this._worldButton.scale.setTo(globals.UI.smallButtonScale);
-            this._worldButton.alignTo(gameEls.fsButt, Phaser.BOTTOM_CENTER, 0, globals.UI.buttonOffset);
+            //this._worldButton.alignTo(gameEls.fsButt, Phaser.BOTTOM_CENTER, 0, globals.UI.buttonOffset);
+            cornerObj(this._worldButton, globals.UI.buttonOffset, "se");
         }
 
         //affiche les sites de production
