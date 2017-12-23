@@ -41,7 +41,7 @@ gameState.update = function(){
 
     //Permet d'obtenir le x et y quand on clique
     if(game.input.activePointer.isDown){
-        console.log(game.input.x, game.input.y);
+        // console.log(game.input.x, game.input.y);
     }
 }
 

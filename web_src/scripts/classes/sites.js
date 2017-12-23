@@ -73,6 +73,7 @@ class Site{
                     // console.log("Unlock callback called");
                     globals.moneyMgr.buy(this._unlockPrice, () => {
                         this.unlockSite();
+                        this._showFacShop();
                     })
                 },
             };
@@ -80,8 +81,7 @@ class Site{
 
             this._dialog.start();
         }else if(this.fac.type == "notUsed" && this.fac.level == 1){
-            this._newspaper = new Newspaper("smallSections", globals.data.factories, this);
-            this._newspaper.start();
+            this._showFacShop();
         }else{
             let upgPrc = this._fac.upgradePrice;
             let desPrc = this._fac.destructionPrice;
@@ -122,6 +122,11 @@ class Site{
             this._dialog.start();
         }
 
+    }
+
+    _showFacShop(){
+        let newspaper = new Newspaper("smallSections", globals.data.factories, this);
+        newspaper.start();
     }
 
     _closeDialogBox(){

@@ -15,15 +15,21 @@ gameEls.setup.earthMap = function(){
 }
 
 gameEls.setup.UI = function(){
-    gameEls.fsButt = game.add.button(0,0,"buttons",function(){
+    gameEls.fsBtn = game.add.button(0,0,"buttons",() => {
         if(game.scale.isFullScreen){
             game.scale.stopFullScreen();
         }else{
             game.scale.startFullScreen();
         }
     },this,3,4,5,3);
-    gameEls.fsButt.scale.setTo(globals.UI.smallButtonScale);
-    cornerObj(gameEls.fsButt, globals.UI.buttonOffset, "ne");
+    gameEls.fsBtn.scale.setTo(globals.UI.smallButtonScale);
+    cornerObj(gameEls.fsBtn, globals.UI.buttonOffset, "ne");
+
+    gameEls.researchBtn = game.add.button(0,0,"buttons", () => {
+        console.log("Let's research some shit");
+    }, this, 9,10,11,9);
+    gameEls.researchBtn.scale.setTo(globals.UI.smallButtonScale);
+    gameEls.researchBtn.alignTo(gameEls.fsBtn, Phaser.BOTTOM_CENTER);
 
     //autres éléments permanents de l'UI...
 }

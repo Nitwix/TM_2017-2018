@@ -1,5 +1,3 @@
-//TODO: se calmer sérieusement sur les prix et les coefficients
-
 globals.data.factories = {
     title: "À vendre",
     spritesheet: "factories",
@@ -11,7 +9,7 @@ globals.data.factories = {
         (new Factory("fissionPlant", 0, "Centrale nucléaire à fission", 160e2, 500e3, 1, 10, 150, 1.1, "Cette centrale risque d'exploser.")).dataObj,
         (new Factory("windTurbines", 0, "Champ d'éoliennes", 33e2, 100e3, 1, 10, 150, 1.25, "Ce type d'énergie est très écologique.")).dataObj,
         (new Factory("solarPanels", 0, "Champ de panneaux solaires", 35e3, 25e3, 1, 10, 150, 1.3, "Ce type d'énergie est très écologique.")).dataObj,
-
+        (new Factory("fusionPlant", 0, "Centrale nucléaire à fusion", 3e5, 1e6, 2, 0, 10e3, 1.25, "C'est le futur.")).dataObj
     ]
             // coalCentral: {
             //     factoryType: "coalCentral",

@@ -88,6 +88,10 @@ class Factory{
                 return 6*maxLvl + this.level;
             case "solarPanels":
                 return 7*maxLvl + this.level;
+            case "geothermalPlant":
+                return 8*maxLvl + this.level;
+            case "fusionPlant":
+                return 9*maxLvl + this.level; 
             default:
             console.warn("factory not found in classes/factory.js");
         }

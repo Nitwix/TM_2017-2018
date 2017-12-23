@@ -194,6 +194,7 @@ class Newspaper{
             for(i; i<max; i++){
                 // debugger;
                 let el = this._data.els[i];
+                if (el == undefined) continue;
                 this._addSection(parseInt(i%this._elsPerPage), el);
             }
         }else{
