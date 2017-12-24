@@ -117,7 +117,6 @@ class Site{
                         });
                 };
             }
-
             this._dialog = new SmallDialog(dialDat);
             this._dialog.start();
         }
@@ -125,7 +124,7 @@ class Site{
     }
 
     _showFacShop(){
-        let newspaper = new Newspaper("smallSections", globals.data.factories, this);
+        let newspaper = new Newspaper("smallSections", globals.data.factoryShop, this);
         newspaper.start();
     }
 

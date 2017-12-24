@@ -13,6 +13,7 @@ class TimeMgr{
         this._timer = game.time.create();
 
         this._callbacks = callbacks; //array de callbacks
+        this._YUCallbacks = [];
 
         this._year = 1799;
         this._lastYUSec = -1;
@@ -47,6 +48,10 @@ class TimeMgr{
     }
 
     _yearUpdate(){
+        for(let c of this._YUCallbacks){
+            c();
+        }
+
         this._year++;
         this._updateYearDisplay();
     }
@@ -100,9 +105,14 @@ class TimeMgr{
         this._yearText.text = this._year;
     }
 
-    //TODO: tester pour voir si ça fonctionne bien
+    //NOTE: ne fonctionne pas lorsque le cb fait appel à this
     addCallback(callback){
         this._callbacks.push(callback);
+    }
+
+    //ajoute un callback pour la methode 'yearUpdate'
+    addYUCallback(callback){
+        this._YUCallbacks.push(callback);
     }
 
     get yearDuration(){

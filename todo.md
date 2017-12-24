@@ -12,6 +12,8 @@
     - le site de production sur lequel la centrale se trouvait coûte **très** cher à décontaminer/redébloquer
 - faire des recherche concernant le taux de carbon dans l'atmosphère et son évolution
 - ajouter une tint à la camera en fonction de la concentration de CO<sub>2</sub> dans l'atmosphère
+- corriger le bug du nb de page du newspaper de factoryResearch/factoryShop
+- corriger le bug du newspaper ouvert par un site puis par researchBtn
 
 ## Grands objectifs
 - commencer la rédaction du document écrit

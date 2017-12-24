@@ -19,9 +19,7 @@ class Newspaper{
         //     ]
         // }
 
-        if(gameEls.newspaper != undefined){
-            gameEls.newspaper.stop();
-        }
+        gameEls.stopTmpEls();
 
         switch (template) {
             case "smallSections":
@@ -208,18 +206,35 @@ class Newspaper{
         this._contentEls.alpha = 0;
     }
 
+    _purposeSpecificMods(el){
+        //éléments spécifiques à la page d'achat des usines
+        switch(this._data.purpose){
+            case "factoryShop":
+                el.posTxt = el.fac.constructionPrice.toReadableStr();
+                el.posCB = () => {
+                    globals.moneyMgr.buy(el.fac.constructionPrice, () => {
+                        gameEls.newspaper.stop();
+                        this._comingFrom.fac = el.fac.copy();
+                    });
+                };
+                break;
+            case "factoryResearch":
+                el.posTxt = el.fac.researchPrice.toReadableStr();
+                el.posCB = () => {
+                    globals.moneyMgr.buy(el.fac.researchPrice, () => {
+                        console.log(`You invested ${el.fac.researchPrice} in research for ${el.fac.type}`);
+                        
+                    });
+                };
+                break;
+            default:
+                console.log("no mods made to el in np purposeSpecificMods");
+        }
+    }
+
     _addSection(index, el){
 
-        //éléments spécifiques à la page d'achat des usines
-        if(this._data.spritesheet == "factories"){
-            el.posCB = () => {
-                globals.moneyMgr.buy(el.fac._constructionPrice, () => {
-                    gameEls.newspaper.stop();
-                    this._comingFrom.fac = el.fac.copy();
-                });
-            }
-        }
-
+        this._purposeSpecificMods(el);
 
         //positionnement par raport au TOP_LEFT
         let offY = this._posProps.headOffY - index * this._posProps.sectionHeight;

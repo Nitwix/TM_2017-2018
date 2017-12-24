@@ -9,6 +9,7 @@ class Factory{
         this._energyProduction = energyProduction;
         this._constructionPrice = constructionPrice;
         this._destructionPrice = constructionPrice * destrCoeff;
+        this._researchPrice = 2*constructionPrice;
         this._CO2Production = CO2Production;
         this._grayCO2 = grayCO2;
         this._upgradeCoeff = upgradeCoeff;
@@ -37,8 +38,16 @@ class Factory{
         this._energyProduction = e;
     }
 
+    get constructionPrice(){
+        return this._constructionPrice;
+    }
+
     get destructionPrice(){
         return this._destructionPrice;
+    }
+
+    get researchPrice(){
+        return this._researchPrice;
     }
 
     set level(l){
@@ -63,7 +72,7 @@ class Factory{
             spriteIndex: this.iconIndex,
             title: this._title,
             descr: this.descr,
-            posTxt: this._constructionPrice.toReadableStr(),
+            posTxt: "s.b.mod.",
             fac: this //reference à cet instance de Factory
         };
         return obj;
@@ -80,7 +89,7 @@ class Factory{
                 return 2*maxLvl + this.level;
             case "gasPlant":
                 return 3*maxLvl + this.level;
-            case "dam":
+            case "hydroPlant":
                 return 4*maxLvl + this.level;
             case "fissionPlant":
                 return 5*maxLvl + this.level;

@@ -25,6 +25,8 @@ gameState.create = function(){
 
     globals.productionMgr.energyProduction = 0;
 
+    globals.researchMgr = new ResearchMgr();
+
     // let newspaper = new Newspaper("smallSections", globals.data.factories);
     // newspaper.start();
 
