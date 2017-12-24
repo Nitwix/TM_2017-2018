@@ -212,13 +212,8 @@ class Newspaper{
 
         //éléments spécifiques à la page d'achat des usines
         if(this._data.spritesheet == "factories"){
-            //TODO: modifier pour passer tous les arguments nécessaires à classes/factory.js
-            // let fac = new Factory(el.factoryType, 0); //affiche tjs une image de niveau 1
-            el.spriteIndex = el.fac.iconIndex;
-            // debugger;
-            el.posTxt = el.constructionPrice.toReadableStr();
             el.posCB = () => {
-                globals.moneyMgr.buy(el.constructionPrice, () => {
+                globals.moneyMgr.buy(el.fac._constructionPrice, () => {
                     gameEls.newspaper.stop();
                     this._comingFrom.fac = el.fac.copy();
                 });

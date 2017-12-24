@@ -1,7 +1,7 @@
 class ProductionMgr{
     constructor(){
         this._energyProduction = 0;
-        this._energyToMondio = 1;
+        this._energyToMondio = .3;
     }
 
     update(){

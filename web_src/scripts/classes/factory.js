@@ -60,10 +60,10 @@ class Factory{
 
     get dataObj(){
         let obj = {
-            factoryType: this._type,
+            spriteIndex: this.iconIndex,
             title: this._title,
             descr: this.descr,
-            constructionPrice: this._constructionPrice,
+            posTxt: this._constructionPrice.toReadableStr(),
             fac: this //reference à cet instance de Factory
         };
         return obj;

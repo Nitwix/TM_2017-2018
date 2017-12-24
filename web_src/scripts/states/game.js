@@ -1,4 +1,4 @@
-var gameState = {};
+let gameState = {};
 
 gameState.create = function(){
     gameEls.setup.background(); //voir utils/gameEls.js
