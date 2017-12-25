@@ -26,7 +26,8 @@ class Newspaper{
                 this._template = 0;
                 this._pageIndex = 0;
                 this._elsPerPage = 3;
-                this._maxPageIndex = Math.floor(data.els.length / this._elsPerPage); //parce que la numérotation commence à 0
+                let tmpMaxPage = Math.floor(data.els.length / this._elsPerPage);
+                this._maxPageIndex = (data.els.length%this._elsPerPage === 0) ? tmpMaxPage - 1 : tmpMaxPage; //parce que la numérotation commence à 0
             break;
             case "firstPage":
                 this._template = 1;
@@ -100,8 +101,6 @@ class Newspaper{
         }, this);
 
         //this._baseEls.add(this._newspaper);
-
-
     }
 
     _addBaseEls(){
@@ -122,7 +121,7 @@ class Newspaper{
             this._posProps.sectionHeight = 100;
             this._posProps.offX = -32;
 
-            this._addChangePageBtn(true);
+            if (this._maxPageIndex > 0) this._addChangePageBtn(true);
 
             this._pageNumber = game.make.bitmapText(0,0,"pixel_font", this._pageIndex+1, 24);
             this._pageNumber.alignIn(this._newspaper, Phaser.BOTTOM_CENTER, 0, -32);
@@ -171,7 +170,6 @@ class Newspaper{
 
         if(this._pageIndex == this._maxPageIndex){
             this._addChangePageBtn(false);
-
         }else if (this._pageIndex == 0) {
             this._addChangePageBtn(true);
         }else{
@@ -222,8 +220,8 @@ class Newspaper{
                 el.posTxt = el.fac.researchPrice.toReadableStr();
                 el.posCB = () => {
                     globals.moneyMgr.buy(el.fac.researchPrice, () => {
-                        console.log(`You invested ${el.fac.researchPrice} in research for ${el.fac.type}`);
-                        
+                        // console.log(`You invested ${el.fac.researchPrice} in research for ${el.fac.type}`);
+                        globals.researchMgr.augmentUnlockProb(el.fac.type, 10);
                     });
                 };
                 break;

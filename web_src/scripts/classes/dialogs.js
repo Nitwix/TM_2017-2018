@@ -4,8 +4,6 @@ class Dialog{
 	texts : array of strings: chaque string est une 'phase' du dialogue qui nécessite que le joueur fasse qqch
 	*/
 	constructor(texts){
-
-		//TODO: Dans les scripts où j'instatie des Dialog, ne pas ouvrir si gameEls.dialog != undefined
 		this._texts = texts;
 
 		//groupe Phaser contenant les éléments du dialog
@@ -72,6 +70,7 @@ class Dialog{
 		//quand tous les mots du string on été affichés, on passe au suivant dans l'array
 	    this._timer.onComplete.add(function(){
 	    	if(index + 1 < texts.length){
+				// this._waitForNext(false);
 	    		this._displayTexts(texts, index + 1);
 	    	}else{
 	    		this._waitForNext(true); //c'est le dernier texte qui est affiché

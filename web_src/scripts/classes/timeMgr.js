@@ -39,7 +39,7 @@ class TimeMgr{
             if(Math.floor(this._timer.seconds) % (this._yearDuration/1000) === 0 && this._lastYUSec != curSec){
                 this._yearUpdate();
                 this._lastYUSec = curSec;
-                console.log("yearUpdate called");
+                // console.log("yearUpdate called");
             }
         }, this);
         this._timer.start();
@@ -122,6 +122,5 @@ class TimeMgr{
     set yearDuration(d){
         this._yearDuration = d;
         this._timerLoop.delay = this._delay;
-        console.log(d);
     }
 }
