@@ -91,24 +91,15 @@ class Dialog{
 
 		this._group.add(nextButton);
 		this._nextButton = nextButton;
-
-		//permet d'appuyer sur n'importe quelle touche du clavier pour passer au prochain texte
-		game.input.keyboard.enabled = true;
-		game.input.keyboard.addCallbacks(this, function(){
-			this._launchNext(lastText);
-		});
 	}
 
 	_launchNext(lastText){
-		game.input.keyboard.enabled = false; //on ne peut pas appuyer lorsque le texte est en train de s'afficher
-
 		this._bmpText.text = "";
 		this._timer.resume();
 		this._nextButton.destroy();
 
 		if(lastText){
 			this.stop(); //si c'est le dernier texte qui est affiché, on stoppe le dialogue
-			game.input.keyboard.enabled = true; //réactive le clavier
 		}
 	}
 }

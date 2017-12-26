@@ -68,8 +68,6 @@ class TimeMgr{
         this._yearText.alignIn(box, Phaser.CENTER, 0, -6);
         this._yearDisplayGroup.add(this._yearText);
 
-        //TODO: afficher un text qui fadein et fadeout avec l'échelle de temps chaque fois qu'on clique sur un des boutons
-        //TODO: limiter l'échelle de temps à un range de [1/4, 4]
         let slowDown = game.make.button(0,0,"speed", () => {
             if(this._timeScale > this._CONSTANTS.minTimeScale){
                 this.yearDuration *= 2;

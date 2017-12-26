@@ -1,10 +1,9 @@
 # À faire
 ## Bugs à fixer
-- corriger le bug du newspaper ouvert par un site puis par researchBtn
 - bug lorsqu'on a plusieurs textes avec la classe Dialog (affiche instantanémment la suite)
+- corriger le bug qui fait que 2 images supperposées s'affichent sur un site de production après avoir fait de la recherche
 
 ## Petits objectifs
-- dessiner la carte du monde
 - dessiner Conseil
 - (maybe) afficher l'icone Mondio dans smallDialog quand on veut acheter qqch
 - ajouter un compteur de population
@@ -33,8 +32,6 @@
     (diminue la prod. de CO2 de la population)
     - etc...
     - **ces conseils s'afficheront dans des smallDialog**
-- ajouter un bouton *recherche*
-    - permet de débloquer peu à peu les nouveaux types de centrales (aléatoirement)
 - ajouter un bouton *statistiques (nombres)*
     - les pages contiennent les valeurs des différents indicateurs (quantité de mondios, prod. d'énergie, de CO2, population, etc...)
 - ajouter un bouton *statistiques (graphes)* //pas sûr
@@ -69,3 +66,6 @@
 - classe TimeMgr (17.12.2017)
     - yearTime peut être accéléré ou ralenti
     - afficher l'année
+- ajouter un bouton *recherche* (26.12.2017)
+    - permet de débloquer peu à peu les nouveaux types de centrales (aléatoirement)
+- dessiner la carte du monde (26.12.2017)
