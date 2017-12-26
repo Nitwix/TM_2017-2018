@@ -11,7 +11,7 @@ class Site{
     //ajoute le site au game
     add(){
         this.siteButton = game.add.button(this.pos.x, this.pos.y, "factories", () => {
-            this._dialogBox();
+            this._onClick();
         }, this);
         // this.siteButton.scale.setTo(2);
         this.updateBtnFrames();
@@ -53,11 +53,9 @@ class Site{
     }
 
     //affiche la boîte qui permet de déverouiller le site de production ou de l'améliorer
-    _dialogBox(){
-        //pour qu'une seule boîte de dialog soit affichée
-        if(gameEls.smallDialog != undefined){
-            gameEls.smallDialog.stop();
-        }
+    _onClick(){
+        //pour qu'un seul élément ne soit affiché à la fois
+        gameEls.stopTmpEls();
 
         let x = this.pos.x;
         let y = this.pos.y;

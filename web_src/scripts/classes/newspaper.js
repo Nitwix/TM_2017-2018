@@ -58,6 +58,8 @@ class Newspaper{
     }
 
     start(){
+        gameEls.stopTmpEls();
+
         //attribue l'objet newspaper à gameEls.newspaper
         gameEls.newspaper = this;
 
@@ -300,6 +302,10 @@ class Newspaper{
             gameEls.dialog.stop();
         }
 
+        if (globals.currentRegion != "") {
+            globals.regions[globals.currentRegion].init(true);
+        }
+
         //TODO: appeler des fonction pour fade out les éléments joliments
         this._baseEls.destroy();
         this._contentEls.destroy();
@@ -311,13 +317,12 @@ class Newspaper{
         let EMTween = game.add.tween(gameEls.earthMap);
         EMTween.to({alpha:1}, this._tweenProps.sDur);
         EMTween.start();
-        EMTween.onComplete.addOnce(() => {
-            if(globals.currentRegion != ""){
-                globals.regions[globals.currentRegion].init(true);
-            }
-        }, this);
+        // EMTween.onComplete.addOnce(() => {
+        //     //On ne peut pas init onComplete car sinon, lorsqu'on passe de newspaper à newspaper, la région s'uninit 2x de suite puis s'init sur le nouveau newspaper
 
-
-
+        //     // if(globals.currentRegion != ""){
+        //     //     globals.regions[globals.currentRegion].init(true);
+        //     // }
+        // }, this);
     }
 }

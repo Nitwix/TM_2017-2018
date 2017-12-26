@@ -37,7 +37,6 @@ gameState.update = function(){
         globReg.update();
     }
 
-
     // globals.moneyMgr.totVal += 10000;
     // console.log(globals.moneyMgr.totVal);
 

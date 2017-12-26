@@ -50,6 +50,7 @@ class Region{
     }
 
     init(onlySites){
+        console.warn("Region init!", this._name);
         if(onlySites != true){
             this._worldButton = game.add.button(0,0,"buttons", function(){
                 globReg.goto.world(this);
@@ -66,7 +67,9 @@ class Region{
     }
 
     uninit(onlySites){
-        if(onlySites != true){
+        console.warn("Region uninit!", this._name);
+
+        if(!onlySites){
             this._worldButton.destroy();
         }
 

@@ -6,7 +6,7 @@ class ResearchMgr{
             fuelPlant: 0,
             gasPlant: 0,
             hydroPlant: 0,
-            fissionPlant: 95,
+            fissionPlant: 0,
             windTurbines: 0,
             solarPanels: 0,
             geothermalPlant: 0,
