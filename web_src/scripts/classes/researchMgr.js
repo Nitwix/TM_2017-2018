@@ -1,22 +1,23 @@
 class ResearchMgr{
     constructor(){
         //probabilité de débloquer les centrales à chaque update (en pourcents)
-        this._unlockProbs = {
-            coalPlant: 0,
-            fuelPlant: 0,
-            gasPlant: 0,
-            hydroPlant: 0,
-            fissionPlant: 0,
-            windTurbines: 0,
-            solarPanels: 0,
-            geothermalPlant: 0,
-            fusionPlant: 0
+        this._unlockData = {
+            coalPlant: [0,10],
+            fuelPlant: [0, 5],
+            gasPlant: [0, 2],
+            hydroPlant: [0, 1],
+            fissionPlant: [0, 1],
+            windTurbines: [0, 1],
+            solarPanels: [0, .5],
+            geothermalPlant: [0, .2],
+            fusionPlant: [0, .1]
         };
         globals.timeMgr.addCallback(this.rndUnlockUpdate);
     }
 
-    augmentUnlockProb(facType, amount){
-        this._unlockProbs[facType] += amount;
+    augmentUnlockProb(facType){
+        this._unlockData[facType][0] += this._unlockData[facType][1];
+        console.log(this._unlockData);
     }
 
 
@@ -24,13 +25,13 @@ class ResearchMgr{
         //fonction appellée à chaque update de timeMgr
 
         //utilisation de 'globals' car appelé depuis timeMgr
-        let unlockProbs = globals.researchMgr._unlockProbs;
+        let unlockData = globals.researchMgr._unlockData;
 
         //parcours des unlockProbs pour débloquer aléatoirement un type de centrale
-        for (let facType in unlockProbs){
+        for (let facType in unlockData){
             let rnd = game.math.random(0,100);
-            if(rnd < unlockProbs[facType]){
-                unlockProbs[facType] = -Infinity;
+            if(rnd < unlockData[facType][0]){
+                unlockData[facType][0] = -Infinity;
                 // console.log(facType);
                 globals.researchMgr.unlockFacType(facType);
             }

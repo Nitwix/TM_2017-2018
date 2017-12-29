@@ -10,16 +10,15 @@ class Site{
 
     //ajoute le site au game
     add(){
-        this.siteButton = game.add.button(this.pos.x, this.pos.y, "factories", () => {
-            this._onClick();
-        }, this);
-        // this.siteButton.scale.setTo(2);
+        this.siteButton = game.add.button(this.pos.x, this.pos.y, "factories", this._onClick, this);
+        // this.siteButton.scale.setTo(1.5);
         this.updateBtnFrames();
         this.siteButton.anchor.setTo(.5);
     }
 
     updateBtnFrames(){
-        this.siteButton.setFrames(this.fac.iconIndex, this.fac.iconIndex, this.fac.iconIndex, this.fac.iconIndex);
+        let idx = this._fac.iconIndex;
+        this.siteButton.setFrames(idx, idx, idx, idx);
     }
 
     //détruis le bouton du site de production
@@ -43,7 +42,7 @@ class Site{
     }
 
     destroyFac(){
-        this.fac = new Factory("notUsed", 1); //production negative pour diminuer la production d'énergie
+        this.fac = new Factory("notUsed", 1);
         this.updateBtnFrames();
     }
 

@@ -207,14 +207,16 @@ class Newspaper{
     }
 
     _purposeSpecificMods(el){
-        //éléments spécifiques à la page d'achat des usines
+        
         switch(this._data.purpose){
+            //éléments spécifiques à la page d'achat des usines
             case "factoryShop":
                 el.posTxt = el.fac.constructionPrice.toReadableStr();
                 el.posCB = () => {
                     globals.moneyMgr.buy(el.fac.constructionPrice, () => {
                         gameEls.newspaper.stop();
                         this._comingFrom.fac = el.fac.copy();
+                        this._comingFrom.updateBtnFrames(); //sinon le bouton du site n'est pas mis à jour
                     });
                 };
                 break;
@@ -223,12 +225,12 @@ class Newspaper{
                 el.posCB = () => {
                     globals.moneyMgr.buy(el.fac.researchPrice, () => {
                         // console.log(`You invested ${el.fac.researchPrice} in research for ${el.fac.type}`);
-                        globals.researchMgr.augmentUnlockProb(el.fac.type, 10);
+                        globals.researchMgr.augmentUnlockProb(el.fac.type);
                     });
                 };
                 break;
             default:
-                console.log("no mods made to el in np purposeSpecificMods");
+                console.log("no mods made to el in newspaper purposeSpecificMods");
         }
     }
 
@@ -297,6 +299,7 @@ class Newspaper{
     }
 
     stop(){
+        
         //ferme un éventuel dialog qui serait resté ouvert
         if(gameEls.dialog != undefined){
             gameEls.dialog.stop();

@@ -50,14 +50,13 @@ class Region{
     }
 
     init(onlySites){
-        console.warn("Region init!", this._name);
+        // console.warn("Region init!", this._name);
         if(onlySites != true){
             this._worldButton = game.add.button(0,0,"buttons", function(){
                 globReg.goto.world(this);
             }, this, 6,7,8,6);
             this._worldButton.scale.setTo(globals.UI.smallButtonScale);
-            //this._worldButton.alignTo(gameEls.fsButt, Phaser.BOTTOM_CENTER, 0, globals.UI.buttonOffset);
-            cornerObj(this._worldButton, globals.UI.buttonOffset, "se");
+            this._worldButton.alignTo(gameEls.researchBtn, Phaser.BOTTOM_CENTER, 0, globals.UI.buttonOffset);
         }
 
         //affiche les sites de production
@@ -67,7 +66,7 @@ class Region{
     }
 
     uninit(onlySites){
-        console.warn("Region uninit!", this._name);
+        // console.warn("Region uninit!", this._name);
 
         if(!onlySites){
             this._worldButton.destroy();

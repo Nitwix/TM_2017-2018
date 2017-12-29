@@ -1,7 +1,6 @@
 # À faire
 ## Bugs à fixer
 - bug lorsqu'on a plusieurs textes avec la classe Dialog (affiche instantanémment la suite)
-- corriger le bug qui fait que 2 images supperposées s'affichent sur un site de production après avoir fait de la recherche
 
 ## Petits objectifs
 - dessiner Conseil

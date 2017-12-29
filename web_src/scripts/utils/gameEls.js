@@ -30,7 +30,7 @@ gameEls.setup.UI = function(){
         newspaper.start();
     }, this, 9,10,11,9);
     gameEls.researchBtn.scale.setTo(globals.UI.smallButtonScale);
-    gameEls.researchBtn.alignTo(gameEls.fsBtn, Phaser.BOTTOM_CENTER);
+    gameEls.researchBtn.alignTo(gameEls.fsBtn, Phaser.BOTTOM_CENTER, 0, globals.UI.buttonOffset);
 
     //autres éléments permanents de l'UI...
 }
