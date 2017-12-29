@@ -43,7 +43,7 @@ class Factory{
     }
 
     get destructionPrice(){
-        return this._destructionPrice;
+        return this.upgradePrice/2;
     }
 
     get researchPrice(){

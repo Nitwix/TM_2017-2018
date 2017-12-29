@@ -2,17 +2,17 @@ class ResearchMgr{
     constructor(){
         //probabilité de débloquer les centrales à chaque update (en pourcents)
         this._unlockData = {
-            coalPlant: [0,10],
-            fuelPlant: [0, 5],
-            gasPlant: [0, 2],
-            hydroPlant: [0, 1],
-            fissionPlant: [0, 1],
-            windTurbines: [0, 1],
-            solarPanels: [0, .5],
-            geothermalPlant: [0, .2],
+            coalPlant: [0,20],
+            fuelPlant: [0, 10],
+            gasPlant: [0, 5],
+            hydroPlant: [0, 2],
+            fissionPlant: [0, 2],
+            windTurbines: [0, 2],
+            solarPanels: [0, 2],
+            geothermalPlant: [0, 2],
             fusionPlant: [0, .1]
         };
-        globals.timeMgr.addCallback(this.rndUnlockUpdate);
+        globals.timeMgr.addYUCallback(this.rndUnlockUpdate);
     }
 
     augmentUnlockProb(facType){
@@ -50,6 +50,14 @@ class ResearchMgr{
                 globals.data.factoryShop.els.push(dataObj);
                 let dialog = new Dialog([`Félicitations, mon cher président! Vous avez débloqué un nouveau type de centrale: ${dataObj.title}! Vous pouvez désormais installer celle-ci sur n'importe quel site de production libre.`]);
                 dialog.start();
+
+                //pour que le dialog ne se ferme pas immédiatement lorsqu'on spamme le bouton pour investir dans la recherche
+                game.input.enabled = false;
+                let tmpInputDisable = game.time.create();
+                tmpInputDisable.add(500, () => {
+                    game.input.enabled = true;
+                }, this);
+                tmpInputDisable.start();
             }else{
                 newFacResEls.push(dataObj);
             }

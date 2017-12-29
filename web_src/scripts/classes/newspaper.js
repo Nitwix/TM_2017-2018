@@ -226,6 +226,7 @@ class Newspaper{
                     globals.moneyMgr.buy(el.fac.researchPrice, () => {
                         // console.log(`You invested ${el.fac.researchPrice} in research for ${el.fac.type}`);
                         globals.researchMgr.augmentUnlockProb(el.fac.type);
+                        showTmpText("Votre investissement a bien été pris en compte", 32, 184);
                     });
                 };
                 break;
