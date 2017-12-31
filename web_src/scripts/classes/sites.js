@@ -12,31 +12,37 @@ class Site{
     add(){
         this._gGroup = game.add.group();
         this.siteButton = game.make.button(this.pos.x, this.pos.y, "factories", this._onClick, this);
-        // this.siteButton.scale.setTo(1.5);
-        // console.log(this._fac.type);
-        this.updateBtnFrames();
         this.siteButton.anchor.setTo(.5);
         this._gGroup.add(this.siteButton);
 
         let animData = this._fac.animData;
         if(animData != undefined){
-            let facAnimSprite = game.make.sprite(this.pos.x + animData.offX, this.pos.y + animData.offY, animData.name);
-            facAnimSprite.anchor.setTo(.5);
-            facAnimSprite.scale = (animData.scale == undefined) ? new Phaser.Point(1,1) : animData.scale;
-            this._gGroup.add(facAnimSprite);
+            this._facAnimSprite = game.make.sprite(0,0, animData.name);
+            this._facAnimSprite.anchor.setTo(.5);
+            this._updateFacAnim();
+            this._gGroup.add(this._facAnimSprite);
 
 
-            let facAnim = facAnimSprite.animations.add('facAnim', null, 8, true);
+            let facAnim = this._facAnimSprite.animations.add('facAnim', null, 6, true);
             facAnim.play();
-            // this._gGroup.add(facAnim);
         }
 
-
+        this._updateGraphicsGroup();
     }
 
-    updateBtnFrames(){
+    _updateFacAnim(){
+        let animData = this._fac.animData;
+        this._facAnimSprite.position.setTo(this.pos.x + animData.offX, this.pos.y + animData.offY, animData.name);
+        this._facAnimSprite.scale = (animData.scale == undefined) ? new Phaser.Point(1,1) : animData.scale;
+    }
+
+    _updateGraphicsGroup(){
         let idx = this._fac.iconIndex;
         this.siteButton.setFrames(idx, idx, idx, idx);
+        if(this._fac.animData != undefined){
+            this._updateFacAnim();
+        }
+
     }
 
     //détruis le bouton du site de production
@@ -44,8 +50,8 @@ class Site{
         this._gGroup.destroy();
     }
 
-    // NOTE: ce setter n'appelle pas updateBtnFrames car sinon ça crée un bug lorsqu'on achète une usine depuis newspaper.js
-    // la méthode updateBtnFrames serait appelée avant que les boutons des usines soient crées
+    // NOTE: ce setter n'appelle pas _updateGraphicsGroup car sinon ça crée un bug lorsqu'on achète une usine depuis newspaper.js
+    // la méthode _updateGraphicsGroup serait appelée avant que les boutons des usines soient crées
     set fac(facObj){
         this._fac = facObj;
     }
@@ -56,17 +62,17 @@ class Site{
 
     upgradeFac(){
         this.fac.upgrade();
-        this.updateBtnFrames();
+        this._updateGraphicsGroup();
     }
 
     destroyFac(){
         this.fac = new Factory("notUsed", 1);
-        this.updateBtnFrames();
+        this._updateGraphicsGroup();
     }
 
     unlockSite(){
         this.fac.level++;
-        this.updateBtnFrames();
+        this._updateGraphicsGroup();
     }
 
     //affiche la boîte qui permet de déverouiller le site de production ou de l'améliorer

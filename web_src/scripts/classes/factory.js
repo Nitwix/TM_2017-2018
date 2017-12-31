@@ -116,13 +116,13 @@ class Factory{
 
     get animData(){
         let data;
-        switch(this.type){
+        switch(this._type){
             case "coalPlant":
                 data = {
                     name: "smokeAnim",
-                    offX: 10,
+                    offX: 14 - this._level*3,
                     offY: -26,
-                    scale: new Phaser.Point(.64,1)
+                    scale: new Phaser.Point(.48+this._level/6,1)
                 };
                 break;
             case "fuelPlant":
