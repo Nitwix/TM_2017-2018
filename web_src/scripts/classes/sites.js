@@ -10,10 +10,28 @@ class Site{
 
     //ajoute le site au game
     add(){
-        this.siteButton = game.add.button(this.pos.x, this.pos.y, "factories", this._onClick, this);
+        this._gGroup = game.add.group();
+        this.siteButton = game.make.button(this.pos.x, this.pos.y, "factories", this._onClick, this);
         // this.siteButton.scale.setTo(1.5);
+        // console.log(this._fac.type);
         this.updateBtnFrames();
         this.siteButton.anchor.setTo(.5);
+        this._gGroup.add(this.siteButton);
+
+        let animData = this._fac.animData;
+        if(animData != undefined){
+            let facAnimSprite = game.make.sprite(this.pos.x + animData.offX, this.pos.y + animData.offY, animData.name);
+            facAnimSprite.anchor.setTo(.5);
+            facAnimSprite.scale = (animData.scale == undefined) ? new Phaser.Point(1,1) : animData.scale;
+            this._gGroup.add(facAnimSprite);
+
+
+            let facAnim = facAnimSprite.animations.add('facAnim', null, 8, true);
+            facAnim.play();
+            // this._gGroup.add(facAnim);
+        }
+
+
     }
 
     updateBtnFrames(){
@@ -23,7 +41,7 @@ class Site{
 
     //détruis le bouton du site de production
     del(){
-        this.siteButton.destroy();
+        this._gGroup.destroy();
     }
 
     // NOTE: ce setter n'appelle pas updateBtnFrames car sinon ça crée un bug lorsqu'on achète une usine depuis newspaper.js

@@ -100,7 +100,7 @@ class Factory{
             case "geothermalPlant":
                 return 8*maxLvl + this.level;
             case "fusionPlant":
-                return 9*maxLvl + this.level; 
+                return 9*maxLvl + this.level;
             default:
             console.warn("factory not found in classes/factory.js");
         }
@@ -112,6 +112,32 @@ class Factory{
         }else{
             return true;
         }
+    }
+
+    get animData(){
+        let data;
+        switch(this.type){
+            case "coalPlant":
+                data = {
+                    name: "smokeAnim",
+                    offX: 10,
+                    offY: -26,
+                    scale: new Phaser.Point(.64,1)
+                };
+                break;
+            case "fuelPlant":
+            case "gasPlant":
+            case "fissionPlant":
+                data = {
+                    name: "smokeAnim",
+                    offX: 10,
+                    offY: -10
+                };
+                break;
+            default:
+                return undefined;
+        }
+        return data;
     }
 
     upgrade(){

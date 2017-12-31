@@ -30,6 +30,17 @@ gameState.create = function(){
     // let newspaper = new Newspaper("smallSections", globals.data.factories);
     // newspaper.start();
 
+    // let test1 = game.add.sprite(200,200, 'smokeAnim');
+    // test1.scale.setTo(2, 4);
+    // let anim1 = test1.animations.add('smoke', null, 8, true);
+    // anim1.play();
+    //
+    // let test2 = game.add.sprite(400,200, 'explosionAnim');
+    // test2.scale.setTo(4);
+    // let anim2 = test2.animations.add('explode', null, 8, true);
+    // anim2.play();
+
+
 };
 gameState.update = function(){
     //on ne peut que cliquer sur les régions lorsqu'il n'y a pas de newspaper

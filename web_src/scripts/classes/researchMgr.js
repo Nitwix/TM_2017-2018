@@ -17,7 +17,6 @@ class ResearchMgr{
 
     augmentUnlockProb(facType){
         this._unlockData[facType][0] += this._unlockData[facType][1];
-        console.log(this._unlockData);
     }
 
 

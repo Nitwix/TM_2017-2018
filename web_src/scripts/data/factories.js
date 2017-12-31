@@ -3,8 +3,8 @@ globals.data.factoryShop = {
     spritesheet: "factories",
     purpose: "factoryShop",
     els: [
-        // (new Factory("coalPlant", 0, "Centrale à charbon", 5e2, 15e3, 1, 10, 150, 1.15, "Ceci est une description supplémentaire")).dataObj,
-    ]          
+        (new Factory("coalPlant", 0, "Centrale à charbon", 5e2, 15e3, 1, 10, 150, 1.15, "Ceci est une description supplémentaire")).dataObj,
+    ]
 }
 
 globals.data.factoryResearch = {
