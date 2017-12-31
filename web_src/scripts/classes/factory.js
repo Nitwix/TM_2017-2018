@@ -126,12 +126,29 @@ class Factory{
                 };
                 break;
             case "fuelPlant":
+                data = {
+                    name: "smokeAnim",
+                    offX: 13,
+                    offY: -16,
+                    scale: new Phaser.Point(.32,.64)
+                };
+                break;
             case "gasPlant":
+                let lvlCoeff = (this._level === 2) ? 1 : 0;
+                data = {
+                    name: "smokeAnim",
+                    offX: 13,
+                    offY: -16,
+                    scale: new Phaser.Point(.32 + lvlCoeff*.16,.64)
+                };
+                break;
             case "fissionPlant":
                 data = {
                     name: "smokeAnim",
-                    offX: 10,
-                    offY: -10
+                    offX: 0,
+                    offY: -16,
+                    scale: new Phaser.Point(1, .32),
+                    tint: 0xeeeeee
                 };
                 break;
             default:

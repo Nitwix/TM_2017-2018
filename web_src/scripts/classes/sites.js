@@ -34,6 +34,7 @@ class Site{
         let animData = this._fac.animData;
         this._facAnimSprite.position.setTo(this.pos.x + animData.offX, this.pos.y + animData.offY, animData.name);
         this._facAnimSprite.scale = (animData.scale == undefined) ? new Phaser.Point(1,1) : animData.scale;
+        this._facAnimSprite.tint = (animData.tint == undefined) ? 0xFFFFFF : animData.tint;
     }
 
     _updateGraphicsGroup(){
