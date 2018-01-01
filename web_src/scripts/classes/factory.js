@@ -142,6 +142,15 @@ class Factory{
                     scale: new Phaser.Point(.32 + lvlCoeff*.16,.64)
                 };
                 break;
+            case "hydroPlant":
+                data = {
+                    name: "waterAnim",
+                    offX: 0,
+                    offY: -10,
+                    scale: new Phaser.Point(.78,.64),
+                    frameRate: 3
+                };
+                break;
             case "fissionPlant":
                 data = {
                     name: "whiteSmokeAnim",

@@ -4,6 +4,7 @@ globals.data.factoryShop = {
     purpose: "factoryShop",
     els: [
         //rien car aucune centrale débloquée au début du jeu
+        (new Factory("hydroPlant", 0, "Barrage", 33e2, 100e3, 1, 10, 150, 1.25, "Ce barrage produira de l'énergie de façon écologique.")).dataObj
     ]
 }
 
