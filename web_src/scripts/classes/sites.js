@@ -22,8 +22,8 @@ class Site{
             this._updateFacAnim();
             this._gGroup.add(this._facAnimSprite);
 
-
-            let facAnim = this._facAnimSprite.animations.add('facAnim', null, 6, true);
+            let frameRate = animData.frameRate || 6;
+            let facAnim = this._facAnimSprite.animations.add('facAnim', null, frameRate, true);
             facAnim.play();
         }
 
@@ -32,9 +32,12 @@ class Site{
 
     _updateFacAnim(){
         let animData = this._fac.animData;
-        this._facAnimSprite.position.setTo(this.pos.x + animData.offX, this.pos.y + animData.offY, animData.name);
-        this._facAnimSprite.scale = (animData.scale == undefined) ? new Phaser.Point(1,1) : animData.scale;
-        this._facAnimSprite.tint = (animData.tint == undefined) ? 0xFFFFFF : animData.tint;
+        let offX = animData.offX || 0;
+        let offY = animData.offY || 0;
+        this._facAnimSprite.position.setTo(this.pos.x + offX, this.pos.y + offY, animData.name);
+        this._facAnimSprite.scale = animData.scale || new Phaser.Point(1,1);
+        this._facAnimSprite.tint = animData.tint || 0xFFFFFF;
+        this._facAnimSprite.alpha = animData.alpha || 1;
     }
 
     _updateGraphicsGroup(){

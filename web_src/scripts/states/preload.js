@@ -21,6 +21,10 @@ preloadState.preload = function(){
 	//chargement des usines
 	game.load.spritesheet("factories", `${sprites}factories/factories.png`, 32, 32);
 	game.load.spritesheet("smokeAnim", `${sprites}factories/smokeAnim.png`, 32, 32);
+	game.load.spritesheet("whiteSmokeAnim", `${sprites}factories/whiteSmokeAnim.png`, 32, 32);
+	game.load.spritesheet("windAnim", `${sprites}factories/windAnim.png`, 32, 24);
+	game.load.spritesheet("sunAnim", `${sprites}factories/sunAnim.png`, 32, 24);
+	game.load.spritesheet("fusionAnim", `${sprites}factories/fusionAnim.png`, 32, 32);
 	game.load.spritesheet("explosionAnim", `${sprites}factories/explosionAnim.png`, 48, 48);
 
 	//chargement des éléments utilisés dans SmallDialog

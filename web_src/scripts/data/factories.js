@@ -3,7 +3,7 @@ globals.data.factoryShop = {
     spritesheet: "factories",
     purpose: "factoryShop",
     els: [
-        (new Factory("fissionPlant", 0, "Centrale à charbon", 5e2, 15e3, 1, 10, 150, 1.15, "Ceci est une description supplémentaire")).dataObj,
+        //rien car aucune centrale débloquée au début du jeu
     ]
 }
 
@@ -19,6 +19,7 @@ globals.data.factoryResearch = {
         (new Factory("fissionPlant", 0, "Centrale nucléaire à fission", 160e2, 500e3, 1, 10, 150, 1.1, "Cette centrale risque d'exploser.")).dataObj,
         (new Factory("windTurbines", 0, "Champ d'éoliennes", 33e2, 100e3, 1, 10, 150, 1.25, "Ce type d'énergie est très écologique.")).dataObj,
         (new Factory("solarPanels", 0, "Champ de panneaux solaires", 35e3, 25e3, 1, 10, 150, 1.3, "Ce type d'énergie est très écologique.")).dataObj,
+        (new Factory("geothermalPlant", 0, "Centrale géothermique", 35e3, 25e3, 1, 10, 150, 1.3, "Ce type d'énergie est écologique.")).dataObj,
         (new Factory("fusionPlant", 0, "Centrale nucléaire à fusion", 3e5, 1e6, 2, 0, 10e3, 1.25, "C'est le futur.")).dataObj
     ]
 }

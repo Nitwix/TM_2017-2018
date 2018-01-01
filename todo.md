@@ -1,6 +1,7 @@
 # À faire
 ## Bugs à fixer
 - bug lorsqu'on a plusieurs textes avec la classe Dialog (affiche instantanémment la suite)
+- les animations des usines ne disparaissent pas immédiatement après que les usines aient été détruites
 
 ## Petits objectifs
 - dessiner Conseil

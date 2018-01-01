@@ -144,11 +144,47 @@ class Factory{
                 break;
             case "fissionPlant":
                 data = {
-                    name: "smokeAnim",
+                    name: "whiteSmokeAnim",
                     offX: 0,
-                    offY: -16,
-                    scale: new Phaser.Point(1, .32),
-                    tint: 0xeeeeee
+                    offY: -19,
+                    scale: new Phaser.Point(.48, .36),
+                    frameRate: 3
+                };
+                break;
+            case "windTurbines":
+                data = {
+                    name: "windAnim",
+                    offY: -4,
+                    offX: -6,
+                    frameRate: 8,
+                    alpha: .4
+                };
+                break;
+            case "solarPanels":
+                data = {
+                    name: "sunAnim",
+                    offY: -12,
+                    offX: -4,
+                    frameRate: 4,
+                    alpha: .6
+                };
+                break;
+            case "geothermalPlant":
+                data = {
+                    name: "whiteSmokeAnim",
+                    offX: -3 + this._level*2,
+                    offY: -18,
+                    scale: new Phaser.Point(.14 + this._level*.4,.42),
+                    frameRate: 5
+                };
+                break;
+            case "fusionPlant":
+                data = {
+                    name: "fusionAnim",
+                    offX: 0,
+                    offY: 2,
+                    scale: new Phaser.Point(.36,.36),
+                    frameRate: 4
                 };
                 break;
             default:

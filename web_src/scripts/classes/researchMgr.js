@@ -4,13 +4,13 @@ class ResearchMgr{
         this._unlockData = {
             coalPlant: [0,20],
             fuelPlant: [0, 10],
-            gasPlant: [0, 5],
-            hydroPlant: [0, 2],
-            fissionPlant: [0, 2],
-            windTurbines: [0, 2],
-            solarPanels: [0, 2],
-            geothermalPlant: [0, 2],
-            fusionPlant: [0, .1]
+            gasPlant: [0, 15],
+            hydroPlant: [0, 15],
+            fissionPlant: [0, 15],
+            windTurbines: [0, 15],
+            solarPanels: [0, 15],
+            geothermalPlant: [0, 15],
+            fusionPlant: [0, 15]
         };
         globals.timeMgr.addYUCallback(this.rndUnlockUpdate);
     }
