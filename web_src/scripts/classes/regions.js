@@ -27,7 +27,7 @@ class Region{
             let id = "s"+globals.sites.id;
             let unlockPrice = ((globals.sites.id*10+21))**3; //NOTE: à inclure dans le rapport écrit et expliquer pourquoi j'ai fait ce choix
             // console.log(`${id} unlockPrice: ${unlockPrice}`);
-            this.sites[id] = new Site(id, point[0], point[1], "notUsed", 0, unlockPrice); //voir classes/sites.js
+            this.sites[id] = new Site(id, point[0], point[1], unlockPrice); //voir classes/sites.js
 
             globals.sites.id++;
         }

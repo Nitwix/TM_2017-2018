@@ -1,24 +1,41 @@
 //principalement utilisé dans la classe Site mais aussi pour passer la data à Newspaper depuis data/factories.js
 class Factory{
-    constructor(type, level, title, energyProduction, constructionPrice, destrCoeff, CO2Production, grayCO2, upgradeCoeff, addDescr){
-        this._type = type;
-        this._level = level;
+    constructor(data){
+        //type, level, title, power, constructionPrice, destrCoeff, CO2Production, grayCO2, upgradeCoeff, addDescr
+        this._type = data.type;
+        this._level = data.level;
 
         //seront mis à 'undefined' si ils ne sont pas fournis
-        this._title = title;
-        this._energyProduction = energyProduction;
-        this._constructionPrice = constructionPrice;
-        this._destructionPrice = constructionPrice * destrCoeff;
-        this._researchPrice = 2*constructionPrice;
-        this._CO2Production = CO2Production;
-        this._grayCO2 = grayCO2;
-        this._upgradeCoeff = upgradeCoeff;
-        this._addDescr = addDescr; //ajout à la description de base
+        this._title = data.title;
+        this._power = data.power;
+        this._constructionPrice = data.constructionPrice;
+        this._destrCoeff = data.destrCoeff;
+        this._CO2Production = data.CO2Production;
+        this._grayCO2 = data.grayCO2;
+        this._upgradeCoeff = data.upgradeCoeff;
+        this._addDescr = data.addDescr; //ajout à la description de base
+
+        this._destructionPrice = data.constructionPrice * data.destrCoeff;
+        this._researchPrice = 2*data.constructionPrice;
     }
 
     //pour avoir une copie parfaite de l'objet actuel (utilisé dans newspaper.js)
     copy(){
-        return (new Factory(this._type, this._level, this._title, this._energyProduction, this._constructionPrice, this._destructionPrice / this._constructionPrice, this._CO2Production, this._grayCO2, this._upgradeCoeff, this._addDescr));
+        return (new Factory({
+            type: this._type,
+            level: this._level,
+            title: this._title,
+            power: this._power,
+            constructionPrice: this._constructionPrice,
+            destrCoeff: this._destrCoeff,
+            CO2Production: this._CO2Production,
+            grayCO2: this._grayCO2,
+            upgradeCoeff: this._upgradeCoeff,
+            addDescr: this._addDescr}));
+    }
+
+    set type(t){
+        this._type = t;
     }
 
     get type(){
@@ -29,13 +46,12 @@ class Factory{
         return this._level;
     }
 
-    get energyProduction(){
-        return this._energyProduction;
+    get power(){
+        return this._power;
     }
 
-    set energyProduction(e){
-        globals.productionMgr.energyProduction += e - this._energyProduction;
-        this._energyProduction = e;
+    set power(e){
+        this._power = e;
     }
 
     get constructionPrice(){
@@ -43,7 +59,7 @@ class Factory{
     }
 
     get destructionPrice(){
-        return this.upgradePrice/2;
+        return this.upgradePrice*this._destrCoeff;
     }
 
     get researchPrice(){
@@ -54,12 +70,8 @@ class Factory{
         this._level = l;
     }
 
-    set type(t){
-        this._type = t;
-    }
-
     get descr(){
-        return `Cette usine produira ${this._energyProduction.toReadableStr()} Watts. ${this._addDescr}`;
+        return `Cette usine produira ${this._power.toReadableStr()} Watts. ${this._addDescr}`;
     }
 
     get upgradePrice(){
@@ -147,8 +159,8 @@ class Factory{
                     name: "waterAnim",
                     offX: 0,
                     offY: -10,
-                    scale: new Phaser.Point(.78,.64),
-                    frameRate: 3
+                    frameRate: 2,
+                    alpha: .8
                 };
                 break;
             case "fissionPlant":
@@ -205,6 +217,6 @@ class Factory{
     upgrade(){
         this.level++;
 
-        this.energyProduction = this._energyProduction * this._upgradeCoeff;
+        this.power = this._power * this._upgradeCoeff;
     }
 }

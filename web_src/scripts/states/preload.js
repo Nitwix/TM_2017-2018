@@ -21,7 +21,7 @@ preloadState.preload = function(){
 	//chargement des usines
 	game.load.spritesheet("factories", `${sprites}factories/factories.png`, 32, 32);
 	game.load.spritesheet("smokeAnim", `${sprites}factories/smokeAnim.png`, 32, 32);
-	game.load.spritesheet("waterAnim", `${sprites}factories/waterAnim.png`, 32, 16);
+	game.load.spritesheet("waterAnim", `${sprites}factories/waterAnim.png`, 28, 8);
 	game.load.spritesheet("whiteSmokeAnim", `${sprites}factories/whiteSmokeAnim.png`, 32, 32);
 	game.load.spritesheet("windAnim", `${sprites}factories/windAnim.png`, 32, 24);
 	game.load.spritesheet("sunAnim", `${sprites}factories/sunAnim.png`, 32, 24);

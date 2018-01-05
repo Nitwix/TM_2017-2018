@@ -1,8 +1,8 @@
 class Site{
-    constructor(id, x, y, facType, facLvl, unlockPrice){
+    constructor(id, x, y, unlockPrice){
         this.id = id;
         this.pos = new Phaser.Point(x, y);
-        this._fac = new Factory(facType, facLvl); //voir classes/factory.js
+        this._fac = new Factory({type:"notUsed", level: 0}); //voir classes/factory.js
         this._unlockPrice = unlockPrice;
 
         globals.sites.instances.push(this);
@@ -45,6 +45,8 @@ class Site{
         this.siteButton.setFrames(idx, idx, idx, idx);
         if(this._fac.animData != undefined){
             this._updateFacAnim();
+        }else if (this._facAnimSprite != undefined) {
+            this._facAnimSprite.destroy();
         }
 
     }
@@ -70,12 +72,12 @@ class Site{
     }
 
     destroyFac(){
-        this.fac = new Factory("notUsed", 1);
+        this._fac = new Factory({type:"notUsed", level:1});
         this._updateGraphicsGroup();
     }
 
     unlockSite(){
-        this.fac.level++;
+        this._fac.level++;
         this._updateGraphicsGroup();
     }
 
