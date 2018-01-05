@@ -96,7 +96,7 @@ globals.data.factoryResearch = {
             title:"Champ de panneaux solaires",
             power:35e3,
             constructionPrice:25e3,
-            destrCoeff:1,
+            destrCoeff:.2,
             CO2Production:10,
             grayCO2:150,
             upgradeCoeff:1.3,
