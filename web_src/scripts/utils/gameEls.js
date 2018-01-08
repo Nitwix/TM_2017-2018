@@ -32,6 +32,29 @@ gameEls.setup.UI = function(){
     gameEls.researchBtn.scale.setTo(globals.UI.smallButtonScale);
     gameEls.researchBtn.alignTo(gameEls.fsBtn, Phaser.BOTTOM_CENTER, 0, globals.UI.buttonOffset);
 
+    gameEls.statsBtn = game.add.button(0,0,"buttons", () => {
+        console.log("Stats btn pressed");
+        let data = {
+            title: "Statistiques",
+            spritesheet: "statsIcons", //n'existe pas encore
+            els: [
+                {
+                spriteIndex: 0, 
+                title: "Mondios", 
+                descr: "Ceci représente combien d'argent vous possédez.",
+                posTxt: "lol",
+                negTxt: "pas lol"
+            }
+            ]
+        };
+        let statsNP = new Newspaper("smallSections", data);
+        statsNP.start();
+    }, this, 12, 13, 14, 12);
+    gameEls.statsBtn.scale.setTo(globals.UI.smallButtonScale);
+    gameEls.statsBtn.alignTo(gameEls.researchBtn, Phaser.BOTTOM_CENTER, 0, globals.UI.buttonOffset);
+
+    gameEls.lastBtn = gameEls.statsBtn; //pour pouvoir mettre le worldButton en-dessous
+
     //autres éléments permanents de l'UI...
 }
 

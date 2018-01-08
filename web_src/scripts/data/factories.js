@@ -14,7 +14,6 @@ globals.data.factoryResearch = {
     els: [
         (new Factory({
             type:"coalPlant",
-            level: 0,
             title:"Centrale à charbon",
             power:5e2,
             constructionPrice: 15e3,
@@ -27,7 +26,6 @@ globals.data.factoryResearch = {
 
         (new Factory({
             type:"fuelPlant",
-            level: 0,
             title:"Centrale au fioul",
             power:7e2,
             constructionPrice: 25e3,
@@ -40,7 +38,6 @@ globals.data.factoryResearch = {
 
         (new Factory({
             type:"gasPlant",
-            level: 0,
             title:"Centrale à gaz",
             power:10e2,
             constructionPrice: 30e3,
@@ -53,7 +50,6 @@ globals.data.factoryResearch = {
 
         (new Factory({
             type:"hydroPlant",
-            level: 0,
             title:"Barrage hydroélectrique",
             power:33e2,
             constructionPrice:100e3,
@@ -66,7 +62,6 @@ globals.data.factoryResearch = {
 
         (new Factory({
             type:"fissionPlant",
-            level: 0,
             title:"Centrale nucléaire à fission",
             power:160e2,
             constructionPrice:500e3,
@@ -79,7 +74,6 @@ globals.data.factoryResearch = {
 
         (new Factory({
             type:"windTurbines",
-            level: 0,
             title:"Champ d'éoliennes",
             power:33e2,
             constructionPrice:100e3,
@@ -92,7 +86,6 @@ globals.data.factoryResearch = {
 
         (new Factory({
             type:"solarPanels",
-            level: 0,
             title:"Champ de panneaux solaires",
             power:35e3,
             constructionPrice:25e3,
@@ -105,7 +98,6 @@ globals.data.factoryResearch = {
 
         (new Factory({
             type:"geothermalPlant",
-            level: 0,
             title:"Centrale géothermique",
             power:35e3,
             constructionPrice:25e3,
@@ -118,7 +110,6 @@ globals.data.factoryResearch = {
 
         (new Factory({
             type:"fusionPlant",
-            level: 0,
             title:"Centrale nucléaire à fusion",
             power:3e5,
             constructionPrice:1e6,
@@ -134,7 +125,7 @@ globals.data.factoryResearch = {
 /*
 {
     type:,
-    level: 0,
+
     title:,
     power:,
     constructionPrice:,

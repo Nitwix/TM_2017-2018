@@ -28,6 +28,10 @@ class Newspaper{
                 this._elsPerPage = 3;
                 let tmpMaxPage = Math.floor(data.els.length / this._elsPerPage);
                 this._maxPageIndex = (data.els.length%this._elsPerPage === 0) ? tmpMaxPage - 1 : tmpMaxPage; //parce que la numérotation commence à 0
+
+                this._CONSTANTS = {
+                    descrMaxWidth: 350
+                };
             break;
             case "firstPage":
                 this._template = 1;
@@ -244,32 +248,54 @@ class Newspaper{
         let offY = this._posProps.headOffY - index * this._posProps.sectionHeight;
         let offX = this._posProps.offX;
 
-        let factIcon = game.make.image(0,0,this._data.spritesheet, el.spriteIndex);
-        factIcon.scale.setTo(2);
-        factIcon.alignIn(this._newspaper, Phaser.TOP_LEFT, offX, offY);
-        this._contentEls.add(factIcon);
+        let icon = game.make.image(0,0,this._data.spritesheet, el.spriteIndex);
+        icon.scale.setTo(2);
+        icon.alignIn(this._newspaper, Phaser.TOP_LEFT, offX, offY);
+        this._contentEls.add(icon);
 
         let sectionTitle = game.make.bitmapText(0,0,"pixel_font", el.title, 32);
-        sectionTitle.alignTo(factIcon, Phaser.TOP_RIGHT, sectionTitle.width + 15, -4);
+        sectionTitle.alignTo(icon, Phaser.TOP_RIGHT, sectionTitle.width + 15, -4);
         sectionTitle.tint = this._fontTint;
         this._contentEls.add(sectionTitle);
 
         let descr = game.make.bitmapText(0,0,"pixel_font", el.descr, 20);
         descr.alignTo(sectionTitle, Phaser.BOTTOM_LEFT, 0, 16);
         descr.tint = this._fontTint;
-        descr.maxWidth = 350;
+        descr.maxWidth = this._CONSTANTS.descrMaxWidth;
         this._contentEls.add(descr);
 
-        let posBtn = game.make.button(0,0,"pos_neg", () => {
+        if(el.posTxt != undefined && el.negTxt != undefined){ //si'l faut mettre un bouton dans la section
+            this._addPosBtn(icon, el, true);
+            this._addNegBtn(icon, el, false);
+        }
+    }
+
+    _addPosBtn(icon, el, above){
+        let posBtn = game.make.button(0, 0, "pos_neg", () => {
             el.posCB();
-        }, this, 0,1,2,0);
-        posBtn.alignTo(factIcon, Phaser.BOTTOM_RIGHT, descr.maxWidth + 64, -24);
+        }, this, 0, 1, 2, 0);
+        let offY = (above) ? -32 : 0;
+        posBtn.alignTo(icon, Phaser.BOTTOM_RIGHT, this._CONSTANTS.descrMaxWidth + 64, -24 + offY);
         posBtn.scale.setTo(2);
         this._contentEls.add(posBtn);
 
-        let posTxt = game.make.bitmapText(0,0,"pixel_font", el.posTxt, globals.UI.posBtnFontSize);
+        let posTxt = game.make.bitmapText(0, 0, "pixel_font", el.posTxt, globals.UI.posBtnFontSize);
         posTxt.alignIn(posBtn, Phaser.CENTER, 1, -3);
         this._contentEls.add(posTxt);
+    }
+
+    _addNegBtn(icon, el, above){
+        let negBtn = game.make.button(0, 0, "pos_neg", () => {
+            el.negCB();
+        }, this, 3, 4, 5, 3);
+        let offY = (above) ? -32 : 0;
+        negBtn.alignTo(icon, Phaser.BOTTOM_RIGHT, this._CONSTANTS.descrMaxWidth + 64, -24 + offY);
+        negBtn.scale.setTo(2);
+        this._contentEls.add(negBtn);
+
+        let negTxt = game.make.bitmapText(0, 0, "pixel_font", el.negTxt, globals.UI.posBtnFontSize);
+        negTxt.alignIn(negBtn, Phaser.CENTER, 1, -3);
+        this._contentEls.add(negTxt);
     }
 
     //TODO: faire la fonction pour ajouter une colonne au newspaper

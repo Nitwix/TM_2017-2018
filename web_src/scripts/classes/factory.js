@@ -2,8 +2,8 @@
 class Factory{
     constructor(data){
         //type, level, title, power, constructionPrice, destrCoeff, CO2Production, grayCO2, upgradeCoeff, addDescr
-        this._type = data.type;
-        this._level = data.level;
+        this._type = data.type || "notUsed";
+        this._level = data.level || 0;
 
         //seront mis à 'undefined' si ils ne sont pas fournis
         this._title = data.title;
