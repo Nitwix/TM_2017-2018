@@ -58,6 +58,10 @@ class Factory{
         return this._constructionPrice;
     }
 
+    get CO2Production(){
+        return this._CO2Production;
+    }
+
     get destructionPrice(){
         return this.upgradePrice*this._destrCoeff;
     }
@@ -217,6 +221,8 @@ class Factory{
     upgrade(){
         this.level++;
 
-        this.power = this._power * this._upgradeCoeff;
+        this._power *= this._upgradeCoeff;
+        this._CO2Production *= this._upgradeCoeff;
+
     }
 }

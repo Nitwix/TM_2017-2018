@@ -264,38 +264,47 @@ class Newspaper{
         descr.maxWidth = this._CONSTANTS.descrMaxWidth;
         this._contentEls.add(descr);
 
-        if(el.posTxt != undefined && el.negTxt != undefined){ //si'l faut mettre un bouton dans la section
+        if(el.posTxt && el.negTxt){ //si'l faut mettre un bouton dans la section
             this._addPosBtn(icon, el, true);
+            this._addNegBtn(icon, el, false);
+        }else if (el.posTxt) {
+            this._addPosBtn(icon, el, false);
+        }else if (el.negTxt) {
             this._addNegBtn(icon, el, false);
         }
     }
 
-    _addPosBtn(icon, el, above){
-        let posBtn = game.make.button(0, 0, "pos_neg", () => {
-            el.posCB();
-        }, this, 0, 1, 2, 0);
-        let offY = (above) ? -32 : 0;
-        posBtn.alignTo(icon, Phaser.BOTTOM_RIGHT, this._CONSTANTS.descrMaxWidth + 64, -24 + offY);
-        posBtn.scale.setTo(2);
+    _addPosBtn(icon, el, isAbove){
+        let posBtn = this._mkBtn(icon, isAbove, false, el.posCB);
         this._contentEls.add(posBtn);
 
-        let posTxt = game.make.bitmapText(0, 0, "pixel_font", el.posTxt, globals.UI.posBtnFontSize);
-        posTxt.alignIn(posBtn, Phaser.CENTER, 1, -3);
+        let posTxt = this._mkTxt(el.posTxt, posBtn);
         this._contentEls.add(posTxt);
     }
 
-    _addNegBtn(icon, el, above){
-        let negBtn = game.make.button(0, 0, "pos_neg", () => {
-            el.negCB();
-        }, this, 3, 4, 5, 3);
-        let offY = (above) ? -32 : 0;
-        negBtn.alignTo(icon, Phaser.BOTTOM_RIGHT, this._CONSTANTS.descrMaxWidth + 64, -24 + offY);
-        negBtn.scale.setTo(2);
+    _addNegBtn(icon, el, isAbove){
+        let negBtn = this._mkBtn(icon, isAbove, true, el.negCB);
         this._contentEls.add(negBtn);
 
-        let negTxt = game.make.bitmapText(0, 0, "pixel_font", el.negTxt, globals.UI.posBtnFontSize);
-        negTxt.alignIn(negBtn, Phaser.CENTER, 1, -3);
+        let negTxt = this._mkTxt(el.negTxt, negBtn);
         this._contentEls.add(negTxt);
+    }
+
+    _mkBtn(icon, isAbove, isNeg, callback){
+        let offY = (isAbove) ? -32 : 0;
+        let idx = (isNeg) ? 3 : 0;
+        let btn = game.make.button(0,0, "pos_neg", () => {
+            if(callback) callback();
+        }, this, idx, 1 + idx,2 + idx, idx);
+        btn.scale.setTo(2);
+        btn.alignTo(icon, Phaser.BOTTOM_RIGHT, this._CONSTANTS.descrMaxWidth + 120, -24 + offY);
+        return btn;
+    }
+
+    _mkTxt(txt, btn){
+        let bmTxt = game.make.bitmapText(0, 0, "pixel_font", txt, globals.UI.posBtnFontSize);
+        bmTxt.alignIn(btn, Phaser.CENTER, 1, -3);
+        return bmTxt;
     }
 
     //TODO: faire la fonction pour ajouter une colonne au newspaper

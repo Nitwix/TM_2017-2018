@@ -33,18 +33,29 @@ gameEls.setup.UI = function(){
     gameEls.researchBtn.alignTo(gameEls.fsBtn, Phaser.BOTTOM_CENTER, 0, globals.UI.buttonOffset);
 
     gameEls.statsBtn = game.add.button(0,0,"buttons", () => {
-        console.log("Stats btn pressed");
         let data = {
             title: "Statistiques",
             spritesheet: "statsIcons", //n'existe pas encore
             els: [
                 {
-                spriteIndex: 0, 
-                title: "Mondios", 
-                descr: "Ceci représente combien d'argent vous possédez.",
-                posTxt: "lol",
-                negTxt: "pas lol"
-            }
+                    spriteIndex: 0,
+                    title: "Mondios",
+                    descr: `Vous possédez ${globals.moneyMgr.totVal.toReadableStr()} Mondios.\nVous gagnez environ ${Math.round(globals.productionMgr.mondioProduction)} Mondios par semaine.`
+                },
+                {
+                    spriteIndex: 1,
+                    title: "Production électrique",
+                    descr: `Vos centrales à travers le monde produisent ${Math.round(globals.productionMgr.totPower)} Watts`
+                },
+                {
+                    spriteIndex: 2,
+                    title: "Emissions de CO2",
+                    descr: `Vous émettez environ ${Math.round(globals.productionMgr.totCO2Production)}(kg?) de CO2 par semaine`
+                }
+                /*
+                à rajouter:
+                - peut-être : population
+                */
             ]
         };
         let statsNP = new Newspaper("smallSections", data);

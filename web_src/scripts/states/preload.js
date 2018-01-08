@@ -17,6 +17,7 @@ preloadState.preload = function(){
 	game.load.spritesheet("buttons", `${sprites}buttons/buttons.png`, 32, 32);
     game.load.spritesheet("wide_buttons", `${sprites}buttons/wide_buttons.png`, 64, 32);
 	game.load.spritesheet("speed", `${sprites}buttons/speed.png`, 14, 11);
+	game.load.spritesheet("statsIcons", `${sprites}stats/statsIcons.png`, 32, 32);
 
 	//chargement des usines
 	game.load.spritesheet("factories", `${sprites}factories/factories.png`, 32, 32);

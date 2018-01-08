@@ -1,15 +1,20 @@
 class ProductionMgr{
     constructor(){
         this._totPower = 0;
+        this._totCO2Production = 0;
+
         this._energyToMondio = .3;
     }
 
     update(){
         let totPower = 0;
+        let CO2Production = 0;
         for(let s of globals.sites.instances){
-            totPower += (s.fac.power != undefined) ? s.fac.power : 0;
+            totPower += s.fac.power || 0;
+            CO2Production += s.fac.CO2Production || 0;
         }
-        this.totPower = totPower;
+        this._totPower = totPower;
+        this._totCO2Production = CO2Production;
         globals.moneyMgr.totVal += this.mondioProduction;
     }
 
@@ -23,6 +28,10 @@ class ProductionMgr{
 
     get totPower(){
         return this._totPower;
+    }
+
+    get totCO2Production(){
+        return this._totCO2Production;
     }
 
     set energyToMondio(r){
