@@ -1,7 +1,9 @@
 class ProductionMgr{
     constructor(){
         this._totPower = 0;
-        this._totCO2Production = 0;
+        this._CO2Production = 0;
+
+        this._totCO2Produced = 0; //CO2 émi au total dans l'atmosphère (CO2Production + grayCO2)
 
         this._energyToMondio = .3;
     }
@@ -14,8 +16,18 @@ class ProductionMgr{
             CO2Production += s.fac.CO2Production || 0;
         }
         this._totPower = totPower;
-        this._totCO2Production = CO2Production;
+        this._CO2Production = CO2Production;
+
         globals.moneyMgr.totVal += this.mondioProduction;
+        this._totCO2Produced += CO2Production;
+
+        this._updateCam();
+    }
+
+    _updateCam(){
+        let CO2Limit = 1e4; //if above this value, you loose the game; to add in the globals
+        game.camera.fade(0x000000, 1, true, this._totCO2Produced / CO2Limit);
+        // console.log(game.camera);
     }
 
     get mondioProduction(){
@@ -30,8 +42,16 @@ class ProductionMgr{
         return this._totPower;
     }
 
-    get totCO2Production(){
-        return this._totCO2Production;
+    get CO2Production(){
+        return this._CO2Production;
+    }
+
+    get totCO2Produced(){
+        return this._totCO2Produced;
+    }
+
+    set totCO2Produced(v){
+        this._totCO2Produced = v;
     }
 
     set energyToMondio(r){

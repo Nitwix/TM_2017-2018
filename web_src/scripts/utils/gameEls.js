@@ -50,7 +50,7 @@ gameEls.setup.UI = function(){
                 {
                     spriteIndex: 2,
                     title: "Emissions de CO2",
-                    descr: `Vous émettez environ ${Math.round(globals.productionMgr.totCO2Production)}(kg?) de CO2 par semaine`
+                    descr: `Vos centrales ont émi environ ${Math.round(globals.productionMgr.totCO2Produced)}(kg?) de CO2 dans l'atmosphère.\nElles émettent environ ${Math.round(globals.productionMgr.CO2Production)}(kg?) de CO2 par semaine.`
                 }
                 /*
                 à rajouter:

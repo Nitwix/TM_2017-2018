@@ -62,6 +62,10 @@ class Factory{
         return this._CO2Production;
     }
 
+    get grayCO2(){
+        return this._grayCO2;
+    }
+
     get destructionPrice(){
         return this.upgradePrice*this._destrCoeff;
     }

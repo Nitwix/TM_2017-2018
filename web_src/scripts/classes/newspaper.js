@@ -70,6 +70,7 @@ class Newspaper{
                 el.posCB = () => {
                     globals.moneyMgr.buy(el.fac.constructionPrice, () => {
                         this._comingFrom.fac = el.fac.copy();
+                        globals.productionMgr.totCO2Produced += el.fac.grayCO2;
                         gameEls.newspaper.stop();
                     });
                 };
