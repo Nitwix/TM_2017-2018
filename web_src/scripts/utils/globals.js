@@ -1,6 +1,14 @@
 //ce script contient des variables globales réutilisées tout au long du jeu
 
-var globals = {};
+var globals = {
+    UI: {},
+    regions: {},
+    currentRegion: "",
+    sites: {},
+    factories: {},
+    data: {},
+    CO2Limit: 1e4
+};
 
 
 globals.UI = {

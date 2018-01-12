@@ -21,12 +21,15 @@ class ProductionMgr{
         globals.moneyMgr.totVal += this.mondioProduction;
         this._totCO2Produced += CO2Production;
 
+        if(this._totCO2Produced >= globals.CO2Limit){
+            game.state.start("gameEnd");
+        } 
+
         this._updateCam();
     }
 
     _updateCam(){
-        let CO2Limit = 1e4; //if above this value, you loose the game; to add in the globals
-        game.camera.fade(0x000000, 1, true, this._totCO2Produced / CO2Limit);
+        game.camera.fade(0x000000, 10, true, this._totCO2Produced / globals.CO2Limit);
         // console.log(game.camera);
     }
 

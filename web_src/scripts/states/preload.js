@@ -65,6 +65,6 @@ preloadState.update = function(){
 	this.earth.rotation += 0.01;
 
 	if(game.load.hasLoaded){
-		game.state.start("game");
+		game.state.start("gameEnd");
 	}
 };
