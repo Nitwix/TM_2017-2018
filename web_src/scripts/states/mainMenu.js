@@ -4,8 +4,9 @@ var mainMenuState = {
 };
 
 mainMenuState.create = function(){
-	gameEls.setup.bureau(); //voir utils/setup.js
-    gameEls.setup.UI();
+	gameEls.setup.background();
+	gameEls.setup.earthMap();
+	//ajouter le bouton plein écran
 
 	var playButt = game.add.button(0,0,"wide_buttons", function(){
         game.state.start("game");
