@@ -6,7 +6,7 @@ var mainMenuState = {
 mainMenuState.create = function(){
 	gameEls.setup.background();
 	gameEls.setup.earthMap();
-	//ajouter le bouton plein écran
+	gameEls.setup.fsBtn();
 
 	var playButt = game.add.button(0,0,"wide_buttons", function(){
         game.state.start("game");

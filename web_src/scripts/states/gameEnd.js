@@ -1,8 +1,13 @@
 let gameEndState = {
     create: () => {
 
-        gameEndState.txt = ["Félicitations, vous êtes parvenu à un point de non retour dans le réchauffement climatique.",
-            "Votre planète continuera à se réchauffer dans un cycle de rétroaction positive (ne pensez pas que c'est une bonne chose)."];
+        if(globals.gameWon){
+            gameEndState.txt = ["Félicitations, vous avez atteint les objectifs de la COP21",
+                "Vous pouvez refaire une partie dans un mode de difficulté plus élevée."];
+        }else{
+            gameEndState.txt = ["Félicitations, vous êtes parvenu à un point de non retour dans le réchauffement climatique.",
+                "Votre planète continuera à se réchauffer dans un cycle de rétroaction positive (ne pensez pas que c'est une bonne chose)."];
+        }
 
         let count = 0;
         gameEndState.showNextTxt(count);
@@ -29,6 +34,8 @@ let gameEndState = {
             let btnGroup = game.add.group();
 
             let btn = game.make.button(0,0,"wide_buttons", () => {
+                //TODO: reset les éléments dans factories (propriety visibleInNP ou truc du genre)
+                //reset les instances des sites
                 game.state.start("mainMenu");
             }, this, 0,1,2,0);
             btn.scale.setTo(3);
@@ -44,5 +51,10 @@ let gameEndState = {
             btnTween.to({alpha:1}, tweenDur);
             btnTween.start();
         }
+        
+    },
+
+    resetGame: () => {
+
     }
 }

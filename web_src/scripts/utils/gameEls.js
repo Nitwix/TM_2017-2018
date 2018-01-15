@@ -14,16 +14,20 @@ gameEls.setup.earthMap = function(){
     centerObj(gameEls.earthMap); //voir utils/pos.js
 }
 
-gameEls.setup.UI = function(){
-    gameEls.fsBtn = game.add.button(0,0,"buttons",() => {
-        if(game.scale.isFullScreen){
+gameEls.setup.fsBtn = function(){
+    gameEls.fsBtn = game.add.button(0, 0, "buttons", () => {
+        if (game.scale.isFullScreen) {
             game.scale.stopFullScreen();
-        }else{
+        } else {
             game.scale.startFullScreen();
         }
-    },this,3,4,5,3);
+    }, this, 3, 4, 5, 3);
     gameEls.fsBtn.scale.setTo(globals.UI.smallButtonScale);
     cornerObj(gameEls.fsBtn, globals.UI.buttonOffset, "ne");
+}
+
+gameEls.setup.UI = function(){
+    gameEls.setup.fsBtn();
 
     gameEls.researchBtn = game.add.button(0,0,"buttons", () => {
         let newspaper = new Newspaper("smallSections", globals.data.factoryResearch, this);
