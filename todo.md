@@ -1,7 +1,8 @@
 # À faire
 ## Bugs à fixer
 - bug lorsqu'on a plusieurs textes avec la classe Dialog (affiche instantanémment la suite)
-
+- lorsqu'in débloque plusieurs centrales d'un coup, seul une s'affiche dans le dialog
+- lorsqu'on clique sur une region et qu'on clique sur un bouton pendant le zoom
 
 ## Petits objectifs
 - dessiner Conseil
@@ -17,7 +18,8 @@
 - ajuster les valeurs de production des usines pour que le jeu soit plus intéressant.
 - ajuster la valeur limite de CO2
 - diminuer la valeur totale de CO2 dans l'atmosphère en fonction des décisions du joueur (dans "actions citoyennes")
-- afficher l'augmentation de temperature depuis le début du jeu (en fonction de totCO2)
+- afficher l'augmentation de temperature depuis le début du jeu (en fonction de totCO2)¨
+- afficher d'autres infos sur les centrales dans la description (dans newspaper)
 
 
 ## Grands objectifs

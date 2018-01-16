@@ -4,17 +4,17 @@ globals.data.factoryShop = {
     purpose: "factoryShop",
     els: [
         //rien car aucune centrale débloquée au début du jeu
-        (new Factory({
-            type:"coalPlant",
-            title:"Centrale à charbon",
-            power:5e2,
-            constructionPrice: 15e3,
-            destrCoeff:2,
-            CO2Production:30,
-            grayCO2:30,
-            upgradeCoeff:1.15,
-            addDescr: "La prolifération des centrales à charbon pose des problèmes environnementaux."
-        })).dataObj,
+        // (new Factory({
+        //     type:"coalPlant",
+        //     title:"Centrale à charbon",
+        //     power:5e2,
+        //     constructionPrice: 15e3,
+        //     destrCoeff:2,
+        //     CO2Production:30,
+        //     grayCO2:30,
+        //     upgradeCoeff:1.15,
+        //     addDescr: "La prolifération des centrales à charbon pose des problèmes environnementaux."
+        // })).dataObj,
     ]
 }
 
@@ -89,7 +89,7 @@ globals.data.factoryResearch = {
             power:33e2,
             constructionPrice:100e3,
             destrCoeff:1,
-            CO2Production:10,
+            CO2Production:0,
             grayCO2:150,
             upgradeCoeff:1.25,
             addDescr:"Ce type d'énergie est très écologique."
@@ -101,7 +101,7 @@ globals.data.factoryResearch = {
             power:35e3,
             constructionPrice:25e3,
             destrCoeff:.2,
-            CO2Production:10,
+            CO2Production:0,
             grayCO2:150,
             upgradeCoeff:1.3,
             addDescr:"En plus d'être très joli à voir, ce type de production ne contribue pas à l'effet de serre"

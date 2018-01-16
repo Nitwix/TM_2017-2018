@@ -15,8 +15,11 @@ var globals = {
     factories: { 
         maxLevel: 3,
     },
+
     data: {}, //voir scripts/data
-    CO2Limit: 1e3,
+
+    initMoney: 25e6,
+    CO2Limit: 1e4,
     beginYear:1799,
     endYear: 2100,
     gameWon: undefined, //type : bool

@@ -16,7 +16,7 @@ gameState.create = function(){
     /*this.conseilRect = new Phaser.Rectangle(0, 0, 96, 128);
     cornerObj(this.conseilRect, 10, "sw");*/
 
-    globals.moneyMgr = new MoneyMgr(25e4);
+    globals.moneyMgr = new MoneyMgr(globals.initMoney);
 
     globals.productionMgr = new ProductionMgr();
 
