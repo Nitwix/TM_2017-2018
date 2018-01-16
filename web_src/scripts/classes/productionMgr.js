@@ -6,6 +6,8 @@ class ProductionMgr{
         this._totCO2Produced = 0; //CO2 émi au total dans l'atmosphère (CO2Production + grayCO2)
 
         this._energyToMondio = .3;
+
+        this.gameEnded = false;
     }
 
     update(){
@@ -21,16 +23,28 @@ class ProductionMgr{
         globals.moneyMgr.totVal += this.mondioProduction;
         this._totCO2Produced += CO2Production;
 
-        if(this._totCO2Produced >= globals.CO2Limit){
-            game.state.start("gameEnd");
-        } 
-
-        this._updateCam();
+        if(!this.gameEnded){
+            if(this._totCO2Produced >= globals.CO2Limit){
+                //BUG: la camera fait un flash vers alpha=0 avant de fader vers alpha=1
+                this._fadeCam(2000, 1, () => {
+                    globals.gameWon = false;
+                    game.state.start("gameEnd");
+                });
+                this.gameEnded = true;
+            }else{
+                const fadeScale = 4 / 5;
+                this._fadeCam(10, fadeScale * (this._totCO2Produced / globals.CO2Limit));
+            }
+        }
     }
 
-    _updateCam(){
-        game.camera.fade(0x000000, 10, true, this._totCO2Produced / globals.CO2Limit);
+    _fadeCam(duration, alpha, onCompleteCB){
+        game.camera.fade(0x000000, duration, true, alpha);
         // console.log(game.camera);
+        if(onCompleteCB){
+            game.camera.onFadeComplete.addOnce(onCompleteCB, this);
+            // debugger;
+        }
     }
 
     get mondioProduction(){

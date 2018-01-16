@@ -1,7 +1,7 @@
 # À faire
 ## Bugs à fixer
 - bug lorsqu'on a plusieurs textes avec la classe Dialog (affiche instantanémment la suite)
-- les animations des usines ne disparaissent pas immédiatement après que les usines aient été détruites
+
 
 ## Petits objectifs
 - dessiner Conseil
@@ -13,8 +13,11 @@
     - affiche un newspaper
     - fait diminuer la population
     - le site de production sur lequel la centrale se trouvait coûte **très** cher à décontaminer/redébloquer
-- faire des recherche concernant le taux de carbon dans l'atmosphère et son évolution
-- ajouter une tint à la camera en fonction de la concentration de CO<sub>2</sub> dans l'atmosphère
+- faire des recherches concernant le taux de carbon dans l'atmosphère et son évolution
+- ajuster les valeurs de production des usines pour que le jeu soit plus intéressant.
+- ajuster la valeur limite de CO2
+- diminuer la valeur totale de CO2 dans l'atmosphère en fonction des décisions du joueur (dans "actions citoyennes")
+
 
 ## Grands objectifs
 - commencer la rédaction du document écrit
@@ -32,8 +35,6 @@
     (diminue la prod. de CO2 de la population)
     - etc...
     - **ces conseils s'afficheront dans des smallDialog**
-- ajouter un bouton *statistiques (nombres)*
-    - les pages contiennent les valeurs des différents indicateurs (quantité de mondios, prod. d'énergie, de CO2, population, etc...)
 - ajouter un bouton *statistiques (graphes)* //pas sûr
     - affiche un graphe des différentes valeurs sur des pages différentes
 
@@ -69,3 +70,6 @@
 - ajouter un bouton *recherche* (26.12.2017)
     - permet de débloquer peu à peu les nouveaux types de centrales (aléatoirement)
 - dessiner la carte du monde (26.12.2017)
+- ajouter un bouton *statistiques (nombres)* (08.01.2018)
+    - les pages contiennent les valeurs des différents indicateurs (quantité de mondios, prod. d'énergie, de CO2, population, etc...)
+- ajouter une tint à la camera en fonction de la concentration de CO<sub>2</sub> dans l'atmosphère (16.01.2018)

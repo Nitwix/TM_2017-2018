@@ -7,7 +7,7 @@ var globals = {
     sites: {},
     factories: {},
     data: {},
-    CO2Limit: 1e4,
+    CO2Limit: 1e3,
     gameWon: true
 };
 
