@@ -15,7 +15,7 @@ class TimeMgr{
         this._callbacks = callbacks; //array de callbacks
         this._YUCallbacks = [];
 
-        this._year = 1799;
+        this._year = globals.beginYear;
         this._lastYUSec = -1;
 
         this._timeScale = 1;
@@ -48,6 +48,14 @@ class TimeMgr{
     }
 
     _yearUpdate(){
+        if(this._year >= globals.endYear && !globals.gameEnded){
+            gameEls.fadeCam(2000, 1, () => {
+                globals.gameWon = true;
+                game.state.start("gameEnd");
+            });   
+            globals.gameEnded = true;
+        }
+
         for(let c of this._YUCallbacks){
             c();
         }

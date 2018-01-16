@@ -1,6 +1,10 @@
 let gameState = {};
 
 gameState.create = function(){
+    //en cas de nouvelle partie, réinitialisons.
+    globals.reset();
+
+
     gameEls.setup.background(); //voir utils/gameEls.js
     gameEls.setup.earthMap();
     gameEls.setup.UI();
@@ -26,20 +30,7 @@ gameState.create = function(){
     globals.productionMgr.energyProduction = 0;
 
     globals.researchMgr = new ResearchMgr();
-
-    // let newspaper = new Newspaper("smallSections", globals.data.factories);
-    // newspaper.start();
-
-    // let test1 = game.add.sprite(200,200, 'smokeAnim');
-    // test1.scale.setTo(2, 4);
-    // let anim1 = test1.animations.add('smoke', null, 8, true);
-    // anim1.play();
-    //
-    // let test2 = game.add.sprite(400,200, 'explosionAnim');
-    // test2.scale.setTo(4);
-    // let anim2 = test2.animations.add('explode', null, 8, true);
-    // anim2.play();
-
+    
 
 };
 gameState.update = function(){

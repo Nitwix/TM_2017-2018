@@ -17,10 +17,15 @@
 - ajuster les valeurs de production des usines pour que le jeu soit plus intéressant.
 - ajuster la valeur limite de CO2
 - diminuer la valeur totale de CO2 dans l'atmosphère en fonction des décisions du joueur (dans "actions citoyennes")
+- afficher l'augmentation de temperature depuis le début du jeu (en fonction de totCO2)
 
 
 ## Grands objectifs
 - commencer la rédaction du document écrit
+- Réinitialisation des sites de production, des usines et de plusieurs autres choses après la fin du jeu
+- Tutoriel !
+- modes de difficulté
+- Interventions de Conseil
 - classe TimeMgr
     - _maybe_ mettre un résumé des productions de l'année à la fin de chaque année
 - faire la musique du jeu + les effets sonores

@@ -11,8 +11,9 @@
 - se termine lorsque : le joueur a dépassé une augmentation de 2°C (objectif de l'augmentation de moins de 2 degrés celsius fixé par l'accord de Paris) ou l'année > 2100
 
 - idées pour titre:
-- De Révolution à Evolution
-- 1800 à 2100, une histoire de l'énergie
+    - De Révolution à Evolution
+    - 1800 à 2100, une histoire de l'énergie
+    - Création d'un jeu vidéo sur les thémathiques de l'écologie et de la transition énergétique
 
 - évènements historiques réels interviennent dans le jeu (journal jeté sur la table avec news)
 
@@ -25,17 +26,17 @@
 - une action écologique rapporte des points de réputation auprès de ton conseiller écologique et vice versa -->
 
 - carte rapprochée :
-- affiche une région
-- plusieurs emplacements disponibles pour sites de production
+    - affiche une région
+    - plusieurs emplacements disponibles pour sites de production
 
 - fission nucléaire disponible mais conséquences aléatoire : explosion de centrale, population intoxiquée par déchets, ...
 
 - les graphismes du bureau évoluent au cours du temps
 
 - scénario :
-- narrateurs/guides : conseiller écologique : Conseil
-- joueur : président du monde (Ou ministre de l'énergie et des ressources)
-<!-- - joueur : président d'une compagnie électrique //voir Réflexions-->
+    - narrateurs/guides : conseiller écologique : Conseil
+    - joueur : président du monde (Ou ministre de l'énergie et des ressources)
+    <!-- - joueur : président d'une compagnie électrique //voir Réflexions-->
 
 - Mettre une icone : demander Conseil/conseil
 
@@ -112,11 +113,11 @@ Centrale nucléaire (fusion) | 3M | 1.000M | x2 | 0 | 10k | 1.25
 - chaque "jour de jeu", il y a une probabilité que l'on débloque une nouvelle façon de produire de l'énergie
 - plus on investit dans la recherche d'une technologie, plus on augmente la probabilité de "découvrir" cette façon de produire de l'énergie
 - une fois qu'on a découvert la méthode, on peut commencer à l'installer dans les régions compatibles
-- on ne peut commencer à investir dans la recherche qu'à partir d'une certaine année
-- éoliennes : ~1900
-- panneaux solaires photovoltaïques : ~1905
-- centrales nucléaires : ~1930
-- centrales à fusion : ~1970
+- on ne peut commencer à investir dans la recherche qu'à partir d'une certaine année //pas sûr
+    - éoliennes : ~1900
+    - panneaux solaires photovoltaïques : ~1905
+    - centrales nucléaires : ~1930
+    - centrales à fusion : ~1970
 
 
 
@@ -144,9 +145,8 @@ Centrale nucléaire (fusion) | 3M | 1.000M | x2 | 0 | 10k | 1.25
 
 - (1800-1810) tutoriel
 - début avec (assez pour tuto)M
-- déblocage d'un site de production d'énergie et d'un site de production de ressources
-- installation de mine de charbon 1
-- installation de usine 1
+- déblocage d'un site de production d'énergie
+- installation de centrale à charbon niveau 1
 - le déblocage de sites de production coûte de l'argent
 - des évènements aléatoires se produisent durant la partie
 

@@ -12,7 +12,7 @@ globals.data.factoryShop = {
             destrCoeff:2,
             CO2Production:30,
             grayCO2:30,
-            upgradeCoeff:1.75,
+            upgradeCoeff:1.15,
             addDescr: "La prolifération des centrales à charbon pose des problèmes environnementaux."
         })).dataObj,
     ]

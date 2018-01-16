@@ -54,7 +54,7 @@ gameEls.setup.UI = function(){
                 {
                     spriteIndex: 2,
                     title: "Emissions de CO2",
-                    descr: `Vos centrales ont émi environ ${Math.round(globals.productionMgr.totCO2Produced)}(kg?) de CO2 dans l'atmosphère.\nElles émettent environ ${Math.round(globals.productionMgr.CO2Production)}(kg?) de CO2 par semaine.`
+                    descr: `Vos centrales ont émi environ ${Math.round(globals.productionMgr.totCO2)}(kg?) de CO2 dans l'atmosphère.\nElles émettent environ ${Math.round(globals.productionMgr.CO2Production)}(kg?) de CO2 par semaine.`
                 }
                 /*
                 à rajouter:
@@ -84,6 +84,15 @@ gameEls.stopTmpEls = function(){
     }
     if(gameEls.smallDialog != undefined){
         gameEls.smallDialog.stop();
+    }
+}
+
+gameEls.fadeCam = function (duration, alpha, onCompleteCB){
+    game.camera.fade(0x000000, duration, true, alpha);
+    // console.log(game.camera);
+    if (onCompleteCB) {
+        game.camera.onFadeComplete.addOnce(onCompleteCB, this);
+        // debugger;
     }
 }
 

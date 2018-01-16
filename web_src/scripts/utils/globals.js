@@ -2,14 +2,41 @@
 
 var globals = {
     UI: {},
-    regions: {},
-    currentRegion: "",
-    sites: {},
-    factories: {},
-    data: {},
+
+    //voir utils/regions.js
+    regions: {},//contient les instances de la classe Region
+    currentRegion: "", //"" quand en worldview et la key de la région sinon
+
+    //contient des variable en rapport avec les sites de production
+    sites: {
+        id: 0, //identifiant unique pour chaque site de production (voir utils/regions.js)
+        instances: []
+    },
+    factories: { 
+        maxLevel: 3,
+    },
+    data: {}, //voir scripts/data
     CO2Limit: 1e3,
-    gameWon: true
+    beginYear:1799,
+    endYear: 2100,
+    gameWon: undefined, //type : bool
+    gameEnded: false, //pour ne pas appeler plusieurs fois gameEls.fadeCam(...)
+
+    moneyMgr: {},
+    productionMgr: {},
+    researchMgr: {},
+
+    reset: null // défini ci-dessous
 };
+
+globals.reset = function(){
+    globals.gameEnded = false;
+    globals.sites.instances = [];
+
+    globals.sites.id = 0;
+
+    //reset data factories
+}
 
 
 globals.UI = {
@@ -22,26 +49,10 @@ globals.UI = {
     longTweenDur: 800
 };
 
-//voir utils/regions.js
-globals.regions = {}; //array contenant les instances de la classe Region
-globals.currentRegion = ""; //"" quand en worldview et la key de la région sinon
 
-//contient des variable en rapport avec les sites de production
-globals.sites = {
-    id: 0, //identifiant unique pour chaque site de production (voir utils/regions.js)
-    instances: []
-};
-
-
-globals.factories = {
-    maxLevel: 3
-};
 
 // globals.sites.dialogDisplayed = ""; //"" quand en 'world view' et 's...' si box d'unlock/upgrade ouverte
 // remplacé par gameEls.smallDialog
 
 // globals.dialogDisplayed = false;
 // remplacé par gameEls.dialog
-
-
-globals.data = {}; //voir scripts/data/
