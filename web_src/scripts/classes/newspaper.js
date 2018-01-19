@@ -86,7 +86,7 @@ class Newspaper{
                 };
                 break;
             default:
-                console.log("no mods made to el in newspaper purposeSpecificMods");
+                // console.log("no mods made to el in newspaper purposeSpecificMods");
         }
     }
 

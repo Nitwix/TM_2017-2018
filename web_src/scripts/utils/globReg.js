@@ -72,6 +72,8 @@ globReg.goto.region = function(region){
 
     globals.currentRegion = region.name;
 
+    game.input.enabled = false; //désactive pendant le zoom
+
     this.zoom = game.add.tween(gameEls.earthMap);
 
     let mp = region.poly.midPoint();
@@ -89,6 +91,7 @@ globReg.goto.region = function(region){
 
     this.zoom.start();
     this.zoom.onComplete.add(function(){
+        game.input.enabled = true; //réactive à la fin du zoom
         region.init();
     }, this);
 

@@ -77,7 +77,7 @@ globals.data.factoryResearch = {
             power:160e2,
             constructionPrice:500e3,
             destrCoeff:1,
-            CO2Production:10,
+            CO2Production:0,
             grayCO2:150,
             upgradeCoeff:1.1,
             addDescr:"Cette centrale risque d'exploser."
@@ -113,7 +113,7 @@ globals.data.factoryResearch = {
             power:35e3,
             constructionPrice:25e3,
             destrCoeff:1,
-            CO2Production:10,
+            CO2Production:0,
             grayCO2:150,
             upgradeCoeff:1.3,
             addDescr:"Ce type d'énergie est écologique. La fumée que vous voyez n'est que de la vapeur d'eau"

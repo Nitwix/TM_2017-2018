@@ -1,8 +1,7 @@
 # À faire
 ## Bugs à fixer
 - bug lorsqu'on a plusieurs textes avec la classe Dialog (affiche instantanémment la suite)
-- lorsqu'in débloque plusieurs centrales d'un coup, seul une s'affiche dans le dialog
-- lorsqu'on clique sur une region et qu'on clique sur un bouton pendant le zoom
+- lorsqu'on débloque plusieurs centrales d'un coup, seul une s'affiche dans le dialog
 
 ## Petits objectifs
 - dessiner Conseil

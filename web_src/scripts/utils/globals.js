@@ -18,7 +18,7 @@ var globals = {
 
     data: {}, //voir scripts/data
 
-    initMoney: 25e6,
+    initMoney: 25e5,
     CO2Limit: 1e4,
     beginYear:1799,
     endYear: 2100,
