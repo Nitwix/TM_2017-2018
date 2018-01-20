@@ -37,32 +37,7 @@ gameEls.setup.UI = function(){
     gameEls.researchBtn.alignTo(gameEls.fsBtn, Phaser.BOTTOM_CENTER, 0, globals.UI.buttonOffset);
 
     gameEls.statsBtn = game.add.button(0,0,"buttons", () => {
-        let data = {
-            title: "Statistiques",
-            spritesheet: "statsIcons", //n'existe pas encore
-            els: [
-                {
-                    spriteIndex: 0,
-                    title: "Mondios",
-                    descr: `Vous possédez ${globals.moneyMgr.totVal.toReadableStr()} Mondios.\nVous gagnez environ ${Math.round(globals.productionMgr.mondioProduction)} Mondios par semaine.`
-                },
-                {
-                    spriteIndex: 1,
-                    title: "Production électrique",
-                    descr: `Vos centrales à travers le monde produisent ${Math.round(globals.productionMgr.totPower)} Watts`
-                },
-                {
-                    spriteIndex: 2,
-                    title: "Emissions de CO2",
-                    descr: `Vos centrales ont émi environ ${Math.round(globals.productionMgr.totCO2)}(kg?) de CO2 dans l'atmosphère.\nElles émettent environ ${Math.round(globals.productionMgr.CO2Production)}(kg?) de CO2 par semaine.`
-                }
-                /*
-                à rajouter:
-                - peut-être : population
-                */
-            ]
-        };
-        let statsNP = new Newspaper("smallSections", data);
+        let statsNP = new Newspaper("smallSections", globals.data.stats);
         statsNP.start();
     }, this, 12, 13, 14, 12);
     gameEls.statsBtn.scale.setTo(globals.UI.smallButtonScale);
