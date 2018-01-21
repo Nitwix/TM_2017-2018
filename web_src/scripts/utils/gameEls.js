@@ -37,13 +37,21 @@ gameEls.setup.UI = function(){
     gameEls.researchBtn.alignTo(gameEls.fsBtn, Phaser.BOTTOM_CENTER, 0, globals.UI.buttonOffset);
 
     gameEls.statsBtn = game.add.button(0,0,"buttons", () => {
+        initStatsData();
         let statsNP = new Newspaper("smallSections", globals.data.stats);
         statsNP.start();
     }, this, 12, 13, 14, 12);
     gameEls.statsBtn.scale.setTo(globals.UI.smallButtonScale);
     gameEls.statsBtn.alignTo(gameEls.researchBtn, Phaser.BOTTOM_CENTER, 0, globals.UI.buttonOffset);
 
-    gameEls.lastBtn = gameEls.statsBtn; //pour pouvoir mettre le worldButton en-dessous
+    gameEls.ecoActionsBtn = game.add.button(0,0,"buttons", () => {
+        globals.ecoActionsMgr.startNP();
+        globals.ecoActionsMgr.toggleRedDot();
+    }, this, 15, 16, 17, 15);
+    gameEls.ecoActionsBtn.scale.setTo(globals.UI.smallButtonScale);
+    gameEls.ecoActionsBtn.alignTo(gameEls.statsBtn, Phaser.BOTTOM_CENTER, 0, globals.UI.buttonOffset);
+
+    gameEls.lastBtn = gameEls.ecoActionsBtn; //pour pouvoir mettre le worldButton en-dessous
 
     //autres éléments permanents de l'UI...
 }

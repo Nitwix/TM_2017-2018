@@ -12,7 +12,7 @@ var globals = {
         id: 0, //identifiant unique pour chaque site de production (voir utils/regions.js)
         instances: []
     },
-    factories: { 
+    factories: {
         maxLevel: 3,
     },
 
@@ -20,16 +20,19 @@ var globals = {
 
     initMoney: 25e5,
     CO2Limit: 1e4,
+    globalWarmingLimit: 2,
     beginYear:1799,
     endYear: 2100,
     gameWon: undefined, //type : bool
     gameEnded: false, //pour ne pas appeler plusieurs fois gameEls.fadeCam(...)
 
-    moneyMgr: {},
-    productionMgr: {},
-    researchMgr: {},
+    moneyMgr: null,
+    productionMgr: null,
+    researchMgr: null,
+    ecoActionsMgr: null,
 
-    reset: null // défini ci-dessous
+    reset: null, // défini ci-dessous,
+    initData: null //défini ci-dessous
 };
 
 globals.reset = function(){
@@ -40,6 +43,10 @@ globals.reset = function(){
 
     //reset data factories
 }
+
+// globals.initData = function(){
+//     initStatsData();
+// }
 
 
 globals.UI = {

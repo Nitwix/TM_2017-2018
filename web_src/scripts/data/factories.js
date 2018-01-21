@@ -4,17 +4,17 @@ globals.data.factoryShop = {
     purpose: "factoryShop",
     els: [
         //rien car aucune centrale débloquée au début du jeu
-        // (new Factory({
-        //     type:"coalPlant",
-        //     title:"Centrale à charbon",
-        //     power:5e2,
-        //     constructionPrice: 15e3,
-        //     destrCoeff:2,
-        //     CO2Production:30,
-        //     grayCO2:30,
-        //     upgradeCoeff:1.15,
-        //     addDescr: "La prolifération des centrales à charbon pose des problèmes environnementaux."
-        // })).dataObj,
+        (new Factory({
+            type:"coalPlant",
+            title:"Centrale à charbon",
+            power:5e2,
+            constructionPrice: 15e3,
+            destrCoeff:2,
+            CO2Production:30,
+            grayCO2:30,
+            upgradeCoeff:1.15,
+            addDescr: "La prolifération des centrales à charbon pose des problèmes environnementaux."
+        })).dataObj,
     ]
 }
 

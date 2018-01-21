@@ -17,8 +17,13 @@
 - ajuster les valeurs de production des usines pour que le jeu soit plus intéressant.
 - ajuster la valeur limite de CO2
 - diminuer la valeur totale de CO2 dans l'atmosphère en fonction des décisions du joueur (dans "actions citoyennes")
-- afficher l'augmentation de temperature depuis le début du jeu (en fonction de totCO2)¨
+- afficher l'augmentation de temperature depuis le début du jeu (en fonction de totCO2)
 - afficher d'autres infos sur les centrales dans la description (dans newspaper)
+- recherche
+    - progression avec un facteur 1.x
+    - afficher la progression dans le newspaper
+- Ajouter un besoin en énergie qui doit être satisfait
+- ajouter un bouton pause
 
 
 ## Grands objectifs
@@ -40,9 +45,10 @@
     - encourager l'utilisation des transports publiques
     (diminue la prod. de CO2 de la population)
     - etc...
-    - **ces conseils s'afficheront dans des smallDialog**
+    - **ces conseils s'afficheront dans un newspaper**
 - ajouter un bouton *statistiques (graphes)* //pas sûr
     - affiche un graphe des différentes valeurs sur des pages différentes
+- ajouter des niveaux de difficulté
 
 
 

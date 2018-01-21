@@ -15,6 +15,7 @@ preloadState.preload = function(){
 
 	//chargement de l'UI
 	game.load.spritesheet("buttons", `${sprites}buttons/buttons.png`, 32, 32);
+	game.load.spritesheet("redDotAnim", `${sprites}buttons/redDot.png`, 8, 8);
     game.load.spritesheet("wide_buttons", `${sprites}buttons/wide_buttons.png`, 64, 32);
 	game.load.spritesheet("speed", `${sprites}buttons/speed.png`, 14, 11);
 	game.load.spritesheet("statsIcons", `${sprites}stats/statsIcons.png`, 32, 32);

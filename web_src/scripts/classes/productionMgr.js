@@ -31,7 +31,7 @@ class ProductionMgr{
                 });
                 globals.gameEnded = true;
             }else{
-                const fadeScale = 4 / 5;
+                const fadeScale = 3 / 5;
                 gameEls.fadeCam(10, fadeScale * (this._totCO2 / globals.CO2Limit));
             }
         }
@@ -69,5 +69,9 @@ class ProductionMgr{
 
     get energyToMondio(){
         return this._energyToMondio;
+    }
+
+    get globalWarming(){
+        return (this._totCO2 / globals.CO2Limit)*globals.globalWarmingLimit;
     }
 }

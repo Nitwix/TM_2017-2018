@@ -30,7 +30,10 @@ gameState.create = function(){
     globals.productionMgr.energyProduction = 0;
 
     globals.researchMgr = new ResearchMgr();
-    
+
+    globals.ecoActionsMgr = new EcoActionsMgr();
+
+    // globals.initData();
 
 };
 gameState.update = function(){
