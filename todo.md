@@ -1,4 +1,19 @@
 # À faire
+## Pour la beta (uniquement l'essentiel concernant le gameplay)
+- => nécessite de pouvoir mettre à jour les textes des newspaper pendant qu'il est ouvert
+- Ajouter un besoin en énergie qui doit être satisfait qui augmente en fonction de la population
+    - à afficher dans stats (besoin et population)
+- afficher d'autres infos sur les centrales dans la description (dans newspaper)
+- recherche
+    - progression avec un facteur 1.x
+    - afficher la progression dans le newspaper
+
+- ajuster (à la fin)
+    - les valeurs de production des usines pour que le jeu soit plus intéressant.
+    - la valeur limite de CO2
+
+
+
 ## Bugs à fixer
 - bug lorsqu'on a plusieurs textes avec la classe Dialog (affiche instantanémment la suite)
 - lorsqu'on débloque plusieurs centrales d'un coup, seul une s'affiche dans le dialog
@@ -6,23 +21,12 @@
 ## Petits objectifs
 - dessiner Conseil
 - (maybe) afficher l'icone Mondio dans smallDialog quand on veut acheter qqch
-- ajouter un compteur de population
-- ajouter une mesure de la production de CO<sub>2</sub> de la population
 - ajouter des évènements historiques affichés dans un newspaper
 - ajouter l'explosion aléatoire des centrales à fission
     - affiche un newspaper
     - fait diminuer la population
     - le site de production sur lequel la centrale se trouvait coûte **très** cher à décontaminer/redébloquer
 - faire des recherches concernant le taux de carbon dans l'atmosphère et son évolution
-- ajuster les valeurs de production des usines pour que le jeu soit plus intéressant.
-- ajuster la valeur limite de CO2
-- diminuer la valeur totale de CO2 dans l'atmosphère en fonction des décisions du joueur (dans "actions citoyennes")
-- afficher l'augmentation de temperature depuis le début du jeu (en fonction de totCO2)
-- afficher d'autres infos sur les centrales dans la description (dans newspaper)
-- recherche
-    - progression avec un facteur 1.x
-    - afficher la progression dans le newspaper
-- Ajouter un besoin en énergie qui doit être satisfait
 - ajouter un bouton pause
 
 
@@ -41,11 +45,13 @@
     - le prix de destruction
     - la production de CO<sub>2</sub>
     - le "CO<sub>2</sub>" gris de construction des centrales
+
 - trouver des 'conseils écologiques' et leur effet:
     - encourager l'utilisation des transports publiques
     (diminue la prod. de CO2 de la population)
     - etc...
     - **ces conseils s'afficheront dans un newspaper**
+    - ajouter une mesure de la production de CO<sub>2</sub> de la population qui est modifiée en fonctions des ecoActions
 - ajouter un bouton *statistiques (graphes)* //pas sûr
     - affiche un graphe des différentes valeurs sur des pages différentes
 - ajouter des niveaux de difficulté
@@ -85,3 +91,5 @@
 - ajouter un bouton *statistiques (nombres)* (08.01.2018)
     - les pages contiennent les valeurs des différents indicateurs (quantité de mondios, prod. d'énergie, de CO2, population, etc...)
 - ajouter une tint à la camera en fonction de la concentration de CO<sub>2</sub> dans l'atmosphère (16.01.2018)
+- afficher l'augmentation de temperature depuis le début du jeu (en fonction de totCO2) (21.01.2018)
+

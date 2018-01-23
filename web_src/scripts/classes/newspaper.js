@@ -61,6 +61,24 @@ class Newspaper{
         this._fontTint = 0x55472f;
     }
 
+    /*just a method to test the feasability of updating the newspaper while it's displayed
+    -> ça pourrait très bien marcher :D
+    TODO: 
+    - mettre à jour la data de façon plus générale
+    - mettre alpha = 0 uniquement lorsqu'on veut faire un tween (dans addContentEls)
+    - ajouter les boutons de changement de page de façon plus générale
+
+    */
+    testUpdate(){
+        updateStatsData();
+        this._data = globals.data.stats;
+
+        this._contentEls.destroy(true, true);
+        this._addContentEls();
+        
+        this._addChangePageBtn(true);
+    }
+
     _purposeSpecificMods(el){
 
         switch(this._data.purpose){
@@ -195,6 +213,7 @@ class Newspaper{
         this._contentEls.add(btn); //simplifie la logique de changement de page
     }
 
+    //TODO: changer next en forward pour plus de clarté
     _changePage(next){
         this._contentEls.removeAll(true);
         if(next){
@@ -236,7 +255,7 @@ class Newspaper{
         }
 
         //pour pouvoir tweener plus tard
-        this._contentEls.alpha = 0;
+        this._contentEls.alpha = 1; //normalement 0
     }
 
 

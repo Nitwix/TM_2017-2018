@@ -31,7 +31,7 @@ gameState.create = function(){
 
     globals.researchMgr = new ResearchMgr();
 
-    globals.ecoActionsMgr = new EcoActionsMgr();
+    // globals.ecoActionsMgr = new EcoActionsMgr();
 
     // globals.initData();
 

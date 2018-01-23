@@ -1,4 +1,4 @@
-function initStatsData(){
+function updateStatsData(){
     globals.data.stats = {
         title: "Statistiques",
         spritesheet: "statsIcons", //n'existe pas encore

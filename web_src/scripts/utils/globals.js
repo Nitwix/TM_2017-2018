@@ -19,7 +19,7 @@ var globals = {
     data: {}, //voir scripts/data
 
     initMoney: 25e5,
-    CO2Limit: 1e4,
+    CO2Limit: 1e6,
     globalWarmingLimit: 2,
     beginYear:1799,
     endYear: 2100,

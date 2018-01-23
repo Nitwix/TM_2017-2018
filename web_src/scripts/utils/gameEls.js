@@ -22,7 +22,6 @@ gameEls.setup.fsBtn = function(){
             game.scale.startFullScreen();
         }
     }, this, "fs", "TOPMOST");
-    // game.add.existing(gameEls.fsBtn);
 }
 
 gameEls.setup.UI = function(){
@@ -34,19 +33,19 @@ gameEls.setup.UI = function(){
     }, this, "research", gameEls.fsBtn);
 
     gameEls.statsBtn = new MenuButton(() => {
-        initStatsData();
+        updateStatsData();
         let statsNP = new Newspaper("smallSections", globals.data.stats);
         statsNP.start();
     }, this, "stats", gameEls.researchBtn);
-    gameEls.statsBtn.toggleBlink();
-
-    gameEls.ecoActionsBtn = new MenuButton(() => {
-        globals.ecoActionsMgr.startNP();
-        globals.ecoActionsMgr.toggleRedDot();
-    }, this, "ecoActions", gameEls.statsBtn);
 
 
-    gameEls.lastBtn = gameEls.ecoActionsBtn; //pour pouvoir mettre le worldButton en-dessous
+    // gameEls.ecoActionsBtn = new MenuButton(() => {
+    //     globals.ecoActionsMgr.startNP();
+    //     globals.ecoActionsMgr.toggleRedDot();
+    // }, this, "ecoActions", gameEls.statsBtn);
+
+
+    gameEls.lastBtn = gameEls.statsBtn; //pour pouvoir mettre le worldButton en-dessous
 
     //autres éléments permanents de l'UI...
 }
