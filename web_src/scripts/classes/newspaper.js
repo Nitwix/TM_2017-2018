@@ -61,6 +61,10 @@ class Newspaper{
         this._fontTint = 0x55472f;
     }
 
+    get data(){
+        return this._data;
+    }
+
     /*just a method to test the feasability of updating the newspaper while it's displayed
     -> ça pourrait très bien marcher :D
     TODO: 
@@ -69,14 +73,23 @@ class Newspaper{
     - ajouter les boutons de changement de page de façon plus générale
 
     */
-    testUpdate(){
-        updateStatsData();
-        this._data = globals.data.stats;
+    // testUpdate(){
+    //     updateStatsData();
+    //     this._data = globals.data.stats;
 
-        this._contentEls.destroy(true, true);
-        this._addContentEls();
+    //     this._contentEls.destroy(true, true);
+    //     this._addContentEls();
         
-        this._addChangePageBtn(true);
+    //     this._addChangePageBtn(true);
+    // }
+
+    updateContent(newData){
+        this._data = newData;
+
+        this._contentEls.removeAll(true);
+        this._addContentEls();
+
+        this._addChangePageBtns();
     }
 
     _purposeSpecificMods(el){
@@ -111,8 +124,7 @@ class Newspaper{
     start(){
         gameEls.stopTmpEls();
 
-        //attribue l'objet newspaper à gameEls.newspaper
-        gameEls.newspaper = this;
+        
 
         //supprime l'affichage des sites de production si on est en vue "region" et rend la map invisible
         if(globals.currentRegion != ""){
@@ -144,6 +156,9 @@ class Newspaper{
         NPSTween.start();
 
         NPSTween.onComplete.addOnce(() => {
+            //attribue l'objet newspaper à gameEls.newspaper
+            gameEls.newspaper = this;
+
             this._addBaseEls();
             this._addContentEls();
 
@@ -213,6 +228,17 @@ class Newspaper{
         this._contentEls.add(btn); //simplifie la logique de changement de page
     }
 
+    _addChangePageBtns(){
+        if (this._pageIndex == this._maxPageIndex) {
+            this._addChangePageBtn(false);
+        } else if (this._pageIndex == 0) {
+            this._addChangePageBtn(true);
+        } else {
+            this._addChangePageBtn(false);
+            this._addChangePageBtn(true);
+        }
+    }
+
     //TODO: changer next en forward pour plus de clarté
     _changePage(next){
         this._contentEls.removeAll(true);
@@ -222,14 +248,7 @@ class Newspaper{
             this._pageIndex--;
         }
 
-        if(this._pageIndex == this._maxPageIndex){
-            this._addChangePageBtn(false);
-        }else if (this._pageIndex == 0) {
-            this._addChangePageBtn(true);
-        }else{
-            this._addChangePageBtn(false);
-            this._addChangePageBtn(true);
-        }
+        this._addChangePageBtns();
 
         this._pageNumber.text = this._pageIndex + 1;
 

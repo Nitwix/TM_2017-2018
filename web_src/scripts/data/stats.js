@@ -1,7 +1,7 @@
 function updateStatsData(){
     globals.data.stats = {
-        title: "Statistiques",
-        spritesheet: "statsIcons", //n'existe pas encore
+        title: "Statistiques", //ATTENTION!!! ce nom est utilisé dans game.js pour définir quel objet data il faut fournir à newspaper.updateContent(data)
+        spritesheet: "statsIcons", 
         els: [
             {
                 spriteIndex: 0,

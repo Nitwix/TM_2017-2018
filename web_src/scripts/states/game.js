@@ -23,6 +23,12 @@ gameState.create = function(){
     globals.timeMgr = new TimeMgr(32e3, [
         () => {
             globals.productionMgr.update();
+
+            // ATTENTION si on change le titre du newspaper stats
+            if(gameEls.newspaper && gameEls.newspaper.data.title == "Statistiques"){
+                updateStatsData();
+                gameEls.newspaper.updateContent(globals.data.stats);
+            }
         }
     ]);
     globals.timeMgr.startUpdate();
