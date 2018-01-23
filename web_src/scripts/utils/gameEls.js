@@ -15,41 +15,36 @@ gameEls.setup.earthMap = function(){
 }
 
 gameEls.setup.fsBtn = function(){
-    gameEls.fsBtn = game.add.button(0, 0, "buttons", () => {
+    gameEls.fsBtn = new MenuButton(() => {
         if (game.scale.isFullScreen) {
             game.scale.stopFullScreen();
         } else {
             game.scale.startFullScreen();
         }
-    }, this, 3, 4, 5, 3);
-    gameEls.fsBtn.scale.setTo(globals.UI.smallButtonScale);
-    cornerObj(gameEls.fsBtn, globals.UI.buttonOffset, "ne");
+    }, this, "fs", "TOPMOST");
+    // game.add.existing(gameEls.fsBtn);
 }
 
 gameEls.setup.UI = function(){
     gameEls.setup.fsBtn();
 
-    gameEls.researchBtn = game.add.button(0,0,"buttons", () => {
+    gameEls.researchBtn = new MenuButton(() => {
         let newspaper = new Newspaper("smallSections", globals.data.factoryResearch, this);
         newspaper.start();
-    }, this, 9,10,11,9);
-    gameEls.researchBtn.scale.setTo(globals.UI.smallButtonScale);
-    gameEls.researchBtn.alignTo(gameEls.fsBtn, Phaser.BOTTOM_CENTER, 0, globals.UI.buttonOffset);
+    }, this, "research", gameEls.fsBtn);
 
-    gameEls.statsBtn = game.add.button(0,0,"buttons", () => {
+    gameEls.statsBtn = new MenuButton(() => {
         initStatsData();
         let statsNP = new Newspaper("smallSections", globals.data.stats);
         statsNP.start();
-    }, this, 12, 13, 14, 12);
-    gameEls.statsBtn.scale.setTo(globals.UI.smallButtonScale);
-    gameEls.statsBtn.alignTo(gameEls.researchBtn, Phaser.BOTTOM_CENTER, 0, globals.UI.buttonOffset);
+    }, this, "stats", gameEls.researchBtn);
+    gameEls.statsBtn.toggleBlink();
 
-    gameEls.ecoActionsBtn = game.add.button(0,0,"buttons", () => {
+    gameEls.ecoActionsBtn = new MenuButton(() => {
         globals.ecoActionsMgr.startNP();
         globals.ecoActionsMgr.toggleRedDot();
-    }, this, 15, 16, 17, 15);
-    gameEls.ecoActionsBtn.scale.setTo(globals.UI.smallButtonScale);
-    gameEls.ecoActionsBtn.alignTo(gameEls.statsBtn, Phaser.BOTTOM_CENTER, 0, globals.UI.buttonOffset);
+    }, this, "ecoActions", gameEls.statsBtn);
+
 
     gameEls.lastBtn = gameEls.ecoActionsBtn; //pour pouvoir mettre le worldButton en-dessous
 
