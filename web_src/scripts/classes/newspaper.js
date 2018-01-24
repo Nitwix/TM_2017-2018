@@ -253,7 +253,6 @@ class Newspaper{
         this._pageNumber.text = this._pageIndex + 1;
 
         this._addContentEls();
-        this._contentEls.alpha = 1;
     }
 
     _addContentEls(){
@@ -272,9 +271,6 @@ class Newspaper{
                 this._addColumn(index, el);
             }
         }
-
-        //pour pouvoir tweener plus tard
-        this._contentEls.alpha = 1; //normalement 0
     }
 
 
