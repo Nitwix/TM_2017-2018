@@ -1,6 +1,7 @@
-let prob = .01;
-let pow = 1.005;
-for(let i=0; i<1e2; i++){
-    prob += Math.pow((1/prob),pow);
-    console.log(prob);
+let c = 5;
+let r = .9;
+let sum = 0;
+for(let i=0; i<=1e2; i++){
+    sum += c*Math.pow(r, i);
+    console.log(sum);
 }

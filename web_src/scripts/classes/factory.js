@@ -16,7 +16,9 @@ class Factory{
         this._addDescr = data.addDescr; //ajout à la description de base
 
         this._destructionPrice = data.constructionPrice * data.destrCoeff;
+
         this._researchPrice = 2*data.constructionPrice;
+        this._unlockProb = data.unlockProb || 0;
     }
 
     //pour avoir une copie parfaite de l'objet actuel (utilisé dans newspaper.js)
@@ -31,7 +33,9 @@ class Factory{
             CO2Production: this._CO2Production,
             grayCO2: this._grayCO2,
             upgradeCoeff: this._upgradeCoeff,
-            addDescr: this._addDescr}));
+            addDescr: this._addDescr,
+            unlockProb: this._unlockProb
+        }));
     }
 
     set type(t){
@@ -74,12 +78,29 @@ class Factory{
         return this._researchPrice;
     }
 
+    get unlockProb(){
+        return this._unlockProb;
+    }
+    set unlockProb(p){
+        this._unlockProb = p;
+    }
+
     set level(l){
         this._level = l;
     }
 
-    get descr(){
-        return `Cette usine produira ${this._power.toReadableStr()} Watts. ${this._addDescr}`;
+    getDescr(purpose){
+        switch (purpose) {
+            case "factoryResearch":
+                return `Cette usine produira ${this._power.toReadableStr()} Watts. Vous avez actuellement ${this._unlockProb}% de chance de débloquer ce type de centrale`;
+                break;
+            case "factoryShop":
+                return `Cette usine produira ${this._power.toReadableStr()} Watts. ${this._addDescr}`;
+                break;
+            default:
+                return "should be modified in newspaper.js/_purposeSpecificMods";
+        }
+
     }
 
     get upgradePrice(){
@@ -91,8 +112,6 @@ class Factory{
         let obj = {
             spriteIndex: this.iconIndex,
             title: this._title,
-            descr: this.descr,
-            posTxt: "s.b.mod.",
             fac: this //reference à cet instance de Factory
         };
         return obj;

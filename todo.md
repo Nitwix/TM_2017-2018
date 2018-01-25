@@ -1,8 +1,6 @@
 # À faire
 ## Pour la beta (uniquement l'essentiel concernant le gameplay)
-- recherche
-    - progression avec un facteur 1.x
-    - afficher la progression dans le newspaper
+
 - Ajouter un besoin en énergie qui doit être satisfait qui augmente en fonction de la population
     - à afficher dans stats (besoin et population)
 - afficher d'autres infos sur les centrales dans la description (dans newspaper)
@@ -93,4 +91,6 @@
 - ajouter une tint à la camera en fonction de la concentration de CO<sub>2</sub> dans l'atmosphère (16.01.2018)
 - afficher l'augmentation de temperature depuis le début du jeu (en fonction de totCO2) (21.01.2018)
 - => nécessite de pouvoir mettre à jour les textes des newspaper pendant qu'il est ouvert (24.01.2018)
-
+- recherche (25.01.2018)
+    - progression avec série géométrique
+    - afficher la progression dans le newspaper

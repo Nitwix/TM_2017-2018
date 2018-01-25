@@ -1,28 +1,60 @@
 class ResearchMgr{
     constructor(){
-        //probabilité de débloquer les centrales à chaque update (en pourcents)
-        //arrays avec [prob, r], r étant une constante
-        //plus r est grand, plus la probabilité tend *lentement* vers une valeur élevée
+        //la probabilité est une série géométrique telle que
+        //a(k) = c*r^k
+        //a(0) = c*r^0 = c : premier terme de la série => probabilité après premier investissement
+        //et Sn quand n->+infiny
+        //Sn = c / (1-r) = 100
+
+        //plus c est grand, plus la somme partielle augmente rapidement
         this._unlockData = {
-            coalPlant: [1.1, 1.5],
-            fuelPlant: [1, 1.7],
-            gasPlant: [1, 1.9,
-            hydroPlant: [1, 2.1],
-            fissionPlant: [1, 1.1],
-            windTurbines: [1, 1.1],
-            solarPanels: [1, 1.1],
-            geothermalPlant: [1, 1.1],
-            fusionPlant: [1, 1.1]
+            coalPlant: {c: 5},
+            fuelPlant: {c: 5},
+            gasPlant: {c: 5},
+            hydroPlant: {c: 5},
+            fissionPlant: {c: 5},
+            windTurbines: {c: 5},
+            solarPanels: {c: 5},
+            geothermalPlant: {c: 5},
+            fusionPlant: {c: 5}
         };
+        this._setupUnlockData();
+
         globals.timeMgr.addYUCallback(this.rndUnlockUpdate);
     }
 
-    increaseUnlockProb(facType){
-        //nProb = (1/prob) ^ r, r étant une constante
-        let newProb = Phaser.Math.roundTo(1/this._unlockData[facType][0] ** this._unlockData[facType][1], -3);
-        this._unlockData[facType][0] += newProb;
-        console.log(this._unlockData[facType]);
+    _setupUnlockData(){
+        const serieLimit = 100;
+        for(let key in this._unlockData){
+            let facProb = this._unlockData[key];
+            facProb.r = 1 - (facProb.c / serieLimit);
+            facProb.k = 0;
+            facProb.partSum = 0;
+        }
+    }
 
+    increaseUnlockProb(facType){
+        //sum += c * r**k;
+        let facProb = this._unlockData[facType]
+        let {c,r,k} = facProb;
+        let ak = c * r**k;
+        facProb.partSum = Phaser.Math.roundTo(facProb.partSum + ak, -3);
+        facProb.k++;
+        // console.log(facProb);
+        this.getFacObj(facType).unlockProb = facProb.partSum;
+
+        // ATTENTION si on change le 'purpose' du newspaper
+        if(gameEls.newspaper && gameEls.newspaper.data.purpose == "factoryResearch"){
+            gameEls.newspaper.updateContent(globals.data.factoryResearch);
+        }
+    }
+
+    getFacObj(facType){
+        for(let facData of globals.data.factoryResearch.els){
+            if(facData.fac.type == facType){
+                return facData.fac;
+            }
+        }
     }
 
 
@@ -33,12 +65,13 @@ class ResearchMgr{
         let unlockData = globals.researchMgr._unlockData;
 
         //parcours des unlockProbs pour débloquer aléatoirement un type de centrale
-        for (let facType in unlockData){
+        for (let key in unlockData){
+            let facProb = unlockData[key];
             let rnd = game.math.random(0,100);
-            if(rnd < unlockData[facType][0]){
-                unlockData[facType][0] = -Infinity;
+            if(rnd < facProb.partSum){
+                facProb.partSum = -Infinity;
                 // console.log(facType);
-                globals.researchMgr.unlockFacType(facType);
+                globals.researchMgr.unlockFacType(key);
             }
         }
     }

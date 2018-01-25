@@ -67,7 +67,7 @@ class Newspaper{
 
     /*just a method to test the feasability of updating the newspaper while it's displayed
     -> ça pourrait très bien marcher :D
-    TODO: 
+    TODO:
     - mettre à jour la data de façon plus générale
     - mettre alpha = 0 uniquement lorsqu'on veut faire un tween (dans addContentEls)
     - ajouter les boutons de changement de page de façon plus générale
@@ -79,7 +79,7 @@ class Newspaper{
 
     //     this._contentEls.destroy(true, true);
     //     this._addContentEls();
-        
+
     //     this._addChangePageBtn(true);
     // }
 
@@ -105,6 +105,7 @@ class Newspaper{
                         gameEls.newspaper.stop();
                     });
                 };
+                el.descr = el.fac.getDescr("factoryShop");
                 break;
             case "factoryResearch":
                 el.posTxt = el.fac.researchPrice.toReadableStr();
@@ -115,6 +116,7 @@ class Newspaper{
                         showTmpText("Votre investissement a bien été pris en compte", 32, 184);
                     });
                 };
+                el.descr = el.fac.getDescr("factoryResearch");
                 break;
             default:
                 // console.log("no mods made to el in newspaper purposeSpecificMods");
@@ -124,7 +126,6 @@ class Newspaper{
     start(){
         gameEls.stopTmpEls();
 
-        
 
         //supprime l'affichage des sites de production si on est en vue "region" et rend la map invisible
         if(globals.currentRegion != ""){
