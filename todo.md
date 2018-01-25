@@ -7,8 +7,9 @@
 
 
 - ajuster (à la fin)
-    - les valeurs de production des usines pour que le jeu soit plus intéressant.
+    - les valeurs de production des centrales pour que le jeu soit plus intéressant.
     - la valeur limite de CO2
+    - les pourcentages de base de recherche des centrales
 
 
 

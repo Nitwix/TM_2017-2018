@@ -4,50 +4,102 @@
         <title>Travail de maturité 2017-2018</title>
         <meta charset="utf-8">
         <link rel="icon" type="image/png" href="assets/sprites/preload/earth.png">
+
+        <style>
+            @font-face {
+                font-family: pixel_font;
+                src: url(advancedpixel-7.ttf);
+            }
+
+            body {
+                /*background-color: #9B855C; couleur journal*/
+                font-family: pixel_font;
+                color: #BCAD91;
+
+                background: url("assets/sprites/bureau/bureau.png") repeat;
+                background-size: 768px 448px;
+
+                margin-left: 30px;
+            }
+
+            #phaser-canvas{
+                width: 800px;
+                border: solid #503525 2px;
+                margin-left: 25px;
+                margin-bottom: 30px;
+            }
+        </style>
+
+        <!-- phaser -->
+        <script src="scripts/phaser.min.js"></script>
+
+        <!-- classes -->
+        <script src="scripts/classes/dialogs.js"></script>
+        <script src="scripts/classes/factory.js"></script>
+        <script src="scripts/classes/sites.js"></script>
+        <script src="scripts/classes/smallDialog.js"></script>
+        <script src="scripts/classes/regions.js"></script>
+        <script src="scripts/classes/moneyDisplay.js"></script>
+        <script src="scripts/classes/moneyMgr.js"></script>
+        <script src="scripts/classes/newspaper.js"></script>
+        <script src="scripts/classes/timeMgr.js"></script>
+        <script src="scripts/classes/productionMgr.js"></script>
+        <script src="scripts/classes/researchMgr.js"></script>
+        <script src="scripts/classes/ecoActionsMgr.js"></script>
+        <script src="scripts/classes/menuButton.js"></script>
+
+
+        <!-- utils -->
+        <script src="scripts/utils/globals.js"></script>
+        <script src="scripts/utils/pos.js"></script>
+        <script src="scripts/utils/poly.js"></script>
+        <script src="scripts/utils/gameEls.js"></script>
+        <script src="scripts/utils/globReg.js"></script>
+        <script src="scripts/utils/readableNumber.js"></script>
+        <script src="scripts/utils/tmpText.js"></script>
+
+
+        <!-- data -->
+        <script src="scripts/data/dialogsTexts.js"></script>
+        <script src="scripts/data/factories.js"></script>
+        <script src="scripts/data/stats.js"></script>
+
+        <!-- states -->
+        <script src="scripts/states/boot.js"></script>
+        <script src="scripts/states/preload.js"></script>
+        <script src="scripts/states/mainMenu.js"></script>
+        <script src="scripts/states/game.js"></script>
+        <script src="scripts/states/gameEnd.js"></script>
+
+        <script src="main.js"></script>
     </head>
 
-    <!-- phaser -->
-    <script src="scripts/phaser.min.js"></script>
 
-    <!-- classes -->
-    <script src="scripts/classes/dialogs.js"></script>
-    <script src="scripts/classes/factory.js"></script>
-    <script src="scripts/classes/sites.js"></script>
-    <script src="scripts/classes/smallDialog.js"></script>
-    <script src="scripts/classes/regions.js"></script>
-    <script src="scripts/classes/moneyDisplay.js"></script>
-    <script src="scripts/classes/moneyMgr.js"></script>
-    <script src="scripts/classes/newspaper.js"></script>
-    <script src="scripts/classes/timeMgr.js"></script>
-    <script src="scripts/classes/productionMgr.js"></script>
-    <script src="scripts/classes/researchMgr.js"></script>
-    <script src="scripts/classes/ecoActionsMgr.js"></script>
-    <script src="scripts/classes/menuButton.js"></script>
+    <body>
+        <div style="font-size: 90px; margin-bottom: 30px;text-decoration: underline;">DE RÉVOLUTION À ÉVOLUTION</div>
 
+        <div id="phaser-canvas">
+            <!-- canvas généré par Phaser inséré ici -->
+        </div>
 
+        <div style="font-size:30px; width: 1000px;">
+            Bienvenue, cher président&middot;e.<br>
+            Vous allez vivre ici une fabuleuse histoire!<br>
 
-    <!-- utils -->
-    <script src="scripts/utils/globals.js"></script>
-    <script src="scripts/utils/pos.js"></script>
-    <script src="scripts/utils/poly.js"></script>
-    <script src="scripts/utils/gameEls.js"></script>
-    <script src="scripts/utils/globReg.js"></script>
-    <script src="scripts/utils/readableNumber.js"></script>
-    <script src="scripts/utils/tmpText.js"></script>
+            <p>En effet, vous dirigerez la destinée de l'humanité pendant une de ses périodes les plus difficiles:
+            du début du XIX<sup>ème</sup> jusqu'à la fin du XXI<sup>ème</sup> siècle (si tout se passe bien!).<br>
+            Vous aurez à faire des choix difficiles et diriger votre planète du mieux que vous pourrez,
+            car si vous commettez trop d'erreurs, vous vouez l'humanité à sa perte!<br></p>
 
+            <p>Pour commencer, investissez une certaine somme dans la recherche d'un type de centrale en appuyant sur le bouton 'Recherche'.
+            Lorsque vos scientifiques seront parvenus à faire fonctionner le type de centrale sur laquelle vous avez
+            décidé de les faire travailler, vous pourrez installer cette centrale sur un site de production libre.
+            Commencez donc en Europe, car c'est là que cette révolution a veritablement commencé.</p>
 
-    <!-- data -->
-    <script src="scripts/data/dialogsTexts.js"></script>
-    <script src="scripts/data/factories.js"></script>
-    <script src="scripts/data/stats.js"></script>
+            Plusieurs indications utiles se trouvent dans l'onglet 'Statistiques'.<br>
 
-    <!-- states -->
-    <script src="scripts/states/boot.js"></script>
-    <script src="scripts/states/preload.js"></script>
-    <script src="scripts/states/mainMenu.js"></script>
-    <script src="scripts/states/game.js"></script>
-    <script src="scripts/states/gameEnd.js"></script>
+        </div>
 
-    <script src="main.js"></script>
+    </body>
 
 </html>
