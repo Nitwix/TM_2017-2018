@@ -1,11 +1,13 @@
 class ResearchMgr{
     constructor(){
         //probabilité de débloquer les centrales à chaque update (en pourcents)
+        //arrays avec [prob, r], r étant une constante
+        //plus r est grand, plus la probabilité tend *lentement* vers une valeur élevée
         this._unlockData = {
-            coalPlant: [1, 1.1],
-            fuelPlant: [1, 1.1],
-            gasPlant: [1, 1.1],
-            hydroPlant: [1, 1.1],
+            coalPlant: [1.1, 1.5],
+            fuelPlant: [1, 1.7],
+            gasPlant: [1, 1.9,
+            hydroPlant: [1, 2.1],
             fissionPlant: [1, 1.1],
             windTurbines: [1, 1.1],
             solarPanels: [1, 1.1],
@@ -15,10 +17,11 @@ class ResearchMgr{
         globals.timeMgr.addYUCallback(this.rndUnlockUpdate);
     }
 
-    augmentUnlockProb(facType){
-        let newProb = Phaser.Math.roundTo(this._unlockData[facType][0] * this._unlockData[facType][1], -3);
-        this._unlockData[facType][0] = newProb;
-
+    increaseUnlockProb(facType){
+        //nProb = (1/prob) ^ r, r étant une constante
+        let newProb = Phaser.Math.roundTo(1/this._unlockData[facType][0] ** this._unlockData[facType][1], -3);
+        this._unlockData[facType][0] += newProb;
+        console.log(this._unlockData[facType]);
 
     }
 

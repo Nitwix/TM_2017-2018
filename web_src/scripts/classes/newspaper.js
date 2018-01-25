@@ -111,7 +111,7 @@ class Newspaper{
                 el.posCB = () => {
                     globals.moneyMgr.buy(el.fac.researchPrice, () => {
                         // console.log(`You invested ${el.fac.researchPrice} in research for ${el.fac.type}`);
-                        globals.researchMgr.augmentUnlockProb(el.fac.type);
+                        globals.researchMgr.increaseUnlockProb(el.fac.type);
                         showTmpText("Votre investissement a bien été pris en compte", 32, 184);
                     });
                 };
