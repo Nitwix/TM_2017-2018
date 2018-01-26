@@ -2,8 +2,10 @@
 ## Pour la beta (uniquement l'essentiel concernant le gameplay)
 
 - ajuster (à la fin)
-    - les valeurs de production des centrales pour que le jeu soit plus intéressant.
+    - la somme de départ
     - la valeur limite de CO2
+    - le taux watt -> mondio
+    - les valeurs de production des centrales pour que le jeu soit plus intéressant.
     - le "c" de recherche des centrales
 
 

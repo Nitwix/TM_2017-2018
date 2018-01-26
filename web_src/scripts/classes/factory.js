@@ -1,7 +1,7 @@
 //principalement utilisé dans la classe Site mais aussi pour passer la data à Newspaper depuis data/factories.js
 class Factory{
     constructor(data){
-        //type, level, title, power, constructionPrice, destrCoeff, CO2Production, grayCO2, upgradeCoeff, addDescr
+        //type, level, title, power, constructionPrice, destrCoeff, CO2Production, addDescr
         this._type = data.type || "notUsed";
         this._level = data.level || 0;
 
@@ -12,7 +12,6 @@ class Factory{
         this._destrCoeff = data.destrCoeff;
         this._CO2Production = data.CO2Production;
         // this._grayCO2 = data.grayCO2;
-        this._upgradeCoeff = data.upgradeCoeff;
         this._addDescr = data.addDescr; //ajout à la description de base
 
         this._destructionPrice = data.constructionPrice * data.destrCoeff;
@@ -31,8 +30,6 @@ class Factory{
             constructionPrice: this._constructionPrice,
             destrCoeff: this._destrCoeff,
             CO2Production: this._CO2Production,
-            // grayCO2: this._grayCO2,
-            upgradeCoeff: this._upgradeCoeff,
             addDescr: this._addDescr,
             unlockProb: this._unlockProb
         }));
@@ -104,7 +101,7 @@ class Factory{
     }
 
     get upgradePrice(){
-        let prc = (this._constructionPrice*(this._level+1)) ** this._upgradeCoeff;
+        let prc = (this._constructionPrice*(this._level+1)) * globals.factories.upgradeCoeff;
         return prc;
     }
 
@@ -243,9 +240,9 @@ class Factory{
 
     upgrade(){
         this.level++;
-
-        this._power *= this._upgradeCoeff;
-        this._CO2Production *= this._upgradeCoeff;
+        let upCoeff = globals.factories.upgradeCoeff;
+        this._power *= upCoeff;
+        this._CO2Production *= upCoeff;
 
     }
 }
