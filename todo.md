@@ -13,6 +13,7 @@
 ## Bugs à fixer
 - bug lorsqu'on a plusieurs textes avec la classe Dialog (affiche instantanémment la suite)
 - lorsqu'on débloque plusieurs centrales d'un coup, seul une s'affiche dans le dialog
+- le bouton pour changer de page dans le newspaper ne devrait pas être détruit à chaque update car on ne parvient plus à le cliquer
 
 ## Petits objectifs
 - dessiner Conseil
