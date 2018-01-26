@@ -8,15 +8,15 @@ class ResearchMgr{
 
         //plus c est grand, plus la somme partielle augmente rapidement
         this._unlockData = {
-            coalPlant: {c: 5},
-            fuelPlant: {c: 5},
-            gasPlant: {c: 5},
-            hydroPlant: {c: 5},
-            fissionPlant: {c: 5},
-            windTurbines: {c: 5},
-            solarPanels: {c: 5},
-            geothermalPlant: {c: 5},
-            fusionPlant: {c: 5}
+            coalPlant: {c: 15},
+            fuelPlant: {c: 15},
+            gasPlant: {c: 15},
+            hydroPlant: {c: 15},
+            fissionPlant: {c: 15},
+            windTurbines: {c: 15},
+            solarPanels: {c: 15},
+            geothermalPlant: {c: 15},
+            fusionPlant: {c: 15}
         };
         this._setupUnlockData();
 

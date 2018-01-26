@@ -1,7 +1,7 @@
 function updateStatsData(){
     globals.data.stats = {
         title: "Statistiques", //ATTENTION!!! ce nom est utilisé dans game.js pour définir quel objet data il faut fournir à newspaper.updateContent(data)
-        spritesheet: "statsIcons", 
+        spritesheet: "statsIcons",
         els: [
             {
                 spriteIndex: 0,
@@ -16,7 +16,7 @@ function updateStatsData(){
             {
                 spriteIndex: 2,
                 title: "Emissions de CO2",
-                descr: `Vos centrales ont émi environ ${Math.round(globals.productionMgr.totCO2)}(kg?) de CO2 dans l'atmosphère.\nElles émettent environ ${Math.round(globals.productionMgr.CO2Production)}(kg?) de CO2 par semaine.`
+                descr: `Vos centrales ont émi environ ${Math.round(globals.productionMgr.totCO2)}kg de CO2 dans l'atmosphère.\nElles émettent environ ${Math.round(globals.productionMgr.CO2Production)}kg de CO2 par semaine.`
             },
             {
                 spriteIndex: 3,
@@ -26,7 +26,6 @@ function updateStatsData(){
             /*
             à rajouter:
             - peut-être : population
-            - température
             - besoin d'énergie
             */
         ]

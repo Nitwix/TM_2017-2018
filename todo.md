@@ -1,11 +1,11 @@
 # À faire
 ## Pour la beta (uniquement l'essentiel concernant le gameplay)
 
-- ajuster (à la fin)
+- ajuster (à la fin) pour que le jeu soit plus intéressant.
     - la somme de départ
     - la valeur limite de CO2
     - le taux watt -> mondio
-    - les valeurs de production des centrales pour que le jeu soit plus intéressant.
+    - les valeurs de production des centrales
     - le "c" de recherche des centrales
 
 
@@ -35,7 +35,7 @@
 - Tutoriel !
 - modes de difficulté
 - Interventions de Conseil
-<!-- 
+<!--
 - classe TimeMgr
     - _maybe_ mettre un résumé des productions de l'année à la fin de chaque année
 -->

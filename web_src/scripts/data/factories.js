@@ -26,91 +26,91 @@ globals.data.factoryResearch = {
         (new Factory({
             type:"coalPlant",
             title:"Centrale à charbon",
-            power:5e2,
-            constructionPrice: 30e3,
+            power:500,
+            constructionPrice: 90e2,
             destrCoeff:2,
-            CO2Production:1,
+            CO2Production:1e1,
             addDescr: "Les centrales à charbon causent des problèmes environnementaux."
         })).dataObj,
 
         (new Factory({
             type:"fuelPlant",
             title:"Centrale au fioul",
-            power:7e2,
-            constructionPrice: 25e3,
-            destrCoeff:1,
-            CO2Production:10,
+            power:1000,
+            constructionPrice: 85e3,
+            destrCoeff:2,
+            CO2Production:1e2,
             addDescr: ""
         })).dataObj,
 
         (new Factory({
             type:"gasPlant",
             title:"Centrale à gaz",
-            power:10e2,
-            constructionPrice: 30e3,
-            destrCoeff:1,
-            CO2Production:10,
-            addDescr:"pV=nRT"
+            power:1500,
+            constructionPrice: 80e4,
+            destrCoeff:2,
+            CO2Production:1e3,
+            addDescr:""
         })).dataObj,
 
         (new Factory({
             type:"hydroPlant",
             title:"Barrage hydroélectrique",
-            power:33e2,
-            constructionPrice:100e3,
-            destrCoeff:1,
+            power:2000,
+            constructionPrice: 75e5,
+            destrCoeff:4,
             CO2Production:0,
-            addDescr:"Ce barrage produira de l'énergie de façon écologique."
+            addDescr:""
         })).dataObj,
 
         (new Factory({
             type:"fissionPlant",
             title:"Centrale nucléaire à fission",
-            power:160e2,
-            constructionPrice:500e3,
-            destrCoeff:8,
+            power:3000,
+            constructionPrice: 60e7,
+            destrCoeff:12,
             CO2Production:0,
-            addDescr:"Cette centrale risque d'exploser."
-        })).dataObj,
-
-        (new Factory({
-            type:"windTurbines",
-            title:"Champ d'éoliennes",
-            power:33e2,
-            constructionPrice:100e3,
-            destrCoeff:1,
-            CO2Production:0,
-            addDescr:"Ce type d'énergie est très écologique."
-        })).dataObj,
-
-        (new Factory({
-            type:"solarPanels",
-            title:"Champ de panneaux solaires",
-            power:35e3,
-            constructionPrice:25e3,
-            destrCoeff:.2,
-            CO2Production:0,
-            addDescr:"En plus d'être très joli à voir, ce type de production ne contribue pas à l'effet de serre"
+            addDescr:"Les risques en valent-ils vraiment la peine?"
         })).dataObj,
 
         (new Factory({
             type:"geothermalPlant",
             title:"Centrale géothermique",
-            power:35e3,
-            constructionPrice:25e3,
-            destrCoeff:1,
+            power:2000,
+            constructionPrice: 55e6,
+            destrCoeff:2,
             CO2Production:0,
-            addDescr:"Ce type d'énergie est écologique. La fumée que vous voyez n'est que de la vapeur d'eau"
+            addDescr:"La fumée que vous voyez n'est que de la vapeur d'eau."
+        })).dataObj,
+
+        (new Factory({
+            type:"windTurbines",
+            title:"Champ d'éoliennes",
+            power:2000,
+            constructionPrice: 50e8,
+            destrCoeff:1.5,
+            CO2Production:0,
+            addDescr:""
+        })).dataObj,
+
+        (new Factory({
+            type:"solarPanels",
+            title:"Champ de panneaux solaires",
+            power:2500,
+            constructionPrice: 45e9,
+            destrCoeff:.2,
+            CO2Production:0,
+            addDescr:"Ces panneaux peuvent être facilement détruits si besoin."
         })).dataObj,
 
         (new Factory({
             type:"fusionPlant",
             title:"Centrale nucléaire à fusion",
-            power:3e5,
-            constructionPrice:1e6,
-            destrCoeff:2,
+            power:6000,
+            constructionPrice: 40e11,
+            destrCoeff:6,
             CO2Production:0,
-            addDescr:"C'est le futur."
+            addDescr:"Cette centrale est un bon compromis entre économie et écologie"
         })).dataObj
     ]
 }
