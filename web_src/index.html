@@ -28,6 +28,17 @@
                 margin-left: 25px;
                 margin-bottom: 30px;
             }
+
+            .sectionTitle{
+                margin-bottom: 30px;
+                text-decoration: underline;
+                font-size: 40px;   
+            }
+
+            .sectionContent{
+                font-size:30px; 
+                width: 1000px;
+            }
         </style>
 
         <!-- phaser -->
@@ -76,13 +87,13 @@
 
 
     <body>
-        <div style="font-size: 90px; margin-bottom: 30px;text-decoration: underline;">DE RÉVOLUTION À ÉVOLUTION</div>
+        <div style="font-size: 90px;" class="sectionTitle">DE RÉVOLUTION À ÉVOLUTION <sup>BETA</sup></div>
 
         <div id="phaser-canvas">
             <!-- canvas généré par Phaser inséré ici -->
         </div>
 
-        <div style="font-size:30px; width: 1000px;">
+        <div class="sectionContent">
             Bienvenue, cher président&middot;e.<br>
             Vous allez vivre ici une fabuleuse histoire!<br>
 
@@ -96,9 +107,22 @@
             décidé de les faire travailler, vous pourrez installer cette centrale sur un site de production libre.
             Commencez donc en Europe, car c'est là que cette révolution a veritablement commencé.</p>
 
-            Plusieurs indications utiles se trouvent dans l'onglet 'Statistiques'.<br>
+            <p>Plusieurs indications utiles se trouvent dans l'onglet 'Statistiques'.</p>
 
+            <p>Pour recommencer une partie acutalisez la page.</p>
         </div>
+
+        <div class="sectionContent">
+            <div class="sectionTitle">
+                À faire pour la version finale
+            </div>
+            <ul>
+                <li>Ajouter l'explosion aléatoire des centrales à fission</li>
+                <li>Réinitialisation des sites de production, des usines et de plusieurs autres choses après la fin du jeu</li>
+                <li>Tutoriel !</li>
+            </ul>
+        </div>
+        
 
     </body>
 

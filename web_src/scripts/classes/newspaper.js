@@ -113,7 +113,7 @@ class Newspaper{
                     globals.moneyMgr.buy(el.fac.researchPrice, () => {
                         // console.log(`You invested ${el.fac.researchPrice} in research for ${el.fac.type}`);
                         globals.researchMgr.increaseUnlockProb(el.fac.type);
-                        showTmpText("Votre investissement a bien été pris en compte", 32, 184);
+                        // showTmpText("Votre investissement a bien été pris en compte", 32, 184);
                     });
                 };
                 el.descr = el.fac.getDescr("factoryResearch");
@@ -166,7 +166,7 @@ class Newspaper{
             game.world.bringToTop(this._baseEls);
             game.world.bringToTop(this._contentEls);
 
-            this._fade(true);
+            // this._fade(true);
         }, this);
 
         //this._baseEls.add(this._newspaper);
@@ -206,7 +206,7 @@ class Newspaper{
         this._baseEls.add(title);
 
         //pour pouvoir tweener plus tard
-        this._baseEls.alpha = 0;
+        // this._baseEls.alpha = 1;
     }
 
     _addChangePageBtn(next){
@@ -349,27 +349,26 @@ class Newspaper{
     }
 
     //fade les éléments des différents groupes
-    _fade(fadeIn){
-        if(fadeIn){
-            let BETween = game.add.tween(this._baseEls);
-            BETween.to({alpha:1}, this._tweenProps.sDur);
-            BETween.start();
+    // _fade(fadeIn){
+    //     if(fadeIn){
+    //         let BETween = game.add.tween(this._baseEls);
+    //         BETween.to({alpha:1}, this._tweenProps.sDur);
+    //         BETween.start();
 
-            let CETween = game.add.tween(this._contentEls);
-            CETween.to({alpha:1}, this._tweenProps.sDur);
-            CETween.start();
-        }else{
-            let NPTween = game.add.tween(this._newspaper);
-            NPTween.to({alpha:0}, this._tweenProps.sDur);
-            NPTween.start();
+    //         let CETween = game.add.tween(this._contentEls);
+    //         CETween.to({alpha:1}, this._tweenProps.sDur);
+    //         CETween.start();
+    //     }else{
+    //         let NPTween = game.add.tween(this._newspaper);
+    //         NPTween.to({alpha:0}, this._tweenProps.sDur);
+    //         NPTween.start();
 
-            NPTween.onComplete.addOnce(() => {
-                this._newspaper.destroy();
-            }, this);
+    //         NPTween.onComplete.addOnce(() => {
+    //             this._newspaper.destroy();
+    //         }, this);
 
-        }
-
-    }
+    //     }
+    // }
 
     stop(){
 
@@ -385,7 +384,8 @@ class Newspaper{
         //TODO: appeler des fonction pour fade out les éléments joliments
         this._baseEls.destroy();
         this._contentEls.destroy();
-        this._fade(false);
+        this._newspaper.destroy();
+        // this._fade(false);
 
         gameEls.newspaper = undefined;
 

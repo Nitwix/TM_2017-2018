@@ -3,8 +3,7 @@
 
 - Ajouter un besoin en énergie qui doit être satisfait qui augmente en fonction de la population
     - à afficher dans stats (besoin et population)
-- afficher d'autres infos sur les centrales dans la description (dans newspaper)
-
+- system de reset (pas sûr)
 
 - ajuster (à la fin)
     - les valeurs de production des centrales pour que le jeu soit plus intéressant.
@@ -95,3 +94,4 @@
 - recherche (25.01.2018)
     - progression avec série géométrique
     - afficher la progression dans le newspaper
+- afficher d'autres infos sur les centrales dans la description (dans newspaper) (26.01.2018)

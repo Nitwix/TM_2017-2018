@@ -95,7 +95,7 @@ class Factory{
                 return `Cette usine produira ${this._power.toReadableStr()} Watts. Vous avez actuellement ${this._unlockProb}% de chance de débloquer ce type de centrale`;
                 break;
             case "factoryShop":
-                return `Cette usine produira ${this._power.toReadableStr()} Watts. ${this._addDescr}`;
+                return `Cette usine produira ${this._power.toReadableStr()} Watts. Ce type de centrale produit environ ${this._CO2Production}kg de CO2 par semaine. ${this._addDescr}`;
                 break;
             default:
                 return "should be modified in newspaper.js/_purposeSpecificMods";
