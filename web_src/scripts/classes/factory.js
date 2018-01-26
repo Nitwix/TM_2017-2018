@@ -11,7 +11,7 @@ class Factory{
         this._constructionPrice = data.constructionPrice;
         this._destrCoeff = data.destrCoeff;
         this._CO2Production = data.CO2Production;
-        this._grayCO2 = data.grayCO2;
+        // this._grayCO2 = data.grayCO2;
         this._upgradeCoeff = data.upgradeCoeff;
         this._addDescr = data.addDescr; //ajout à la description de base
 
@@ -31,7 +31,7 @@ class Factory{
             constructionPrice: this._constructionPrice,
             destrCoeff: this._destrCoeff,
             CO2Production: this._CO2Production,
-            grayCO2: this._grayCO2,
+            // grayCO2: this._grayCO2,
             upgradeCoeff: this._upgradeCoeff,
             addDescr: this._addDescr,
             unlockProb: this._unlockProb
@@ -66,9 +66,9 @@ class Factory{
         return this._CO2Production;
     }
 
-    get grayCO2(){
-        return this._grayCO2;
-    }
+    // get grayCO2(){
+    //     return this._grayCO2;
+    // }
 
     get destructionPrice(){
         return this.upgradePrice*this._destrCoeff;

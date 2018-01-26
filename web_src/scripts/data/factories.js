@@ -30,7 +30,6 @@ globals.data.factoryResearch = {
             constructionPrice: 15e3,
             destrCoeff:2,
             CO2Production:1,
-            grayCO2:150,
             upgradeCoeff:1.15,
             addDescr: "Les centrales à charbon causent des problèmes environnementaux."
         })).dataObj,
@@ -42,7 +41,6 @@ globals.data.factoryResearch = {
             constructionPrice: 25e3,
             destrCoeff:1,
             CO2Production:10,
-            grayCO2:150,
             upgradeCoeff:1.2,
             addDescr: ""
         })).dataObj,
@@ -54,7 +52,6 @@ globals.data.factoryResearch = {
             constructionPrice: 30e3,
             destrCoeff:1,
             CO2Production:10,
-            grayCO2:150,
             upgradeCoeff:1.25,
             addDescr:"pV=nRT"
         })).dataObj,
@@ -66,7 +63,6 @@ globals.data.factoryResearch = {
             constructionPrice:100e3,
             destrCoeff:1,
             CO2Production:0,
-            grayCO2:150,
             upgradeCoeff:1.25,
             addDescr:"Ce barrage produira de l'énergie de façon écologique."
         })).dataObj,
@@ -78,7 +74,6 @@ globals.data.factoryResearch = {
             constructionPrice:500e3,
             destrCoeff:1,
             CO2Production:0,
-            grayCO2:150,
             upgradeCoeff:1.1,
             addDescr:"Cette centrale risque d'exploser."
         })).dataObj,
@@ -90,7 +85,6 @@ globals.data.factoryResearch = {
             constructionPrice:100e3,
             destrCoeff:1,
             CO2Production:0,
-            grayCO2:150,
             upgradeCoeff:1.25,
             addDescr:"Ce type d'énergie est très écologique."
         })).dataObj,
@@ -102,7 +96,6 @@ globals.data.factoryResearch = {
             constructionPrice:25e3,
             destrCoeff:.2,
             CO2Production:0,
-            grayCO2:150,
             upgradeCoeff:1.3,
             addDescr:"En plus d'être très joli à voir, ce type de production ne contribue pas à l'effet de serre"
         })).dataObj,
@@ -114,7 +107,6 @@ globals.data.factoryResearch = {
             constructionPrice:25e3,
             destrCoeff:1,
             CO2Production:0,
-            grayCO2:150,
             upgradeCoeff:1.3,
             addDescr:"Ce type d'énergie est écologique. La fumée que vous voyez n'est que de la vapeur d'eau"
         })).dataObj,
@@ -126,7 +118,6 @@ globals.data.factoryResearch = {
             constructionPrice:1e6,
             destrCoeff:2,
             CO2Production:0,
-            grayCO2:10e3,
             upgradeCoeff:1.25,
             addDescr:"C'est le futur."
         })).dataObj
