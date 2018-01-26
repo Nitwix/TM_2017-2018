@@ -24,6 +24,7 @@
     - le site de production sur lequel la centrale se trouvait coûte **très** cher à décontaminer/redébloquer
 - faire des recherches concernant le taux de carbon dans l'atmosphère et son évolution
 - ajouter un bouton pause
+- augmenter le prix de recherche à chaque recherche
 
 
 ## Grands objectifs
