@@ -20,3 +20,9 @@
 ## Autres sources
 
 - musique : remake de Imagine de John Lennon
+
+
+## Ajustement des valeurs des centrales
+- [production de CO2 par type de centrale](https://en.wikipedia.org/wiki/Life-cycle_greenhouse-gas_emissions_of_energy_sources#2014_IPCC,_Global_warming_potential_of_selected_electricity_sources)
+- [prix de production des différentes centrales](https://www.iea.org/Textbase/npsum/ElecCost2015SUM.pdf) //pas sûr
+- trouver coût de production d'électricité des centrales

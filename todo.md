@@ -1,14 +1,10 @@
 # À faire
 ## Pour la beta (uniquement l'essentiel concernant le gameplay)
 
-- Ajouter un besoin en énergie qui doit être satisfait qui augmente en fonction de la population
-    - à afficher dans stats (besoin et population)
-- system de reset (pas sûr)
-
 - ajuster (à la fin)
     - les valeurs de production des centrales pour que le jeu soit plus intéressant.
     - la valeur limite de CO2
-    - les pourcentages de base de recherche des centrales
+    - le "c" de recherche des centrales
 
 
 
@@ -30,12 +26,16 @@
 
 ## Grands objectifs
 - commencer la rédaction du document écrit
+- Ajouter un besoin en énergie qui doit être satisfait qui augmente en fonction de la population
+    - à afficher dans stats (besoin et population)
 - Réinitialisation des sites de production, des usines et de plusieurs autres choses après la fin du jeu
 - Tutoriel !
 - modes de difficulté
 - Interventions de Conseil
+<!-- 
 - classe TimeMgr
     - _maybe_ mettre un résumé des productions de l'année à la fin de chaque année
+-->
 - faire la musique du jeu + les effets sonores
 - faire des recherches concernant les centrales; trouver :
     - la production d'énergie
