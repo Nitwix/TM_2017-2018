@@ -89,7 +89,7 @@ class Newspaper{
         this._contentEls.removeAll(true);
         this._addContentEls();
 
-        this._addChangePageBtns();
+        // this._addChangePageBtns();
     }
 
     _purposeSpecificMods(el){
@@ -125,7 +125,6 @@ class Newspaper{
 
     start(){
         gameEls.stopTmpEls();
-
 
         //supprime l'affichage des sites de production si on est en vue "region" et rend la map invisible
         if(globals.currentRegion != ""){
@@ -169,7 +168,7 @@ class Newspaper{
             // this._fade(true);
         }, this);
 
-        //this._baseEls.add(this._newspaper);
+        this._baseEls.add(this._newspaper);
     }
 
     _addBaseEls(){
@@ -190,12 +189,16 @@ class Newspaper{
             this._posProps.sectionHeight = 100;
             this._posProps.offX = -32;
 
-            if (this._maxPageIndex > 0) this._addChangePageBtn(true);
-
             this._pageNumber = game.make.bitmapText(0,0,"pixel_font", this._pageIndex+1, 24);
             this._pageNumber.alignIn(this._newspaper, Phaser.BOTTOM_CENTER, 0, -32);
             this._pageNumber.tint = this._fontTint;
             this._baseEls.add(this._pageNumber);
+
+            this._addChangePageBtn(true);
+            this._addChangePageBtn(false);
+
+            this._updateChangePageBtns();
+            
         }else if (this._template == 1) {
             title.fontSize = 80;
             this._posProps.titleOffY = -48;
@@ -209,6 +212,8 @@ class Newspaper{
         // this._baseEls.alpha = 1;
     }
 
+
+    
     _addChangePageBtn(next){
         let btn = game.make.button(0,0, "arrows", () => {
             this._changePage(next);
@@ -226,9 +231,10 @@ class Newspaper{
             this._nextPageBtn = btn;
         }
         btn.alignIn(this._newspaper, alignPos, offX, offY);
-        this._contentEls.add(btn); //simplifie la logique de changement de page
+        this._baseEls.add(btn); //simplifie la logique de changement de page
     }
 
+    /*
     _addChangePageBtns(){
         if (this._pageIndex == this._maxPageIndex) {
             this._addChangePageBtn(false);
@@ -237,6 +243,22 @@ class Newspaper{
         } else {
             this._addChangePageBtn(false);
             this._addChangePageBtn(true);
+        }
+    }*/
+
+    _updateChangePageBtns(){
+        if(this._maxPageIndex <= 0){
+            this._nextPageBtn.visible = false;
+            this._prevPageBtn.visible = false;
+        }else if (this._pageIndex == this._maxPageIndex) {
+            this._nextPageBtn.visible = false;
+            this._prevPageBtn.visible = true;
+        } else if (this._pageIndex == 0) {
+            this._nextPageBtn.visible = true;
+            this._prevPageBtn.visible = false;
+        } else {
+            this._nextPageBtn.visible = true;
+            this._prevPageBtn.visible = true;
         }
     }
 
@@ -249,7 +271,7 @@ class Newspaper{
             this._pageIndex--;
         }
 
-        this._addChangePageBtns();
+        this._updateChangePageBtns();
 
         this._pageNumber.text = this._pageIndex + 1;
 
@@ -384,7 +406,7 @@ class Newspaper{
         //TODO: appeler des fonction pour fade out les éléments joliments
         this._baseEls.destroy();
         this._contentEls.destroy();
-        this._newspaper.destroy();
+        // this._newspaper.destroy();
         // this._fade(false);
 
         gameEls.newspaper = undefined;

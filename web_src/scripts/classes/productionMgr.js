@@ -5,7 +5,7 @@ class ProductionMgr{
 
         this._totCO2 = 0; //CO2 émi au total dans l'atmosphère (CO2Production + grayCO2 - CO2Absorbed)
 
-        this._energyToMondio = .3;
+        this._energyToMondio = .5;
 
     }
 
@@ -31,8 +31,8 @@ class ProductionMgr{
                 });
                 globals.gameEnded = true;
             }else{
-                const fadeScale = 3 / 5;
-                gameEls.fadeCam(10, fadeScale * (this._totCO2 / globals.CO2Limit));
+                // const fadeScale = 3 / 5;
+                // gameEls.fadeCam(10, fadeScale * (this._totCO2 / globals.CO2Limit));
             }
         }
     }

@@ -8,7 +8,7 @@ class ResearchMgr{
 
         //plus c est grand, plus la somme partielle augmente rapidement
         this._unlockData = {
-            coalPlant: {c: 5},
+            coalPlant: {c: 10},
             fuelPlant: {c: 2},
             gasPlant: {c: 2},
             hydroPlant: {c: .5},

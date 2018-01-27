@@ -13,7 +13,7 @@
 ## Bugs à fixer
 - bug lorsqu'on a plusieurs textes avec la classe Dialog (affiche instantanémment la suite)
 - lorsqu'on débloque plusieurs centrales d'un coup, seul une s'affiche dans le dialog
-- le bouton pour changer de page dans le newspaper ne devrait pas être détruit à chaque update car on ne parvient plus à le cliquer
+- l'update du newspaper est **très** lente
 
 ## Petits objectifs
 - dessiner Conseil
@@ -26,6 +26,7 @@
 - faire des recherches concernant le taux de carbon dans l'atmosphère et son évolution
 - ajouter un bouton pause
 - augmenter le prix de recherche à chaque recherche
+- diminuer le taux de CO2 à chaque update (CO2Absorbtion ou un truc du genre)
 
 
 ## Grands objectifs

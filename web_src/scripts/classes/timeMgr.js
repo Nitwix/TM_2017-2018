@@ -5,8 +5,8 @@ class TimeMgr{
             msYearDuration: 32000,
             secYearDuration: 32,
 
-            maxTimeScale: 8,
-            minTimeScale: 1/8
+            maxTimeScale: 4,
+            minTimeScale: 1/4
         };
 
         this._yearDuration = yearDuration;
