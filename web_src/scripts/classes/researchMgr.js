@@ -11,7 +11,7 @@ class ResearchMgr{
             coalPlant: {c: 10},
             fuelPlant: {c: 2},
             gasPlant: {c: 2},
-            hydroPlant: {c: .5},
+            hydroPlant: {c: 5},
             fissionPlant: {c: .2},
             windTurbines: {c: .1},
             solarPanels: {c: .05},

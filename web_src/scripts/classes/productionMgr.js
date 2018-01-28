@@ -5,7 +5,7 @@ class ProductionMgr{
 
         this._totCO2 = 0; //CO2 émi au total dans l'atmosphère (CO2Production + grayCO2 - CO2Absorbed)
 
-        this._energyToMondio = .5;
+        this._energyToMondio = 1.2;
 
     }
 
