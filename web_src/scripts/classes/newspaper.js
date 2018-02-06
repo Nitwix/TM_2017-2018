@@ -156,6 +156,8 @@ class Newspaper{
         NPSTween.start();
 
         NPSTween.onComplete.addOnce(() => {
+            game.input.enabled = true; //réactive l'input 
+
             //attribue l'objet newspaper à gameEls.newspaper
             gameEls.newspaper = this;
 

@@ -65,6 +65,7 @@ class ResearchMgr{
         let unlockData = globals.researchMgr._unlockData;
 
         //parcours des unlockProbs pour débloquer aléatoirement un type de centrale
+        let unlockedFacNames = "";
         for (let key in unlockData){
             let facProb = unlockData[key];
             let rnd = game.math.random(0,100);
@@ -72,8 +73,13 @@ class ResearchMgr{
                 facProb.partSum = -Infinity;
                 // console.log(facType);
                 globals.researchMgr.unlockFacType(key);
+
+                unlockedFacNames += this.getFacObj(key).title; //obtenir le nom des centrales
             }
         }
+
+        //afficher le newspaper avec le nom des usines débloquées
+        
     }
 
     //déverouille un type de centrale

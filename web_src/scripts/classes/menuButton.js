@@ -28,6 +28,11 @@ class MenuButton extends Phaser.Button {
             this.alignTo(alignUnder, Phaser.BOTTOM_CENTER, 0, globals.UI.buttonOffset);
         }
 
+        //pour éviter le double clique
+        this.onInputUp.add(() => {
+            game.input.enabled = false;
+        }, this);
+
         game.add.existing(this);
         
 
