@@ -21,7 +21,7 @@ gameEls.setup.fsBtn = function(){
         } else {
             game.scale.startFullScreen();
         }
-    }, this, "fs", "TOPMOST");
+    }, this, "fs", "TOPMOST",  false);
 }
 
 gameEls.setup.UI = function(){

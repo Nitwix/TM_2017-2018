@@ -1,5 +1,5 @@
 class MenuButton extends Phaser.Button {
-    constructor(CB, CBCtx, iconName, alignUnder){
+    constructor(CB, CBCtx, iconName, alignUnder, disableInput){
         let bIconIndex = 0;
         switch(iconName){
             case "fs":
@@ -29,9 +29,15 @@ class MenuButton extends Phaser.Button {
         }
 
         //pour éviter le double clique
-        this.onInputUp.add(() => {
-            game.input.enabled = false;
-        }, this);
+        if(disableInput !== false){
+            disableInput = true; //true si undefined
+        }
+        if(disableInput){
+            this.onInputUp.add(() => {
+                game.input.enabled = false;
+            }, this);
+        }
+        
 
         game.add.existing(this);
         

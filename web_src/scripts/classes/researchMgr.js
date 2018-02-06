@@ -65,7 +65,7 @@ class ResearchMgr{
         let unlockData = globals.researchMgr._unlockData;
 
         //parcours des unlockProbs pour débloquer aléatoirement un type de centrale
-        let unlockedFacNames = "";
+        let unlockedFacNames = []; //arr de strings
         for (let key in unlockData){
             let facProb = unlockData[key];
             let rnd = game.math.random(0,100);
@@ -74,12 +74,24 @@ class ResearchMgr{
                 // console.log(facType);
                 globals.researchMgr.unlockFacType(key);
 
-                unlockedFacNames += this.getFacObj(key).title; //obtenir le nom des centrales
+                console.log(key);
+                //ne fonctionne pas :(
+                unlockedFacNames.push(globals.researchMgr.getFacObj(key).title); //obtenir le nom des centrales
             }
         }
 
         //afficher le newspaper avec le nom des usines débloquées
-        
+        let dialText = "";
+        if(unlockedFacNames.length === 1){
+            dialText = `Félicitations, mon cher président! Vous avez débloqué un nouveau type de centrale: ${ unlockedFacNames[0] }! Vous pouvez désormais installer celle-ci sur n'importe quel site de production libre.`;
+        }else if(unlockedFacNames.length > 1){
+            dialText = `Félicitations, mon cher président! Vous avez débloqué plusieurs nouveaux types de centrale: ${unlockedFacNames.join(", ")}! Vous pouvez désormais installer celles-ci sur n'importe quel site de production libre.`;
+        }
+
+        if(dialText != ""){
+            let dialog = new Dialog([dialText]);
+            dialog.start();
+        }
     }
 
     //déverouille un type de centrale
@@ -92,8 +104,7 @@ class ResearchMgr{
             let dataObj = globals.data.factoryResearch.els[dataObjId];
             if(dataObj.fac.type == facType){
                 globals.data.factoryShop.els.push(dataObj);
-                let dialog = new Dialog([`Félicitations, mon cher président! Vous avez débloqué un nouveau type de centrale: ${dataObj.title}! Vous pouvez désormais installer celle-ci sur n'importe quel site de production libre.`]);
-                dialog.start();
+                
 
                 //pour que le dialog ne se ferme pas immédiatement lorsqu'on spamme le bouton pour investir dans la recherche
                 game.input.enabled = false;
