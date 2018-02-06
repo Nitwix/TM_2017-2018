@@ -73,15 +73,6 @@ class Newspaper{
     - ajouter les boutons de changement de page de façon plus générale
 
     */
-    // testUpdate(){
-    //     updateStatsData();
-    //     this._data = globals.data.stats;
-
-    //     this._contentEls.destroy(true, true);
-    //     this._addContentEls();
-
-    //     this._addChangePageBtn(true);
-    // }
 
     totalUpdate(newData){
         this._data = newData;
@@ -92,10 +83,42 @@ class Newspaper{
         // this._addChangePageBtns();
     }
 
-    textUpdate(newData){
-        this._contentEls.forEach((el) => {
-            console.log(el);
-        }, this, true);
+    softUpdate(newData){
+        this._data = newData || this._data;
+
+        for(let section of this._displayedSections){
+
+        }
+        let i = this._pageIndex * this._elsPerPage;
+        let max = this._elsPerPage + this._pageIndex * this._elsPerPage;
+
+        let sCount = 0;
+        for (i; i < max; i++) {
+            let section = this._displayedSections[sCount];
+            let el = this._data.els[i];
+
+            //update la visibilité
+            for (let key in section) {
+                let displayEl = section[key];
+                if (!displayEl) continue;
+                displayEl.visible = (!el) ? false : true;
+            }
+
+            if(!el) continue;
+
+            
+            section.icon.frame = el.spriteIndex;
+            section.title.text = el.title;
+            section.descr.text = el.descr;
+            if(section.posTxt){
+                section.posTxt.text = el.posTxt;
+            }
+            if(section.negTxt){
+                section.negTxt.text = el.negTxt;
+            }
+
+            sCount++;
+        }
     }
 
     _purposeSpecificMods(el){
@@ -168,10 +191,11 @@ class Newspaper{
             gameEls.newspaper = this;
 
             this._addBaseEls();
-            this._addContentEls();
+            this._createSections();
 
             game.world.bringToTop(this._baseEls);
             game.world.bringToTop(this._contentEls);
+            this._bringSectionsToTop();
 
             // this._fade(true);
         }, this);
@@ -220,8 +244,6 @@ class Newspaper{
         // this._baseEls.alpha = 1;
     }
 
-
-    
     _addChangePageBtn(next){
         let btn = game.make.button(0,0, "arrows", () => {
             this._changePage(next);
@@ -272,7 +294,7 @@ class Newspaper{
 
     //TODO: changer next en forward pour plus de clarté
     _changePage(next){
-        this._contentEls.removeAll(true);
+        // this._contentEls.removeAll(true);
         if(next){
             this._pageIndex++;
         }else{
@@ -283,7 +305,115 @@ class Newspaper{
 
         this._pageNumber.text = this._pageIndex + 1;
 
-        this._addContentEls();
+        // this._addContentEls();
+        this.softUpdate();
+    }
+
+    //appelé *une seule fois* dans start!
+    _createSections(){
+        this._displayedSections = [];
+        if (this._template == 0) {
+            for (let i=0; i<this._elsPerPage; i++) {
+                // debugger;
+                let el = this._data.els[i];
+                if (el == undefined) continue;
+                let cEl = this._createSection(i, el);
+                this._displayedSections.push(cEl);
+            }
+        } else {
+            //TODO
+        }
+    }
+
+    //appelé trois fois au total dans createContentEls!
+    _createSection(index, el){
+        this._purposeSpecificMods(el);
+
+        let section = {
+            icon: null,
+            title: null,
+            descr: null,
+
+            posBtn: null,
+            posTxt: null,
+
+            negBtn: null, 
+            negTxt: null
+        };
+
+
+        //positionnement par raport au TOP_LEFT
+        let offY = this._posProps.headOffY - index * this._posProps.sectionHeight;
+        let offX = this._posProps.offX;
+
+        let icon = game.make.image(0, 0, this._data.spritesheet, el.spriteIndex);
+        icon.scale.setTo(2);
+        icon.alignIn(this._newspaper, Phaser.TOP_LEFT, offX, offY);
+        section.icon = icon;
+
+        let sectionTitle = game.make.bitmapText(0, 0, "pixel_font", el.title, 32);
+        sectionTitle.alignTo(icon, Phaser.TOP_RIGHT, sectionTitle.width + 15, -4);
+        sectionTitle.tint = this._fontTint;
+        section.title = sectionTitle;
+
+        let descr = game.make.bitmapText(0, 0, "pixel_font", el.descr, 20);
+        descr.alignTo(sectionTitle, Phaser.BOTTOM_LEFT, 0, 16);
+        descr.tint = this._fontTint;
+        descr.maxWidth = this._CONSTANTS.descrMaxWidth;
+        section.descr = descr;
+
+        let posRet, negRet;
+        if (el.posTxt && el.negTxt) { //si'l faut mettre un bouton dans la section
+            posRet = this._createPosBtn(icon, el, true);
+
+            negRet = this._createNegBtn(icon, el, false);
+        } else if (el.posTxt) {
+            posRet = this._createPosBtn(icon, el, false);
+        } else if (el.negTxt) {
+            negRet = this._createNegBtn(icon, el, false);
+        }
+
+        if(posRet){
+            section.posBtn = posRet[0];
+            section.posTxt = posRet[1];
+        }
+        if(negRet){
+            section.negBtn = negRet[0];
+            section.negTxt = negRet[1];
+        }
+
+        
+
+        for(let key in section){
+            if(!section[key]) continue;
+            game.add.existing(section[key]);
+        }
+
+        return section;
+    }
+
+    _bringSectionsToTop(){
+        for(let section of this._displayedSections){
+            for (let key in section) {
+                if (!section[key]) continue;
+                game.world.bringToTop(section[key]);
+            }
+        }
+        
+    }
+
+    _createPosBtn(icon, el, isAbove) {
+        let posBtn = this._mkBtn(icon, isAbove, false, el.posCB);
+
+        let posTxt = this._mkTxt(el.posTxt, posBtn);
+        return [posBtn, posTxt];
+    }
+
+    _createNegBtn(icon, el, isAbove) {
+        let negBtn = this._mkBtn(icon, isAbove, true, el.negCB);
+
+        let negTxt = this._mkTxt(el.negTxt, negBtn);
+        return [negBtn, negTxt];
     }
 
     _addContentEls(){
@@ -303,8 +433,6 @@ class Newspaper{
             }
         }
     }
-
-
 
     _addSection(index, el){
 
@@ -400,6 +528,16 @@ class Newspaper{
     //     }
     // }
 
+    _destroyDisplayedSections(){
+        this._displayedSections.forEach((section) =>{
+            for(let key in section){
+                let el = section[key];
+                if(!el) continue;
+                el.destroy();
+            }
+        });
+    }
+
     stop(){
 
         //ferme un éventuel dialog qui serait resté ouvert
@@ -414,6 +552,7 @@ class Newspaper{
         //TODO: appeler des fonction pour fade out les éléments joliments
         this._baseEls.destroy();
         this._contentEls.destroy();
+        this._destroyDisplayedSections();
         // this._newspaper.destroy();
         // this._fade(false);
 
