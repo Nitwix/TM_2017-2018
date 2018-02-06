@@ -83,13 +83,19 @@ class Newspaper{
     //     this._addChangePageBtn(true);
     // }
 
-    updateContent(newData){
+    totalUpdate(newData){
         this._data = newData;
 
         this._contentEls.removeAll(true);
         this._addContentEls();
 
         // this._addChangePageBtns();
+    }
+
+    textUpdate(newData){
+        this._contentEls.forEach((el) => {
+            console.log(el);
+        }, this, true);
     }
 
     _purposeSpecificMods(el){

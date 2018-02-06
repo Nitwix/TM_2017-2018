@@ -45,7 +45,7 @@ class ResearchMgr{
 
         // ATTENTION si on change le 'purpose' du newspaper
         if(gameEls.newspaper && gameEls.newspaper.data.purpose == "factoryResearch"){
-            gameEls.newspaper.updateContent(globals.data.factoryResearch);
+            gameEls.newspaper.textUpdate(globals.data.factoryResearch);
         }
     }
 
@@ -55,6 +55,8 @@ class ResearchMgr{
                 return facData.fac;
             }
         }
+
+        console.log("not found :(");   
     }
 
 
@@ -70,13 +72,16 @@ class ResearchMgr{
             let facProb = unlockData[key];
             let rnd = game.math.random(0,100);
             if(rnd < facProb.partSum){
+
+                //ajoute le nom dans la liste des centrales débloquées
+                let title = globals.researchMgr.getFacObj(key).title; //obtenir le nom des centrales
+                unlockedFacNames.push(title); 
+
                 facProb.partSum = -Infinity;
                 // console.log(facType);
                 globals.researchMgr.unlockFacType(key);
 
-                console.log(key);
-                //ne fonctionne pas :(
-                unlockedFacNames.push(globals.researchMgr.getFacObj(key).title); //obtenir le nom des centrales
+                
             }
         }
 

@@ -47,6 +47,10 @@ class Factory{
         return this._level;
     }
 
+    get title(){
+        return this._title;
+    }
+
     get power(){
         return this._power;
     }
