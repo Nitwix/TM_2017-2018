@@ -11,7 +11,6 @@
 
 ## Bugs à fixer
 - bug lorsqu'on a plusieurs textes avec la classe Dialog (affiche instantanémment la suite)
-- l'update du newspaper est **très** lente
 
 ## Petits objectifs
 - dessiner Conseil
