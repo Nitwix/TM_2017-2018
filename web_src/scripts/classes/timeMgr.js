@@ -5,7 +5,7 @@ class TimeMgr{
             msYearDuration: 32000,
             secYearDuration: 32,
 
-            maxTimeScale: 4,
+            maxTimeScale: 32,
             minTimeScale: 1/4
         };
 
@@ -52,7 +52,7 @@ class TimeMgr{
             gameEls.fadeCam(2000, 1, () => {
                 globals.gameWon = true;
                 game.state.start("gameEnd");
-            });   
+            });
             globals.gameEnded = true;
         }
 

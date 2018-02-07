@@ -47,8 +47,6 @@ class Newspaper{
 
         //éléments de base qui restent entre les changements de page
         this._baseEls = game.add.group();
-        //éléments qui changent lorsqu'on change de page
-        this._contentEls = game.add.group();
 
         //contient toutes les propriétés liées au positionnement des éléments
         this._posProps = {}
@@ -74,27 +72,15 @@ class Newspaper{
 
     */
 
-    totalUpdate(newData){
-        this._data = newData;
-
-        this._contentEls.removeAll(true);
-        this._addContentEls();
-
-        // this._addChangePageBtns();
-    }
-
     softUpdate(newData){
         this._data = newData;
-        // this._data = newData || this._data;
 
         let i = this._pageIndex * this._elsPerPage;
         let max = this._elsPerPage + this._pageIndex * this._elsPerPage;
         let sCount = 0;
         for (i; i < max; i++) {
             let section = this._displayedSections[sCount];
-            console.log(section);
             let el = this._data.els[i];
-            this._purposeSpecificMods(el);
 
             //update la visibilité
             for (let key in section) {
@@ -105,22 +91,29 @@ class Newspaper{
             sCount++;
 
             if(!el) continue;
-            
-            section.icon.frame = el.spriteIndex;
-            section.title.text = el.title;
 
-            section.descr.text = el.descr;
-            if(section.posTxt){
-                section.posTxt.text = el.posTxt;
-                section.posBtn.onInputUp.removeAll();
-                section.posBtn.onInputUp.add(el.posCB, this);
-            }
-            if(section.negTxt){
-                section.negTxt.text = el.negTxt;
-                section.negBtn.onInputUp.removeAll();
-                section.negBtn.onInputUp.add(el.negCB, this);
-            }
+            this._updateSectionProps(section, el);
 
+        }
+    }
+
+    _updateSectionProps(section, el){
+        this._purposeSpecificMods(el);
+        section.icon.frame = el.spriteIndex;
+        section.title.text = el.title;
+
+        section.descr.text = el.descr;
+        if(section.posTxt){
+            section.posTxt.text = el.posTxt;
+            section.posBtn.onInputUp.removeAll();
+            section.posBtn.onInputUp.add(el.posCB, this);
+            this._alignTxtInBtn(section.posTxt, section.posBtn);
+        }
+        if(section.negTxt){
+            section.negTxt.text = el.negTxt;
+            section.negBtn.onInputUp.removeAll();
+            section.negBtn.onInputUp.add(el.negCB, this);
+            this._alignTxtInBtn(section.posTxt, section.posBtn);
         }
     }
 
@@ -133,7 +126,6 @@ class Newspaper{
                 el.posCB = () => {
                     globals.moneyMgr.buy(el.fac.constructionPrice, () => {
                         this._comingFrom.fac = el.fac.copy();
-                        // globals.productionMgr.totCO2 += el.fac.grayCO2;
                         gameEls.newspaper.stop();
                     });
                 };
@@ -143,15 +135,11 @@ class Newspaper{
                 el.posTxt = el.fac.researchPrice.toReadableStr();
                 el.posCB = () => {
                     globals.moneyMgr.buy(el.fac.researchPrice, () => {
-                        // console.log(`You invested ${el.fac.researchPrice} in research for ${el.fac.type}`);
                         globals.researchMgr.increaseUnlockProb(el.fac.type);
-                        // showTmpText("Votre investissement a bien été pris en compte", 32, 184);
                     });
                 };
                 el.descr = el.fac.getDescr("factoryResearch");
                 break;
-            default:
-                // console.log(el);
         }
     }
 
@@ -166,7 +154,6 @@ class Newspaper{
         let EMTween = game.add.tween(gameEls.earthMap);
         EMTween.to({alpha:0}, this._tweenProps.lDur);
         EMTween.start();
-        //gameEls.earthMap.visible = false;
 
         this._newspaper = game.add.image(0,0, "newspaper", this._template);
         this._newspaper.scale.setTo(8);
@@ -188,7 +175,7 @@ class Newspaper{
         NPSTween.start();
 
         NPSTween.onComplete.addOnce(() => {
-            game.input.enabled = true; //réactive l'input 
+            game.input.enabled = true; //réactive l'input
 
             //attribue l'objet newspaper à gameEls.newspaper
             gameEls.newspaper = this;
@@ -197,10 +184,8 @@ class Newspaper{
             this._createSections();
 
             game.world.bringToTop(this._baseEls);
-            game.world.bringToTop(this._contentEls);
             this._bringSectionsToTop();
 
-            // this._fade(true);
         }, this);
 
         this._baseEls.add(this._newspaper);
@@ -233,7 +218,7 @@ class Newspaper{
             this._addChangePageBtn(false);
 
             this._updateChangePageBtns();
-            
+
         }else if (this._template == 1) {
             title.fontSize = 80;
             this._posProps.titleOffY = -48;
@@ -243,8 +228,6 @@ class Newspaper{
         title.alignIn(this._newspaper, Phaser.TOP_CENTER, 0, this._posProps.titleOffY);
         this._baseEls.add(title);
 
-        //pour pouvoir tweener plus tard
-        // this._baseEls.alpha = 1;
     }
 
     _addChangePageBtn(next){
@@ -254,7 +237,6 @@ class Newspaper{
         btn.scale.setTo(2);
         let offX = -16, offY = -16, alignPos = Phaser.BOTTOM_RIGHT;
         if(!next){
-            // btn.angle = 180;
             btn.anchor.setTo(.5);
             alignPos = Phaser.BOTTOM_LEFT;
             btn.setFrames(3,4,5,3);
@@ -264,7 +246,7 @@ class Newspaper{
             this._nextPageBtn = btn;
         }
         btn.alignIn(this._newspaper, alignPos, offX, offY);
-        this._baseEls.add(btn); //simplifie la logique de changement de page
+        this._baseEls.add(btn);
     }
 
 
@@ -284,9 +266,7 @@ class Newspaper{
         }
     }
 
-    //TODO: changer next en forward pour plus de clarté
     _changePage(next){
-        // this._contentEls.removeAll(true);
         if(next){
             this._pageIndex++;
         }else{
@@ -297,8 +277,6 @@ class Newspaper{
         this.softUpdate(this._data);
 
         this._pageNumber.text = this._pageIndex + 1;
-
-        // this._addContentEls();
     }
 
     //appelé *une seule fois* dans start!
@@ -306,7 +284,6 @@ class Newspaper{
         this._displayedSections = [];
         if (this._template == 0) {
             for (let i=0; i<this._elsPerPage; i++) {
-                // debugger;
                 let el = this._data.els[i];
                 if (el == undefined) continue;
                 let cEl = this._createSection(i, el);
@@ -329,7 +306,7 @@ class Newspaper{
             posBtn: null,
             posTxt: null,
 
-            negBtn: null, 
+            negBtn: null,
             negTxt: null
         };
 
@@ -388,39 +365,23 @@ class Newspaper{
                 game.world.bringToTop(section[key]);
             }
         }
-        
+
     }
 
     _createPosBtn(icon, el, isAbove) {
         let posBtn = this._mkBtn(icon, isAbove, false, el.posCB);
 
-        let posTxt = this._mkTxt(el.posTxt, posBtn);
+        let posTxt = this._mkBtnTxt(el.posTxt, posBtn);
         return [posBtn, posTxt];
     }
 
     _createNegBtn(icon, el, isAbove) {
         let negBtn = this._mkBtn(icon, isAbove, true, el.negCB);
 
-        let negTxt = this._mkTxt(el.negTxt, negBtn);
+        let negTxt = this._mkBtnTxt(el.negTxt, negBtn);
         return [negBtn, negTxt];
     }
 
-
-    _addPosBtn(icon, el, isAbove){
-        let posBtn = this._mkBtn(icon, isAbove, false, el.posCB);
-        this._contentEls.add(posBtn);
-
-        let posTxt = this._mkTxt(el.posTxt, posBtn);
-        this._contentEls.add(posTxt);
-    }
-
-    _addNegBtn(icon, el, isAbove){
-        let negBtn = this._mkBtn(icon, isAbove, true, el.negCB);
-        this._contentEls.add(negBtn);
-
-        let negTxt = this._mkTxt(el.negTxt, negBtn);
-        this._contentEls.add(negTxt);
-    }
 
     _mkBtn(icon, isAbove, isNeg, callback){
         let offY = (isAbove) ? -32 : 0;
@@ -433,10 +394,14 @@ class Newspaper{
         return btn;
     }
 
-    _mkTxt(txt, btn){
+    _mkBtnTxt(txt, btn){
         let bmTxt = game.make.bitmapText(0, 0, "pixel_font", txt, globals.UI.posBtnFontSize);
-        bmTxt.alignIn(btn, Phaser.CENTER, 1, -3);
+        this._alignTxtInBtn(bmTxt, btn);
         return bmTxt;
+    }
+
+    _alignTxtInBtn(bmTxt, btn){
+        bmTxt.alignIn(btn, Phaser.CENTER, 1, -3);
     }
 
     //TODO: faire la fonction pour ajouter une colonne au newspaper
@@ -444,27 +409,6 @@ class Newspaper{
 
     }
 
-    //fade les éléments des différents groupes
-    // _fade(fadeIn){
-    //     if(fadeIn){
-    //         let BETween = game.add.tween(this._baseEls);
-    //         BETween.to({alpha:1}, this._tweenProps.sDur);
-    //         BETween.start();
-
-    //         let CETween = game.add.tween(this._contentEls);
-    //         CETween.to({alpha:1}, this._tweenProps.sDur);
-    //         CETween.start();
-    //     }else{
-    //         let NPTween = game.add.tween(this._newspaper);
-    //         NPTween.to({alpha:0}, this._tweenProps.sDur);
-    //         NPTween.start();
-
-    //         NPTween.onComplete.addOnce(() => {
-    //             this._newspaper.destroy();
-    //         }, this);
-
-    //     }
-    // }
 
     _destroyDisplayedSections(){
         this._displayedSections.forEach((section) =>{
@@ -487,25 +431,13 @@ class Newspaper{
             globals.regions[globals.currentRegion].init(true);
         }
 
-        //TODO: appeler des fonction pour fade out les éléments joliments
         this._baseEls.destroy();
-        this._contentEls.destroy();
         this._destroyDisplayedSections();
-        // this._newspaper.destroy();
-        // this._fade(false);
 
         gameEls.newspaper = undefined;
 
-        // gameEls.earthMap.visible = true;
         let EMTween = game.add.tween(gameEls.earthMap);
         EMTween.to({alpha:1}, this._tweenProps.sDur);
         EMTween.start();
-        // EMTween.onComplete.addOnce(() => {
-        //     //On ne peut pas init onComplete car sinon, lorsqu'on passe de newspaper à newspaper, la région s'uninit 2x de suite puis s'init sur le nouveau newspaper
-
-        //     // if(globals.currentRegion != ""){
-        //     //     globals.regions[globals.currentRegion].init(true);
-        //     // }
-        // }, this);
     }
 }
