@@ -26,7 +26,7 @@ gameState.create = function(){
 
             // ATTENTION si on change le titre du newspaper stats
             if(gameEls.newspaper && gameEls.newspaper.data.title == "Statistiques"){
-                updateStatsData();
+                globals.data.stats = updateStatsData();
                 gameEls.newspaper.softUpdate(globals.data.stats);
             }
         }

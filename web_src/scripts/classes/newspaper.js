@@ -84,18 +84,17 @@ class Newspaper{
     }
 
     softUpdate(newData){
-        this._data = newData || this._data;
+        this._data = newData;
+        // this._data = newData || this._data;
 
-        for(let section of this._displayedSections){
-
-        }
         let i = this._pageIndex * this._elsPerPage;
         let max = this._elsPerPage + this._pageIndex * this._elsPerPage;
-
         let sCount = 0;
         for (i; i < max; i++) {
             let section = this._displayedSections[sCount];
             let el = this._data.els[i];
+            this._purposeSpecificMods(el);
+            // console.log(section, el);
 
             //update la visibilité
             for (let key in section) {
@@ -105,10 +104,12 @@ class Newspaper{
             }
 
             if(!el) continue;
-
+            // console.log("el exists: "+ el);
             
             section.icon.frame = el.spriteIndex;
             section.title.text = el.title;
+            console.log(el.fac.descr);
+
             section.descr.text = el.descr;
             if(section.posTxt){
                 section.posTxt.text = el.posTxt;
@@ -148,7 +149,7 @@ class Newspaper{
                 el.descr = el.fac.getDescr("factoryResearch");
                 break;
             default:
-                // console.log("no mods made to el in newspaper purposeSpecificMods");
+                // console.log(el);
         }
     }
 
@@ -302,11 +303,11 @@ class Newspaper{
         }
 
         this._updateChangePageBtns();
+        this.softUpdate(this._data);
 
         this._pageNumber.text = this._pageIndex + 1;
 
         // this._addContentEls();
-        this.softUpdate();
     }
 
     //appelé *une seule fois* dans start!
@@ -365,7 +366,6 @@ class Newspaper{
         let posRet, negRet;
         if (el.posTxt && el.negTxt) { //si'l faut mettre un bouton dans la section
             posRet = this._createPosBtn(icon, el, true);
-
             negRet = this._createNegBtn(icon, el, false);
         } else if (el.posTxt) {
             posRet = this._createPosBtn(icon, el, false);

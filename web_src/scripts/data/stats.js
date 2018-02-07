@@ -1,5 +1,5 @@
 function updateStatsData(){
-    globals.data.stats = {
+    let data = {
         title: "Statistiques", //ATTENTION!!! ce nom est utilisé dans game.js pour définir quel objet data il faut fournir à newspaper.updateContent(data)
         spritesheet: "statsIcons",
         els: [
@@ -30,4 +30,5 @@ function updateStatsData(){
             */
         ]
     };
+    return data;
 }

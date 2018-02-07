@@ -45,7 +45,7 @@ class ResearchMgr{
 
         // ATTENTION si on change le 'purpose' du newspaper
         if(gameEls.newspaper && gameEls.newspaper.data.purpose == "factoryResearch"){
-            gameEls.newspaper.textUpdate(globals.data.factoryResearch);
+            gameEls.newspaper.softUpdate(globals.data.factoryResearch);
         }
     }
 
