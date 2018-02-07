@@ -92,33 +92,35 @@ class Newspaper{
         let sCount = 0;
         for (i; i < max; i++) {
             let section = this._displayedSections[sCount];
+            console.log(section);
             let el = this._data.els[i];
             this._purposeSpecificMods(el);
-            // console.log(section, el);
 
             //update la visibilité
             for (let key in section) {
                 let displayEl = section[key];
-                if (!displayEl) continue;
-                displayEl.visible = (!el) ? false : true;
+                if (!displayEl) continue; //quand negBtn n'existe pas par exemple
+                displayEl.visible = (el) ? true : false;
             }
+            sCount++;
 
             if(!el) continue;
-            // console.log("el exists: "+ el);
             
             section.icon.frame = el.spriteIndex;
             section.title.text = el.title;
-            console.log(el.fac.descr);
 
             section.descr.text = el.descr;
             if(section.posTxt){
                 section.posTxt.text = el.posTxt;
+                section.posBtn.onInputUp.removeAll();
+                section.posBtn.onInputUp.add(el.posCB, this);
             }
             if(section.negTxt){
                 section.negTxt.text = el.negTxt;
+                section.negBtn.onInputUp.removeAll();
+                section.negBtn.onInputUp.add(el.negCB, this);
             }
 
-            sCount++;
         }
     }
 

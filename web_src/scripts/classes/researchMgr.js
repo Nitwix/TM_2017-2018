@@ -42,6 +42,7 @@ class ResearchMgr{
         facProb.k++;
         // console.log(facProb);
         this.getFacObj(facType).unlockProb = facProb.partSum;
+        // debugger;
 
         // ATTENTION si on change le 'purpose' du newspaper
         if(gameEls.newspaper && gameEls.newspaper.data.purpose == "factoryResearch"){

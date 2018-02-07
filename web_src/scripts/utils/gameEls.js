@@ -33,7 +33,7 @@ gameEls.setup.UI = function(){
     }, this, "research", gameEls.fsBtn);
 
     gameEls.statsBtn = new MenuButton(() => {
-        updateStatsData();
+        globals.data.stats = updateStatsData();
         let statsNP = new Newspaper("smallSections", globals.data.stats);
         statsNP.start();
     }, this, "stats", gameEls.researchBtn);
