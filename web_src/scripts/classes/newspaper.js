@@ -267,17 +267,6 @@ class Newspaper{
         this._baseEls.add(btn); //simplifie la logique de changement de page
     }
 
-    /*
-    _addChangePageBtns(){
-        if (this._pageIndex == this._maxPageIndex) {
-            this._addChangePageBtn(false);
-        } else if (this._pageIndex == 0) {
-            this._addChangePageBtn(true);
-        } else {
-            this._addChangePageBtn(false);
-            this._addChangePageBtn(true);
-        }
-    }*/
 
     _updateChangePageBtns(){
         if(this._maxPageIndex <= 0){
@@ -384,8 +373,6 @@ class Newspaper{
             section.negTxt = negRet[1];
         }
 
-        
-
         for(let key in section){
             if(!section[key]) continue;
             game.add.existing(section[key]);
@@ -418,57 +405,6 @@ class Newspaper{
         return [negBtn, negTxt];
     }
 
-    _addContentEls(){
-        if(this._template == 0){
-            let i=this._pageIndex*this._elsPerPage;
-            let max = this._elsPerPage+this._pageIndex*this._elsPerPage;
-            for(i; i<max; i++){
-                // debugger;
-                let el = this._data.els[i];
-                if (el == undefined) continue;
-                this._addSection(parseInt(i%this._elsPerPage), el);
-            }
-        }else{
-            for(let index in this._data.els){
-                let el = this._data.els[index];
-                this._addColumn(index, el);
-            }
-        }
-    }
-
-    _addSection(index, el){
-
-        this._purposeSpecificMods(el);
-
-        //positionnement par raport au TOP_LEFT
-        let offY = this._posProps.headOffY - index * this._posProps.sectionHeight;
-        let offX = this._posProps.offX;
-
-        let icon = game.make.image(0,0,this._data.spritesheet, el.spriteIndex);
-        icon.scale.setTo(2);
-        icon.alignIn(this._newspaper, Phaser.TOP_LEFT, offX, offY);
-        this._contentEls.add(icon);
-
-        let sectionTitle = game.make.bitmapText(0,0,"pixel_font", el.title, 32);
-        sectionTitle.alignTo(icon, Phaser.TOP_RIGHT, sectionTitle.width + 15, -4);
-        sectionTitle.tint = this._fontTint;
-        this._contentEls.add(sectionTitle);
-
-        let descr = game.make.bitmapText(0,0,"pixel_font", el.descr, 20);
-        descr.alignTo(sectionTitle, Phaser.BOTTOM_LEFT, 0, 16);
-        descr.tint = this._fontTint;
-        descr.maxWidth = this._CONSTANTS.descrMaxWidth;
-        this._contentEls.add(descr);
-
-        if(el.posTxt && el.negTxt){ //si'l faut mettre un bouton dans la section
-            this._addPosBtn(icon, el, true);
-            this._addNegBtn(icon, el, false);
-        }else if (el.posTxt) {
-            this._addPosBtn(icon, el, false);
-        }else if (el.negTxt) {
-            this._addNegBtn(icon, el, false);
-        }
-    }
 
     _addPosBtn(icon, el, isAbove){
         let posBtn = this._mkBtn(icon, isAbove, false, el.posCB);
