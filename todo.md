@@ -1,5 +1,20 @@
 # À faire
-## Pour la beta (uniquement l'essentiel concernant le gameplay)
+## Bugs à fixer
+- bug lorsqu'on a plusieurs textes avec la classe Dialog (affiche instantanémment la suite)
+
+## Pour la version à rendre pour le TM
+- Tutoriel !
+- faire la musique du jeu + les effets sonores
+- Ajouter un besoin en énergie qui doit être satisfait qui augmente en fonction de la population
+    - à afficher dans stats (besoin et population)
+    - cause une fin du jeu si pas satisfait pendant x ans de suite
+
+- faire des recherches concernant les centrales; trouver :
+    - la production d'énergie
+    - le prix de construction
+    - le prix de destruction
+    - la production de CO<sub>2</sub>
+    - le "CO<sub>2</sub>" gris de construction des centrales
 
 - ajuster (à la fin) pour que le jeu soit plus intéressant.
     - la somme de départ
@@ -7,10 +22,6 @@
     - le taux watt -> mondio
     - les valeurs de production des centrales
     - le "c" de recherche des centrales
-
-
-## Bugs à fixer
-- bug lorsqu'on a plusieurs textes avec la classe Dialog (affiche instantanémment la suite)
 
 ## Petits objectifs
 - dessiner Conseil
@@ -28,23 +39,14 @@
 
 ## Grands objectifs
 - commencer la rédaction du document écrit
-- Ajouter un besoin en énergie qui doit être satisfait qui augmente en fonction de la population
-    - à afficher dans stats (besoin et population)
 - Réinitialisation des sites de production, des usines et de plusieurs autres choses après la fin du jeu
-- Tutoriel !
 - modes de difficulté
 - Interventions de Conseil
 <!--
 - classe TimeMgr
     - _maybe_ mettre un résumé des productions de l'année à la fin de chaque année
 -->
-- faire la musique du jeu + les effets sonores
-- faire des recherches concernant les centrales; trouver :
-    - la production d'énergie
-    - le prix de construction
-    - le prix de destruction
-    - la production de CO<sub>2</sub>
-    - le "CO<sub>2</sub>" gris de construction des centrales
+
 
 - trouver des 'conseils écologiques' et leur effet:
     - encourager l'utilisation des transports publiques

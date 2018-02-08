@@ -42,14 +42,13 @@ gameState.create = function(){
     // globals.initData();
 
 };
+
+
 gameState.update = function(){
     //on ne peut que cliquer sur les régions lorsqu'il n'y a pas de newspaper
     if(gameEls.newspaper == undefined){
         globReg.update();
     }
-
-    // globals.moneyMgr.totVal += 10000;
-    // console.log(globals.moneyMgr.totVal);
 
     //Permet d'obtenir le x et y quand on clique
     if(game.input.activePointer.isDown){
