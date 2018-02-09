@@ -93,6 +93,7 @@ class SmallDialog{
         closeBtn.anchor.setTo(.5);
         this._posProps.cntOffX = -6;
         closeBtn.alignIn(this._box, Phaser.TOP_RIGHT, this._posProps.cntOffX, this._posProps.cntOffY);
+        closeBtn.hitArea = new Phaser.Rectangle(-24, -28, 48, 48);
         this._dialog.add(closeBtn);
 
 

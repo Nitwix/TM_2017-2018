@@ -13,6 +13,7 @@ class Site{
         this._gGroup = game.add.group();
         this.siteButton = game.make.button(this.pos.x, this.pos.y, "factories", this._onClick, this);
         this.siteButton.anchor.setTo(.5);
+        this.siteButton.hitArea = new Phaser.Rectangle(-32, -32, 64, 64);
         this._gGroup.add(this.siteButton);
 
         let animData = this._fac.animData;
