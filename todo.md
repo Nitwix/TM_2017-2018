@@ -4,10 +4,11 @@
 
 ## Pour la version à rendre pour le TM
 - Tutoriel !
-- faire la musique du jeu + les effets sonores
+- faire la musique du jeu (+ les effets sonores)
 - Ajouter un besoin en énergie qui doit être satisfait qui augmente en fonction de la population
     - à afficher dans stats (besoin et population)
     - cause une fin du jeu si pas satisfait pendant x ans de suite
+- augmenter hitbox des boutons
 
 - faire des recherches concernant les centrales; trouver :
     - la production d'énergie

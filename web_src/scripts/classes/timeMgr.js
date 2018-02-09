@@ -84,6 +84,8 @@ class TimeMgr{
             this._showTimeScale();
         }, this,0,0,0,0);
         slowDown.alignIn(box, Phaser.LEFT_CENTER, -6);
+        //bouton de 14x11
+        slowDown.hitArea = new Phaser.Rectangle(-14,-5,28,22); //à ajuster
         this._yearDisplayGroup.add(slowDown);
 
         let speedUp = game.make.button(0, 0, "speed", () => {
@@ -92,7 +94,6 @@ class TimeMgr{
                 this._timeScale *= 2;
             }
             this._showTimeScale();
-
         }, this, 1, 1, 1, 1);
         speedUp.alignIn(box, Phaser.RIGHT_CENTER, -6);
         this._yearDisplayGroup.add(speedUp);
