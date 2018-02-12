@@ -8,6 +8,8 @@ class Dialog{
 
 		//groupe Phaser contenant les éléments du dialog
 		this._group = game.add.group();
+
+		this._speed = 100;
 	}
 
 	//démarre le dialogue
@@ -54,7 +56,7 @@ class Dialog{
 
 		this._timer = game.time.create();
 
-		this._timer.repeat(100, text.length, function(){
+		this._timer.repeat(this._speed, text.length, function(){
 			this._bmpText.text += text[wordCount] + " ";
 
 			//console.log(this._bmpText.textWidth);
@@ -70,8 +72,8 @@ class Dialog{
 		//quand tous les mots du string on été affichés, on passe au suivant dans l'array
 	    this._timer.onComplete.add(function(){
 	    	if(index + 1 < texts.length){
-				// this._waitForNext(false);
-	    		this._displayTexts(texts, index + 1);
+				this._waitForNext(false, true, index);
+	    		// this._displayTexts(texts, index + 1);
 	    	}else{
 	    		this._waitForNext(true); //c'est le dernier texte qui est affiché
 	    	}
@@ -80,10 +82,10 @@ class Dialog{
 	    this._timer.start();
 	}
 
-	_waitForNext(lastText){
+	_waitForNext(lastText, noMoreWords, index){
 		//ajoute un bouton pour afficher la partie suivante du texte
 		let nextButton = game.make.button(0,0,"arrows", function(){
-			this._launchNext(lastText);
+			this._launchNext(lastText, noMoreWords, index);
 		}, this, 0,1,2,0);
 
 		nextButton.alignIn(this._dialBox, Phaser.BOTTOM_RIGHT, -15, -20);
@@ -93,10 +95,14 @@ class Dialog{
 		this._nextButton = nextButton;
 	}
 
-	_launchNext(lastText){
+	_launchNext(lastText, noMoreWords, index){
 		this._bmpText.text = "";
 		this._timer.resume();
 		this._nextButton.destroy();
+
+		if(noMoreWords){
+			this._displayTexts(this._texts, index+1);
+		}
 
 		if(lastText){
 			this.stop(); //si c'est le dernier texte qui est affiché, on stoppe le dialogue
