@@ -48,12 +48,12 @@ class MenuButton extends Phaser.Button {
         this.redDotAnim = this.redDot.animations.add("blink", null, 2, true);
     }
 
-    toggleBlink() {
-        if (this.redDotAnim.isPlaying) {
+    switchBlink(on) {
+        if (on) {
+            this.redDotAnim.play();
+        } else {
             this.redDotAnim.stop();
             this.redDotAnim.frame = 1;
-        } else {
-            this.redDotAnim.play();
         }
     }
 }

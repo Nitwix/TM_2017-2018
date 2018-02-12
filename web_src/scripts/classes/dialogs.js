@@ -3,13 +3,15 @@ class Dialog{
 	/*
 	texts : array of strings: chaque string est une 'phase' du dialogue qui nécessite que le joueur fasse qqch
 	*/
-	constructor(texts){
+	constructor(texts, speed){
 		this._texts = texts;
 
 		//groupe Phaser contenant les éléments du dialog
 		this._group = game.add.group();
 
-		this._speed = 100;
+		this._speed = speed || 100;
+
+		this.onComplete = new Phaser.Signal();
 	}
 
 	//démarre le dialogue
@@ -44,6 +46,8 @@ class Dialog{
 		this._group.destroy();
 
 		gameEls.dialog = undefined;
+
+		this.onComplete.dispatch();
 	}
 
 

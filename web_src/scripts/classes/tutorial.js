@@ -1,31 +1,53 @@
 class Tutorial{
     constructor(){
-        this._texts = [
-            [
-                "Bien le bonjour, président(e)! Je me présente : Conseil. Je serai votre guide et conseiller durant toute la durée de votre mandat.",
-                "Vous présiderez durant... eh bien, si tout se passe bien, 300 ans. Vous prendrez de nombreuses décisions durant votre carrière et certaines d'entre elles auront des conséquences dans un futur plus ou moins lointain. Réfléchissez donc sagement avant de prendre une décision.",
-                "Pour commencer, vous pourriez investir une certaine somme dans la recherche d'un type de centrale électrique. Appuyez donc sur le bouton 'Recherche'."
-            ]
+
+        this._callbacks = [
+            () => {
+                let txts = [
+                    "Bien le bonjour, président(e)! Je me présente : Conseil. Je serai votre guide et conseiller durant toute la durée de votre mandat.",
+                    "Vous présiderez durant... eh bien, si tout se passe bien, 300 ans. Vous prendrez de nombreuses décisions durant votre carrière et certaines d'entre elles auront des conséquences dans un futur plus ou moins lointain. Réfléchissez donc sagement avant de prendre une décision.",
+                    "Pour commencer, vous pourriez investir une certaine somme dans la recherche d'un type de centrale électrique. Appuyez donc sur le bouton 'Recherche'."
+                ];
+                let dial = new Dialog(txts, 50);
+                dial.onComplete.addOnce(() => {
+                    this.nextStep();
+                }, this);
+                dial.start();
+            },
+            () => {
+                gameEls.researchBtn.switchBlink(true);
+                gameEls.researchBtn.onInputUp.addOnce(()=>{
+                    gameEls.researchBtn.switchBlink(false);
+                    this.nextStep();
+                }, this);
+            },
+            () => {
+                
+            }
         ];
-        this._textIndex = 0;
+
+        this._callbackIndex = 0;
 
         this._signal = new Phaser.Signal();
     }
 
-    start(){
-        this.setNextDialEvent();
-        this.dispatchSignal();
+    setNextSignalCB(){
+        this._signal.addOnce(this._callbacks[this._callbackIndex], this);
+        this._callbackIndex++;
     }
 
-    setNextDialEvent(){
-        this._signal.addOnce(() => {
-            let dial = new Dialog(this._texts[this._textIndex]);
-            dial.start();
-            this._textIndex++;
-        }, this);
-    }
-
-    dispatchSignal(){
+    dispatchEvent(){
         this._signal.dispatch();
     }
+
+    nextStep(){
+        this.setNextSignalCB();
+        this.dispatchEvent();
+    }
+
+    start(){
+        this.nextStep();
+    }
+
+    
 }
