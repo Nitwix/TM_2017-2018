@@ -33,7 +33,11 @@ var globals = {
     ecoActionsMgr: null,
 
     reset: null, // défini ci-dessous,
-    initData: null //défini ci-dessous
+    initData: null, //défini ci-dessous
+
+    signals: {
+        onNewspaperOpen: new Phaser.Signal(),
+    }
 };
 
 globals.reset = function(){

@@ -39,6 +39,7 @@ gameState.create = function(){
 
     globals.tutorial = new Tutorial();
     globals.tutorial.start();
+
     // globals.ecoActionsMgr = new EcoActionsMgr();
 
     // globals.initData();

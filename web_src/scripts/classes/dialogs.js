@@ -9,7 +9,7 @@ class Dialog{
 		//groupe Phaser contenant les éléments du dialog
 		this._group = game.add.group();
 
-		this._speed = speed || 100;
+		this._speed = speed || 50;
 
 		this.onComplete = new Phaser.Signal();
 	}

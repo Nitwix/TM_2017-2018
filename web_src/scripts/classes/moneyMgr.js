@@ -23,7 +23,7 @@ class MoneyMgr{
             if(gameEls.dialog != undefined){
                 gameEls.dialog.stop();
             }
-            let NEMDialog = new Dialog(["Désolé,l'état de nos finances ne nous permet pas cet achat."]);
+            let NEMDialog = new Dialog(["Désolé, l'état de nos finances ne nous permet pas cet achat."]);
             NEMDialog.start();
         }
         //debugger;

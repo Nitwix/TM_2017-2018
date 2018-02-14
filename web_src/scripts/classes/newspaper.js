@@ -57,6 +57,7 @@ class Newspaper{
         };
 
         this._fontTint = 0x55472f;
+
     }
 
     get data(){
@@ -174,7 +175,8 @@ class Newspaper{
         NPTween.start();
         NPSTween.start();
 
-        NPSTween.onComplete.addOnce(() => {
+        //petit trick pour ne pas avoir d' "accrochement" du newspaper
+        let delayedCB = () => {
             game.input.enabled = true; //réactive l'input
 
             //attribue l'objet newspaper à gameEls.newspaper
@@ -186,7 +188,15 @@ class Newspaper{
             game.world.bringToTop(this._baseEls);
             this._bringSectionsToTop();
 
+            globals.signals.onNewspaperOpen.dispatch();
+        };
+
+        NPSTween.onComplete.addOnce(() => {
+            setTimeout(delayedCB, 0); //ça fonctionne, étrangement
         }, this);
+
+        
+        
 
         this._baseEls.add(this._newspaper);
     }

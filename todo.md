@@ -1,6 +1,5 @@
 # À faire
 ## Bugs à fixer
-- bug lorsqu'on a plusieurs textes avec la classe Dialog (affiche instantanémment la suite)
 
 ## Pour la version à rendre pour le TM
 - Tutoriel !
