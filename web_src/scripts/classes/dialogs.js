@@ -9,9 +9,13 @@ class Dialog{
 		//groupe Phaser contenant les éléments du dialog
 		this._group = game.add.group();
 
-		this._speed = speed || 50;
+		this._speed = speed || 20;
 
 		this.onComplete = new Phaser.Signal();
+	}
+
+	bringToTop(){
+		game.world.bringToTop(this._group);
 	}
 
 	//démarre le dialogue

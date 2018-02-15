@@ -20,7 +20,7 @@ var globals = {
     data: {}, //voir scripts/data
 
     initMoney: 25e6,
-    CO2Limit: 1e4,
+    CO2Limit: 1e7,
     globalWarmingLimit: 3, //en degrés celsius
     beginYear:1799,
     endYear: 2100,
@@ -37,6 +37,9 @@ var globals = {
 
     signals: {
         onNewspaperOpen: new Phaser.Signal(),
+        onNewspaperClosed: new Phaser.Signal(),
+        onFactoryUnlocked: new Phaser.Signal(),
+        onRegionEntered: new Phaser.Signal(),
     }
 };
 

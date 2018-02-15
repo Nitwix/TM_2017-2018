@@ -6,7 +6,7 @@ globReg.init = function(){
 
     globals.regions.europe = new Region("europe", 6,
         [[382,163], [355,106], [455,98], [443, 132], [464, 157]],
-        [[240,184], [273, 239], [349,257], [521, 244], [253, 355], [454, 363], [434, 119]]); //voir définition dans utils/regions.js
+        [[273, 239], [240,184], [349,257], [521, 244], [253, 355], [454, 363], [434, 119]]); //voir définition dans utils/regions.js
 
     globals.regions.africa = new Region("africa", 3,
         [[343, 164], [436, 354], [513, 233], [454, 165]],
@@ -93,6 +93,7 @@ globReg.goto.region = function(region){
     this.zoom.onComplete.add(function(){
         game.input.enabled = true; //réactive à la fin du zoom
         region.init();
+        globals.signals.onRegionEntered.dispatch();
     }, this);
 
     globReg.canZoom = false;

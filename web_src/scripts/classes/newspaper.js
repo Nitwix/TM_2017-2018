@@ -195,8 +195,8 @@ class Newspaper{
             setTimeout(delayedCB, 0); //ça fonctionne, étrangement
         }, this);
 
-        
-        
+
+
 
         this._baseEls.add(this._newspaper);
     }
@@ -449,5 +449,8 @@ class Newspaper{
         let EMTween = game.add.tween(gameEls.earthMap);
         EMTween.to({alpha:1}, this._tweenProps.sDur);
         EMTween.start();
+        EMTween.onComplete.add(() => {
+            globals.signals.onNewspaperClosed.dispatch();
+        }, this);
     }
 }

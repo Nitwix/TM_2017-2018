@@ -57,7 +57,7 @@ class ResearchMgr{
             }
         }
 
-        console.log("not found :(");   
+        console.log("not found :(");
     }
 
 
@@ -76,13 +76,13 @@ class ResearchMgr{
 
                 //ajoute le nom dans la liste des centrales débloquées
                 let title = globals.researchMgr.getFacObj(key).title; //obtenir le nom des centrales
-                unlockedFacNames.push(title); 
+                unlockedFacNames.push(title);
 
                 facProb.partSum = -Infinity;
                 // console.log(facType);
                 globals.researchMgr.unlockFacType(key);
 
-                
+
             }
         }
 
@@ -96,6 +96,9 @@ class ResearchMgr{
 
         if(dialText != ""){
             let dialog = new Dialog([dialText]);
+            dialog.onComplete.addOnce(() => {
+                globals.signals.onFactoryUnlocked.dispatch();
+            }, this);
             dialog.start();
         }
     }
@@ -110,7 +113,7 @@ class ResearchMgr{
             let dataObj = globals.data.factoryResearch.els[dataObjId];
             if(dataObj.fac.type == facType){
                 globals.data.factoryShop.els.push(dataObj);
-                
+
 
                 //pour que le dialog ne se ferme pas immédiatement lorsqu'on spamme le bouton pour investir dans la recherche
                 game.input.enabled = false;
