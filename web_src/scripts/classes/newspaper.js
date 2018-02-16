@@ -448,9 +448,12 @@ class Newspaper{
 
         let EMTween = game.add.tween(gameEls.earthMap);
         EMTween.to({alpha:1}, this._tweenProps.sDur);
-        EMTween.start();
-        EMTween.onComplete.add(() => {
+        EMTween.onComplete.addOnce(() => {
             globals.signals.onNewspaperClosed.dispatch();
+            // console.log("em tweened");
         }, this);
+        EMTween.start();
+        // debugger;
+        
     }
 }

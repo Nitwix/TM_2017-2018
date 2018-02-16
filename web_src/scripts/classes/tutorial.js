@@ -92,7 +92,11 @@ class Tutorial{
                     "Sur ce, bonne chance, et à bientôt!"
                 ];
                 let dial = new Dialog(txts);
-                // globals.signals.onNewspaperClosed.addOnce(dial.start, this);
+                console.log(txts);
+                globals.signals.onNewspaperClosed.addOnce(() => {
+                    dial.start();
+                    dial.bringToTop();
+                }, this);
             }
         ];
 
