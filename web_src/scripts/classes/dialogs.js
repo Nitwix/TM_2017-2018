@@ -42,7 +42,9 @@ class Dialog{
 		this._bmpText = bmpText;
 	    // bmpTex.tint = 0xedddae; //couleur du texte
 
-	    this._displayTexts(this._texts, 0);
+		this._displayTexts(this._texts, 0);
+		
+		this.bringToTop();
 	}
 
 	//arrête le dialogue et supprime la boîte de dialogue

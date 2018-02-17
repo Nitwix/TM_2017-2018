@@ -40,6 +40,7 @@ var globals = {
         onNewspaperClosed: new Phaser.Signal(),
         onFactoryUnlocked: new Phaser.Signal(),
         onRegionEntered: new Phaser.Signal(),
+        onNPBtnClicked: new Phaser.Signal()
     }
 };
 

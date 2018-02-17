@@ -398,6 +398,7 @@ class Newspaper{
         let idx = (isNeg) ? 3 : 0;
         let btn = game.make.button(0,0, "pos_neg", () => {
             if(callback) callback();
+            globals.signals.onNPBtnClicked.dispatch();
         }, this, idx, 1 + idx,2 + idx, idx);
         btn.scale.setTo(2);
         btn.alignTo(icon, Phaser.BOTTOM_RIGHT, this._CONSTANTS.descrMaxWidth + 120, -24 + offY);

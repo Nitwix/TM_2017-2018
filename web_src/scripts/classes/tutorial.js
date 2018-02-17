@@ -30,6 +30,16 @@ class Tutorial{
             },
             () => {
                 let txts = [
+                    "Si vous voulez diminuer le temps que ça vous prendra pour déverouiller une centrale, cliquez sur la flèche de droite à côté de l'affichage de l'année."
+                ];
+                let dial = new Dialog(txts);
+                globals.signals.onNPBtnClicked.addOnce(() => {
+                    dial.start();
+                }, this);
+                dial.onComplete.addOnce(this.nextStep, this);
+            },
+            () => {
+                let txts = [
                     "Vous devriez installer la centrale que vous avez débloquée en Europe, car c'est là que commence la révolution industrielle!",
                     "Pour ce faire, cliquez sur l'Europe."
                 ];
@@ -46,7 +56,6 @@ class Tutorial{
                 let dial = new Dialog(txts);
                 globals.signals.onRegionEntered.addOnce(() => {
                     dial.start();
-                    dial.bringToTop();
                 }, this);
                 dial.onComplete.addOnce(this.nextStep, this);
             },
@@ -57,7 +66,6 @@ class Tutorial{
                 let dial = new Dialog(txts);
                 globals.signals.onNewspaperOpen.addOnce(() => {
                     dial.start();
-                    dial.bringToTop();
                 }, this);
 
                 globals.signals.onNewspaperClosed.addOnce(this.nextStep, this);
@@ -81,21 +89,18 @@ class Tutorial{
                 globals.signals.onNewspaperOpen.addOnce(() => {
                     gameEls.statsBtn.switchBlink(false);
                     dial.start();
-                    dial.bringToTop();
                 }, this);
                 dial.onComplete.addOnce(this.nextStep, this);
             },
             () => {
                 let txts = [
                     "Voilà, j'ai fini de vous expliquer ce que vous deviez savoir. Maintenant, vous savez ce qu'il vous reste à faire:",
-                    "Mener votre planète au mieu à travers cette période difficile, en trouvant une équilibre entre profit et écologie.",
+                    "Mener votre planète au mieux à travers cette période difficile, en trouvant une équilibre entre profit et écologie.",
                     "Sur ce, bonne chance, et à bientôt!"
                 ];
                 let dial = new Dialog(txts);
-                console.log(txts);
                 globals.signals.onNewspaperClosed.addOnce(() => {
                     dial.start();
-                    dial.bringToTop();
                 }, this);
             }
         ];
