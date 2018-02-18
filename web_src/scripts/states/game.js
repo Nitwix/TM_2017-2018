@@ -37,9 +37,10 @@ gameState.create = function(){
 
     globals.researchMgr = new ResearchMgr();
 
-    globals.tutorial = new Tutorial();
-    globals.tutorial.start();
-
+    if(globals.showTutorial){
+        globals.tutorial = new Tutorial();
+        globals.tutorial.start();
+    }
     // globals.ecoActionsMgr = new EcoActionsMgr();
 
     // globals.initData();

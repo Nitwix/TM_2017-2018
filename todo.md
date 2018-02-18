@@ -2,11 +2,10 @@
 ## Bugs à fixer
 
 ## Pour la version à rendre pour le TM
-- Tutoriel !
-- faire la musique du jeu (+ les effets sonores)
-- Ajouter un besoin en énergie qui doit être satisfait qui augmente en fonction de la population
+<!-- - faire la musique du jeu (+ les effets sonores) -->
+<!-- - Ajouter un besoin en énergie qui doit être satisfait qui augmente en fonction de la population
     - à afficher dans stats (besoin et population)
-    - cause une fin du jeu si pas satisfait pendant x ans de suite
+    - cause une fin du jeu si pas satisfait pendant x ans de suite -->
 
 - faire des recherches concernant les centrales; trouver :
     - la production d'énergie
@@ -99,3 +98,4 @@
     - afficher la progression dans le newspaper
 - afficher d'autres infos sur les centrales dans la description (dans newspaper) (26.01.2018)
 - augmenter hitbox des boutons (09.02.2018)
+- Tutoriel ! (18.02.2018)

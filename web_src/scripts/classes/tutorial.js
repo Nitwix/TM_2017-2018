@@ -95,7 +95,7 @@ class Tutorial{
             () => {
                 let txts = [
                     "Voilà, j'ai fini de vous expliquer ce que vous deviez savoir. Maintenant, vous savez ce qu'il vous reste à faire:",
-                    "Mener votre planète au mieux à travers cette période difficile, en trouvant une équilibre entre profit et écologie.",
+                    "Mener votre planète au mieux à travers cette période difficile, en trouvant une équilibre entre économie et écologie.",
                     "Sur ce, bonne chance, et à bientôt!"
                 ];
                 let dial = new Dialog(txts);

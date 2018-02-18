@@ -41,7 +41,9 @@ var globals = {
         onFactoryUnlocked: new Phaser.Signal(),
         onRegionEntered: new Phaser.Signal(),
         onNPBtnClicked: new Phaser.Signal()
-    }
+    },
+
+    showTutorial: true
 };
 
 globals.reset = function(){
