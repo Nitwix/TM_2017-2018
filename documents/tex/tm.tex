@@ -4,12 +4,12 @@
 \usepackage{graphicx}
 \usepackage{hyperref}
 \usepackage[utf8]{inputenc}
-\usepackage[francais]{babel}
+\usepackage[french]{babel}
 
 
 \title{De Révolution à Evolution \\ Création d'un jeu vidéo sur les thèmes de l'écologie et de la transition énergétique}
-\date{16-02-2018}
-\author{Niels Lachat \\ Mentor : Patrick Rickli}
+\date{2017-2018}
+\author{Niels Lachat, 3MG01 \\ Mentor : Patrick Rickli \\ Lycée Denis-de-Rougemont}
 
 \begin{document}
         \pagenumbering{gobble}
@@ -24,17 +24,23 @@
         Le but de ce travail de maturité était de créer un jeu vidéo abordant les thématiques de l'environnement et de la transition énergétique. 
         Le genre du jeu de gestion a été choisi pour démontrer les principes économiques de la transition énergétique.
         Ces principes ont bien entendu été simplifiés et modélisés afin de pouvoir les intégrer dans un jeu vidéo.
-        \\
+        
+        
         Je présenterai tout d'abord le concept sur lequel le jeu a été basé et j'expliquerai ensuite comment le joueur interagit avec le jeu.
-        Je conclurai par une explication du fonctionnement d'une partie du code du jeu.
+        Je conclurai par une explication du fonctionnement de certaines parties du code du jeu.
 
         \section{Concept du jeu}
         \subsection{Développement du concept}
         
-        Initialement, mon projet était de créer un jeu de gestion de ressources dont l'univers du jeu était aussi proche que possible de la réalité. Je me suis rapidement rendu compte que je devrais faire des simplifications pour que le jeu soit intéressant à jouer et que le projet soit réalisable avec le temps que j'avais à disposition. \\
-        La mécanique économique étant la mécanique principale de jeu, il était primordiale qu'elle soit bien pensée.
+        Mon projet était de créer un jeu de gestion de ressources dont l'univers du jeu était aussi proche que possible de la réalité. Le joueur (incarnant le président/la présidente du monde fictif) commence sa partie au début du 18\textsuperscript{ème} siècle. Il devait être amené au fil des expériences du jeu à réaliser qu'à un certain moment, une transition énergétique était nécessaire afin d'assurer la survie de l'espèce humaine.
         
-        \paragraph{Première } \hspace{0pt} \\
+        
+        La mécanique économique étant la mécanique principale de jeu, il était primordiale qu'elle soit bien pensée.
+        Plusieurs mécaniques économiques m'ont parues intéressantes mais je n'en ai retenue qu'une seule pour les raisons décrites ci-dessous.
+        
+        
+        La première alternative consistait à avoir deux types de centrales: des centrales produisant de l'énergie (centrales à charbon, barrages hydroélectriques, centrales nucléaires, etc...) et d'autres produisant des ressources (usines de textile, forges, champs, etc...). Le joueur installerait des centrales énergétiques pour produire de l'énergie permettant de faire fonctionner ses centrales produisant des ressources. Ainsi, un cycle économique se créerait. 
+        Deux raisons m'ont convaincu de ne pas choisir cette alternative. Premièrement, l'idée ci-dessus ne transmettait pas le message que je voulais transmettre: en effet, ce n'est pas ce que l'on produit et ce que l'on consomme qui pose un problème, c'est la façon dont nous le faisons. Ce qui m'amène à la deuxième raison m'ayant fait renoncer à cette alternative: la complexité des mécaniques de jeu et par conséquent du code.
         
 
         \subsection{Concept final}
@@ -45,6 +51,7 @@
         \subsection{Fonctionnement du jeu}
         
         \section{Conclusion}
+        \subsection{Ce que j'aurais aimé rajouter dans le jeu}
 
         \begin{figure}[h]
                 \includegraphics[width=\linewidth]{../images/mainMenu}
