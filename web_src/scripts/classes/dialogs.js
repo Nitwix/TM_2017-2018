@@ -9,7 +9,7 @@ class Dialog{
 		//groupe Phaser contenant les éléments du dialog
 		this._group = game.add.group();
 
-		this._speed = speed || 20;
+		this._speed = speed || 100;
 
 		this.onComplete = new Phaser.Signal();
 	}
@@ -43,7 +43,7 @@ class Dialog{
 	    // bmpTex.tint = 0xedddae; //couleur du texte
 
 		this._displayTexts(this._texts, 0);
-		
+
 		this.bringToTop();
 	}
 
