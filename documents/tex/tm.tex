@@ -1,10 +1,12 @@
 \documentclass{article}
 
-
 \usepackage{graphicx}
 \usepackage{hyperref}
 \usepackage[utf8]{inputenc}
 \usepackage[french]{babel}
+\usepackage{float}
+
+\newcommand{\initMoney}{250'000}
 
 
 \title{De Révolution à Evolution \\ Création d'un jeu vidéo sur les thèmes de l'écologie et de la transition énergétique}
@@ -52,26 +54,70 @@
         \subsubsection{Le personnage incarné par le joueur}
         Je me suis également posé la question de savoir quel personnage le joueur devrait incarner. Dans un premier temps m'est venu l'idée que le joueur pourrait être un riche patron d'une multinationale. Cependant cela impliquait que c'était du ressort des multinationales d'assurer ou non la transition énergétique et d'effectuer des actions en faveur de l'écologie, ce qui est en tout cas partiellement faux. Cette possibilité excluait également le joueur, qui ne se sentait que très peu concerné par la problématique.
         
+        
+        L'autre possibilité était donc que le joueur incarne le président/la présidente du monde. Cette option a l'avantage d'expliquer le pouvoir immense qu'a le joueur et de montrer que n'importe qui peut agir pour le bien de la planète.
+        Un inconvénient de ce choix est que cela éloigne le monde du jeu de la réalité car le monde n'est évidemment pas gouverné par un président mondial. Cette alternative a tout de même été choisie pour simplifier la narration et le concept.
+        
 
+		\subsubsection{La monnaie du jeu}
+		Une question qui s'est posée assez rapidement dans le développement de l'idée du jeu était celle du choix de la monnaie du jeu. J'ai d'abord pensé à utiliser une monnaie réelle mais la question des échelles des prix des objets du jeu m'a fait douter de ce choix. En choisissant une monnaie fictive, j'avais le choix de fixer les prix que je voulais car on ne pourrait avec des prix réels.
+		J'ai donc choisi de créer les \textit{Mondios}, monnaie universelle de la planète (voir figure \ref{fig:mondiosLogo}).
+		\begin{figure}[H]
+                \centerline{\includegraphics[scale=.5]{../images/mondiosLogo}}
+                \caption{Icône de la monnaie du jeu: les \textit{Mondios}}
+                \label{fig:mondiosLogo}
+        \end{figure}		
+		
         \subsection{Concept final}
-        Vous êtes en 1800, au début de la révolution industrielle et devez débloquer votre première centrale 
-        %pas sûr  que j'utiliserai cette section
+        Vous êtes en 1800, au début de la révolution industrielle. Vous venez d'avoir été élu président(e) de la planète. Votre but: mener la planète à travers la Révolution industrielle et assurer la transition énergétique afin de ne pas arriver à un point critique du réchauffement climatique. Le jeu s'achève soit si vous avez dépassé une température critique du réchauffement climatique (jeu perdu) ou si vous avez atteint l'année 2100 (jeu gagné).
+        L'action principale du joueur consiste à gérer les centrales énergétiques présentes sur sa planète.
 
         \section{Le jeu}
         \subsection{Interaction du joueur}
+        \subsubsection{Les éléments de l'écran principal}
+		L'écran principal du jeu comporte plusieurs éléments dont je vais expliquer l'utilité ci-dessous (voir à chaque fois la figure \ref{fig:worldView}).
+		
+		\begin{itemize}
+			\item \textbf{L'argent du joueur} (en mondios) est affiché dans le coin en haut à gauche de l'écran.
+			\item \textbf{L'année de jeu} est affichée en haut au centre de l'écran. Les flèches à gauche et à droite de l'année permettent de ralentir (flèche gauche) ou d’accélérer (flèche droite) le déroulement du temps du jeu.
+			\item \textbf{Le bouton plein écran} affiché en haut à droite de l'écran permet d'activer ou de désactiver le plein écran.
+			\item \textbf{L'onglet de recherche} est accessible via le bouton 'Recherche' situé en-dessous du bouton plein écran. Son utilité est expliquée dans la section \ref{onglets}.
+			\item  \textbf{L'onglet de statistiques} est accessible via le bouton 'Statistiques' affiché en-dessous du bouton 'Recherche'. Son utilité est également expliquée dans la section \ref{onglets}.
+		\end{itemize}
+		
+		\begin{figure}[H]
+                \includegraphics[width=\linewidth]{../images/worldView}
+                \caption{Ecran principal du jeu}
+                \label{fig:worldView}
+        \end{figure} 
+		
+		\subsubsection{Les onglets du jeu} \label{onglets}
+		%Continuer ici :)
+        
+        \subsubsection{Comment jouer}
+        Le joueur commence par devoir choisir de jouer avec ou sans tutoriel pour lui expliquer les bases du jeu (voir figure \ref{fig:mainMenu}). 
+        \begin{figure}[H]
+                \includegraphics[width=\linewidth]{../images/mainMenu}
+                \caption{Menu principal du jeu}
+                \label{fig:mainMenu}
+        \end{figure}
+        
+        S'il choisit de suivre le tutoriel, il sera guidé dans le jeu avec le personnage de Conseil qui lui expliquera le fonctionnement de tous les éléments du jeu et le but de la partie.
         
         
+        Lorsqu'il commence une partie, le joueur commence avec \initMoney ~ Mondios. Il devra d'abord utiliser cet argent dans l'onglet 'Recherche' (voir figure \ref{fig:research}) qui lui permettra de débloquer une centrale énergétique. Après avoir suffisamment investit dans un type de centrale et attendu un certain moment (les centrales ne peuvent se débloquer qu'à chaque passage d'année), le type de centrale se débloque.
+        \begin{figure}[H]
+                \includegraphics[width=\linewidth]{../images/recherche}
+                \caption{Onglet de recherche}
+                \label{fig:research}
+        \end{figure}
 
         \subsection{Fonctionnement du jeu}
         
         \section{Conclusion}
         \subsection{Ce que j'aurais aimé rajouter dans le jeu}
 
-        \begin{figure}[h]
-                \includegraphics[width=\linewidth]{../images/mainMenu}
-                \caption{Menu principal du jeu}
-                \label{fig:mainMenu}
-        \end{figure}
+        
 
         Figure \ref{fig:mainMenu}
 

@@ -21,7 +21,7 @@ var globals = {
 
     initMoney: 25e4,
     CO2Limit: 1e7,
-    globalWarmingLimit: 3, //en degrés celsius
+    globalWarmingLimit: 2, //en degrés celsius
     beginYear:1799,
     endYear: 2100,
     gameWon: undefined, //type : bool
