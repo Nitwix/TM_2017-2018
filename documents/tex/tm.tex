@@ -5,6 +5,9 @@
 \usepackage[utf8]{inputenc}
 \usepackage[french]{babel}
 \usepackage{float}
+\usepackage{parskip}
+\setlength{\parindent}{15pt}
+
 
 \newcommand{\initMoney}{250'000}
 
@@ -62,6 +65,9 @@
 		\subsubsection{La monnaie du jeu}
 		Une question qui s'est posée assez rapidement dans le développement de l'idée du jeu était celle du choix de la monnaie du jeu. J'ai d'abord pensé à utiliser une monnaie réelle mais la question des échelles des prix des objets du jeu m'a fait douter de ce choix. En choisissant une monnaie fictive, j'avais le choix de fixer les prix que je voulais car on ne pourrait avec des prix réels.
 		J'ai donc choisi de créer les \textit{Mondios}, monnaie universelle de la planète (voir figure \ref{fig:mondiosLogo}).
+		
+		
+		\textit{Note: }L'affichage de l'argent est toujours effectué en utilisant les préfixes du Système international d'unités pour réduire l'espace que celui-ci prend sur l'écran (par exemple 150'200 sera affiché comme 150.2k)
 		\begin{figure}[H]
                 \centerline{\includegraphics[scale=.5]{../images/mondiosLogo}}
                 \caption{Icône de la monnaie du jeu: les \textit{Mondios}}
@@ -74,6 +80,8 @@
 
         \section{Le jeu}
         \subsection{Interaction du joueur}
+		Dans cette section, j'expliquerai comment le joueur peut interagir avec le jeu en présentant les éléments de l'écran principal, les différents onglets du jeu, la vue des régions et comment jouer au jeu.        
+        
         \subsubsection{Les éléments de l'écran principal}
 		L'écran principal du jeu comporte plusieurs éléments dont je vais expliquer l'utilité ci-dessous (voir à chaque fois la figure \ref{fig:worldView}).
 		
@@ -92,25 +100,39 @@
         \end{figure} 
 		
 		\subsubsection{Les onglets du jeu} \label{onglets}
-		%Continuer ici :)
+		Les menus du jeu sont affichés sous la forme d'onglets (qui représentent un journal).
+		Il y a 3 onglets qui sont sous cette forme de journal: l'onglet de recherche, l'onglet des statistiques et l'onglet d'achat de centrales.
+		Tous les onglets sont construis sur le même modèle, seul leur contenu change. Ainsi, chaque onglet comporte un titre (en haut au centre), un bouton permettant de fermer l'onglet (en haut à droite), trois sections (au centre), un numéro de page (en bas au centre) et des flèches pour changer de page (en bas à gauche et à droite).
+		
+		
+		\textbf{L'onglet de recherche} affiche les centrales énergétiques dans lesquelles le joueur peut investir des mondios (en appuyant sur le bouton vert où le prix de l'investissement est affiché) pour augmenter la probabilité qu'il les débloquera.
+		
+		\begin{figure}[H]
+                \includegraphics[width=\linewidth]{../images/recherche}
+                \caption{Onglet de recherche}
+                \label{fig:research}
+        \end{figure}
+        
+        
+        \textbf{L'onglet des statistiques} affiche les différentes statistiques de jeu. 
+		
+		\subsubsection{La vue des différentes régions}
         
         \subsubsection{Comment jouer}
         Le joueur commence par devoir choisir de jouer avec ou sans tutoriel pour lui expliquer les bases du jeu (voir figure \ref{fig:mainMenu}). 
+        
         \begin{figure}[H]
                 \includegraphics[width=\linewidth]{../images/mainMenu}
                 \caption{Menu principal du jeu}
                 \label{fig:mainMenu}
         \end{figure}
         
+        
         S'il choisit de suivre le tutoriel, il sera guidé dans le jeu avec le personnage de Conseil qui lui expliquera le fonctionnement de tous les éléments du jeu et le but de la partie.
         
         
         Lorsqu'il commence une partie, le joueur commence avec \initMoney ~ Mondios. Il devra d'abord utiliser cet argent dans l'onglet 'Recherche' (voir figure \ref{fig:research}) qui lui permettra de débloquer une centrale énergétique. Après avoir suffisamment investit dans un type de centrale et attendu un certain moment (les centrales ne peuvent se débloquer qu'à chaque passage d'année), le type de centrale se débloque.
-        \begin{figure}[H]
-                \includegraphics[width=\linewidth]{../images/recherche}
-                \caption{Onglet de recherche}
-                \label{fig:research}
-        \end{figure}
+        \
 
         \subsection{Fonctionnement du jeu}
         
