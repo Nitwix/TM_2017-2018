@@ -22,6 +22,7 @@
         \newpage
 
         \tableofcontents
+        %\listoffigures
         \newpage
         \pagenumbering{arabic}
 
@@ -137,12 +138,36 @@
         \end{figure}
 		
 		\subsubsection{La vue des différentes régions}
-		En vue 'region', le joueur peut débloquer des sites de production et interagir avec les centrales énergétiques construites (voir figure \ref{fig:region}).
+		En vue 'region', le joueur peut déverouiller des sites de production et interagir avec les centrales énergétiques construites (voir figure \ref{fig:region}).
 		\begin{figure}[H]
                 \includegraphics[width=\linewidth]{../images/region}
                 \caption{La vue 'region'}
                 \label{fig:region}
         \end{figure}
+        
+        En appuyant sur un site verouillé, une fenêtre de dialogue s'ouvre avec le prix du déblocage affiché (voir figure \ref{fig:unlockSite}).
+        \begin{figure}[H]
+                \includegraphics[width=\linewidth]{../images/unlockSite}
+                \caption{Le déblocage d'un site de production}
+                \label{fig:unlockSite}
+        \end{figure}
+        
+        Il est ensuite possible de construire une centrale sur ce site de production (voir figure \ref{fig:buyPlant}).
+        \begin{figure}[H]
+                \includegraphics[width=\linewidth]{../images/buyPlant}
+                \caption{L'achat d'une centrale électrique}
+                \label{fig:buyPlant}
+        \end{figure}
+        
+        
+        Il est également possible d'améliorer une centrale électrique pour qu'elle produise plus (ce qui aura comme conséquence qu'elle polluera également plus). (voir figure \ref{fig:upgradePlant}).
+        \begin{figure}[H]
+                \includegraphics[width=\linewidth]{../images/upgradePlant}
+                \caption{Amélioration d'une centrale électrique}
+                \label{fig:upgradePlant}
+        \end{figure}
+        
+        Voyons maintenant comment concrètement jouer au jeu.
         
         \subsubsection{Comment jouer}
         Le joueur commence par devoir choisir de jouer avec ou sans tutoriel pour lui expliquer les bases du jeu (voir figure \ref{fig:mainMenu}). 
@@ -159,15 +184,17 @@
         
         Lorsqu'il commence une partie, le joueur commence avec \initMoney ~ Mondios. Il devra d'abord utiliser cet argent dans l'onglet 'Recherche' (voir figure \ref{fig:research}) qui lui permettra de débloquer une centrale énergétique. Après avoir suffisamment investit dans un type de centrale et attendu un certain moment (les centrales ne peuvent se débloquer qu'à chaque passage d'année), le type de centrale se débloque.
         
+        
+        Après avoir débloqué le type de centrale, le joueur peut se rendre dans une région (voir figure \ref{fig:region}) et déverouiller un site de production (voir figure \ref{fig:unlockSite}). Après avoir déverrouillé le site de production, le joueur peut y construire une centrale énergétique (voir figure \ref{fig:buyPlant}). Cette centrale produira de l'énergie qui sera convertie en mondios et qui permettra d'investir dans la recherche d'autres centrales énergétiques ou de construire de nouvelles centrales. Il devra cependant faire attention à ne pas construire des centrales trop polluantes qui réchaufferait sa planète de façon excessive (et qui lui ferait par conséquent perdre la partie).
+        
 
         \subsection{Fonctionnement du jeu}
+		        
+        
         
         \section{Conclusion}
         \subsection{Ce que j'aurais aimé rajouter dans le jeu}
 
-        
-
-        Figure \ref{fig:mainMenu}
 
         \href{https://www.latex-tutorial.com/tutorials/pgfplots/}{Lien vers le tuto}
 
