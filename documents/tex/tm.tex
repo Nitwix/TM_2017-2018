@@ -5,9 +5,11 @@
 \usepackage[utf8]{inputenc}
 \usepackage[french]{babel}
 \usepackage{float}
+
 \usepackage{parskip}
 \setlength{\parindent}{15pt}
 
+\input{lstset_js}
 
 \newcommand{\initMoney}{250'000}
 
@@ -17,6 +19,8 @@
 \author{Niels Lachat, 3MG01 \\ Mentor : Patrick Rickli \\ Lycée Denis-de-Rougemont}
 
 \begin{document}
+		
+
         \pagenumbering{gobble}
         \maketitle
         \newpage
@@ -46,10 +50,10 @@
         
         
         La première alternative consistait à avoir deux types de centrales: des centrales produisant de l'énergie (centrales à charbon, barrages hydroélectriques, centrales nucléaires, etc...) et d'autres produisant des ressources (usines de textile, forges, champs, etc...). Le joueur installerait des centrales énergétiques pour produire de l'énergie permettant de faire fonctionner ses centrales produisant des ressources. Ainsi, un cycle économique se créerait. 
-        Deux raisons m'ont convaincu de ne pas choisir cette alternative. Premièrement, l'idée ci-dessus ne transmettait pas le message que je voulais transmettre: en effet, ce n'est pas ce que l'on produit et ce que l'on consomme qui pose un problème, c'est la façon dont nous le faisons. Ce qui m'amène à la deuxième raison m'ayant fait renoncer à cette alternative: la complexité des mécaniques de jeu et par conséquent du code.
+        Deux raisons m'ont convaincu de ne pas choisir cette alternative. Premièrement, l'idée ci-dessus ne transmettait pas le message que je voulais transmettre: en effet, ce n'est pas ce que l'on produit et ce que l'on consomme qui pose un problème, c'est la façon dont nous le faisons. La deuxième raison m'ayant fait renoncer à cette alternative est la complexité des mécaniques de jeu et par conséquent du code qu'impliquait cette mécanique économique.
         
         
-        La deuxième alternative était basé sur deux types de centrales: les centrales de production de ressources énergétiques (mines, puits de pétroles, etc...) et les centrales de production d'énergie (citées ci-dessus). Le joueur devrait trouver un bon équilibre entre les ressources énergétiques qu'il produirait et les centrales énergétiques qui consomment ces ressources.
+        La deuxième alternative était basé sur deux types de centrales: les centrales de production de ressources énergétiques (mines, puits de pétroles, etc...) et les centrales de production d'énergie (citées dans la première alternative). Le joueur devrait trouver un bon équilibre entre les ressources énergétiques qu'il produirait et les centrales énergétiques qui consomment ces ressources.
         Cette alternative aurait pu être intéressante du point de vue du joueur mais elle était également trop compliquée à intégrer dans le jeu et ne reflétait pas non plus l'idée que je voulais transmettre dans mon jeu (les centrales de production de ressources énergétiques n'apportant pas beaucoup à la réflexion).
         
         
@@ -64,7 +68,7 @@
         
 
 		\subsubsection{La monnaie du jeu}
-		Une question qui s'est posée assez rapidement dans le développement de l'idée du jeu était celle du choix de la monnaie du jeu. J'ai d'abord pensé à utiliser une monnaie réelle mais la question des échelles des prix des objets du jeu m'a fait douter de ce choix. En choisissant une monnaie fictive, j'avais le choix de fixer les prix que je voulais car on ne pourrait avec des prix réels.
+		Une question qui s'est posée assez rapidement dans le développement de l'idée du jeu était celle du choix de la monnaie du jeu. J'ai d'abord pensé à utiliser une monnaie réelle mais la question des échelles des prix des objets du jeu m'a fait douter de ce choix. En choisissant une monnaie fictive, j'avais le choix de fixer les prix que je voulais car on ne pourrait pas comparer avec des prix réels.
 		J'ai donc choisi de créer les \textit{Mondios}, monnaie universelle de la planète (voir figure \ref{fig:mondiosLogo}).
 		
 		
@@ -78,16 +82,16 @@
         
         \subsubsection{La temporalité du jeu}
         %Expliquer pourquoi 32 sec par année et pourquoi 1800-2100	
+        //TODO
 		
         \subsection{Concept final}
-        Vous êtes en 1800, au début de la révolution industrielle. Vous venez d'avoir été élu président(e) de la planète. Votre but: mener la planète à travers la Révolution industrielle et assurer la transition énergétique afin de ne pas arriver à un point critique du réchauffement climatique. Le jeu s'achève soit si vous avez dépassé une température critique du réchauffement climatique (jeu perdu) ou si vous avez atteint l'année 2100 (jeu gagné).
+		Vous êtes en 1800, au début de la révolution industrielle. Vous venez d'être élu président(e) de la planète. Votre but: mener la planète à travers la Révolution industrielle et assurer la transition énergétique afin de ne pas arriver à un point critique du réchauffement climatique. Le jeu s'achève soit si vous avez dépassé une température critique du réchauffement climatique (jeu perdu) ou si vous avez atteint l'année 2100 (jeu gagné).
         L'action principale du joueur consiste à gérer les centrales énergétiques présentes sur sa planète.
 
         \section{Le jeu}
-        \subsection{Interaction du joueur}
 		Dans cette section, j'expliquerai comment le joueur peut interagir avec le jeu en présentant les éléments de l'écran principal, les différents onglets du jeu, la vue des régions et comment jouer au jeu.        
         
-        \subsubsection{Les éléments de l'écran principal}
+        \subsection{Les éléments de l'écran principal}
 		L'écran principal du jeu comporte plusieurs éléments dont je vais expliquer l'utilité ci-dessous (voir à chaque fois la figure \ref{fig:worldView}).
 		
 		\begin{itemize}
@@ -104,9 +108,9 @@
                 \label{fig:worldView}
         \end{figure} 
 		
-		\subsubsection{Les onglets du jeu} \label{onglets}
+		\subsection{Les onglets du jeu} \label{onglets}
 		Les menus du jeu sont affichés sous la forme d'onglets (qui représentent un journal).
-		Il y a 3 onglets qui sont sous cette forme de journal: l'onglet de recherche, l'onglet des statistiques et l'onglet d'achat de centrales.
+		Il y a 3 onglets qui sont sous cette forme de journal: l'onglet de recherche, l'onglet des statistiques et l'onglet d'achat de centrales (ce dernier sera présenté dans la section \ref{regionView}).
 		Tous les onglets sont construis sur le même modèle, seul leur contenu change. Ainsi, chaque onglet comporte un titre (en haut au centre), un bouton permettant de fermer l'onglet (en haut à droite), trois sections (au centre), un numéro de page (en bas au centre) et des flèches pour changer de page (en bas à gauche et à droite).
 		
 		
@@ -122,7 +126,7 @@
         \textbf{L'onglet des statistiques} affiche les différentes statistiques de jeu. Ces informations indiquent servent à guider les choix du joueur. (Voir à chaque fois les figures \ref{fig:stats1} et \ref{fig:stats2}).
         \begin{itemize}
         		\item La première section concerne l'argent du joueur et sa production d'argent.
-        		\item La seconde section affiche la production d'électricité des centrales du joueur
+        		\item La seconde section affiche la production d'électricité des centrales du joueur.
         		\item La troisième section affiche l'émission totale de CO$_{2}$ depuis le début du jeu et l'émission hebdomadaire de CO$_{2}$ des centrales énergétiques.
         		\item La quatrième section (sur la deuxième page) affiche l'augmentation de température depuis le début de la révolution industrielle (début du jeu).
         \end{itemize}
@@ -137,7 +141,7 @@
                 \label{fig:stats2}
         \end{figure}
 		
-		\subsubsection{La vue des différentes régions}
+		\subsection{La vue des différentes régions} \label{regionView}
 		En vue 'region', le joueur peut déverouiller des sites de production et interagir avec les centrales énergétiques construites (voir figure \ref{fig:region}).
 		\begin{figure}[H]
                 \includegraphics[width=\linewidth]{../images/region}
@@ -145,7 +149,7 @@
                 \label{fig:region}
         \end{figure}
         
-        En appuyant sur un site verouillé, une fenêtre de dialogue s'ouvre avec le prix du déblocage affiché (voir figure \ref{fig:unlockSite}).
+        En appuyant sur un site verouillé, une fenêtre de dialogue s'ouvre avec le prix du déverrouillage affiché (voir figure \ref{fig:unlockSite}).
         \begin{figure}[H]
                 \includegraphics[width=\linewidth]{../images/unlockSite}
                 \caption{Le déblocage d'un site de production}
@@ -160,17 +164,17 @@
         \end{figure}
         
         
-        Il est également possible d'améliorer une centrale électrique pour qu'elle produise plus (ce qui aura comme conséquence qu'elle polluera également plus). (voir figure \ref{fig:upgradePlant}).
+        Dans la vue 'region', on peut améliorer une centrale électrique pour qu'elle produise plus (ce qui aura comme conséquence qu'elle polluera également plus). Il est aussi possible de la détruire en appuyant sur le bouton rouge. (voir figure \ref{fig:upgradePlant}).
         \begin{figure}[H]
                 \includegraphics[width=\linewidth]{../images/upgradePlant}
                 \caption{Amélioration d'une centrale électrique}
                 \label{fig:upgradePlant}
         \end{figure}
         
-        Voyons maintenant comment concrètement jouer au jeu.
         
-        \subsubsection{Comment jouer}
-        Le joueur commence par devoir choisir de jouer avec ou sans tutoriel pour lui expliquer les bases du jeu (voir figure \ref{fig:mainMenu}). 
+        \subsection{Comment jouer}
+        Le joueur commence par devoir choisir de jouer avec ou sans tutoriel. (voir figure \ref{fig:mainMenu}).
+        S'il choisit de suivre le tutoriel, il sera guidé dans le jeu par le personnage de Conseil qui lui expliquera le fonctionnement de tous les éléments du jeu et le but de la partie. 
         
         \begin{figure}[H]
                 \includegraphics[width=\linewidth]{../images/mainMenu}
@@ -178,26 +182,45 @@
                 \label{fig:mainMenu}
         \end{figure}
         
-        
-        S'il choisit de suivre le tutoriel, il sera guidé dans le jeu avec le personnage de Conseil qui lui expliquera le fonctionnement de tous les éléments du jeu et le but de la partie.
-        
-        
-        Lorsqu'il commence une partie, le joueur commence avec \initMoney ~ Mondios. Il devra d'abord utiliser cet argent dans l'onglet 'Recherche' (voir figure \ref{fig:research}) qui lui permettra de débloquer une centrale énergétique. Après avoir suffisamment investit dans un type de centrale et attendu un certain moment (les centrales ne peuvent se débloquer qu'à chaque passage d'année), le type de centrale se débloque.
+        Lorsqu'il commence une partie, le joueur possède \initMoney ~ Mondios. Il devra d'abord utiliser cet argent dans l'onglet 'Recherche' (voir figure \ref{fig:research}) qui lui permettra de débloquer une centrale énergétique. Après avoir suffisamment investit dans un type de centrale et attendu un certain moment (les centrales ne peuvent se débloquer qu'à chaque passage d'année), le type de centrale se débloque.
         
         
-        Après avoir débloqué le type de centrale, le joueur peut se rendre dans une région (voir figure \ref{fig:region}) et déverouiller un site de production (voir figure \ref{fig:unlockSite}). Après avoir déverrouillé le site de production, le joueur peut y construire une centrale énergétique (voir figure \ref{fig:buyPlant}). Cette centrale produira de l'énergie qui sera convertie en mondios et qui permettra d'investir dans la recherche d'autres centrales énergétiques ou de construire de nouvelles centrales. Il devra cependant faire attention à ne pas construire des centrales trop polluantes qui réchaufferait sa planète de façon excessive (et qui lui ferait par conséquent perdre la partie).
+        Après avoir débloqué un type de centrale, le joueur peut se rendre dans une région (voir figure \ref{fig:region}) et déverouiller un site de production (voir figure \ref{fig:unlockSite}). Après avoir déverrouillé le site de production, le joueur peut y construire une centrale énergétique (voir figure \ref{fig:buyPlant}). Cette centrale produira de l'énergie qui sera convertie en mondios et qui permettra d'investir dans la recherche d'autres centrales énergétiques ou de construire de nouvelles centrales. Il devra cependant faire attention à ne pas construire des centrales trop polluantes qui réchaufferait sa planète de façon excessive (et qui lui ferait par conséquent perdre la partie).
         
 
-        \subsection{Fonctionnement du jeu}
-		        
+        \section{Fonctionnement du code}
+        Dans cette section, j'expliquerai quelles technologies j'ai utilisées pour créer mon jeu et comment différentes parties du code fonctionnent. Je ne pourrai pas expliquer la totalité du code du jeu car cela serait trop long et n'aurait pas un grand intérêt. Je n'expliquerai que certaines parties qui me semblent dignes d'intérêt.
+        
+        \subsection{Les technologies utilisées}
+        Le jeu a été crée dans le langage de programmation JavaScript (avec utilisation des dernières possibilités de ECMAScript 2016, voir la référence \cite{ecma2016}). La librairie open source Phaser JS en version 2.9.4 (voir la référence \cite{phaser}) m'a servi à simplifier certaines parties du code du jeu.
+        
+       	
+		\subsection{Le script d'entrée: main.js}
+		\lstinputlisting[language=JavaScript]{../../web_src/main.js}
+		Ceci est le script principal car il définit la variable \textit{game} qui sera utilisée très souvent dans d'autres scripts.
+		La variable \textit{config} définit plusieurs données utiles qui seront fournies à la classe \textit{Phaser.Game(\dots)} pour créer \textit{game}.
         
         
         \section{Conclusion}
         \subsection{Ce que j'aurais aimé rajouter dans le jeu}
+		//TODO
+        
+        \begin{thebibliography}{9}
 
-
-        \href{https://www.latex-tutorial.com/tutorials/pgfplots/}{Lien vers le tuto}
-
-
-
+			\bibitem{phaser}
+  			La librairie PHASER,
+  			\url{http://phaser.io},
+  			consulté le 6 septembre 2017
+  			
+  			\bibitem{phaserDocs}
+  			La documentation officielle PHASER,
+  			\url{https://photonstorm.github.io/phaser-ce/},
+  			consultée régulièrement jusqu'au 18 février 2018
+  			
+  			\bibitem{ecma2016}
+  			La version de JavaScript utilisée,
+  			\url{https://en.wikipedia.org/wiki/ECMAScript#7th_Edition_-_ECMAScript_2016},
+  			consulté le 28.02.2018
+  			
+		\end{thebibliography}
 \end{document}

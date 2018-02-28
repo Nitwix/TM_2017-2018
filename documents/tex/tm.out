@@ -7,11 +7,12 @@
 \BOOKMARK [3][-]{subsubsection.2.1.4}{La temporalit\351 du jeu}{subsection.2.1}% 7
 \BOOKMARK [2][-]{subsection.2.2}{Concept final}{section.2}% 8
 \BOOKMARK [1][-]{section.3}{Le jeu}{}% 9
-\BOOKMARK [2][-]{subsection.3.1}{Interaction du joueur}{section.3}% 10
-\BOOKMARK [3][-]{subsubsection.3.1.1}{Les \351l\351ments de l'\351cran principal}{subsection.3.1}% 11
-\BOOKMARK [3][-]{subsubsection.3.1.2}{Les onglets du jeu}{subsection.3.1}% 12
-\BOOKMARK [3][-]{subsubsection.3.1.3}{La vue des diff\351rentes r\351gions}{subsection.3.1}% 13
-\BOOKMARK [3][-]{subsubsection.3.1.4}{Comment jouer}{subsection.3.1}% 14
-\BOOKMARK [2][-]{subsection.3.2}{Fonctionnement du jeu}{section.3}% 15
-\BOOKMARK [1][-]{section.4}{Conclusion}{}% 16
-\BOOKMARK [2][-]{subsection.4.1}{Ce que j'aurais aim\351 rajouter dans le jeu}{section.4}% 17
+\BOOKMARK [2][-]{subsection.3.1}{Les \351l\351ments de l'\351cran principal}{section.3}% 10
+\BOOKMARK [2][-]{subsection.3.2}{Les onglets du jeu}{section.3}% 11
+\BOOKMARK [2][-]{subsection.3.3}{La vue des diff\351rentes r\351gions}{section.3}% 12
+\BOOKMARK [2][-]{subsection.3.4}{Comment jouer}{section.3}% 13
+\BOOKMARK [1][-]{section.4}{Fonctionnement du code}{}% 14
+\BOOKMARK [2][-]{subsection.4.1}{Les technologies utilis\351es}{section.4}% 15
+\BOOKMARK [2][-]{subsection.4.2}{Le script d'entr\351e: main.js}{section.4}% 16
+\BOOKMARK [1][-]{section.5}{Conclusion}{}% 17
+\BOOKMARK [2][-]{subsection.5.1}{Ce que j'aurais aim\351 rajouter dans le jeu}{section.5}% 18

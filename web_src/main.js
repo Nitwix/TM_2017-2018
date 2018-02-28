@@ -1,15 +1,15 @@
-// Script d'entrée
+// Script d'entree
 
 // configuration de Phaser.Game
-var config = {
+let config = {
     width: 800,
-    height: 450, // w/h = 1.777... pour une résolution standard
+    height: 450, // w/h = 16/9 pour un rapport standard
     renderer: Phaser.CANVAS,
     parent: "phaser-canvas",
-    antialias: false // pour que les pixel art ne soient pas floutés
+    antialias: false // pour que les pixel art ne soient pas floutes
 };
 
-var game = new Phaser.Game(config);
+let game = new Phaser.Game(config);
 
 //ajout des states du jeu
 game.state.add("boot", bootState);
