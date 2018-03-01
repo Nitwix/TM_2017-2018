@@ -15,5 +15,5 @@
 \contentsline {section}{\numberline {4}Fonctionnement du code}{10}{section.4}
 \contentsline {subsection}{\numberline {4.1}Les technologies utilis\IeC {\'e}es}{11}{subsection.4.1}
 \contentsline {subsection}{\numberline {4.2}Le script d'entr\IeC {\'e}e: main.js}{11}{subsection.4.2}
-\contentsline {section}{\numberline {5}Conclusion}{11}{section.5}
-\contentsline {subsection}{\numberline {5.1}Ce que j'aurais aim\IeC {\'e} rajouter dans le jeu}{11}{subsection.5.1}
+\contentsline {section}{\numberline {5}Conclusion}{12}{section.5}
+\contentsline {subsection}{\numberline {5.1}Ce que j'aurais aim\IeC {\'e} rajouter dans le jeu}{12}{subsection.5.1}

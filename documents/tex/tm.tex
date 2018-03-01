@@ -197,8 +197,16 @@
        	
 		\subsection{Le script d'entrée: main.js}
 		\lstinputlisting[language=JavaScript]{../../web_src/main.js}
-		Ceci est le script principal car il définit la variable \textit{game} qui sera utilisée très souvent dans d'autres scripts.
-		La variable \textit{config} définit plusieurs données utiles qui seront fournies à la classe \textit{Phaser.Game(\dots)} pour créer \textit{game}.
+		Ceci est le script principal car il lance l'exécution de toutes les autres parties du code.
+		La variable \textit{config} définit plusieurs données utiles qui seront fournies à la classe \textit{Phaser.Game(\dots)} pour créer la variable \textit{game}. Cette variable est la variable principale de la librairie Phaser: chaque fois que l'on veut rajouter un élément de jeu (image, animation, bouton, etc\dots), que l'on veut démarrer un état du jeu (voir prochain paragraphe) ou que l'on veut modifier des propriétés de la caméra, c'est grâce à la variable \textit{game} qu'on le fera.
+		
+		
+		Ensuite, les différents états du jeu (\textit{state}) sont définis. Chaque \textit{state} sert à définir un état du jeu. Le \textit{preloadState} représente par exemple l'étape où le jeu charge les éléments du jeu dans le cache du navigateur.
+		Le \textit{mainMenuState} représente l'état du jeu lorsqu'on est dans le menu principal (voir figure \ref{fig:mainMenu}).
+		Le premier paramètre de la méthode \textit{game.state.add(\dots)} est une chaîne de caractères qui représente la clé de l'état (grâce à laquelle on pourra démarrer plus tard cet état). Le second paramètre fait référence à un objet qui fera office de conteneur pour le state.
+		
+		
+		Pour finir on appelle \textit{game.state.start("boot")} pour démarrer le boot state (pas très important pour la compréhension du fonctionnement global du jeu).
         
         
         \section{Conclusion}
