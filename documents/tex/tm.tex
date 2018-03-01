@@ -194,8 +194,15 @@
         \subsection{Les technologies utilisées}
         Le jeu a été crée dans le langage de programmation JavaScript (avec utilisation des dernières possibilités de ECMAScript 2016, voir la référence \cite{ecma2016}). La librairie open source Phaser JS en version 2.9.4 (voir la référence \cite{phaser}) m'a servi à simplifier certaines parties du code du jeu.
         
+        
+        \textit{Note : } Les commentaires dans les scripts présentés ci-dessous ne contiennent pas de caractères avec accent pour des soucis de compatibilité des caractères.
+        
+        
+        \subsection{La structure des fichiers}
+        //TODO
+        
        	
-		\subsection{Le script d'entrée: main.js}
+		\subsection{Le script d'entrée: main.js} \label{main.js}
 		\lstinputlisting[language=JavaScript]{../../web_src/main.js}
 		Ceci est le script principal car il lance l'exécution de toutes les autres parties du code.
 		La variable \textit{config} définit plusieurs données utiles qui seront fournies à la classe \textit{Phaser.Game(\dots)} pour créer la variable \textit{game}. Cette variable est la variable principale de la librairie Phaser: chaque fois que l'on veut rajouter un élément de jeu (image, animation, bouton, etc\dots), que l'on veut démarrer un état du jeu (voir prochain paragraphe) ou que l'on veut modifier des propriétés de la caméra, c'est grâce à la variable \textit{game} qu'on le fera.
@@ -207,12 +214,46 @@
 		
 		
 		Pour finir on appelle \textit{game.state.start("boot")} pour démarrer le boot state (pas très important pour la compréhension du fonctionnement global du jeu).
-        
+		
+		\subsection{Les propriétés globales : globals.js}
+		\lstinputlisting[language=JavaScript]{../../web_src/scripts/utils/globals.js}
+		Ce script contient toutes les variables globales réutilisées durant tout le jeu. Il serait trop long de décrire l'utilité de toutes les propriétés et méthodes de l'objet \textit{globals}. C'est pourquoi je ne décrirai que certaines d'entre elles.
+		
+		\begin{itemize}
+			\item \textit{initMoney} représente l'argent qu'a le joueur au départ du jeu.
+			\item \textit{CO2Limit} représente la quantité maximum de CO$_{2}$ qu'il peut y avoir dans l'atmosphère. Passé cette limite, le joueur aura perdu la partie.
+			\item \textit{globalWarmingLimit} représente la limite de réchauffement de la planète. Le réchauffement de la planète est calculé à partir de la quantité de CO$_{2}$ dans l'atmosphère.
+			\item \textit{beginYear} et \textit{endYear} représentent les années de début et de fin du jeu.
+			\item \textit{signals} est un objet qui contient les signaux utiles pour le tutoriel.
+		\end{itemize}
+		
+		\subsection{Le fichier principal du jeu: game.js}
+		\lstinputlisting[language=JavaScript]{../../web_src/scripts/states/game.js}
+		La variable principale de ce fichier se nomme \textit{gameState}. C'est cette variable qui a été passée en argument de \textit{game.state.add(\dots)} dans le fichier main.js (voir section \ref{main.js}).
+		
+		\subsubsection{les \textit{states} Phaser}
+		Chaque \textit{state} dans Phaser est constitué de quatre méthodes principales: \textit{preload, create, update} et \textit{render}. 
+		
+		
+		La méthode \textit{preload} sert à charger les éléments du jeu dans le cache du navigateur. Cependant, comme j'ai déjà chargé tous les éléments dont j'avais besoin dans ma \textit{state} appelée \textit{preload}, je n'ai plus besoin de le faire dans \textit{gameState}.  
+		
+		
+		La méthode \textit{create} sert à exécuter des instructions qui ne doivent s'exécuter qu'une fois avant l'appel de la méthode \textit{update}.
+		
+		
+		La méthode \textit{update} est appelée toutes les quelques millisecondes et permet d'effectuer des actions répétées.
+		
+		
+		La méthode \textit{render} permet d'exécuter des méthode de débogage.
+		
+		\subsubsection{La méthode gameState.create}
+		      
         
         \section{Conclusion}
         \subsection{Ce que j'aurais aimé rajouter dans le jeu}
 		//TODO
         
+        \newpage
         \begin{thebibliography}{9}
 
 			\bibitem{phaser}

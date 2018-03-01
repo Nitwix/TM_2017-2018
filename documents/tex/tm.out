@@ -13,6 +13,10 @@
 \BOOKMARK [2][-]{subsection.3.4}{Comment jouer}{section.3}% 13
 \BOOKMARK [1][-]{section.4}{Fonctionnement du code}{}% 14
 \BOOKMARK [2][-]{subsection.4.1}{Les technologies utilis\351es}{section.4}% 15
-\BOOKMARK [2][-]{subsection.4.2}{Le script d'entr\351e: main.js}{section.4}% 16
-\BOOKMARK [1][-]{section.5}{Conclusion}{}% 17
-\BOOKMARK [2][-]{subsection.5.1}{Ce que j'aurais aim\351 rajouter dans le jeu}{section.5}% 18
+\BOOKMARK [2][-]{subsection.4.2}{La structure des fichiers}{section.4}% 16
+\BOOKMARK [2][-]{subsection.4.3}{Le script d'entr\351e: main.js}{section.4}% 17
+\BOOKMARK [2][-]{subsection.4.4}{Les propri\351t\351s globales : globals.js}{section.4}% 18
+\BOOKMARK [2][-]{subsection.4.5}{Le fichier principal du jeu: game.js}{section.4}% 19
+\BOOKMARK [3][-]{subsubsection.4.5.1}{les states Phaser}{subsection.4.5}% 20
+\BOOKMARK [1][-]{section.5}{Conclusion}{}% 21
+\BOOKMARK [2][-]{subsection.5.1}{Ce que j'aurais aim\351 rajouter dans le jeu}{section.5}% 22

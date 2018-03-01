@@ -1,11 +1,19 @@
-//ce script contient des variables globales réutilisées tout au long du jeu
+//ce script contient des variables globales reutilisees tout au long du jeu
 
-var globals = {
-    UI: {},
+let globals = {
+    UI: {
+        buttonOffset: 3,
+        smallButtonScale: 2,
+    
+        posBtnFontSize: 26,
+    
+        shortTweenDur: 300,
+        longTweenDur: 800
+    },
 
     //voir utils/regions.js
     regions: {},//contient les instances de la classe Region
-    currentRegion: "", //"" quand en worldview et la key de la région sinon
+    currentRegion: "", //"" quand en worldview et la key de la region sinon
 
     //contient des variable en rapport avec les sites de production
     sites: {
@@ -21,7 +29,7 @@ var globals = {
 
     initMoney: 25e4,
     CO2Limit: 1e7,
-    globalWarmingLimit: 2, //en degrés celsius
+    globalWarmingLimit: 2, //en degres celsius
     beginYear:1799,
     endYear: 2100,
     gameWon: undefined, //type : bool
@@ -32,8 +40,8 @@ var globals = {
     researchMgr: null,
     ecoActionsMgr: null,
 
-    reset: null, // défini ci-dessous,
-    initData: null, //défini ci-dessous
+    reset: null, // defini ci-dessous,
+    initData: null, //defini ci-dessous
 
     signals: {
         onNewspaperOpen: new Phaser.Signal(),
@@ -45,35 +53,3 @@ var globals = {
 
     showTutorial: true
 };
-
-globals.reset = function(){
-    globals.gameEnded = false;
-    globals.sites.instances = [];
-
-    globals.sites.id = 0;
-
-    //reset data factories
-}
-
-// globals.initData = function(){
-//     initStatsData();
-// }
-
-
-globals.UI = {
-    buttonOffset: 3,
-    smallButtonScale: 2,
-
-    posBtnFontSize: 26,
-
-    shortTweenDur: 300,
-    longTweenDur: 800
-};
-
-
-
-// globals.sites.dialogDisplayed = ""; //"" quand en 'world view' et 's...' si box d'unlock/upgrade ouverte
-// remplacé par gameEls.smallDialog
-
-// globals.dialogDisplayed = false;
-// remplacé par gameEls.dialog
