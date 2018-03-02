@@ -42,11 +42,11 @@
         \section{Concept du jeu}
         \subsection{Développement du concept}
         
-        Mon projet était de créer un jeu de gestion de ressources dont l'univers du jeu était aussi proche que possible de la réalité. Le joueur (incarnant le président/la présidente du monde fictif) commence sa partie au début du 18\textsuperscript{ème} siècle. Il devait être amené au fil des expériences du jeu à réaliser qu'à un certain moment, une transition énergétique était nécessaire afin d'assurer la survie de l'espèce humaine.
+        Mon projet était de créer un jeu de gestion de ressources dont l'univers du jeu était aussi proche que possible de la réalité. Le joueur (incarnant le président/la présidente du monde fictif) commence sa partie au début du 18\textsuperscript{ème} siècle. Il devait être amené au fil des expériences du jeu à réaliser qu'à un certain moment, une transition énergétique soit nécessaire afin d'assurer la survie de l'espèce humaine.
         
         \subsubsection{La mécanique économique}
         La mécanique économique étant la mécanique principale de jeu, il était primordiale qu'elle soit bien pensée.
-        Plusieurs mécaniques économiques m'ont parues intéressantes mais je n'en ai retenue qu'une seule pour les raisons décrites ci-dessous.
+        Plusieurs mécaniques économiques m'ont parues intéressantes mais je n'en ai retenu qu'une seule pour les raisons décrites ci-dessous.
         
         
         La première alternative consistait à avoir deux types de centrales: des centrales produisant de l'énergie (centrales à charbon, barrages hydroélectriques, centrales nucléaires, etc...) et d'autres produisant des ressources (usines de textile, forges, champs, etc...). Le joueur installerait des centrales énergétiques pour produire de l'énergie permettant de faire fonctionner ses centrales produisant des ressources. Ainsi, un cycle économique se créerait. 
@@ -60,7 +60,7 @@
         J'ai donc opté pour la troisième alternative qui consiste à n'avoir qu'un seul type de centrales: les centrales de production d'énergie. Ainsi, le joueur choisit où il installe ses centrales et celles-ci produisent de l'énergie qui est convertie directement en mondios (nom de la monnaie du jeu). Il peut ainsi acheter de nouvelles centrales avec l'argent qu'il obtient.
         
         \subsubsection{Le personnage incarné par le joueur}
-        Je me suis également posé la question de savoir quel personnage le joueur devrait incarner. Dans un premier temps m'est venu l'idée que le joueur pourrait être un riche patron d'une multinationale. Cependant cela impliquait que c'était du ressort des multinationales d'assurer ou non la transition énergétique et d'effectuer des actions en faveur de l'écologie, ce qui est en tout cas partiellement faux. Cette possibilité excluait également le joueur, qui ne se sentait que très peu concerné par la problématique.
+        Je me suis également posé la question de savoir quel personnage le joueur devrait incarner. Dans un premier temps m'est venu l'idée que le joueur pourrait être un riche patron d'une multinationale. Cependant cela impliquait que ce serait du ressort des multinationales d'assurer ou non la transition énergétique et d'effectuer des actions en faveur de l'écologie, ce qui est en tout cas partiellement faux. Cette possibilité excluait également le joueur, qui ne se sentait que très peu concerné par la problématique.
         
         
         L'autre possibilité était donc que le joueur incarne le président/la présidente du monde. Cette option a l'avantage d'expliquer le pouvoir immense qu'a le joueur et de montrer que n'importe qui peut agir pour le bien de la planète.
@@ -89,7 +89,7 @@
         L'action principale du joueur consiste à gérer les centrales énergétiques présentes sur sa planète.
 
         \section{Le jeu}
-		Dans cette section, j'expliquerai comment le joueur peut interagir avec le jeu en présentant les éléments de l'écran principal, les différents onglets du jeu, la vue des régions et comment jouer au jeu.        
+		Dans cette section, j'expliquerai comment interagir avec le jeu en présentant les éléments de l'écran principal, les différents onglets, la vue des régions et finalement comment jouer.        
         
         \subsection{Les éléments de l'écran principal}
 		L'écran principal du jeu comporte plusieurs éléments dont je vais expliquer l'utilité ci-dessous (voir à chaque fois la figure \ref{fig:worldView}).
@@ -111,7 +111,7 @@
 		\subsection{Les onglets du jeu} \label{onglets}
 		Les menus du jeu sont affichés sous la forme d'onglets (qui représentent un journal).
 		Il y a 3 onglets qui sont sous cette forme de journal: l'onglet de recherche, l'onglet des statistiques et l'onglet d'achat de centrales (ce dernier sera présenté dans la section \ref{regionView}).
-		Tous les onglets sont construis sur le même modèle, seul leur contenu change. Ainsi, chaque onglet comporte un titre (en haut au centre), un bouton permettant de fermer l'onglet (en haut à droite), trois sections (au centre), un numéro de page (en bas au centre) et des flèches pour changer de page (en bas à gauche et à droite).
+		Tous les onglets sont construits sur le même modèle, seul leur contenu change. Ainsi, chaque onglet comporte un titre (en haut au centre), un bouton permettant de fermer l'onglet (en haut à droite), trois sections (au centre), un numéro de page (en bas au centre) et des flèches pour changer de page (en bas à gauche et à droite).
 		
 		
 		\textbf{L'onglet de recherche} affiche les centrales énergétiques dans lesquelles le joueur peut investir des mondios (en appuyant sur le bouton vert où le prix de l'investissement est affiché) pour augmenter la probabilité qu'il les débloquera.
@@ -142,10 +142,10 @@
         \end{figure}
 		
 		\subsection{La vue des différentes régions} \label{regionView}
-		En vue 'region', le joueur peut déverouiller des sites de production et interagir avec les centrales énergétiques construites (voir figure \ref{fig:region}).
+		En vue 'région', le joueur peut déverouiller des sites de production et interagir avec les centrales énergétiques construites (voir figure \ref{fig:region}).
 		\begin{figure}[H]
                 \includegraphics[width=\linewidth]{../images/region}
-                \caption{La vue 'region'}
+                \caption{La vue 'région'}
                 \label{fig:region}
         \end{figure}
         
@@ -164,7 +164,7 @@
         \end{figure}
         
         
-        Dans la vue 'region', on peut améliorer une centrale électrique pour qu'elle produise plus (ce qui aura comme conséquence qu'elle polluera également plus). Il est aussi possible de la détruire en appuyant sur le bouton rouge. (voir figure \ref{fig:upgradePlant}).
+        Dans la vue 'région', on peut améliorer une centrale électrique pour qu'elle produise plus (ce qui aura comme conséquence qu'elle polluera également plus). Il est aussi possible de la détruire en appuyant sur le bouton rouge. (voir figure \ref{fig:upgradePlant}).
         \begin{figure}[H]
                 \includegraphics[width=\linewidth]{../images/upgradePlant}
                 \caption{Amélioration d'une centrale électrique}
@@ -182,14 +182,14 @@
                 \label{fig:mainMenu}
         \end{figure}
         
-        Lorsqu'il commence une partie, le joueur possède \initMoney ~ Mondios. Il devra d'abord utiliser cet argent dans l'onglet 'Recherche' (voir figure \ref{fig:research}) qui lui permettra de débloquer une centrale énergétique. Après avoir suffisamment investit dans un type de centrale et attendu un certain moment (les centrales ne peuvent se débloquer qu'à chaque passage d'année), le type de centrale se débloque.
+        Lorsqu'il commence une partie, le joueur possède \initMoney ~ Mondios. Il devra d'abord utiliser cet argent dans l'onglet 'Recherche' (voir figure \ref{fig:research}) qui lui permettra de débloquer une centrale énergétique. Après avoir suffisamment investi dans un type de centrale et attendu un certain moment (les centrales ne peuvent se débloquer qu'à chaque passage d'année), le type de centrale se débloque.
         
         
-        Après avoir débloqué un type de centrale, le joueur peut se rendre dans une région (voir figure \ref{fig:region}) et déverouiller un site de production (voir figure \ref{fig:unlockSite}). Après avoir déverrouillé le site de production, le joueur peut y construire une centrale énergétique (voir figure \ref{fig:buyPlant}). Cette centrale produira de l'énergie qui sera convertie en mondios et qui permettra d'investir dans la recherche d'autres centrales énergétiques ou de construire de nouvelles centrales. Il devra cependant faire attention à ne pas construire des centrales trop polluantes qui réchaufferait sa planète de façon excessive (et qui lui ferait par conséquent perdre la partie).
+        Après avoir débloqué un type de centrale, le joueur peut se rendre dans une région (voir figure \ref{fig:region}) et déverrouiller un site de production (voir figure \ref{fig:unlockSite}). Après avoir déverrouillé le site de production, le joueur peut y construire une centrale énergétique (voir figure \ref{fig:buyPlant}). Cette centrale produira de l'énergie qui sera convertie en mondios et qui permettra d'investir dans la recherche d'autres centrales énergétiques ou de construire de nouvelles centrales. Il devra cependant faire attention à ne pas construire des centrales trop polluantes qui réchaufferaient sa planète de façon excessive (et qui lui ferait par conséquent perdre la partie).
         
 
         \section{Fonctionnement du code}
-        Dans cette section, j'expliquerai quelles technologies j'ai utilisées pour créer mon jeu et comment différentes parties du code fonctionnent. Je ne pourrai pas expliquer la totalité du code du jeu car cela serait trop long et n'aurait pas un grand intérêt. Je n'expliquerai que certaines parties qui me semblent dignes d'intérêt.
+        Dans cette section, j'expliquerai quelles technologies j'ai utilisées pour créer mon jeu et comment différentes parties du code fonctionnent. Je ne pourrai pas expliquer la totalité du code du jeu car cela serait trop long et n'apporterait pas grand chose à la compréhension du fonctionnement global du jeu. 
         
         \subsection{Les technologies utilisées}
         Le jeu a été crée dans le langage de programmation JavaScript (avec utilisation des dernières possibilités de ECMAScript 2016, voir la référence \cite{ecma2016}). La librairie open source Phaser JS en version 2.9.4 (voir la référence \cite{phaser}) m'a servi à simplifier certaines parties du code du jeu.
@@ -252,6 +252,8 @@
         \section{Conclusion}
         \subsection{Ce que j'aurais aimé rajouter dans le jeu}
 		//TODO
+		
+		\subsection{Ce que m'a apporté ce travail de maturité}
         
         \newpage
         \begin{thebibliography}{9}
