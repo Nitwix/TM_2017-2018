@@ -3,10 +3,9 @@ class ProductionMgr{
         this._totPower = 0;
         this._CO2Production = 0;
 
-        this._totCO2 = 0; //CO2 émi au total dans l'atmosphère (CO2Production + grayCO2 - CO2Absorbed)
+        this._totCO2 = 0; //CO2 emi au total dans l'atmosphere
 
-        this._energyToMondio = 1.2;
-
+        this._powerToMondio = 1.2;
     }
 
     update(){
@@ -24,7 +23,6 @@ class ProductionMgr{
 
         if(!globals.gameEnded){
             if(this._totCO2 >= globals.CO2Limit){
-                //BUG: la camera fait un flash vers alpha=0 avant de fader vers alpha=1
                 gameEls.fadeCam(2000, 1, () => {
                     globals.gameWon = false;
                     game.state.start("gameEnd");
@@ -37,11 +35,14 @@ class ProductionMgr{
         }
     }
 
-
-
     get mondioProduction(){
-        return this._totPower * this._energyToMondio;
+        return this._totPower * this._powerToMondio;
     }
+
+    get globalWarming() {
+        return (this._totCO2 / globals.CO2Limit) * globals.globalWarmingLimit;
+    }
+    //...
 
     set totPower(e){
         this._totPower = parseInt(e);
@@ -63,15 +64,11 @@ class ProductionMgr{
         this._totCO2 = v;
     }
 
-    set energyToMondio(r){
-        this._energyToMondio = r;
+    set powerToMondio(r){
+        this._powerToMondio = r;
     }
 
-    get energyToMondio(){
-        return this._energyToMondio;
-    }
-
-    get globalWarming(){
-        return (this._totCO2 / globals.CO2Limit)*globals.globalWarmingLimit;
+    get powerToMondio(){
+        return this._powerToMondio;
     }
 }

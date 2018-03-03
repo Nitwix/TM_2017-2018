@@ -17,8 +17,16 @@
 \BOOKMARK [2][-]{subsection.4.3}{Le script d'entr\351e: main.js}{section.4}% 17
 \BOOKMARK [2][-]{subsection.4.4}{Les propri\351t\351s globales : globals.js}{section.4}% 18
 \BOOKMARK [2][-]{subsection.4.5}{Le fichier principal du jeu: game.js}{section.4}% 19
-\BOOKMARK [3][-]{subsubsection.4.5.1}{les states Phaser}{subsection.4.5}% 20
+\BOOKMARK [3][-]{subsubsection.4.5.1}{Les states Phaser}{subsection.4.5}% 20
 \BOOKMARK [3][-]{subsubsection.4.5.2}{La m\351thode gameState.create}{subsection.4.5}% 21
-\BOOKMARK [1][-]{section.5}{Conclusion}{}% 22
-\BOOKMARK [2][-]{subsection.5.1}{Ce que j'aurais aim\351 rajouter dans le jeu}{section.5}% 23
-\BOOKMARK [2][-]{subsection.5.2}{Ce que m'a apport\351 ce travail de maturit\351}{section.5}% 24
+\BOOKMARK [3][-]{subsubsection.4.5.3}{La m\351thode gameState.update}{subsection.4.5}% 22
+\BOOKMARK [2][-]{subsection.4.6}{Le gestionnaire de production: productionMgr.js}{section.4}% 23
+\BOOKMARK [3][-]{subsubsection.4.6.1}{La m\351thode constructor}{subsection.4.6}% 24
+\BOOKMARK [3][-]{subsubsection.4.6.2}{La m\351thode update}{subsection.4.6}% 25
+\BOOKMARK [3][-]{subsubsection.4.6.3}{La m\351thode get mondioProduction}{subsection.4.6}% 26
+\BOOKMARK [3][-]{subsubsection.4.6.4}{La m\351thode get globalWarming}{subsection.4.6}% 27
+\BOOKMARK [2][-]{subsection.4.7}{Le gestionnaire du temps: timeMgr.js}{section.4}% 28
+\BOOKMARK [2][-]{subsection.4.8}{Le gestionnaire de recherche: researchMgr.js}{section.4}% 29
+\BOOKMARK [1][-]{section.5}{Conclusion}{}% 30
+\BOOKMARK [2][-]{subsection.5.1}{Ce que j'aurais aim\351 rajouter dans le jeu}{section.5}% 31
+\BOOKMARK [2][-]{subsection.5.2}{Ce que m'a apport\351 ce travail de maturit\351}{section.5}% 32

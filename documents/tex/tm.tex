@@ -5,6 +5,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage[french]{babel}
 \usepackage{float}
+\usepackage{gensymb}
 
 \usepackage{parskip}
 \setlength{\parindent}{15pt}
@@ -231,7 +232,7 @@
 		\lstinputlisting[language=JavaScript]{../../web_src/scripts/states/game.js}
 		La variable principale de ce fichier se nomme \textit{gameState}. C'est cette variable qui a été passée en argument de \textit{game.state.add(\dots)} dans le fichier main.js (voir section \ref{main.js}).
 		
-		\subsubsection{les \textit{states} Phaser}
+		\subsubsection{Les \textit{states} Phaser}
 		Chaque \textit{state} dans Phaser est constitué de quatre méthodes principales: \textit{preload, create, update} et \textit{render}. 
 		
 		
@@ -247,7 +248,48 @@
 		La méthode \textit{render} permet d'exécuter des méthode de débogage.
 		
 		\subsubsection{La méthode gameState.create}
-		      
+		Le premier bloc de code dans cette section sert à mettre en place les différents éléments de l'interface: l'arrière-plan, la carte du monde et les autres éléments de l'interface utilisateur (UI).
+		
+		
+		Ensuite, \textit{globReg.init()} permet d'initialiser les zones cliquables des régions de la carte et les sites de production des régions.
+		
+		
+		Les prochaines lignes initialisent les différents \textit{managers}. Ceux-ci ont des fonctions importantes durant tout le jeu et gèrent plusieurs données importantes. Le \textit{moneyMgr} sert entre autre à stocker l'argent total possédé par le joueur et a une méthode qui permet de tester si on peut effectuer un achat d'une certaine valeur. \textit{productionMgr, timeMgr} et \textit{researchMgr} seront expliqués ci-après (voir respectivement les sections \ref{productionMgr}, \ref{timeMgr} et \ref{researchMgr}).
+		
+		
+		On démarre ensuite le tutoriel si la variable \textit{globals.showTutorial} a la valeur \textit{true} (celle-ci a reçue la valeur vrai ou faux lors du clique sur le bouton du menu principal, voir figure \ref{fig:mainMenu}).
+		
+		\subsubsection{La méthode gameState.update}
+		Dans cette méthode, la méthode \textit{globReg.update()} est appelée si il n'y pas d'instance de la classe \textit{Newspaper} active. \textit{globReg.update()} permet de constamment tester si le joueur a cliqué sur une des régions et d'enclencher le zoom sur cette région si c'est le cas.
+		
+		
+		\subsection{Le gestionnaire de production: productionMgr.js} \label{productionMgr}
+		\lstinputlisting[language=JavaScript, lastline=45]{../../web_src/scripts/classes/productionMgr.js}
+		Le fichier productionMgr.js contient uniquement la classe ProductionMgr (la notation de classe telle qu'écrite ici est une nouvelle possibilité de ECMAScript 2015\footnote{Pour plus d'informations sur les classes, voir \url{https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Classes}. Site consulté le 03.03.2018.}).
+		
+		\subsubsection{La méthode \textit{constructor}}
+		La première méthode de n'importe quelle classe est la méthode \textit{constructor}. Celle-ci est appelée automatiquement lorsqu'on instancie un objet de cette classe. Ici,  plusieurs propriétés des instances de cette classe sont initialisées (le tiret bas devant les propriétés indiquent que celles-ci ne devraient normalement pas être accessibles depuis l'extérieur de l'instance de la classe). La propriété \textit{\_totPower} représente la puissance cumulée de toutes les centrales construites du jeu. \textit{\_CO2Production} représente la production de CO$_{2}$ totale des centrales. \textit{\_totCO2} représente la quantité totale de CO$_{2}$ émise depuis le début du jeu. \textit{\_powerToMondio} représente le taux de conversion de puissance à mondios (voir la section \ref{mondioProduction}).
+		
+		\subsubsection{La méthode \textit{update}}
+		Les premières lignes servent à récupérer les données des sites de production pour pouvoir mettre à jour les propriétés \textit{\_totPower} et \textit{\_CO2Production}. 
+		
+		
+		On augmente ensuite la valeur totale de l'argent du joueur et le total du CO$_{2}$ relâché dans l'atmosphère.
+		
+		
+		Les prochaines lignes testent si la valeur totale de CO$_{2}$ excède le maximum de la valeur possible. Si c'est le cas, on démarre le \textit{state "gameEnd"} qui indique que la partie est perdue. On met également à jour l'opacité de la caméra pour avoir un écran de plus en plus sombre en fonction de la valeur de \textit{\_totCO2}.
+		
+		\subsubsection{La méthode \textit{get mondioProduction}} \label{mondioProduction}
+		Cette méthode renvoie simplement la valeur de production de mondios utilisée dans la méthode \textit{update}. Elle utilise le mot-clé \textit{get} pour que la méthode agisse comme si c'était une propriété de la classe.
+		
+		\subsubsection{La méthode \textit{get globalWarming}} \label{globalWarming}
+		Cette méthode renvoie la valeur du réchauffement global de la planète en \degree C. Elle dépend de la quantité totale de CO$_{2}$ dans l'atmosphère.
+		
+		\subsection{Le gestionnaire du temps: timeMgr.js} \label{timeMgr}
+		//TODO
+		
+		\subsection{Le gestionnaire de recherche: researchMgr.js} \label{researchMgr}
+		//TODO
         
         \section{Conclusion}
         \subsection{Ce que j'aurais aimé rajouter dans le jeu}
@@ -272,6 +314,7 @@
   			La version de JavaScript utilisée,
   			\url{https://en.wikipedia.org/wiki/ECMAScript#7th_Edition_-_ECMAScript_2016},
   			consulté le 28.02.2018
+  			
   			
 		\end{thebibliography}
 \end{document}
