@@ -46,7 +46,7 @@
         \section{Concept du jeu}
         \subsection{Développement du concept}
         
-        Mon projet était de créer un jeu de gestion de ressources dont l'univers du jeu était aussi proche que possible de la réalité. Le joueur (incarnant le président/la présidente du monde fictif) commence sa partie au début du 18\textsuperscript{ème} siècle. Il devait être amené au fil des expériences du jeu à réaliser qu'à un certain moment, une transition énergétique soit nécessaire afin d'assurer la survie de l'espèce humaine.
+        Mon projet était de créer un jeu de gestion de ressources dont l'univers du jeu était aussi proche que possible de la réalité. Le joueur (incarnant le président/la présidente du monde fictif) commence sa partie au début du 18\textsuperscript{ème} siècle. Il devait être amené au fil des expériences du jeu à réaliser qu'à un certain moment, une transition énergétique est nécessaire afin d'assurer la survie de l'espèce humaine.
         
         \subsubsection{La mécanique économique}
         La mécanique économique étant la mécanique principale de jeu, il était primordiale qu'elle soit bien pensée.
@@ -57,7 +57,7 @@
         Deux raisons m'ont convaincu de ne pas choisir cette alternative. Premièrement, l'idée ci-dessus ne transmettait pas le message que je voulais transmettre: en effet, ce n'est pas ce que l'on produit et ce que l'on consomme qui pose un problème, c'est la façon dont nous le faisons. La deuxième raison m'ayant fait renoncer à cette alternative est la complexité des mécaniques de jeu et par conséquent du code qu'impliquait cette mécanique économique.
         
         
-        La deuxième alternative était basé sur deux types de centrales: les centrales de production de ressources énergétiques (mines, puits de pétroles, etc...) et les centrales de production d'énergie (citées dans la première alternative). Le joueur devrait trouver un bon équilibre entre les ressources énergétiques qu'il produirait et les centrales énergétiques qui consomment ces ressources.
+        La deuxième alternative était basé sur deux types de centrales: les centrales de production de ressources énergétiques (mines, puits de pétroles, etc...) et les centrales de production d'énergie (citées dans la première alternative). Le joueur devrait trouver un bon équilibre entre les ressources énergétiques qu'il produirait et les centrales énergétiques qui consommeraient ces ressources.
         Cette alternative aurait pu être intéressante du point de vue du joueur mais elle était également trop compliquée à intégrer dans le jeu et ne reflétait pas non plus l'idée que je voulais transmettre dans mon jeu (les centrales de production de ressources énergétiques n'apportant pas beaucoup à la réflexion).
         
         
@@ -88,7 +88,7 @@
         J'ai assez rapidement décidé de commencer le jeu au début de la révolution industrielle (donc environ en 1800) mais j'ai eu plus de doute sur le choix de l'année de fin du jeu. La première idée qui m'est venue était de créer un jeu sans fin: le joueur pourrait continuer de construire des centrales énergétiques jusqu'à ce qu'il n'ait plus rien à améliorer ou à construire. Toutefois, cela me semblait aller à l'encontre des principes du jeu vidéo où il y a toujours un objectif à remplir pour finir le jeu. J'ai donc choisi que le joueur gagnerait la partie s'il parvenait jusqu'à l'an 2100 sans avoir passé la limite des 2\degree C du réchauffement global de la planète (voir point \cite{objsParis2100} des références).
 		
         \subsection{Concept final}
-		Vous êtes en 1800, au début de la révolution industrielle. Vous venez d'être élu président(e) de la planète. Votre but: mener la planète à travers la Révolution industrielle et assurer la transition énergétique afin de ne pas arriver à un point critique du réchauffement climatique. Le jeu s'achève soit si vous avez dépassé les 2\degree C de réchauffement global (jeu perdu) ou si vous avez atteint l'année 2100 (jeu gagné).
+		Vous êtes en 1800, au début de la révolution industrielle. Vous venez d'être élu président(e) de la planète. Votre but: mener la planète à travers la révolution industrielle et assurer la transition énergétique afin de ne pas arriver à un point critique du réchauffement climatique. Le jeu s'achève soit si le joueur a dépassé les 2\degree C de réchauffement global (jeu perdu) ou s'il a atteint l'année 2100 (jeu gagné).
         L'action principale du joueur consiste à gérer les centrales énergétiques présentes sur sa planète.
 
         \section{Le jeu}
@@ -167,7 +167,7 @@
         \end{figure}
         
         
-        Dans la vue 'région', on peut améliorer une centrale électrique pour qu'elle produise plus (ce qui aura comme conséquence qu'elle polluera également plus). Il est aussi possible de la détruire en appuyant sur le bouton rouge. (voir figure \ref{fig:upgradePlant}).
+        Dans la vue 'région', on peut améliorer une centrale électrique pour qu'elle produise plus (ce qui aura comme conséquence qu'elle polluera également plus). Il est aussi possible de la détruire en appuyant sur le bouton rouge (voir figure \ref{fig:upgradePlant}).
         \begin{figure}[H]
                 \includegraphics[width=\linewidth]{../images/upgradePlant}
                 \caption{Amélioration d'une centrale électrique}
@@ -176,7 +176,7 @@
         
         
         \subsection{Comment jouer}
-        Le joueur commence par devoir choisir de jouer avec ou sans tutoriel. (voir figure \ref{fig:mainMenu}).
+        Le joueur commence par devoir choisir de jouer avec ou sans tutoriel (voir figure \ref{fig:mainMenu}).
         S'il choisit de suivre le tutoriel, il sera guidé dans le jeu par le personnage de Conseil qui lui expliquera le fonctionnement de tous les éléments du jeu et le but de la partie. 
         
         \begin{figure}[H]
