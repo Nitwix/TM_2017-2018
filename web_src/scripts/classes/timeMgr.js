@@ -1,11 +1,10 @@
 class TimeMgr{
-    //toutes les valeurs sont données en ms
     constructor(yearDuration, callbacks){
         this._CONSTANTS = {
             msYearDuration: 32000,
             secYearDuration: 32,
 
-            maxTimeScale: 32,
+            maxTimeScale: 8,
             minTimeScale: 1/4
         };
 
@@ -21,25 +20,23 @@ class TimeMgr{
         this._timeScale = 1;
     }
 
+    //donne le temps entre chaque loop de this._timerLoop
     get _delay(){
         let delay = this._yearDuration / (2*this._CONSTANTS.secYearDuration);
-        return delay; //donc le delay de base est de 500ms (pour un yearDuration de 32s)
+        return delay; //donc le delay de base est de 500ms (pour un yearDuration de 32'000ms)
     }
 
     startUpdate(){
-        let delay = this._delay;
-        this._timerLoop = this._timer.loop(delay, () => {
+        this._timerLoop = this._timer.loop(this._delay, () => {
             for(let c of this._callbacks){
                 c();
             }
 
             let curSec = Math.floor(this._timer.seconds);
 
-            //BUG: la yearUpdate s'effectue au maximum une fois par seconde
             if(Math.floor(this._timer.seconds) % (this._yearDuration/1000) === 0 && this._lastYUSec != curSec){
                 this._yearUpdate();
                 this._lastYUSec = curSec;
-                // console.log("yearUpdate called");
             }
         }, this);
         this._timer.start();
@@ -63,6 +60,7 @@ class TimeMgr{
         this._year++;
         this._updateYearDisplay();
     }
+    //...
 
     _startYearDisplay(){
         this._yearDisplayGroup = game.add.group();
@@ -108,7 +106,7 @@ class TimeMgr{
         this._yearText.text = this._year;
     }
 
-    //NOTE: ne fonctionne pas lorsque le cb fait appel à this
+    //NOTE: ne fonctionne pas lorsque le cb fait appel a this
     addCallback(callback){
         this._callbacks.push(callback);
     }

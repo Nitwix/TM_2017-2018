@@ -26,7 +26,14 @@
 \BOOKMARK [3][-]{subsubsection.4.6.3}{La m\351thode get mondioProduction}{subsection.4.6}% 26
 \BOOKMARK [3][-]{subsubsection.4.6.4}{La m\351thode get globalWarming}{subsection.4.6}% 27
 \BOOKMARK [2][-]{subsection.4.7}{Le gestionnaire du temps: timeMgr.js}{section.4}% 28
-\BOOKMARK [2][-]{subsection.4.8}{Le gestionnaire de recherche: researchMgr.js}{section.4}% 29
-\BOOKMARK [1][-]{section.5}{Conclusion}{}% 30
-\BOOKMARK [2][-]{subsection.5.1}{Ce que j'aurais aim\351 rajouter dans le jeu}{section.5}% 31
-\BOOKMARK [2][-]{subsection.5.2}{Ce que m'a apport\351 ce travail de maturit\351}{section.5}% 32
+\BOOKMARK [3][-]{subsubsection.4.7.1}{La m\351thode constructor}{subsection.4.7}% 29
+\BOOKMARK [3][-]{subsubsection.4.7.2}{La m\351thode get \137delay}{subsection.4.7}% 30
+\BOOKMARK [3][-]{subsubsection.4.7.3}{La m\351thode startUpdate}{subsection.4.7}% 31
+\BOOKMARK [3][-]{subsubsection.4.7.4}{La m\351thode \137yearUpdate}{subsection.4.7}% 32
+\BOOKMARK [2][-]{subsection.4.8}{Le gestionnaire de recherche: researchMgr.js}{section.4}% 33
+\BOOKMARK [3][-]{subsubsection.4.8.1}{La m\351thode constructor}{subsection.4.8}% 34
+\BOOKMARK [3][-]{subsubsection.4.8.2}{La m\351thode increaseUnlockProb}{subsection.4.8}% 35
+\BOOKMARK [3][-]{subsubsection.4.8.3}{La m\351thode \137rndUnlockUpdate}{subsection.4.8}% 36
+\BOOKMARK [1][-]{section.5}{Conclusion}{}% 37
+\BOOKMARK [2][-]{subsection.5.1}{Ce que j'aurais aim\351 rajouter dans le jeu}{section.5}% 38
+\BOOKMARK [2][-]{subsection.5.2}{Ce que m'a apport\351 ce travail de maturit\351}{section.5}% 39

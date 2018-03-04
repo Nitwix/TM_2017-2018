@@ -6,6 +6,7 @@
 \usepackage[french]{babel}
 \usepackage{float}
 \usepackage{gensymb}
+\usepackage{amsmath}
 
 \usepackage{parskip}
 \setlength{\parindent}{15pt}
@@ -81,12 +82,11 @@
         \end{figure}
         
         
-        \subsubsection{La temporalité du jeu}
-        %Expliquer pourquoi 32 sec par année et pourquoi 1800-2100	
-        //TODO
+        \subsubsection{La temporalité du jeu}	
+        J'ai assez rapidement décidé de commencer le jeu au début de la révolution industrielle (donc environ en 1800) mais j'ai eu plus de doute sur le choix de l'année de fin du jeu. La première idée qui m'est venue était de créer un jeu sans fin: le joueur pourrait continuer de construire des centrales énergétiques jusqu'à ce qu'il n'ait plus rien à améliorer ou à construire. Toutefois, cela me semblait aller à l'encontre des principes du jeu vidéo où il y a toujours un objectif à remplir pour finir le jeu. J'ai donc choisi que le joueur gagnerait la partie s'il parvenait jusqu'à l'an 2100 sans avoir passé la limite des 2\degree C du réchauffement global de la planète (voir point \cite{objsParis2100} des références).
 		
         \subsection{Concept final}
-		Vous êtes en 1800, au début de la révolution industrielle. Vous venez d'être élu président(e) de la planète. Votre but: mener la planète à travers la Révolution industrielle et assurer la transition énergétique afin de ne pas arriver à un point critique du réchauffement climatique. Le jeu s'achève soit si vous avez dépassé une température critique du réchauffement climatique (jeu perdu) ou si vous avez atteint l'année 2100 (jeu gagné).
+		Vous êtes en 1800, au début de la révolution industrielle. Vous venez d'être élu président(e) de la planète. Votre but: mener la planète à travers la Révolution industrielle et assurer la transition énergétique afin de ne pas arriver à un point critique du réchauffement climatique. Le jeu s'achève soit si vous avez dépassé les 2\degree C de réchauffement global (jeu perdu) ou si vous avez atteint l'année 2100 (jeu gagné).
         L'action principale du joueur consiste à gérer les centrales énergétiques présentes sur sa planète.
 
         \section{Le jeu}
@@ -286,10 +286,67 @@
 		Cette méthode renvoie la valeur du réchauffement global de la planète en \degree C. Elle dépend de la quantité totale de CO$_{2}$ dans l'atmosphère.
 		
 		\subsection{Le gestionnaire du temps: timeMgr.js} \label{timeMgr}
-		//TODO
+		\lstinputlisting[language=JavaScript, lastline=63]{../../web_src/scripts/classes/timeMgr.js}
+		
+		Cette classe définit le gestionnaire de la temporalité du jeu. J'expliquerai ici brièvement les méthodes principales de cette classe.
+		
+		\subsubsection{La méthode \textit{constructor}}
+		Dans cette méthode je commence par définir des constantes de la classe. Les deux premières constantes définies sont la durée de base d'une année. Ensuite je définis les limites de l'accélération ou du ralentissement du temps du jeu (modifié par les boutons à côté de l'affichage de l'année).
+		
+		
+		J'assigne ensuite la valeur de la durée de l'année qui sera modifiée durant le jeu. Je crée ensuite une instance de \textit{Phaser.Timer} que j'assigne à \textit{this.\_timer}.
+		
+		%arrays et callbacks en italique ?
+		Je crée ensuite les arrays qui contiendront les callbacks de la petite update (500ms de base) et de l'update annuelle. 
+		
+		
+		Je définis ensuite la propriété \textit{\_year} qui contiendra l'année actuelle et une propriété dont l'utilité sera expliquée plus tard.
+		
+		
+		Enfin, je définis l'échelle de vitesse du temps qui pourra être modifiée par le joueur.
+		
+		\subsubsection{La méthode \textit{get \_delay}}
+		Cette méthode renvoie la durée d'une petite update (cette méthode sera utilisée dans la méthode \textit{startUpdate}, voir section \ref{startUpdate}).
+		
+		\subsubsection{La méthode \textit{startUpdate}} \label{startUpdate}
+		Cette méthode définit la boucle \textit{this.\_timerLoop} qui s'exécutera toutes les 500ms de base. Dans cette boucle on commence par appeler toutes les callbacks présentes dans \textit{this.\_callbacks}. 
+		Pour savoir s'il y a un passage d'année, on teste si le compteur (en secondes) du timer est un multiple de la durée de l'année et si on ne vient pas de faire un passage d'année. Si cette condition est vraie, on appelle \textit{this.\_yearUpdate}.
+		On démarre ensuite le timer et l'affichage de l'année.
+		
+		\subsubsection{La méthode \textit{\_yearUpdate}}
+		Dans cette méthode,  on commence par tester si l'année actuelle est plus grande (ou égale) à l'année de fin du jeu. Si c'est le cas, on fait un fondu vers un écran noir de la caméra et on démarre le \textit{state gameEnd} (qui est l'écran de fin du jeu).
+		Si ce n'est pas le cas, on appelle toutes les callbacks de \textit{this.\_YUCallbacks}, on augmente la valeur de l'année et on met à jour l'affichage de l'année.
 		
 		\subsection{Le gestionnaire de recherche: researchMgr.js} \label{researchMgr}
-		//TODO
+		\lstinputlisting[language=JavaScript, lastline=53]{../../web_src/scripts/classes/researchMgr.js}
+		
+		Cette classe définit le fonctionnement de la recherche de centrales énergétiques.
+		Chaque type de centrale a une probabilité de se débloquer (valant initialement 0) que le joueur peut augmenter en investissant dans la recherche de ce type de centrale. J'ai choisi \footnote{Suite à un conseil avisé de mon mentor.} d'utiliser une suite géométrique pour représenter la valeur de la probabilité car cela présentait l'avantage que la probabilité pourrait tendre vers 100\% mais ne jamais l'atteindre complètement (ce qui laisse une part de hasard).
+		La valeur de la probabilité est une somme partielle d'une suite géométrique.
+		\begin{align}
+  			a_{k} &= c\cdot r^{k} \\
+    			a_{0} &= c\cdot r^{0} = c \\
+    			\sum_{k=0}^{\infty} a_{k} &= c\cdot \frac{1}{1-r} = 100 \\
+    			r &= 1 - \frac{c}{100} < 1
+		\end{align}
+		% K COMMENCE À 0 OU 1 ???
+		La première équation (1) correspond au terme général de la suite géométrique.
+		La valeur de \textit{c} est égale au premier terme de la suite. Cela représente la valeur de la probabilité après le premier investissement et c'est donc cette variable que j'ai choisi de modifier pour obtenir différentes 'difficultés' de déblocage des centrales. Sachant que la valeur de la somme doit tendre vers 100 lorsque \textit{k} tend vers l'infini (3), je peux calculer la valeur de \textit{r} correspondante (4).
+		
+		%//la probabilite est une serie geometrique telle que
+        %//a(k) = c*r^k
+        %//a(0) = c*r^0 = c : premier terme de la serie => probabilite apres premier investissement
+        %//et Sn quand n->+infiny
+        %//Sn = c / (1-r) = 100
+        
+        \subsubsection{La méthode \textit{constructor}}
+        Ici je définis les valeurs de \textit{c} de chaque type de centrale énergétique. Plus \textit{c} est grand, plus le type de centrale sera facile à débloquer. J'initialise ensuite les autres valeurs nécessaires au calcul de la suite géométrique $(r, k=0, partSum=0)$ grâce à la méthode \textit{\_setupUnlockData}. J'ajoute ensuite la méthode \textit{\_rndUnlockUpdate} aux mises à jour annuelles du gestionnaire du temps (cette méthode sera expliquée dans la section \ref{rndUnlockUpdate}).
+        
+        \subsubsection{La méthode \textit{increaseUnlockProb}}
+        //TODO
+        
+        \subsubsection{La méthode \textit{\_rndUnlockUpdate}} \label{rndUnlockUpdate}
+        //TODO
         
         \section{Conclusion}
         \subsection{Ce que j'aurais aimé rajouter dans le jeu}
@@ -314,6 +371,11 @@
   			La version de JavaScript utilisée,
   			\url{https://en.wikipedia.org/wiki/ECMAScript#7th_Edition_-_ECMAScript_2016},
   			consulté le 28.02.2018
+  			
+  			\bibitem{objsParis2100}
+  			Les objectifs fixés par l'\textit{Accord de Paris sur le climat},
+  			\url{https://fr.wikipedia.org/wiki/Accord_de_Paris_sur_le_climat#Objectifs},
+  			consulté le 04.03.2018
   			
   			
 		\end{thebibliography}
