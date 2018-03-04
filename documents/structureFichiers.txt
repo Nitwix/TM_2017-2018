@@ -1,0 +1,122 @@
+.
+|____assets
+| |____sounds
+| | |____imagine.mp3
+| | |____imagine.mid
+| | |____imagine.wav
+| | |____imagine.ceol
+| |____fonts
+| | |____font.xcf
+| | |____font_xml_png.zip
+| | |____advancedpixel-7.ttf
+| | |____pixel_font.zip
+| | |____font.png
+| | |____font.fnt
+| |____sprites
+| | |____dialogs
+| | | |____dialogBox.png
+| | | |____dialogBox_palette.png
+| | | |____dialogBox.pyxel
+| | | |____conseil.pyxel
+| | |____newspaper
+| | | |____newspaper.png
+| | | |____newspaper.pyxel
+| | |____earthMap
+| | | |____earthMap.pyxel
+| | | |____earthMap.png
+| | | |____earthMap.jpg
+| | | |____earthMap.piskel
+| | |____bureau
+| | | |____bureau.tmx
+| | | |____tiles.pyxel
+| | | |____tiles.png
+| | | |____tiles2.pyxel
+| | | |____bureau.png
+| | |____factories
+| | | |____waterAnim.png
+| | | |____explosionAnim.png
+| | | |____smokeAnim.png
+| | | |____factories.pyxel
+| | | |____sunAnim.png
+| | | |____fusionAnim.png
+| | | |____sunAnim.pyxel
+| | | |____factories.png
+| | | |____explosionAnim.pyxel
+| | | |____fusionAnim.pyxel
+| | | |____windAnim.png
+| | | |____whiteSmokeAnim.pyxel
+| | | |____waterAnim.pyxel
+| | | |____smokeAnim.pyxel
+| | | |____windAnim.pyxel
+| | | |____whiteSmokeAnim.png
+| | |____buttons
+| | | |____buttons_palette.png
+| | | |____pos_neg.png
+| | | |____pos_neg.pyxel
+| | | |____wide_buttons.pyxel
+| | | |____redDot.pyxel
+| | | |____close.pyxel
+| | | |____earthMap_palette.png
+| | | |____arrows.png
+| | | |____buttons.pyxel
+| | | |____buttons.png
+| | | |____speed.pyxel
+| | | |____speed.png
+| | | |____redDot.png
+| | | |____close.png
+| | | |____arrows.pyxel
+| | | |____wide_buttons.png
+| | |____smallDialog
+| | | |____box.png
+| | | |____box.pyxel
+| | |____mondio
+| | | |____displayBox.png
+| | | |____displayBox.pyxel
+| | | |____icon.pyxel
+| | | |____icon.png
+| | |____stats
+| | | |____statsIcons.pyxel
+| | | |____statsIcons.png
+| | |____preload
+| | | |____earth.piskel
+| | | |____earth.png
+|____scripts
+| |____classes
+| | |____researchMgr.js
+| | |____moneyDisplay.js
+| | |____menuButton.js
+| | |____newspaper.js
+| | |____ecoActionsMgr.js
+| | |____timeMgr.js
+| | |____moneyMgr.js
+| | |____dialogs.js
+| | |____regions.js
+| | |____factory.js
+| | |____sites.js
+| | |____tutorial.js
+| | |____smallDialog.js
+| | |____productionMgr.js
+| |____data
+| | |____dialogsTexts.js
+| | |____stats.js
+| | |____factories.js
+| |____utils
+| | |____gameEls.js
+| | |____globReg.js
+| | |____testResearchForm.js
+| | |____readableNumber.js
+| | |____poly.js
+| | |____tmpText.js
+| | |____globals.js
+| | |____pos.js
+| |____phaser.min.js
+| |____phaser.js
+| |____states
+| | |____boot.js
+| | |____preload.js
+| | |____mainMenu.js
+| | |____gameEnd.js
+| | |____game.js
+|____advancedpixel-7.ttf
+|____index.html
+|____main.js

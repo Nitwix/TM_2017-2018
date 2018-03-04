@@ -14,16 +14,16 @@
 \contentsline {subsection}{\numberline {3.4}Comment jouer}{9}{subsection.3.4}
 \contentsline {section}{\numberline {4}Fonctionnement du code}{10}{section.4}
 \contentsline {subsection}{\numberline {4.1}Les technologies utilis\IeC {\'e}es}{11}{subsection.4.1}
-\contentsline {subsection}{\numberline {4.2}La structure des fichiers}{11}{subsection.4.2}
+\contentsline {subsection}{\numberline {4.2}La structure des fichiers (voir appendice \ref {structure})}{11}{subsection.4.2}
 \contentsline {subsection}{\numberline {4.3}Le script d'entr\IeC {\'e}e: main.js}{11}{subsection.4.3}
 \contentsline {subsection}{\numberline {4.4}Les propri\IeC {\'e}t\IeC {\'e}s globales : globals.js}{12}{subsection.4.4}
 \contentsline {subsection}{\numberline {4.5}Le fichier principal du jeu: game.js}{13}{subsection.4.5}
 \contentsline {subsubsection}{\numberline {4.5.1}Les \textit {states} Phaser}{14}{subsubsection.4.5.1}
-\contentsline {subsubsection}{\numberline {4.5.2}La m\IeC {\'e}thode gameState.create}{14}{subsubsection.4.5.2}
+\contentsline {subsubsection}{\numberline {4.5.2}La m\IeC {\'e}thode gameState.create}{15}{subsubsection.4.5.2}
 \contentsline {subsubsection}{\numberline {4.5.3}La m\IeC {\'e}thode gameState.update}{15}{subsubsection.4.5.3}
 \contentsline {subsection}{\numberline {4.6}Le gestionnaire de production: productionMgr.js}{15}{subsection.4.6}
 \contentsline {subsubsection}{\numberline {4.6.1}La m\IeC {\'e}thode \textit {constructor}}{16}{subsubsection.4.6.1}
-\contentsline {subsubsection}{\numberline {4.6.2}La m\IeC {\'e}thode \textit {update}}{16}{subsubsection.4.6.2}
+\contentsline {subsubsection}{\numberline {4.6.2}La m\IeC {\'e}thode \textit {update}}{17}{subsubsection.4.6.2}
 \contentsline {subsubsection}{\numberline {4.6.3}La m\IeC {\'e}thode \textit {get mondioProduction}}{17}{subsubsection.4.6.3}
 \contentsline {subsubsection}{\numberline {4.6.4}La m\IeC {\'e}thode \textit {get globalWarming}}{17}{subsubsection.4.6.4}
 \contentsline {subsection}{\numberline {4.7}Le gestionnaire du temps: timeMgr.js}{17}{subsection.4.7}
@@ -35,6 +35,14 @@
 \contentsline {subsubsection}{\numberline {4.8.1}La m\IeC {\'e}thode \textit {constructor}}{21}{subsubsection.4.8.1}
 \contentsline {subsubsection}{\numberline {4.8.2}La m\IeC {\'e}thode \textit {increaseUnlockProb}}{21}{subsubsection.4.8.2}
 \contentsline {subsubsection}{\numberline {4.8.3}La m\IeC {\'e}thode \textit {\_rndUnlockUpdate}}{21}{subsubsection.4.8.3}
-\contentsline {section}{\numberline {5}Conclusion}{21}{section.5}
-\contentsline {subsection}{\numberline {5.1}Ce que j'aurais aim\IeC {\'e} rajouter dans le jeu}{21}{subsection.5.1}
-\contentsline {subsection}{\numberline {5.2}Ce que m'a apport\IeC {\'e} ce travail de maturit\IeC {\'e}}{21}{subsection.5.2}
+\contentsline {section}{\numberline {5}Conclusion}{22}{section.5}
+\contentsline {subsection}{\numberline {5.1}Ce que j'aurais aim\IeC {\'e} rajouter dans le jeu}{22}{subsection.5.1}
+\contentsline {subsubsection}{\numberline {5.1.1}Diff\IeC {\'e}rents modes de difficult\IeC {\'e}}{22}{subsubsection.5.1.1}
+\contentsline {subsubsection}{\numberline {5.1.2}Possibilit\IeC {\'e} de nouvelle partie apr\IeC {\`e}s la fin du jeu}{22}{subsubsection.5.1.2}
+\contentsline {subsubsection}{\numberline {5.1.3}Musique et effets sonores}{22}{subsubsection.5.1.3}
+\contentsline {subsubsection}{\numberline {5.1.4}R\IeC {\'e}alisme et \IeC {\'e}v\IeC {\`e}nements historiques}{22}{subsubsection.5.1.4}
+\contentsline {subsubsection}{\numberline {5.1.5}Actions \IeC {\'e}cologiques}{23}{subsubsection.5.1.5}
+\contentsline {subsection}{\numberline {5.2}Ce que m'a apport\IeC {\'e} ce travail de maturit\IeC {\'e}}{23}{subsection.5.2}
+\contentsline {subsection}{\numberline {5.3}Continuation du jeu}{23}{subsection.5.3}
+\contentsline {section}{Appendices}{24}{section*.3}
+\contentsline {section}{\numberline {A}La structure des fichiers du jeu}{24}{Annexe.1.A}

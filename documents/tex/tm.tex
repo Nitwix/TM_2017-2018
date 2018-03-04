@@ -7,6 +7,8 @@
 \usepackage{float}
 \usepackage{gensymb}
 \usepackage{amsmath}
+\usepackage{fancyvrb}
+\usepackage[toc,page]{appendix}
 
 \usepackage{parskip}
 \setlength{\parindent}{15pt}
@@ -190,7 +192,7 @@
         
 
         \section{Fonctionnement du code}
-        Dans cette section, j'expliquerai quelles technologies j'ai utilisées pour créer mon jeu et comment différentes parties du code fonctionnent. Je ne pourrai pas expliquer la totalité du code du jeu car cela serait trop long et n'apporterait pas grand chose à la compréhension du fonctionnement global du jeu. 
+        Dans cette section, j'expliquerai quelles technologies j'ai utilisées pour créer mon jeu, comment les fichiers sont structurés et comment différentes parties du code fonctionnent. Je ne pourrai pas expliquer la totalité du code du jeu car cela serait trop long et n'apporterait pas grand chose à la compréhension du fonctionnement global du jeu. 
         
         \subsection{Les technologies utilisées}
         Le jeu a été crée dans le langage de programmation JavaScript (avec utilisation des dernières possibilités de ECMAScript 2016, voir la référence \cite{ecma2016}). La librairie open source Phaser JS en version 2.9.4 (voir la référence \cite{phaser}) m'a servi à simplifier certaines parties du code du jeu.
@@ -199,8 +201,20 @@
         \textit{Note : } Les commentaires dans les scripts présentés ci-dessous ne contiennent pas de caractères avec accent pour des soucis de compatibilité des caractères.
         
         
-        \subsection{La structure des fichiers}
-        //TODO
+        \subsection{La structure des fichiers (voir appendice \ref{structure})}
+        Les fichiers du jeu sont organisés en deux dossiers principaux: \textit{assets} et \textit{scripts}. Le dossier \textit{assets} contient tous les éléments visuels du jeu (c'est-à-dire les images et les animations). Le dossier \textit{scripts} contient tous les scripts du jeu. Les sous-dossiers de ce dossier sont \textit{classes, data, states} et \textit{utils}.
+        
+        
+         \textit{Classes} contient toutes les définitions des classes utilisées dans le jeu. 
+         
+         
+         \textit{Data} contient tous les scripts qui n'ont pas vraiment une action concrète mais qui servent à stocker des données du jeu (par exemple les valeurs de puissance et de production de CO$_{2}$ des centrales).
+         
+         
+         \textit{States} contient tous les fichiers dans lesquels se trouvent les \textit{states} du jeu (voir la section \ref{main.js} pour une explication des \textit{states}).
+         
+         
+         \textit{Utils} contient divers scripts qui sont utils à plusieurs endroits du jeu (par exemple le fichier \textit{globals.js}, voir la section \ref{globals.js} pour une explication).
         
        	
 		\subsection{Le script d'entrée: main.js} \label{main.js}
@@ -216,7 +230,7 @@
 		
 		Pour finir on appelle \textit{game.state.start("boot")} pour démarrer le boot state (pas très important pour la compréhension du fonctionnement global du jeu).
 		
-		\subsection{Les propriétés globales : globals.js}
+		\subsection{Les propriétés globales : globals.js} \label{globals.js}
 		\lstinputlisting[language=JavaScript]{../../web_src/scripts/utils/globals.js}
 		Ce script contient toutes les variables globales réutilisées durant tout le jeu. Il serait trop long de décrire l'utilité de toutes les propriétés et méthodes de l'objet \textit{globals}. C'est pourquoi je ne décrirai que certaines d'entre elles.
 		
@@ -331,7 +345,7 @@
 		\end{align}
 		% K COMMENCE À 0 OU 1 ???
 		La première équation (1) correspond au terme général de la suite géométrique.
-		La valeur de \textit{c} est égale au premier terme de la suite. Cela représente la valeur de la probabilité après le premier investissement et c'est donc cette variable que j'ai choisi de modifier pour obtenir différentes 'difficultés' de déblocage des centrales. Sachant que la valeur de la somme doit tendre vers 100 lorsque \textit{k} tend vers l'infini (3), je peux calculer la valeur de \textit{r} correspondante (4).
+		La valeur de \textit{c} est égale au premier terme de la suite. Cela représente la valeur de la probabilité après le premier investissement et c'est donc cette variable que j'ai choisi de modifier pour obtenir différentes 'difficultés' de déblocage des centrales. Sachant que la valeur de la somme doit tendre vers 100 lorsque \textit{k} tend vers l'infini (3), je peux calculer la valeur de \textit{r} correspondante (4). Les formules sont tirées du \textit{Formulaires et tables}, p.90 (voir référence \cite{FetT}).
 		
 		%//la probabilite est une serie geometrique telle que
         %//a(k) = c*r^k
@@ -343,16 +357,41 @@
         Ici je définis les valeurs de \textit{c} de chaque type de centrale énergétique. Plus \textit{c} est grand, plus le type de centrale sera facile à débloquer. J'initialise ensuite les autres valeurs nécessaires au calcul de la suite géométrique $(r, k=0, partSum=0)$ grâce à la méthode \textit{\_setupUnlockData}. J'ajoute ensuite la méthode \textit{\_rndUnlockUpdate} aux mises à jour annuelles du gestionnaire du temps (cette méthode sera expliquée dans la section \ref{rndUnlockUpdate}).
         
         \subsubsection{La méthode \textit{increaseUnlockProb}}
-        //TODO
+        Cette méthode sert à augmenter la probabilité de débloquer une centrale. Elle est appelée depuis le \textit{newspaper} de recherche.
+        Je commence par calculer le terme actuel de la série $a_{k}$ que j'ajoute à la somme partielle. J'augmente ensuite la variable \textit{k}. Je finis par mettre à jour l'affichage de la probabilité dans le \textit{newspaper} de recherche (grâce à la méthode \textit{gameEls.newspaper.softUpdate}).
         
         \subsubsection{La méthode \textit{\_rndUnlockUpdate}} \label{rndUnlockUpdate}
-        //TODO
+        Cette méthode est appelée à chaque mise à jour annuelle du gestionnaire du temps. Elle permet d'aléatoirement débloquer (ou non) une centrale énergétique. Je commence par parcourir tous les objets contenus dans \textit{unlockData}. Je génère ensuite un nombre rationnel aléatoire entre 0 et 100. Si le nombre aléatoire est plus petit que la probabilité de déblocage de la centrale, j'ajoute le titre de la centrale dans un array des noms de centrales débloquées pour pouvoir informer la joueur de quelles types de centrales il a débloquées. J'assigne ensuite la valeur \textit{-Infinity} à la probabilité pour que la centrale ne puisse pas être débloquée plusieurs fois. Je finis par appeler la méthode \textit{unlockFacType} qui s'occupe de débloquer le type de centrale.
         
         \section{Conclusion}
-        \subsection{Ce que j'aurais aimé rajouter dans le jeu}
-		//TODO
+        \subsection{Ce que j'aurais aimé rajouter dans le jeu} \label{ajoutJeu}
+		Par manque de temps, je n'ai pas pu ajouter toutes les possibilités que j'aurais voulu ajouter à mon jeu. J'expliquerai ici quelques-uns de ces ajouts.
 		
+		\subsubsection{Différents modes de difficulté}
+		J'aurais voulu ajouter différents modes de difficulté pour que le jeu soit plus intéressant. J'aurais par exemple pu baisser la limite de CO$_{2}$ dans l'atmosphère avant la fin de la partie ou la probabilité de débloquer une centrale pour rendre le jeu plus difficile. J'aurais également voulu ajouter un besoin en énergie de la population qui aurait dû être satisfait, ce qui aurait rendu le jeu plus intéressant en forçant le joueur à construire plus de centrales tout en ne polluant pas trop l'atmosphère.
+		
+		\subsubsection{Possibilité de nouvelle partie après la fin du jeu}
+		Une chose que j'avais prévu de faire était de pouvoir recommencer une partie après la fin du jeu sans devoir rafraîchir la page du navigateur. Cependant je me suis rendu compte que c'était plus compliqué que ce que j'imaginais (il fallait notamment réinitialiser plusieurs objets globaux).		
+		
+		\subsubsection{Musique et effets sonores}
+		Afin de rendre le jeu plus agréable, j'aurais voulu ajouter une musique dans le jeu et des effets sonores (lors d'un clic sur un bouton par exemple). J'aurais notamment voulu ajouter la chanson \textit{Imagine} de John Lennon comme musique principale. 
+		
+		\subsubsection{Réalisme et évènements historiques}
+		Il était originalement prévu que le jeu contienne des évènement historiques qui agissent sur le déroulement de la partie mais cela aurait demandé un investissement considérable en temps que je n'avais pas.
+		J'aurais voulu ajouter également l'explosion aléatoire des centrales nucléaires à fission pour ajouter du réalisme au jeu. Un site de production sur lequel se trouvait une centrale nucléaire explosée aurait coûté très cher à nettoyer (et aurait donc été difficilement réutilisable).
+		
+		\subsubsection{Actions écologiques}
+		Une fonctionnalité majeure du jeu (que j'avais d'ailleurs commencé à développer) aurait été un onglet avec différentes actions en faveur (ou en défaveur) de l'environnement. Le joueur aurait pu accepter d'investir dans des actions en faveur de l'environnement, ce qui aurait eu un impact sur le jeu (par exemple, une action en faveur de la préservation de la forêt amazonienne aurait diminué la quantité de CO$_{2}$ dans l'atmosphère).
+
+				
 		\subsection{Ce que m'a apporté ce travail de maturité}
+		Ce travail de maturité m'a appris plusieurs choses par rapport à la programmation. J'ai notamment appris à organiser et structurer un code d'une taille importante en différents scripts, classes et méthodes. J'ai aussi l'impression d'avoir acquis de l'expérience pour ce qui est de prévoir comment concevoir le fonctionnement d'un morceau de code pour qu'il puisse être adaptable dans le futur.
+		
+		
+		J'ai acquis également un certaine expérience dans la création de jeu vidéo (par exemple pour ce qui est de la création d'images et d'animations). Il a été également intéressant d'entendre l'avis de personnes ayant pu jouer à mon jeu. Certaines personnes m'ont fourni des critiques intéressantes grâce auxquelles j'ai parfois pu améliorer mon jeu.
+		
+		\subsection{Continuation du jeu}
+		J'espère pouvoir continuer de développer mon jeu après l'avoir rendu dans cette version qui manque certaines fonctionnalités importantes (citées dans la section \ref{ajoutJeu}). Ce travail m'a grandement plu et j'aimerais beaucoup le continuer dans le but de peut-être un jour le diffuser à plus grande échelle que juste mon entourage afin de contribuer à transmettre le message de l'importance de l'écologie qui me tient à cœur.
         
         \newpage
         \begin{thebibliography}{9}
@@ -360,23 +399,44 @@
 			\bibitem{phaser}
   			La librairie PHASER,
   			\url{http://phaser.io},
-  			consulté le 6 septembre 2017
+  			consulté le 6 septembre 2017.
   			
   			\bibitem{phaserDocs}
   			La documentation officielle PHASER,
   			\url{https://photonstorm.github.io/phaser-ce/},
-  			consultée régulièrement jusqu'au 18 février 2018
+  			consultée régulièrement jusqu'au 18 février 2018.
   			
   			\bibitem{ecma2016}
   			La version de JavaScript utilisée,
   			\url{https://en.wikipedia.org/wiki/ECMAScript#7th_Edition_-_ECMAScript_2016},
-  			consulté le 28.02.2018
+  			consulté le 28.02.2018.
   			
   			\bibitem{objsParis2100}
   			Les objectifs fixés par l'\textit{Accord de Paris sur le climat},
   			\url{https://fr.wikipedia.org/wiki/Accord_de_Paris_sur_le_climat#Objectifs},
-  			consulté le 04.03.2018
+  			consulté le 04.03.2018.
   			
+  			\bibitem{FetT}
+  			Commission Romande de Mathématiques, 
+  			\textit{Formulaires et tables},
+  			Éditions G d'Encre,
+  			2015.
   			
+  			\bibitem{font}
+  			Police de caractère utilisée dans le jeu,
+  			\url{https://www.searchfreefonts.com/font/advancedpixel-7.htm},
+  			consulté le 23.09.2017.
+  			
+  			\bibitem{baseMap}
+  			Image de base utilisée pour la carte de la terre (cette image a été modifiée),
+  			\url{https://minecraftworld.files.wordpress.com/2011/05/earth_flat_map.jpg},
+  			consulté le 06.09.2017.
+ 			
 		\end{thebibliography}
+		
+		%\appendix
+		\begin{appendices}
+			\section{La structure des fichiers du jeu} \label{structure}
+			\VerbatimInput{../structureFichiers.txt}
+		\end{appendices}
 \end{document}

@@ -31,13 +31,13 @@ class ResearchMgr{
         }
     }
 
-    //methode appellee a chaque update de timeMgr
+    //methode appellee a chaque 'year update' de timeMgr
     rndUnlockUpdate(){
         //utilisation de 'globals' car appel depuis timeMgr
         let unlockData = globals.researchMgr._unlockData;
 
         //parcours des unlockProbs pour debloquer aleatoirement un type de centrale
-        let unlockedFacNames = []; //arr de strings
+        let unlockedFacNames = []; //array de strings
         for (let key in unlockData){
             let facProb = unlockData[key];
             let rnd = Phaser.Math.random(0,100);
