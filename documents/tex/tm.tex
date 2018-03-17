@@ -13,6 +13,9 @@
 \usepackage{parskip}
 \setlength{\parindent}{15pt}
 
+%prevents paragraph breaks
+\widowpenalties 1 10000
+
 \input{lstset_js}
 
 \newcommand{\initMoney}{250'000}
@@ -102,7 +105,7 @@
         \section{Le jeu}
 		Dans cette section, j'expliquerai comment interagir avec le jeu en présentant les éléments de l'écran principal, les différents onglets, la vue des régions et finalement comment jouer.        
         
-        \subsection{Les éléments de l'écran principal}
+        \subsection{Les éléments de l'écran principal}\label{mainScreenEls}
 		L'écran principal du jeu comporte plusieurs éléments dont je vais expliquer l'utilité ci-dessous (voir à chaque fois la figure \ref{fig:worldView}).
 		
 		\begin{itemize}
@@ -134,7 +137,7 @@
         \end{figure}
         
         
-        \textbf{L'onglet des statistiques} affiche les différentes statistiques de jeu. Ces informations indiquent servent à guider les choix du joueur. (Voir à chaque fois les figures \ref{fig:stats1} et \ref{fig:stats2}).
+        \textbf{L'onglet des statistiques} affiche les différentes statistiques de jeu. Ces informations servent à guider les choix du joueur. (Voir à chaque fois les figures \ref{fig:stats1} et \ref{fig:stats2}).
         \begin{itemize}
         		\item La première section concerne l'argent du joueur et sa production d'argent.
         		\item La seconde section affiche la production d'électricité des centrales du joueur.
@@ -170,15 +173,14 @@
         Il est ensuite possible de construire une centrale sur ce site de production (voir figure \ref{fig:buyPlant}).
         \begin{figure}[H]
                 \includegraphics[width=\linewidth]{../images/buyPlant}
-                \caption{L'achat d'une centrale électrique}
+                \caption{L'achat d'une centrale énergétique}
                 \label{fig:buyPlant}
         \end{figure}
         
-        
-        Dans la vue 'région', on peut améliorer une centrale électrique pour qu'elle produise plus (ce qui aura comme conséquence qu'elle polluera également plus). Il est aussi possible de la détruire en appuyant sur le bouton rouge (voir figure \ref{fig:upgradePlant}).
+        Dans la vue 'région', on peut améliorer une centrale énergétique pour qu'elle produise plus (ce qui aura comme conséquence qu'elle polluera également plus). Il est aussi possible de la détruire en appuyant sur le bouton rouge (voir figure \ref{fig:upgradePlant}).
         \begin{figure}[H]
                 \includegraphics[width=\linewidth]{../images/upgradePlant}
-                \caption{Amélioration d'une centrale électrique}
+                \caption{Amélioration d'une centrale énergétique}
                 \label{fig:upgradePlant}
         \end{figure}
         
@@ -222,7 +224,7 @@
          \textit{States} contient tous les fichiers dans lesquels se trouvent les \textit{states} du jeu (voir la section \ref{main.js} pour une explication des \textit{states}).
          
          
-         \textit{Utils} contient divers scripts qui sont utils à plusieurs endroits du jeu (par exemple le fichier \textit{globals.js}, voir la section \ref{globals.js} pour une explication).
+         \textit{Utils} contient divers scripts qui sont utiles à plusieurs endroits du jeu (par exemple le fichier \textit{globals.js}, voir la section \ref{globals.js} pour une explication).
         
        	
 		\subsection{Le script d'entrée: main.js} \label{main.js}
@@ -243,7 +245,7 @@
 		Ce script contient toutes les variables globales réutilisées durant tout le jeu. Il serait trop long de décrire l'utilité de toutes les propriétés et méthodes de l'objet \textit{globals}. C'est pourquoi je ne décrirai que certaines d'entre elles.
 		
 		\begin{itemize}
-			\item \textit{initMoney} représente l'argent qu'a le joueur au départ du jeu.
+			\item \textit{initMoney} représente l'argent qu'a le joueur au début du jeu.
 			\item \textit{CO2Limit} représente la quantité maximum de CO$_{2}$ qu'il peut y avoir dans l'atmosphère. Passé cette limite, le joueur aura perdu la partie.
 			\item \textit{globalWarmingLimit} représente la limite de réchauffement de la planète. Le réchauffement de la planète est calculé à partir de la quantité de CO$_{2}$ dans l'atmosphère.
 			\item \textit{beginYear} et \textit{endYear} représentent les années de début et de fin du jeu.
@@ -258,10 +260,10 @@
 		Chaque \textit{state} dans Phaser est constitué de quatre méthodes principales: \textit{preload, create, update} et \textit{render}. 
 		
 		
-		La méthode \textit{preload} sert à charger les éléments du jeu dans le cache du navigateur. Cependant, comme j'ai déjà chargé tous les éléments dont j'avais besoin dans ma \textit{state} appelée \textit{preload}, je n'ai plus besoin de le faire dans \textit{gameState}.  
+		La méthode \textit{preload} sert à charger les éléments du jeu dans le cache du navigateur. Cependant, comme j'ai déjà chargé tous les éléments dont j'avais besoin dans ma \textit{state} appelée \textit{preloadState}, je n'ai plus besoin de le faire dans \textit{gameState}.  
 		
 		
-		La méthode \textit{create} sert à exécuter des instructions qui ne doivent s'exécuter qu'une fois avant l'appel de la méthode \textit{update}.
+		La méthode \textit{create} sert à exécuter des instructions qui doivent s'exécuter une seule fois avant l'appel de la méthode \textit{update}.
 		
 		
 		La méthode \textit{update} est appelée toutes les quelques millisecondes et permet d'effectuer des actions répétées.
@@ -282,7 +284,7 @@
 		On démarre ensuite le tutoriel si la variable \textit{globals.showTutorial} a la valeur \textit{true} (celle-ci a reçue la valeur vrai ou faux lors du clique sur le bouton du menu principal, voir figure \ref{fig:mainMenu}).
 		
 		\subsubsection{La méthode gameState.update}
-		Dans cette méthode, la méthode \textit{globReg.update()} est appelée si il n'y pas d'instance de la classe \textit{Newspaper} active. \textit{globReg.update()} permet de constamment tester si le joueur a cliqué sur une des régions et d'enclencher le zoom sur cette région si c'est le cas.
+		Dans cette méthode, la méthode \textit{globReg.update()} est appelée si il n'y pas d'instance de la classe \textit{Newspaper} active (on ne veut pas que le joueur puisse cliquer à travers un onglet). \textit{globReg.update()} permet de constamment tester si le joueur a cliqué sur une des régions et d'enclencher le zoom sur cette région si c'est le cas.
 		
 		
 		\subsection{Le gestionnaire de production: productionMgr.js} \label{productionMgr}
@@ -290,9 +292,9 @@
 		Le fichier productionMgr.js contient uniquement la classe ProductionMgr (la notation de classe telle qu'écrite ici est une nouvelle possibilité de ECMAScript 2015\footnote{Pour plus d'informations sur les classes, voir \url{https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Classes}. Site consulté le 03.03.2018.}).
 		
 		\subsubsection{La méthode \textit{constructor}}
-		La première méthode de n'importe quelle classe est la méthode \textit{constructor}. Celle-ci est appelée automatiquement lorsqu'on instancie un objet de cette classe. Ici,  plusieurs propriétés des instances de cette classe sont initialisées (le tiret bas devant les propriétés indiquent que celles-ci ne devraient normalement pas être accessibles depuis l'extérieur de l'instance de la classe). La propriété \textit{\_totPower} représente la puissance cumulée de toutes les centrales construites du jeu. \textit{\_CO2Production} représente la production de CO$_{2}$ totale des centrales. \textit{\_totCO2} représente la quantité totale de CO$_{2}$ émise depuis le début du jeu. \textit{\_powerToMondio} représente le taux de conversion de puissance à mondios (voir la section \ref{mondioProduction}).
+		La première méthode de n'importe quelle classe est la méthode \textit{constructor}. Celle-ci est appelée automatiquement lorsqu'on instancie un objet de cette classe. Ici,  plusieurs propriétés des instances de cette classe sont initialisées (le tiret bas devant les propriétés indiquent que celles-ci ne devraient normalement pas être accédées depuis l'extérieur de l'instance de la classe). La propriété \textit{\_totPower} représente la puissance cumulée de toutes les centrales construites du jeu. \textit{\_CO2Production} représente la production de CO$_{2}$ totale des centrales. \textit{\_totCO2} représente la quantité totale de CO$_{2}$ émise depuis le début du jeu. \textit{\_powerToMondio} représente le taux de conversion de puissance à mondios (utilisé dans \textit{get mondioProduction}, voir section \ref{mondioProduction}).
 		
-		\subsubsection{La méthode \textit{update}}
+		\subsubsection{La méthode \textit{update}}\label{prodUpdate}
 		Les premières lignes servent à récupérer les données des sites de production pour pouvoir mettre à jour les propriétés \textit{\_totPower} et \textit{\_CO2Production}. 
 		
 		
@@ -301,11 +303,14 @@
 		
 		Les prochaines lignes testent si la valeur totale de CO$_{2}$ excède le maximum de la valeur possible. Si c'est le cas, on démarre le \textit{state "gameEnd"} qui indique que la partie est perdue. On met également à jour l'opacité de la caméra pour avoir un écran de plus en plus sombre en fonction de la valeur de \textit{\_totCO2}.
 		
+		
+		Cette méthode est appelée dans la mise à jour courte du gestionnaire de temps (voir \textit{timeMgr}, section \ref{timeMgr}).
+		
 		\subsubsection{La méthode \textit{get mondioProduction}} \label{mondioProduction}
-		Cette méthode renvoie simplement la valeur de production de mondios utilisée dans la méthode \textit{update}. Elle utilise le mot-clé \textit{get} pour que la méthode agisse comme si c'était une propriété de la classe.
+		Cette méthode renvoie simplement la valeur de production de mondios (utilisée dans la méthode \textit{update}, voir section \ref{prodUpdate}). Elle utilise le mot-clé \textit{get} pour que la méthode agisse comme si c'était une propriété de la classe.
 		
 		\subsubsection{La méthode \textit{get globalWarming}} \label{globalWarming}
-		Cette méthode renvoie la valeur du réchauffement global de la planète en \degree C. Elle dépend de la quantité totale de CO$_{2}$ dans l'atmosphère.
+		Cette méthode renvoie la valeur du réchauffement global de la planète en \degree C. Elle est proportionnelle à la quantité totale de CO$_{2}$ dans l'atmosphère.
 		
 		\subsection{Le gestionnaire du temps: timeMgr.js} \label{timeMgr}
 		\lstinputlisting[language=JavaScript, lastline=63]{../../web_src/scripts/classes/timeMgr.js}
@@ -313,13 +318,13 @@
 		Cette classe définit le gestionnaire de la temporalité du jeu. J'expliquerai ici brièvement les méthodes principales de cette classe. Le gestionnaire de temps gère la mise à jour courte (qui dure 500ms de base\footnote{Cette valeur sera modifiée si le joueur décide d'accélérer ou de ralentir le jeu.} et dans laquelle se produit par exemple la mise à jour de l'argent du joueur) et la mise à jour annuelle (qui lance par exemple le déblocage aléatoire des centrales énergétiques, voir section \ref{researchMgr}).
 		
 		\subsubsection{La méthode \textit{constructor}}
-		Dans cette méthode je commence par définir des constantes de la classe. Les deux premières constantes définissent la durée de base d'une année. Ensuite j'indique l'échelle maximale et minimale de l'accélération ou du ralentissement du temps du jeu (modifié par les boutons à côté de l'affichage de l'année).
+		Dans cette méthode je commence par définir des constantes de la classe. Les deux premières constantes définissent la durée de base d'une année. Ensuite j'indique l'échelle maximale et minimale de l'accélération ou du ralentissement du temps du jeu (modifié par les boutons à côté de l'affichage de l'année, voir section \ref{mainScreenEls}).
 		
 		
 		J'assigne ensuite la valeur de la durée de l'année qui sera modifiée durant le jeu. Je crée ensuite une instance de \textit{Phaser.Timer} que j'assigne à \textit{this.\_timer}.
 		
 		%arrays et callbacks en italique ?
-		Je crée ensuite les arrays qui contiendront les callbacks de la petite update (500ms de base) et de l'update annuelle. 
+		Je crée ensuite les arrays qui contiendront les callbacks de la mise à jour courte (500ms de base) et de la mise à jour annuelle. 
 		
 		
 		Je définis ensuite la propriété \textit{\_year} qui contiendra l'année actuelle et une propriété \textit{\_lastYUSec} dont l'utilité sera expliquée plus tard.
@@ -328,12 +333,12 @@
 		Enfin, je crée la variable \textit{\_timeScale} qui contient l'échelle de vitesse du temps qui pourra être modifiée par le joueur.
 		
 		\subsubsection{La méthode \textit{get \_delay}}
-		Cette méthode renvoie la durée d'une petite update (cette méthode sera utilisée dans la méthode \textit{startUpdate}, voir section \ref{startUpdate}).
+		Cette méthode renvoie la durée d'une mise à jour courte (cette méthode sera utilisée dans la méthode \textit{startUpdate}, voir section \ref{startUpdate}).
 		
 		\subsubsection{La méthode \textit{startUpdate}} \label{startUpdate}
-		Cette méthode définit la boucle \textit{this.\_timerLoop} qui s'exécutera toutes les 500ms de base. Dans cette boucle on commence par appeler toutes les callbacks présentes dans \textit{this.\_callbacks}. 
-		Pour savoir s'il y a un passage d'année, on teste si le compteur (en secondes) du timer est un multiple de la durée de l'année et si on ne vient pas de faire un passage d'année (d'où l'utilité de \textit{\_lastYUSec}). Si cette condition est vraie, on appelle \textit{this.\_yearUpdate}.
-		On démarre ensuite le timer et l'affichage de l'année.
+		Cette méthode définit la boucle \textit{this.\_timerLoop} qui s'exécutera toutes les 500ms de base. Dans cette boucle, on commence par appeler toutes les callbacks\footnote{Une callback est simplement une fonction exécutée après un certain événement.} présentes dans \textit{this.\_callbacks}. 
+		Pour savoir s'il y a un passage d'année, on teste si le compteur (en secondes) du timer est un multiple de la durée de l'année et si on ne vient pas de faire un passage d'année (d'où l'utilité de \textit{\_lastYUSec}). Si cette condition est vraie, on appelle procède à la mise à jour annuelle (\textit{this.\_yearUpdate}).
+		On démarre ensuite le timer (de la mise à jour courte) et l'affichage de l'année.
 		
 		\subsubsection{La méthode \textit{\_yearUpdate}}
 		Dans cette méthode,  on commence par tester si l'année actuelle est plus grande (ou égale) à l'année de fin du jeu. Si c'est le cas, on fait un fondu vers un écran noir de la caméra et on démarre le \textit{state gameEnd} (qui est l'écran de fin du jeu).
@@ -346,14 +351,14 @@
 		Chaque type de centrale a une probabilité de se débloquer (valant initialement 0) que le joueur peut augmenter en investissant dans la recherche de ce type de centrale. J'ai choisi \footnote{Suite à un conseil avisé de mon mentor.} d'utiliser une suite géométrique pour représenter la valeur de la probabilité car cela présente l'avantage que la probabilité peut tendre vers 100\% mais ne jamais l'atteindre complètement (ce qui laisse une part de hasard).
 		La valeur de la probabilité est une somme partielle d'une suite géométrique.
 		\begin{align}
-  			a_{k} &= c\cdot r^{k} \\
-    			a_{0} &= c\cdot r^{0} = c \\
+  				a_{k} &= c\cdot r^{k}\\
+    			a_{0} &= c\cdot r^{0} = c\\
     			\sum_{k=0}^{\infty} a_{k} &= c\cdot \frac{1}{1-r} = 100,\text{ pour } |r|<1 \\
     			r &= 1 - \frac{c}{100} < 1
 		\end{align}
 		% K COMMENCE À 0 OU 1 ???
 		La première équation (1) correspond au terme général de la suite géométrique.
-		La valeur de \textit{c} est égale au premier terme de la suite. Cela représente la valeur de la probabilité après le premier investissement et c'est donc cette variable que j'ai choisi de modifier pour obtenir différentes 'difficultés' de déblocage des centrales. Sachant que la valeur de la somme doit tendre vers 100 lorsque \textit{k} tend vers l'infini (3), je peux calculer la valeur de \textit{r} correspondante (4). Les formules sont tirées du \textit{Formulaires et tables}, p.90 (voir référence \cite{FetT}).
+		La valeur de \textit{c} est égale au premier terme de la suite (2). Cela représente la valeur de la probabilité après le premier investissement et c'est donc cette variable que j'ai choisi de modifier pour obtenir différentes 'difficultés' de déblocage des centrales. Sachant que la valeur de la somme doit tendre vers 100 lorsque \textit{k} tend vers l'infini (3), je peux calculer la valeur de \textit{r} correspondante (4). Les formules sont tirées du \textit{Formulaires et tables}, p.90 (voir référence \cite{FetT}).
 		
 		%//la probabilite est une serie geometrique telle que
         %//a(k) = c*r^k
@@ -399,7 +404,7 @@
 		J'ai acquis également un certaine expérience dans la création de jeu vidéo (par exemple pour ce qui est de la création d'images et d'animations). Il a été également intéressant d'entendre l'avis de personnes ayant pu jouer à mon jeu. Certaines personnes m'ont fourni des critiques intéressantes grâce auxquelles j'ai parfois pu améliorer mon jeu.
 		
 		\subsection{Continuation du jeu}
-		J'espère pouvoir continuer à développer mon jeu après l'avoir rendu dans cette version qui manque certaines fonctionnalités importantes (citées dans la section \ref{ajoutJeu}). Ce travail m'a grandement plu et j'aimerais beaucoup le continuer dans le but de peut-être un jour publier mon jeu afin de contribuer à transmettre le message de l'importance de l'écologie.
+		J'espère pouvoir continuer à développer mon jeu après l'avoir rendu dans cette version qui manque certaines fonctionnalités (citées dans la section \ref{ajoutJeu}). Ce travail m'a grandement plu et j'aimerais beaucoup le continuer dans le but de peut-être un jour publier mon jeu afin de contribuer à transmettre le message de l'importance de l'écologie.
         
         \newpage
         \begin{thebibliography}{9}

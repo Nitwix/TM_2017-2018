@@ -11,13 +11,13 @@ let globals = {
         longTweenDur: 800
     },
 
-    //voir utils/regions.js
+    //voir classes/regions.js
     regions: {},//contient les instances de la classe Region
     currentRegion: "", //"" quand en worldview et la key de la region sinon
 
     //contient des variable en rapport avec les sites de production
     sites: {
-        id: 0, //identifiant unique pour chaque site de production (voir utils/regions.js)
+        id: 0, //identifiant unique pour chaque site de production (voir classes/regions.js)
         instances: []
     },
     factories: {
