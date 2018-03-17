@@ -310,10 +310,10 @@
 		\subsection{Le gestionnaire du temps: timeMgr.js} \label{timeMgr}
 		\lstinputlisting[language=JavaScript, lastline=63]{../../web_src/scripts/classes/timeMgr.js}
 		
-		Cette classe définit le gestionnaire de la temporalité du jeu. J'expliquerai ici brièvement les méthodes principales de cette classe.
+		Cette classe définit le gestionnaire de la temporalité du jeu. J'expliquerai ici brièvement les méthodes principales de cette classe. Le gestionnaire de temps gère la mise à jour courte (qui dure 500ms de base et dans laquelle se produit par exemple la mise à jour de l'argent du joueur) et la mise à jour annuelle (qui lance par exemple le déblocage aléatoire des centrales énergétiques, voir section \ref{researchMgr}).
 		
 		\subsubsection{La méthode \textit{constructor}}
-		Dans cette méthode je commence par définir des constantes de la classe. Les deux premières constantes définies sont la durée de base d'une année. Ensuite je définis les limites de l'accélération ou du ralentissement du temps du jeu (modifié par les boutons à côté de l'affichage de l'année).
+		Dans cette méthode je commence par définir des constantes de la classe. Les deux premières constantes définissent la durée de base d'une année. Ensuite j'indique l'échelle maximale et minimale de l'accélération ou du ralentissement du temps du jeu (modifié par les boutons à côté de l'affichage de l'année).
 		
 		
 		J'assigne ensuite la valeur de la durée de l'année qui sera modifiée durant le jeu. Je crée ensuite une instance de \textit{Phaser.Timer} que j'assigne à \textit{this.\_timer}.
@@ -322,7 +322,7 @@
 		Je crée ensuite les arrays qui contiendront les callbacks de la petite update (500ms de base) et de l'update annuelle. 
 		
 		
-		Je définis ensuite la propriété \textit{\_year} qui contiendra l'année actuelle et une propriété dont l'utilité sera expliquée plus tard.
+		Je définis ensuite la propriété \textit{\_year} qui contiendra l'année actuelle et une propriété \textit{\_lastYUSec} dont l'utilité sera expliquée plus tard.
 		
 		
 		Enfin, je définis l'échelle de vitesse du temps qui pourra être modifiée par le joueur.
@@ -332,7 +332,7 @@
 		
 		\subsubsection{La méthode \textit{startUpdate}} \label{startUpdate}
 		Cette méthode définit la boucle \textit{this.\_timerLoop} qui s'exécutera toutes les 500ms de base. Dans cette boucle on commence par appeler toutes les callbacks présentes dans \textit{this.\_callbacks}. 
-		Pour savoir s'il y a un passage d'année, on teste si le compteur (en secondes) du timer est un multiple de la durée de l'année et si on ne vient pas de faire un passage d'année. Si cette condition est vraie, on appelle \textit{this.\_yearUpdate}.
+		Pour savoir s'il y a un passage d'année, on teste si le compteur (en secondes) du timer est un multiple de la durée de l'année et si on ne vient pas de faire un passage d'année (d'où l'utilité de \textit{\_lastYUSec}). Si cette condition est vraie, on appelle \textit{this.\_yearUpdate}.
 		On démarre ensuite le timer et l'affichage de l'année.
 		
 		\subsubsection{La méthode \textit{\_yearUpdate}}
