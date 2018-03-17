@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.2.19)  17 MAR 2018 13:33
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.2.19)  17 MAR 2018 16:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -745,7 +745,7 @@ een already used, duplicate ignored
                    \relax 
 l.42         \newpage
                       [3] [1]
-<../images/mondiosLogo.png, id=266, 191.9672pt x 191.9672pt>
+<../images/mondiosLogo.png, id=273, 191.9672pt x 191.9672pt>
 File: ../images/mondiosLogo.png Graphic file (type png)
 
 <use ../images/mondiosLogo.png>
@@ -756,10 +756,10 @@ Package pdftex.def Info: ../images/mondiosLogo.png used on input line 89.
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.109 			\item \textbf
-                      {L'argent du joueur} (en mondios) est affiché dans le...
- <../images/mondiosLogo.png (PNG copy)>]
-<../images/worldView.png, id=283, 803.0pt x 451.6875pt>
+l.105         \subsection
+                         {Les éléments de l'écran principal} <../images/mond
+iosLogo.png (PNG copy)>]
+<../images/worldView.png, id=291, 803.0pt x 451.6875pt>
 File: ../images/worldView.png Graphic file (type png)
 
 <use ../images/worldView.png>
@@ -772,21 +772,21 @@ Package pdftex.def Info: ../images/worldView.png used on input line 117.
                                                   \fi \fi 
 l.126 
        <../images/worldView.png>]
-<../images/recherche.png, id=293, 803.0pt x 451.6875pt>
+<../images/recherche.png, id=301, 803.0pt x 451.6875pt>
 File: ../images/recherche.png Graphic file (type png)
 
 <use ../images/recherche.png>
 Package pdftex.def Info: ../images/recherche.png used on input line 131.
 (pdftex.def)             Requested size: 345.0pt x 194.06331pt.
 
-<../images/stats1.png, id=296, 803.0pt x 451.6875pt>
+<../images/stats1.png, id=304, 803.0pt x 451.6875pt>
 File: ../images/stats1.png Graphic file (type png)
 
 <use ../images/stats1.png>
 Package pdftex.def Info: ../images/stats1.png used on input line 145.
 (pdftex.def)             Requested size: 345.0pt x 194.06331pt.
 
-<../images/stats2.png, id=297, 803.0pt x 451.6875pt>
+<../images/stats2.png, id=305, 803.0pt x 451.6875pt>
 File: ../images/stats2.png Graphic file (type png)
 
 <use ../images/stats2.png>
@@ -799,7 +799,7 @@ Package pdftex.def Info: ../images/stats2.png used on input line 150.
                                                   \fi \fi 
 l.153         \end{figure}
                            <../images/recherche.png>]
-<../images/region.png, id=307, 803.0pt x 451.6875pt>
+<../images/region.png, id=315, 803.0pt x 451.6875pt>
 File: ../images/region.png Graphic file (type png)
 
 <use ../images/region.png>
@@ -818,7 +818,7 @@ tifier (name{figure.5}) has been already used, duplicate ignored
                                                   \fi \fi 
 l.161         \end{figure}
                            <../images/stats1.png> <../images/stats2.png>]
-<../images/unlockSite.png, id=315, 803.0pt x 451.6875pt>
+<../images/unlockSite.png, id=324, 803.0pt x 451.6875pt>
 File: ../images/unlockSite.png Graphic file (type png)
 
 <use ../images/unlockSite.png>
@@ -831,14 +831,14 @@ Package pdftex.def Info: ../images/unlockSite.png used on input line 165.
                                                   \fi \fi 
 l.169 
        <../images/region.png>]
-<../images/buyPlant.png, id=325, 803.0pt x 451.6875pt>
+<../images/buyPlant.png, id=333, 803.0pt x 451.6875pt>
 File: ../images/buyPlant.png Graphic file (type png)
 
 <use ../images/buyPlant.png>
 Package pdftex.def Info: ../images/buyPlant.png used on input line 172.
 (pdftex.def)             Requested size: 345.0pt x 194.06331pt.
 
-<../images/upgradePlant.png, id=327, 803.0pt x 451.6875pt>
+<../images/upgradePlant.png, id=335, 803.0pt x 451.6875pt>
 File: ../images/upgradePlant.png Graphic file (type png)
 
 <use ../images/upgradePlant.png>
@@ -857,7 +857,7 @@ tifier (name{figure.8}) has been already used, duplicate ignored
                                                   \fi \fi 
 l.183         \end{figure}
                            <../images/unlockSite.png> <../images/buyPlant.png>]
-<../images/mainMenu.png, id=336, 803.0pt x 451.6875pt>
+<../images/mainMenu.png, id=344, 803.0pt x 451.6875pt>
 File: ../images/mainMenu.png Graphic file (type png)
 
 <use ../images/mainMenu.png>
@@ -926,20 +926,16 @@ Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 450.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 450.
 Package rerunfilecheck Info: File `tm.out' has not changed.
 (rerunfilecheck)             Checksum: 11A874F4E80A8A4E1F2C737AB3407704;3816.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 450.
  ) 
 Here is how much of TeX's memory you used:
- 9967 strings out of 494883
- 140956 string characters out of 6178693
- 347736 words of memory out of 5000000
- 12737 multiletter control sequences out of 15000+600000
+ 9972 strings out of 494883
+ 141013 string characters out of 6178693
+ 348761 words of memory out of 5000000
+ 12738 multiletter control sequences out of 15000+600000
  10971 words of font info for 40 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 29i,8n,40p,853b,1979s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 29i,10n,40p,853b,1979s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/te
@@ -956,10 +952,10 @@ usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/sha
 re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/tex
 live/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/t
 exmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb>
-Output written on tm.pdf (31 pages, 514539 bytes).
+Output written on tm.pdf (31 pages, 492346 bytes).
 PDF statistics:
- 907 PDF objects out of 1000 (max. 8388607)
- 828 compressed objects within 9 object streams
- 386 named destinations out of 1000 (max. 500000)
+ 916 PDF objects out of 1000 (max. 8388607)
+ 837 compressed objects within 9 object streams
+ 390 named destinations out of 1000 (max. 500000)
  432 words of extra memory for PDF output out of 10000 (max. 10000000)
 

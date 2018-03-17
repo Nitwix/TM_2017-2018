@@ -54,25 +54,25 @@
         \section{Concept du jeu}
         \subsection{Développement du concept}
         
-        Mon projet était de créer un jeu de gestion de ressources dont l'univers du jeu était aussi proche que possible de la réalité. Le joueur (incarnant le président/la présidente du monde) commence sa partie au début du 18\textsuperscript{ème} siècle. Il devait être amené au fil des expériences du jeu à réaliser qu'à un certain moment, une transition énergétique est nécessaire afin d'assurer la survie de l'espèce humaine.
+        Mon projet était de créer un jeu de gestion de ressources dont l'univers du jeu était aussi proche que possible de la réalité. Le joueur devait être amené au fil des expériences du jeu à réaliser qu'à un certain moment, une transition énergétique était nécessaire afin d'assurer la survie de l'espèce humaine. J'expliquerai dans cette section comment s'est développé le concept de mon jeu.
         
         \subsubsection{La mécanique économique}
         La mécanique économique étant la mécanique principale de jeu, il était primordiale qu'elle soit bien pensée.
         Plusieurs mécaniques économiques m'ont parues intéressantes mais je n'en ai retenu qu'une seule pour les raisons décrites ci-dessous.
         
         
-        La première alternative consistait à avoir deux types de centrales: des centrales produisant de l'énergie (centrales à charbon, barrages hydroélectriques, centrales nucléaires, etc...) et d'autres produisant des ressources (usines de textile, forges, champs, etc...). Le joueur installerait des centrales énergétiques pour produire de l'énergie permettant de faire fonctionner ses centrales produisant des ressources. Ainsi, un cycle économique se créerait. 
+        La première alternative consistait à avoir deux types de centrales: des centrales produisant de l'énergie\footnote{Centrales à charbon, barrages hydroélectriques, centrales nucléaires, etc...\label{energyPlant}} et d'autres produisant des ressources \footnote{Usines de textile, forges, champs, etc...}. Le joueur aurait installé des centrales énergétiques pour produire de l'énergie. Cette énergie aurait permis de faire fonctionner ses centrales produisant des ressources. Ainsi, un cycle économique se serait créé. 
         Deux raisons m'ont convaincu de ne pas choisir cette alternative. Premièrement, l'idée ci-dessus ne transmettait pas le message que je voulais transmettre: en effet, ce n'est pas ce que l'on produit et ce que l'on consomme qui pose un problème, c'est la façon dont nous le faisons. La deuxième raison m'ayant fait renoncer à cette alternative est la complexité des mécaniques de jeu et par conséquent du code qu'impliquait cette mécanique économique.
         
         
-        La deuxième alternative était basé sur deux types de centrales: les centrales de production de ressources énergétiques (mines, puits de pétroles, etc...) et les centrales de production d'énergie (citées dans la première alternative). Le joueur devrait trouver un bon équilibre entre les ressources énergétiques qu'il produirait et les centrales énergétiques qui consommeraient ces ressources.
-        Cette alternative aurait pu être intéressante du point de vue du joueur mais elle était également trop compliquée à intégrer dans le jeu et ne reflétait pas non plus l'idée que je voulais transmettre dans mon jeu (les centrales de production de ressources énergétiques n'apportant pas beaucoup à la réflexion).
+        La deuxième alternative était basé sur deux types de centrales: les centrales de production de ressources énergétiques\footnote{Mines, puits de pétroles, etc...} et les centrales de production d'énergie (voir note de bas de page n\degree\ref{energyPlant}). Le joueur aurait dû trouver un bon équilibre entre les ressources énergétiques qu'il aurait produites et les centrales énergétiques qui auraient consommé ces ressources.
+        Cette alternative aurait pu être intéressante du point de vue du joueur mais elle était également trop compliquée à intégrer dans le jeu et ne reflétait pas non plus l'idée que je voulais transmettre (les centrales de production de ressources énergétiques n'apportant pas beaucoup à la réflexion).
         
         
         J'ai donc opté pour la troisième alternative qui consiste à n'avoir qu'un seul type de centrales: les centrales de production d'énergie. Ainsi, le joueur choisit où il installe ses centrales et celles-ci produisent de l'énergie qui est convertie directement en mondios (nom de la monnaie du jeu). Il peut ainsi acheter de nouvelles centrales avec l'argent qu'il obtient.
         
         \subsubsection{Le personnage incarné par le joueur}
-        Je me suis également posé la question de savoir quel personnage le joueur devrait incarner. Dans un premier temps m'est venu l'idée que le joueur pourrait être un riche patron d'une multinationale. Cependant cela impliquait que ce serait du ressort des multinationales d'assurer ou non la transition énergétique et d'effectuer des actions en faveur de l'écologie, ce qui est en tout cas partiellement faux. Cette possibilité excluait également le joueur, qui ne se sentait que très peu concerné par la problématique.
+        Je me suis également posé la question de savoir quel personnage le joueur devrait incarner. Dans un premier temps m'est venu l'idée que le joueur pourrait être un riche patron d'une multinationale. Cependant, cela impliquait que c'était uniquement du ressort des multinationales d'assurer ou non la transition énergétique et d'effectuer des actions en faveur de l'écologie, ce qui est en tout cas partiellement faux. Cette possibilité excluait également le joueur, qui ne se sentait que très peu concerné par la problématique.
         
         
         L'autre possibilité était donc que le joueur incarne le président/la présidente du monde. Cette option a l'avantage d'expliquer le pouvoir immense qu'a le joueur et de montrer que n'importe qui peut agir pour le bien de la planète.
@@ -84,7 +84,7 @@
 		J'ai donc choisi de créer les \textit{Mondios}, monnaie universelle de la planète (voir figure \ref{fig:mondiosLogo}).
 		
 		
-		\textit{Note: }L'affichage de l'argent est toujours effectué en utilisant les préfixes du Système international d'unités pour réduire l'espace que celui-ci prend sur l'écran (par exemple 150'200 sera affiché comme 150.2k)
+		\textit{Note: }L'affichage de l'argent est toujours effectué en utilisant les préfixes du Système international d'unités pour réduire l'espace que celui-ci prend sur l'écran (par exemple 150'200 sera affiché comme 150.2k).
 		\begin{figure}[H]
                 \centerline{\includegraphics[scale=.5]{../images/mondiosLogo}}
                 \caption{Icône de la monnaie du jeu: les \textit{Mondios}}
@@ -93,10 +93,10 @@
         
         
         \subsubsection{La temporalité du jeu}	
-        J'ai assez rapidement décidé de commencer le jeu au début de la révolution industrielle (donc environ en 1800) mais j'ai eu plus de doute sur le choix de l'année de fin du jeu. La première idée qui m'est venue était de créer un jeu sans fin: le joueur pourrait continuer de construire des centrales énergétiques jusqu'à ce qu'il n'ait plus rien à améliorer ou à construire. Toutefois, cela me semblait aller à l'encontre des principes du jeu vidéo où il y a toujours un objectif à remplir pour finir le jeu. J'ai donc choisi que le joueur gagnerait la partie s'il parvenait jusqu'à l'an 2100 sans avoir passé la limite des 2\degree C du réchauffement global de la planète (voir point \cite{objsParis2100} des références).
+        J'ai assez rapidement décidé de commencer le jeu au début de la révolution industrielle (donc environ en 1800) mais j'ai eu plus de doute sur le choix de l'année de fin du jeu. La première idée qui m'est venue était de créer un jeu sans fin: le joueur aurait pu continuer de construire des centrales énergétiques jusqu'à ce qu'il n'ait plus rien à améliorer ou à construire. Toutefois, cela me semblait aller à l'encontre des principes du jeu vidéo où il y a toujours un objectif à remplir pour finir le jeu. J'ai donc choisi que le joueur gagnerait la partie s'il parvenait jusqu'à l'an 2100 sans avoir passé la limite des 2\degree C du réchauffement global de la planète (objectif fixé par l'Accord de Paris sur le climat, voir point \cite{objsParis2100} des références).
 		
         \subsection{Concept final}
-		Vous êtes en 1800, au début de la révolution industrielle. Vous venez d'être élu président(e) de la planète. Votre but: mener la planète à travers la révolution industrielle et assurer la transition énergétique afin de ne pas arriver à un point critique du réchauffement climatique. Le jeu s'achève soit si le joueur a dépassé les 2\degree C de réchauffement global (jeu perdu) ou s'il a atteint l'année 2100 (jeu gagné).
+		Vous êtes en 1800, au début de la révolution industrielle. Vous venez d'être élu président(e) de la planète. Votre but: mener la planète à travers la révolution industrielle et assurer la transition énergétique afin de ne pas arriver à un point critique du réchauffement climatique. Le jeu s'achève soit vous avez dépassé les 2\degree C de réchauffement global (jeu perdu) ou si vous avez atteint l'année 2100 (jeu gagné).
         L'action principale du joueur consiste à gérer les centrales énergétiques présentes sur sa planète.
 
         \section{Le jeu}
@@ -120,12 +120,12 @@
         \end{figure} 
 		
 		\subsection{Les onglets du jeu} \label{onglets}
-		Les menus du jeu sont affichés sous la forme d'onglets (qui représentent un journal).
-		Il y a 3 onglets qui sont sous cette forme de journal: l'onglet de recherche, l'onglet des statistiques et l'onglet d'achat de centrales (ce dernier sera présenté dans la section \ref{regionView}).
+		Les onglets du jeu sont affichés sous forme de journal.
+		Il y a 3 onglets dans le jeu: l'onglet de recherche, l'onglet des statistiques et l'onglet d'achat de centrales (ce dernier sera présenté dans la section \ref{regionView}).
 		Tous les onglets sont construits sur le même modèle, seul leur contenu change. Ainsi, chaque onglet comporte un titre (en haut au centre), un bouton permettant de fermer l'onglet (en haut à droite), trois sections (au centre), un numéro de page (en bas au centre) et des flèches pour changer de page (en bas à gauche et à droite).
 		
 		
-		\textbf{L'onglet de recherche} affiche les centrales énergétiques dans lesquelles le joueur peut investir des mondios (en appuyant sur le bouton vert où le prix de l'investissement est affiché) pour augmenter la probabilité qu'il les débloquera.
+		\textbf{L'onglet de recherche} affiche les centrales énergétiques dans lesquelles le joueur peut investir des mondios (en appuyant sur le bouton vert où le prix de l'investissement est affiché) pour augmenter la probabilité de les débloquer.
 		
 		\begin{figure}[H]
                 \includegraphics[width=\linewidth]{../images/recherche}
@@ -200,7 +200,7 @@
         
 
         \section{Fonctionnement du code}
-        Dans cette section, j'expliquerai quelles technologies j'ai utilisées pour créer mon jeu, comment les fichiers sont structurés et comment différentes parties du code fonctionnent. Je ne pourrai pas expliquer la totalité du code du jeu car cela serait trop long et n'apporterait pas grand chose à la compréhension du fonctionnement global du jeu. 
+        Dans cette section, j'expliquerai quelles technologies j'ai utilisées pour créer mon jeu, comment les fichiers sont structurés et comment quelques parties du code fonctionnent. Je ne pourrai pas expliquer la totalité du code du jeu car cela serait trop long et n'apporterait pas grand chose à la compréhension du fonctionnement global du jeu. 
         
         \subsection{Les technologies utilisées}
         Le jeu a été crée dans le langage de programmation JavaScript (avec utilisation des dernières possibilités de ECMAScript 2016, voir la référence \cite{ecma2016}). La librairie open source Phaser JS en version 2.9.4 (voir la référence \cite{phaser}) m'a servi à simplifier certaines parties du code du jeu.
@@ -276,7 +276,7 @@
 		Ensuite, \textit{globReg.init()} permet d'initialiser les zones cliquables des régions de la carte et les sites de production des régions.
 		
 		
-		Les prochaines lignes initialisent les différents \textit{managers}. Ceux-ci ont des fonctions importantes durant tout le jeu et gèrent plusieurs données importantes. Le \textit{moneyMgr} sert entre autre à stocker l'argent total possédé par le joueur et a une méthode qui permet de tester si on peut effectuer un achat d'une certaine valeur. \textit{productionMgr, timeMgr} et \textit{researchMgr} seront expliqués ci-après (voir respectivement les sections \ref{productionMgr}, \ref{timeMgr} et \ref{researchMgr}).
+		Les prochaines lignes initialisent les différents \textit{managers}. Ceux-ci sont utilisés durant tout le jeu et gèrent plusieurs données importantes. Le \textit{moneyMgr} sert entre autre à stocker l'argent total possédé par le joueur et possède une méthode qui permet de tester si on peut effectuer un achat d'une certaine valeur. \textit{productionMgr, timeMgr} et \textit{researchMgr} seront expliqués ci-après (voir respectivement les sections \ref{productionMgr}, \ref{timeMgr} et \ref{researchMgr}).
 		
 		
 		On démarre ensuite le tutoriel si la variable \textit{globals.showTutorial} a la valeur \textit{true} (celle-ci a reçue la valeur vrai ou faux lors du clique sur le bouton du menu principal, voir figure \ref{fig:mainMenu}).
@@ -310,7 +310,7 @@
 		\subsection{Le gestionnaire du temps: timeMgr.js} \label{timeMgr}
 		\lstinputlisting[language=JavaScript, lastline=63]{../../web_src/scripts/classes/timeMgr.js}
 		
-		Cette classe définit le gestionnaire de la temporalité du jeu. J'expliquerai ici brièvement les méthodes principales de cette classe. Le gestionnaire de temps gère la mise à jour courte (qui dure 500ms de base et dans laquelle se produit par exemple la mise à jour de l'argent du joueur) et la mise à jour annuelle (qui lance par exemple le déblocage aléatoire des centrales énergétiques, voir section \ref{researchMgr}).
+		Cette classe définit le gestionnaire de la temporalité du jeu. J'expliquerai ici brièvement les méthodes principales de cette classe. Le gestionnaire de temps gère la mise à jour courte (qui dure 500ms de base\footnote{Cette valeur sera modifiée si le joueur décide d'accélérer ou de ralentir le jeu.} et dans laquelle se produit par exemple la mise à jour de l'argent du joueur) et la mise à jour annuelle (qui lance par exemple le déblocage aléatoire des centrales énergétiques, voir section \ref{researchMgr}).
 		
 		\subsubsection{La méthode \textit{constructor}}
 		Dans cette méthode je commence par définir des constantes de la classe. Les deux premières constantes définissent la durée de base d'une année. Ensuite j'indique l'échelle maximale et minimale de l'accélération ou du ralentissement du temps du jeu (modifié par les boutons à côté de l'affichage de l'année).
@@ -325,7 +325,7 @@
 		Je définis ensuite la propriété \textit{\_year} qui contiendra l'année actuelle et une propriété \textit{\_lastYUSec} dont l'utilité sera expliquée plus tard.
 		
 		
-		Enfin, je définis l'échelle de vitesse du temps qui pourra être modifiée par le joueur.
+		Enfin, je crée la variable \textit{\_timeScale} qui contient l'échelle de vitesse du temps qui pourra être modifiée par le joueur.
 		
 		\subsubsection{La méthode \textit{get \_delay}}
 		Cette méthode renvoie la durée d'une petite update (cette méthode sera utilisée dans la méthode \textit{startUpdate}, voir section \ref{startUpdate}).
@@ -343,12 +343,12 @@
 		\lstinputlisting[language=JavaScript, lastline=53]{../../web_src/scripts/classes/researchMgr.js}
 		
 		Cette classe définit le fonctionnement de la recherche de centrales énergétiques.
-		Chaque type de centrale a une probabilité de se débloquer (valant initialement 0) que le joueur peut augmenter en investissant dans la recherche de ce type de centrale. J'ai choisi \footnote{Suite à un conseil avisé de mon mentor.} d'utiliser une suite géométrique pour représenter la valeur de la probabilité car cela présentait l'avantage que la probabilité pourrait tendre vers 100\% mais ne jamais l'atteindre complètement (ce qui laisse une part de hasard).
+		Chaque type de centrale a une probabilité de se débloquer (valant initialement 0) que le joueur peut augmenter en investissant dans la recherche de ce type de centrale. J'ai choisi \footnote{Suite à un conseil avisé de mon mentor.} d'utiliser une suite géométrique pour représenter la valeur de la probabilité car cela présente l'avantage que la probabilité peut tendre vers 100\% mais ne jamais l'atteindre complètement (ce qui laisse une part de hasard).
 		La valeur de la probabilité est une somme partielle d'une suite géométrique.
 		\begin{align}
   			a_{k} &= c\cdot r^{k} \\
     			a_{0} &= c\cdot r^{0} = c \\
-    			\sum_{k=0}^{\infty} a_{k} &= c\cdot \frac{1}{1-r} = 100 \\
+    			\sum_{k=0}^{\infty} a_{k} &= c\cdot \frac{1}{1-r} = 100,\text{ pour } |r|<1 \\
     			r &= 1 - \frac{c}{100} < 1
 		\end{align}
 		% K COMMENCE À 0 OU 1 ???
@@ -373,7 +373,7 @@
         
         \section{Conclusion}
         \subsection{Ce que j'aurais aimé rajouter dans le jeu} \label{ajoutJeu}
-		Par manque de temps, je n'ai pas pu ajouter toutes les possibilités que j'aurais voulu ajouter à mon jeu. J'expliquerai ici quelques-uns de ces ajouts.
+		Par manque de temps, il m'a été impossible d'implémenter tout ce que j'aurais voulu dans mon jeu. J'explique dans cette section quels auraient été ces ajouts.
 		
 		\subsubsection{Différents modes de difficulté}
 		J'aurais voulu ajouter différents modes de difficulté pour que le jeu soit plus intéressant. J'aurais par exemple pu baisser la limite de CO$_{2}$ dans l'atmosphère avant la fin de la partie ou la probabilité de débloquer une centrale pour rendre le jeu plus difficile. J'aurais également voulu ajouter un besoin en énergie de la population qui aurait dû être satisfait, ce qui aurait rendu le jeu plus intéressant en forçant le joueur à construire plus de centrales tout en ne polluant pas trop l'atmosphère.
@@ -399,7 +399,7 @@
 		J'ai acquis également un certaine expérience dans la création de jeu vidéo (par exemple pour ce qui est de la création d'images et d'animations). Il a été également intéressant d'entendre l'avis de personnes ayant pu jouer à mon jeu. Certaines personnes m'ont fourni des critiques intéressantes grâce auxquelles j'ai parfois pu améliorer mon jeu.
 		
 		\subsection{Continuation du jeu}
-		J'espère pouvoir continuer de développer mon jeu après l'avoir rendu dans cette version qui manque certaines fonctionnalités importantes (citées dans la section \ref{ajoutJeu}). Ce travail m'a grandement plu et j'aimerais beaucoup le continuer dans le but de peut-être un jour le diffuser à plus grande échelle que juste mon entourage afin de contribuer à transmettre le message de l'importance de l'écologie qui me tient à cœur.
+		J'espère pouvoir continuer à développer mon jeu après l'avoir rendu dans cette version qui manque certaines fonctionnalités importantes (citées dans la section \ref{ajoutJeu}). Ce travail m'a grandement plu et j'aimerais beaucoup le continuer dans le but de peut-être un jour publier mon jeu afin de contribuer à transmettre le message de l'importance de l'écologie.
         
         \newpage
         \begin{thebibliography}{9}
