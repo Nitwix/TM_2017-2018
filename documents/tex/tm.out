@@ -13,7 +13,7 @@
 \BOOKMARK [2][-]{subsection.3.4}{Comment jouer}{section.3}% 13
 \BOOKMARK [1][-]{section.4}{Fonctionnement du code}{}% 14
 \BOOKMARK [2][-]{subsection.4.1}{Les technologies utilis\351es}{section.4}% 15
-\BOOKMARK [2][-]{subsection.4.2}{La structure des fichiers \(voir appendice A\)}{section.4}% 16
+\BOOKMARK [2][-]{subsection.4.2}{La structure des fichiers \(voir annexe A\)}{section.4}% 16
 \BOOKMARK [2][-]{subsection.4.3}{Le script d'entr\351e: main.js}{section.4}% 17
 \BOOKMARK [2][-]{subsection.4.4}{Les propri\351t\351s globales : globals.js}{section.4}% 18
 \BOOKMARK [2][-]{subsection.4.5}{Le fichier principal du jeu: game.js}{section.4}% 19
@@ -43,5 +43,5 @@
 \BOOKMARK [3][-]{subsubsection.5.1.5}{Actions \351cologiques}{subsection.5.1}% 43
 \BOOKMARK [2][-]{subsection.5.2}{Ce que m'a apport\351 ce travail de maturit\351}{section.5}% 44
 \BOOKMARK [2][-]{subsection.5.3}{Continuation du jeu}{section.5}% 45
-\BOOKMARK [1][-]{section*.3}{Appendices}{}% 46
+\BOOKMARK [1][-]{section*.3}{Annexes}{}% 46
 \BOOKMARK [1][-]{Annexe.1.A}{La structure des fichiers du jeu}{}% 47

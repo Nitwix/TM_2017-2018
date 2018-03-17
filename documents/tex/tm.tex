@@ -17,6 +17,9 @@
 
 \newcommand{\initMoney}{250'000}
 
+\renewcommand{\appendixtocname}{Annexes}
+\renewcommand{\appendixpagename}{Annexes}
+
 
 \title{De Révolution à Evolution \\ Création d'un jeu vidéo sur les thèmes de l'écologie et de la transition énergétique}
 \date{2017-2018}
@@ -27,6 +30,11 @@
 
         \pagenumbering{gobble}
         \maketitle
+        \vspace{24pt}
+		\begin{center}
+		        \includegraphics[scale=.3]{../images/logo}
+		\end{center}        
+        
         \newpage
 
         \tableofcontents
@@ -46,7 +54,7 @@
         \section{Concept du jeu}
         \subsection{Développement du concept}
         
-        Mon projet était de créer un jeu de gestion de ressources dont l'univers du jeu était aussi proche que possible de la réalité. Le joueur (incarnant le président/la présidente du monde fictif) commence sa partie au début du 18\textsuperscript{ème} siècle. Il devait être amené au fil des expériences du jeu à réaliser qu'à un certain moment, une transition énergétique est nécessaire afin d'assurer la survie de l'espèce humaine.
+        Mon projet était de créer un jeu de gestion de ressources dont l'univers du jeu était aussi proche que possible de la réalité. Le joueur (incarnant le président/la présidente du monde) commence sa partie au début du 18\textsuperscript{ème} siècle. Il devait être amené au fil des expériences du jeu à réaliser qu'à un certain moment, une transition énergétique est nécessaire afin d'assurer la survie de l'espèce humaine.
         
         \subsubsection{La mécanique économique}
         La mécanique économique étant la mécanique principale de jeu, il était primordiale qu'elle soit bien pensée.
@@ -201,7 +209,7 @@
         \textit{Note : } Les commentaires dans les scripts présentés ci-dessous ne contiennent pas de caractères avec accent pour des soucis de compatibilité des caractères.
         
         
-        \subsection{La structure des fichiers (voir appendice \ref{structure})}
+        \subsection{La structure des fichiers (voir annexe \ref{structure})}
         Les fichiers du jeu sont organisés en deux dossiers principaux: \textit{assets} et \textit{scripts}. Le dossier \textit{assets} contient tous les éléments visuels du jeu (c'est-à-dire les images et les animations). Le dossier \textit{scripts} contient tous les scripts du jeu. Les sous-dossiers de ce dossier sont \textit{classes, data, states} et \textit{utils}.
         
         
