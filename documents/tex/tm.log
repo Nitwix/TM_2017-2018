@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.2.19)  17 MAR 2018 18:50
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.2.19)  18 MAR 2018 17:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -933,11 +933,11 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 455.
 Here is how much of TeX's memory you used:
  9975 strings out of 494883
  141051 string characters out of 6178693
- 319890 words of memory out of 5000000
+ 320890 words of memory out of 5000000
  12740 multiletter control sequences out of 15000+600000
  10971 words of font info for 40 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 29i,10n,40p,894b,1979s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 29i,10n,40p,857b,1979s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/te
@@ -954,7 +954,7 @@ usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/sha
 re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/tex
 live/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/t
 exmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb>
-Output written on tm.pdf (31 pages, 493820 bytes).
+Output written on tm.pdf (31 pages, 494077 bytes).
 PDF statistics:
  922 PDF objects out of 1000 (max. 8388607)
  843 compressed objects within 9 object streams

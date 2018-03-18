@@ -16,7 +16,7 @@ function updateStatsData(){
             {
                 spriteIndex: 2,
                 title: "Emissions de CO2",
-                descr: `Vos centrales ont émi environ ${Math.round(globals.productionMgr.totCO2)}kg de CO2 dans l'atmosphère.\nElles émettent environ ${Math.round(globals.productionMgr.CO2Production)}kg de CO2 par semaine.`
+                descr: `Vos centrales ont émis environ ${Math.round(globals.productionMgr.totCO2)}kg de CO2 dans l'atmosphère.\nElles émettent environ ${Math.round(globals.productionMgr.CO2Production)}kg de CO2 par semaine.`
             },
             {
                 spriteIndex: 3,
