@@ -54,9 +54,9 @@ class ResearchMgr{
         //afficher le newspaper avec le nom des usines debloquees
         let dialText = "";
         if(unlockedFacNames.length === 1){
-            dialText = `Felicitations, mon cher president! Vous avez debloque un nouveau type de centrale: ${ unlockedFacNames[0] }! Vous pouvez desormais installer celle-ci sur n'importe quel site de production libre.`;
+            dialText = `Félicitations, mon cher president! Vous avez débloqué un nouveau type de centrale: ${ unlockedFacNames[0] }! Vous pouvez désormais installer celle-ci sur n'importe quel site de production libre.`;
         }else if(unlockedFacNames.length > 1){
-            dialText = `Felicitations, mon cher president! Vous avez debloque plusieurs nouveaux types de centrale: ${unlockedFacNames.join(", ")}! Vous pouvez desormais installer celles-ci sur n'importe quel site de production libre.`;
+            dialText = `Félicitations, mon cher president! Vous avez débloqué plusieurs nouveaux types de centrale: ${unlockedFacNames.join(", ")}! Vous pouvez désormais installer celles-ci sur n'importe quel site de production libre.`;
         }
 
         if(dialText != ""){
