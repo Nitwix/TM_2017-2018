@@ -2,15 +2,15 @@ class ResearchMgr{
     constructor(){
         //plus c est grand, plus la somme partielle augmente rapidement
         this._unlockData = {
-            coalPlant: {c: 10},
-            fuelPlant: {c: 2},
-            gasPlant: {c: 2},
-            hydroPlant: {c: 5},
-            fissionPlant: {c: .2},
-            windTurbines: {c: .1},
-            solarPanels: {c: .05},
-            geothermalPlant: {c: .02},
-            fusionPlant: {c: .01}
+            coalPlant: {c: 20},
+            fuelPlant: {c: 10},
+            gasPlant: {c: 8},
+            hydroPlant: {c: 7},
+            fissionPlant: {c: 6},
+            windTurbines: {c: 5},
+            solarPanels: {c: 4},
+            geothermalPlant: {c: 3},
+            fusionPlant: {c: 2}
         };
         this._setupUnlockData();
 
@@ -56,7 +56,7 @@ class ResearchMgr{
         if(unlockedFacNames.length === 1){
             dialText = `Félicitations, mon cher president! Vous avez débloqué un nouveau type de centrale: ${ unlockedFacNames[0] }! Vous pouvez désormais installer celle-ci sur n'importe quel site de production libre.`;
         }else if(unlockedFacNames.length > 1){
-            dialText = `Félicitations, mon cher president! Vous avez débloqué plusieurs nouveaux types de centrale: ${unlockedFacNames.join(", ")}! Vous pouvez désormais installer celles-ci sur n'importe quel site de production libre.`;
+            dialText = `Félicitations, mon cher president! Vous avez débloqué plusieurs nouveaux types de centrales: ${unlockedFacNames.join(", ")}! Vous pouvez désormais installer celles-ci sur n'importe quel site de production libre.`;
         }
 
         if(dialText != ""){

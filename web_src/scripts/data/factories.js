@@ -46,7 +46,7 @@ globals.data.factoryResearch = {
             type:"gasPlant",
             title:"Centrale à gaz",
             power:1500,
-            constructionPrice: 80e4,
+            constructionPrice: 120e3,
             destrCoeff:2,
             CO2Production:1e3,
             addDescr:""
@@ -56,7 +56,7 @@ globals.data.factoryResearch = {
             type:"hydroPlant",
             title:"Barrage hydroélectrique",
             power:2000,
-            constructionPrice: 25e5,
+            constructionPrice: 25e4,
             destrCoeff:4,
             CO2Production:0,
             addDescr:""
@@ -65,18 +65,18 @@ globals.data.factoryResearch = {
         (new Factory({
             type:"fissionPlant",
             title:"Centrale nucléaire à fission",
-            power:3000,
-            constructionPrice: 30e7,
+            power:10000,
+            constructionPrice: 50e5,
             destrCoeff:12,
             CO2Production:0,
-            addDescr:"Les risques en valent-ils vraiment la peine?"
+            addDescr:"Les bénéfices en valent-ils vraiment la peine?"
         })).dataObj,
 
         (new Factory({
             type:"geothermalPlant",
             title:"Centrale géothermique",
-            power:2000,
-            constructionPrice: 55e6,
+            power:3000,
+            constructionPrice: 55e4,
             destrCoeff:2,
             CO2Production:0,
             addDescr:"La fumée que vous voyez n'est que de la vapeur d'eau."
@@ -85,8 +85,8 @@ globals.data.factoryResearch = {
         (new Factory({
             type:"windTurbines",
             title:"Champ d'éoliennes",
-            power:2000,
-            constructionPrice: 50e6,
+            power:6000,
+            constructionPrice: 50e5,
             destrCoeff:1.5,
             CO2Production:0,
             addDescr:""
@@ -95,8 +95,8 @@ globals.data.factoryResearch = {
         (new Factory({
             type:"solarPanels",
             title:"Champ de panneaux solaires",
-            power:2500,
-            constructionPrice: 45e7,
+            power:7500,
+            constructionPrice: 45e6,
             destrCoeff:.2,
             CO2Production:0,
             addDescr:"Ces panneaux peuvent être facilement détruits si besoin."
@@ -105,8 +105,8 @@ globals.data.factoryResearch = {
         (new Factory({
             type:"fusionPlant",
             title:"Centrale nucléaire à fusion",
-            power:6000,
-            constructionPrice: 80e7,
+            power:30000,
+            constructionPrice: 80e6,
             destrCoeff:6,
             CO2Production:0,
             addDescr:"Cette centrale est un bon compromis entre économie et écologie"

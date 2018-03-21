@@ -44,5 +44,5 @@
 \contentsline {subsubsection}{\numberline {5.1.5}Actions \IeC {\'e}cologiques}{23}{subsubsection.5.1.5}
 \contentsline {subsection}{\numberline {5.2}Ce que m'a apport\IeC {\'e} ce travail de maturit\IeC {\'e}}{23}{subsection.5.2}
 \contentsline {subsection}{\numberline {5.3}Continuation du jeu}{24}{subsection.5.3}
-\contentsline {section}{Annexes}{25}{section*.3}
-\contentsline {section}{\numberline {A}La structure des fichiers du jeu}{25}{Annexe.1.A}
+\contentsline {section}{Annexes}{}{section*.3}
+\contentsline {section}{\numberline {A}La structure des fichiers du jeu}{}{Annexe.1.A}

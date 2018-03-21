@@ -2,8 +2,7 @@ let gameEndState = {
     create: () => {
 
         if(globals.gameWon){
-            gameEndState.txt = ["Félicitations, vous avez atteint les objectifs de la COP21",
-                "Vous pouvez refaire une partie dans un mode de difficulté plus élevée.",
+            gameEndState.txt = ["Félicitations, vous avez atteint les objectifs de la COP21"
                 ];
         }else{
             gameEndState.txt = ["Félicitations, vous êtes parvenu à un point de non retour dans le réchauffement climatique.",
