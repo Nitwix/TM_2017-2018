@@ -72,7 +72,7 @@
         Cette alternative aurait pu être intéressante du point de vue du joueur mais elle était également trop compliquée à intégrer dans le jeu et ne reflétait pas non plus l'idée que je voulais transmettre (les centrales de production de ressources énergétiques n'apportant pas beaucoup à la réflexion).
         
         
-        J'ai donc opté pour la troisième alternative qui consiste à n'avoir qu'un seul type de centrales: les centrales de production d'énergie. Ainsi, le joueur choisit où il installe ses centrales et celles-ci produisent de l'énergie qui est convertie directement en mondios (nom de la monnaie du jeu). Il peut ainsi acheter de nouvelles centrales avec l'argent qu'il obtient.
+        J'ai donc opté pour la troisième alternative qui consiste à n'avoir qu'un seul type de centrales: les centrales de production d'énergie. Ainsi, le joueur choisit où il installe ses centrales et celles-ci produisent de l'énergie qui est convertie directement en Mondios (nom de la monnaie du jeu). Il peut ainsi acheter de nouvelles centrales avec l'argent qu'il obtient.
         
         \subsubsection{Le personnage incarné par le joueur}
         Je me suis également posé la question de savoir quel personnage le joueur devrait incarner. Dans un premier temps m'est venu l'idée que le joueur pourrait être un riche patron d'une multinationale. Cependant, cela impliquait que c'était uniquement du ressort des multinationales d'assurer ou non la transition énergétique et d'effectuer des actions en faveur de l'écologie, ce qui est en tout cas partiellement faux. Cette possibilité excluait également le joueur, qui ne se sentait que très peu concerné par la problématique.
@@ -109,11 +109,12 @@
 		L'écran principal du jeu comporte plusieurs éléments dont je vais expliquer l'utilité ci-dessous (voir à chaque fois la figure \ref{fig:worldView}).
 		
 		\begin{itemize}
-			\item \textbf{L'argent du joueur} (en mondios) est affiché dans le coin en haut à gauche de l'écran.
+			\item \textbf{La carte du monde} permet de zoomer sur une région du monde (l'utilité des régions est expliquée dans la section \ref{regionView}).
+			\item \textbf{L'argent du joueur} (en Mondios) est affiché dans le coin en haut à gauche de l'écran.
 			\item \textbf{L'année de jeu} est affichée en haut au centre de l'écran. Les flèches à gauche et à droite de l'année permettent de ralentir (flèche gauche) ou d’accélérer (flèche droite) le déroulement du temps du jeu.
 			\item \textbf{Le bouton plein écran} affiché en haut à droite de l'écran permet d'activer ou de désactiver le plein écran.
 			\item \textbf{L'onglet de recherche} est accessible via le bouton 'Recherche' situé en-dessous du bouton plein écran. Son utilité est expliquée dans la section \ref{onglets}.
-			\item  \textbf{L'onglet de statistiques} est accessible via le bouton 'Statistiques' affiché en-dessous du bouton 'Recherche'. Son utilité est également expliquée dans la section \ref{onglets}.
+			\item  \textbf{L'onglet des statistiques} est accessible via le bouton 'Statistiques' affiché en-dessous du bouton 'Recherche'. Son utilité est également expliquée dans la section \ref{onglets}.
 		\end{itemize}
 		
 		\begin{figure}[H]
@@ -125,10 +126,10 @@
 		\subsection{Les onglets du jeu} \label{onglets}
 		Les onglets du jeu sont affichés sous forme de journal.
 		Il y a 3 onglets dans le jeu: l'onglet de recherche, l'onglet des statistiques et l'onglet d'achat de centrales (ce dernier sera présenté dans la section \ref{regionView}).
-		Tous les onglets sont construits sur le même modèle, seul leur contenu change. Ainsi, chaque onglet comporte un titre (en haut au centre), un bouton permettant de fermer l'onglet (en haut à droite), trois sections (au centre), un numéro de page (en bas au centre) et des flèches pour changer de page (en bas à gauche et à droite).
+		Tous les onglets sont construits sur le même modèle, seul leur contenu change. Ainsi, chaque onglet comporte un titre (en haut au centre), un bouton permettant de fermer l'onglet (en haut à droite), trois sections (au centre), un numéro de page (en bas au centre) et des flèches pour changer de page (en bas à gauche ou à droite, ou les deux selon sur quelle page on se trouve).
 		
 		
-		\textbf{L'onglet de recherche} affiche les centrales énergétiques dans lesquelles le joueur peut investir des mondios (en appuyant sur le bouton vert où le prix de l'investissement est affiché) pour augmenter la probabilité de les débloquer.
+		\textbf{L'onglet de recherche} affiche les centrales énergétiques dans lesquelles le joueur peut investir des Mondios (en appuyant sur le bouton vert où le prix de l'investissement est affiché) pour augmenter la probabilité de les débloquer.
 		
 		\begin{figure}[H]
                 \includegraphics[width=\linewidth]{../images/recherche}
@@ -187,7 +188,7 @@
         
         \subsection{Comment jouer}
         Le joueur commence par devoir choisir de jouer avec ou sans tutoriel (voir figure \ref{fig:mainMenu}).
-        S'il choisit de suivre le tutoriel, il sera guidé dans le jeu par le personnage de Conseil qui lui expliquera le fonctionnement de tous les éléments du jeu et le but de la partie. 
+        S'il choisit de suivre le tutoriel, il sera guidé dans le jeu par le personnage de Conseil \footnote{Conseil est le conseiller du président du monde et donc du joueur.} qui lui expliquera le fonctionnement de tous les éléments du jeu et le but de la partie. 
         
         \begin{figure}[H]
                 \includegraphics[width=\linewidth]{../images/mainMenu}
@@ -198,11 +199,11 @@
         Lorsqu'il commence une partie, le joueur possède \initMoney ~ Mondios. Il devra d'abord utiliser cet argent dans l'onglet 'Recherche' (voir figure \ref{fig:research}) qui lui permettra de débloquer une centrale énergétique. Après avoir suffisamment investi dans un type de centrale et attendu un certain moment (les centrales ne peuvent se débloquer qu'à chaque passage d'année), le type de centrale se débloque.
         
         
-        Après avoir débloqué un type de centrale, le joueur peut se rendre dans une région (voir figure \ref{fig:region}) et déverrouiller un site de production (voir figure \ref{fig:unlockSite}). Après avoir déverrouillé le site de production, le joueur peut y construire une centrale énergétique (voir figure \ref{fig:buyPlant}). Cette centrale produira de l'énergie qui sera convertie en mondios et qui permettra d'investir dans la recherche d'autres centrales énergétiques ou de construire de nouvelles centrales. Il devra cependant faire attention à ne pas construire des centrales trop polluantes qui réchaufferaient sa planète de façon excessive (et qui lui ferait par conséquent perdre la partie).
+        Après avoir débloqué un type de centrale, le joueur peut se rendre dans une région (voir figure \ref{fig:region}) et déverrouiller un site de production (voir figure \ref{fig:unlockSite}). Après avoir déverrouillé le site de production, le joueur peut y construire une centrale énergétique (voir figure \ref{fig:buyPlant}). Cette centrale produira de l'énergie qui sera convertie en Mondios et qui permettra d'investir dans la recherche d'autres centrales énergétiques ou de construire de nouvelles centrales. Il devra cependant faire attention à ne pas construire des centrales trop polluantes qui réchaufferaient sa planète de façon excessive (et qui lui feraient par conséquent perdre la partie).
         
 
         \section{Fonctionnement du code}
-        Dans cette section, j'expliquerai quelles technologies j'ai utilisées pour créer mon jeu, comment les fichiers sont structurés et comment quelques parties du code fonctionnent. Je ne pourrai pas expliquer la totalité du code du jeu car cela serait trop long et n'apporterait pas grand chose à la compréhension du fonctionnement global du jeu. 
+        Dans cette section, j'expliquerai quelles technologies j'ai utilisées pour créer mon jeu, comment les fichiers sont structurés et comment quelques parties du code fonctionnent. Je ne pourrai pas expliquer la totalité du code du jeu car cela serait trop long et n'apporterait pas grand chose à la compréhension du fonctionnement global du jeu. J'ai notamment décidé de ne pas expliquer les parties du code qui gèrent l'interface utilisateur.
         
         \subsection{Les technologies utilisées}
         Le jeu a été crée dans le langage de programmation JavaScript (avec utilisation des dernières possibilités de ECMAScript 2016, voir la référence \cite{ecma2016}). La librairie open source Phaser JS en version 2.9.4 (voir la référence \cite{phaser}) m'a servi à simplifier certaines parties du code du jeu.
@@ -235,21 +236,21 @@
 		
 		Ensuite, les différents états du jeu (\textit{state}) sont définis. Chaque \textit{state} sert à définir un état du jeu. Le \textit{preloadState} représente par exemple l'étape où le jeu charge les éléments du jeu dans le cache du navigateur.
 		Le \textit{mainMenuState} représente l'état du jeu lorsqu'on est dans le menu principal (voir figure \ref{fig:mainMenu}).
-		Le premier paramètre de la méthode \textit{game.state.add(\dots)} est une chaîne de caractères qui représente la clé de l'état (grâce à laquelle on pourra démarrer plus tard cet état). Le second paramètre fait référence à un objet qui fera office de conteneur pour le state.
+		Le premier paramètre de la méthode \textit{game.state.add(\dots)} est une chaîne de caractères qui représente la clé de l'état (grâce à laquelle on pourra démarrer plus tard cet état). Le second paramètre fait référence à un objet qui fera office de conteneur pour le \textit{state}.
 		
 		
-		Pour finir on appelle \textit{game.state.start("boot")} pour démarrer le boot state (pas très important pour la compréhension du fonctionnement global du jeu).
+		Pour finir on appelle \textit{game.state.start("boot")} pour démarrer le boot state (qui n'est pas très important pour la compréhension du fonctionnement global du jeu).
 		
 		\subsection{Les propriétés globales : globals.js} \label{globals.js}
 		\lstinputlisting[language=JavaScript]{../../web_src/scripts/utils/globals.js}
-		Ce script contient toutes les variables globales réutilisées durant tout le jeu. Il serait trop long de décrire l'utilité de toutes les propriétés et méthodes de l'objet \textit{globals}. C'est pourquoi je ne décrirai que certaines d'entre elles.
+		Ce script contient tous les objets globaux réutilisées durant tout le jeu. Il serait trop long de décrire l'utilité de toutes les propriétés et méthodes de l'objet \textit{globals}. Je ne décrirai que quelques-unes d'entre elles afin d'expliquer l'utilité de cet objet.
 		
 		\begin{itemize}
 			\item \textit{initMoney} représente l'argent qu'a le joueur au début du jeu.
 			\item \textit{CO2Limit} représente la quantité maximum de CO$_{2}$ qu'il peut y avoir dans l'atmosphère. Passé cette limite, le joueur aura perdu la partie.
 			\item \textit{globalWarmingLimit} représente la limite de réchauffement de la planète. Le réchauffement de la planète est calculé à partir de la quantité de CO$_{2}$ dans l'atmosphère.
 			\item \textit{beginYear} et \textit{endYear} représentent les années de début et de fin du jeu.
-			\item \textit{signals} est un objet qui contient les signaux utiles pour le tutoriel.
+			\item \textit{signals} est un objet qui contient les signaux Phaser utiles pour le tutoriel. \footnote{Un signal Phaser sert simplement à déclencher un événement à un moment particulier. Cela simplifie grandement la gestion du tutoriel.}
 		\end{itemize}
 		
 		\subsection{Le fichier principal du jeu: game.js}
@@ -281,7 +282,7 @@
 		Les prochaines lignes initialisent les différents \textit{managers}. Ceux-ci sont utilisés durant tout le jeu et gèrent plusieurs données importantes. Le \textit{moneyMgr} sert entre autre à stocker l'argent total possédé par le joueur et possède une méthode qui permet de tester si on peut effectuer un achat d'une certaine valeur. \textit{productionMgr, timeMgr} et \textit{researchMgr} seront expliqués ci-après (voir respectivement les sections \ref{productionMgr}, \ref{timeMgr} et \ref{researchMgr}).
 		
 		
-		On démarre ensuite le tutoriel si la variable \textit{globals.showTutorial} a la valeur \textit{true} (celle-ci a reçue la valeur vrai ou faux lors du clic sur le bouton du menu principal, voir figure \ref{fig:mainMenu}).
+		On démarre ensuite le tutoriel si la variable \textit{globals.showTutorial} a la valeur \textit{true} (celle-ci a reçu la valeur \textit{true} ou \textit{false} lors du clic sur le bouton du menu principal, voir figure \ref{fig:mainMenu}).
 		
 		\subsubsection{La méthode gameState.update}
 		Dans cette méthode, la méthode \textit{globReg.update()} est appelée si il n'y pas d'instance de la classe \textit{Newspaper} active (on ne veut pas que le joueur puisse cliquer à travers un onglet). \textit{globReg.update()} permet de constamment tester si le joueur a cliqué sur une des régions et d'enclencher le zoom sur cette région si c'est le cas.
@@ -292,9 +293,12 @@
 		Le fichier productionMgr.js contient uniquement la classe ProductionMgr (la notation de classe telle qu'écrite ici est une nouvelle possibilité de ECMAScript 2015\footnote{Pour plus d'informations sur les classes, voir \url{https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Classes}. Site consulté le 03.03.2018.}).
 		
 		\subsubsection{La méthode \textit{constructor}}
-		La première méthode de n'importe quelle classe est la méthode \textit{constructor}. Celle-ci est appelée automatiquement lorsqu'on instancie un objet de cette classe. Ici,  plusieurs propriétés de cette classe sont initialisées (le tiret bas devant les propriétés indiquent qu'on ne devrait pas pouvoir accéder à celles-ci depuis l'extérieur de la classe). La propriété \textit{\_totPower} représente la puissance cumulée de toutes les centrales construites du jeu. \textit{\_CO2Production} représente la production de CO$_{2}$ totale des centrales. \textit{\_totCO2} représente la quantité totale de CO$_{2}$ émise depuis le début du jeu. \textit{\_powerToMondio} représente le taux de conversion de puissance à mondios (utilisé dans \textit{get mondioProduction}, voir section \ref{mondioProduction}).
+		La première méthode de n'importe quelle classe est la méthode \textit{constructor}. Celle-ci est appelée automatiquement lorsqu'on instancie un objet de cette classe. Ici,  plusieurs propriétés de cette classe sont initialisées (le tiret bas devant les propriétés indiquent qu'on ne devrait pas pouvoir accéder à celles-ci depuis l'extérieur de la classe). La propriété \textit{\_totPower} représente la puissance cumulée de toutes les centrales construites du jeu. \textit{\_CO2Production} représente la production de CO$_{2}$ totale des centrales. \textit{\_totCO2} représente la quantité totale de CO$_{2}$ émise depuis le début du jeu. \textit{\_powerToMondio} représente le taux de conversion de puissance à Mondios (utilisé dans \textit{get mondioProduction}, voir section \ref{mondioProduction}).
 		
 		\subsubsection{La méthode \textit{update}}\label{prodUpdate}
+		Cette méthode est appelée dans la mise à jour courte du gestionnaire de temps (voir \textit{timeMgr}, section \ref{timeMgr}).
+		
+		
 		Les premières lignes servent à récupérer les données des sites de production pour pouvoir mettre à jour les propriétés \textit{\_totPower} et \textit{\_CO2Production}. 
 		
 		
@@ -303,11 +307,8 @@
 		
 		Les prochaines lignes testent si la valeur totale de CO$_{2}$ excède le maximum de la valeur possible. Si c'est le cas, on démarre le \textit{state "gameEnd"} qui indique que la partie est perdue. On met également à jour l'opacité de la caméra pour avoir un écran de plus en plus sombre en fonction de la valeur de \textit{\_totCO2}.
 		
-		
-		Cette méthode est appelée dans la mise à jour courte du gestionnaire de temps (voir \textit{timeMgr}, section \ref{timeMgr}).
-		
 		\subsubsection{La méthode \textit{get mondioProduction}} \label{mondioProduction}
-		Cette méthode renvoie simplement la valeur de production de mondios (utilisée dans la méthode \textit{update}, voir section \ref{prodUpdate}). Elle utilise le mot-clé \textit{get} pour que la méthode agisse comme si c'était une propriété de la classe.
+		Cette méthode renvoie simplement la valeur de production de Mondios (utilisée dans la méthode \textit{update}, voir section \ref{prodUpdate}). Elle utilise le mot-clé \textit{get} pour que la méthode agisse comme si c'était une propriété de la classe.
 		
 		\subsubsection{La méthode \textit{get globalWarming}} \label{globalWarming}
 		Cette méthode renvoie la valeur du réchauffement global de la planète en \degree C. Elle est proportionnelle à la quantité totale de CO$_{2}$ dans l'atmosphère.
@@ -315,16 +316,16 @@
 		\subsection{Le gestionnaire du temps: timeMgr.js} \label{timeMgr}
 		\lstinputlisting[language=JavaScript, lastline=63]{../../web_src/scripts/classes/timeMgr.js}
 		
-		Cette classe définit le gestionnaire de la temporalité du jeu. J'expliquerai ici brièvement les méthodes principales de cette classe. Le gestionnaire de temps gère la mise à jour courte (qui dure 500ms de base\footnote{Cette valeur sera modifiée si le joueur décide d'accélérer ou de ralentir le jeu.} et dans laquelle se produit par exemple la mise à jour de l'argent du joueur) et la mise à jour annuelle (qui lance par exemple le déblocage aléatoire des centrales énergétiques, voir section \ref{researchMgr}).
+		Cette classe définit le gestionnaire de la temporalité du jeu. J'expliquerai ici brièvement les méthodes principales de cette classe. Le gestionnaire de temps gère la mise à jour courte (qui dure 500ms de base\footnote{Cette valeur sera modifiée si le joueur décide d'accélérer ou de ralentir le jeu.} et dans laquelle se produit par exemple la mise à jour de l'argent du joueur) et la mise à jour annuelle (qui lance par exemple le déblocage aléatoire des centrales énergétiques, voir section \ref{rndUnlockUpdate}).
 		
 		\subsubsection{La méthode \textit{constructor}}
 		Dans cette méthode je commence par définir des constantes de la classe. Les deux premières constantes définissent la durée de base d'une année. Ensuite j'indique l'échelle maximale et minimale de l'accélération ou du ralentissement du temps du jeu (modifié par les boutons à côté de l'affichage de l'année, voir section \ref{mainScreenEls}).
 		
 		
-		J'assigne ensuite la valeur de la durée de l'année qui sera modifiée durant le jeu. Je crée ensuite une instance de \textit{Phaser.Timer} que j'assigne à \textit{this.\_timer}.
+		J'assigne ensuite la valeur de la durée de l'année qui sera modifiée durant le jeu. Je crée ensuite une instance de \textit{Phaser.Timer} que j'assigne à \textit{this.\_timer} (ce \textit{timer} me servira à gérer la mise à jour courte).
 		
 		%arrays et callbacks en italique ?
-		Je crée ensuite les arrays qui contiendront les callbacks de la mise à jour courte (500ms de base) et de la mise à jour annuelle. 
+		Je crée ensuite les \textit{arrays} qui contiendront les \textit{callbacks}\footnote{Une callback est simplement une fonction exécutée après un certain événement.} de la mise à jour courte (500ms de base) et de la mise à jour annuelle. 
 		
 		
 		Je définis ensuite la propriété \textit{\_year} qui contiendra l'année actuelle et une propriété \textit{\_lastYUSec} dont l'utilité sera expliquée plus tard.
@@ -336,13 +337,13 @@
 		Cette méthode renvoie la durée d'une mise à jour courte (cette méthode sera utilisée dans la méthode \textit{startUpdate}, voir section \ref{startUpdate}).
 		
 		\subsubsection{La méthode \textit{startUpdate}} \label{startUpdate}
-		Cette méthode définit la boucle \textit{this.\_timerLoop} qui s'exécutera toutes les 500ms de base. Dans cette boucle, on commence par appeler toutes les callbacks\footnote{Une callback est simplement une fonction exécutée après un certain événement.} présentes dans \textit{this.\_callbacks}. 
-		Pour savoir s'il y a un passage d'année, on teste si le compteur (en secondes) du timer est un multiple de la durée de l'année et si on ne vient pas de faire un passage d'année (d'où l'utilité de \textit{\_lastYUSec}). Si cette condition est vraie, on appelle procède à la mise à jour annuelle (\textit{this.\_yearUpdate}).
-		On démarre ensuite le timer (de la mise à jour courte) et l'affichage de l'année.
+		Cette méthode définit la boucle \textit{this.\_timerLoop} qui s'exécutera toutes les 500ms de base. Dans cette boucle, on commence par appeler toutes les \textit{callbacks} présentes dans \textit{this.\_callbacks}. 
+		Pour savoir s'il y a un passage d'année, on teste si le compteur (en secondes) du \textit{timer} est un multiple de la durée de l'année et si on ne vient pas de faire un passage d'année (d'où l'utilité de \textit{\_lastYUSec}). Si cette condition est vraie, on procède à la mise à jour annuelle (\textit{this.\_yearUpdate}).
+		On démarre ensuite le \textit{timer} (de la mise à jour courte) et l'affichage de l'année.
 		
 		\subsubsection{La méthode \textit{\_yearUpdate}}
-		Dans cette méthode,  on commence par tester si l'année actuelle est plus grande (ou égale) à l'année de fin du jeu. Si c'est le cas, on fait un fondu vers un écran noir de la caméra et on démarre le \textit{state gameEnd} (qui est l'écran de fin du jeu).
-		Si ce n'est pas le cas, on appelle toutes les callbacks de \textit{this.\_YUCallbacks}, on augmente la valeur de l'année et on met à jour l'affichage de l'année.
+		Dans cette méthode,  on commence par tester si l'année actuelle est plus grande (ou égale) à l'année de fin du jeu. Si c'est le cas, on fait un fondu vers un écran noir et on démarre le \textit{state gameEnd} (qui est l'écran de fin du jeu).
+		Si ce n'est pas le cas, on appelle toutes les \textit{callbacks} de \textit{this.\_YUCallbacks}, on augmente la valeur de l'année et on met à jour l'affichage de l'année.
 		
 		\subsection{Le gestionnaire de recherche: researchMgr.js} \label{researchMgr}
 		\lstinputlisting[language=JavaScript, lastline=53]{../../web_src/scripts/classes/researchMgr.js}
@@ -370,14 +371,14 @@
         Ici je définis les valeurs de \textit{c} de chaque type de centrale énergétique. Plus \textit{c} est grand, plus le type de centrale sera facile à débloquer. J'initialise ensuite les autres valeurs nécessaires au calcul de la suite géométrique $(r, k=0, partSum=0)$ grâce à la méthode \textit{\_setupUnlockData}. J'ajoute ensuite la méthode \textit{\_rndUnlockUpdate} aux mises à jour annuelles du gestionnaire du temps (cette méthode sera expliquée dans la section \ref{rndUnlockUpdate}).
         
         \subsubsection{La méthode \textit{increaseUnlockProb}}
-        Cette méthode sert à augmenter la probabilité de débloquer une centrale. Elle est appelée depuis le \textit{newspaper} de recherche.
-        Je commence par calculer le terme actuel de la série $a_{k}$ que j'ajoute à la somme partielle. J'augmente ensuite la variable \textit{k}. Je finis par mettre à jour l'affichage de la probabilité dans le \textit{newspaper} de recherche (grâce à la méthode \textit{gameEls.newspaper.softUpdate}).
+        Cette méthode sert à augmenter la probabilité de débloquer une centrale. Elle est appelée depuis l'onglet de recherche.
+        Je commence par calculer le terme actuel de la série $a_{k}$ que j'ajoute à la somme partielle. J'augmente ensuite la variable \textit{k}. Je finis par mettre à jour l'affichage de la probabilité dans l'onglet de recherche (grâce à la méthode \textit{gameEls.newspaper.softUpdate}).
         
         \subsubsection{La méthode \textit{\_rndUnlockUpdate}} \label{rndUnlockUpdate}
-        Cette méthode est appelée à chaque mise à jour annuelle du gestionnaire du temps. Elle permet d'aléatoirement débloquer (ou non) une centrale énergétique. Je commence par parcourir tous les objets contenus dans \textit{unlockData}. Je génère ensuite un nombre rationnel aléatoire entre 0 et 100. Si le nombre aléatoire est plus petit que la probabilité de déblocage de la centrale, j'ajoute le titre de la centrale dans un array des noms de centrales débloquées pour pouvoir informer la joueur de quelles types de centrales il a débloquées. J'assigne ensuite la valeur \textit{-Infinity} à la probabilité pour que la centrale ne puisse pas être débloquée plusieurs fois. Je finis par appeler la méthode \textit{unlockFacType} qui s'occupe de débloquer le type de centrale.
+        Cette méthode est appelée à chaque mise à jour annuelle du gestionnaire du temps. Elle permet d'aléatoirement débloquer (ou non) une centrale énergétique. Je commence par parcourir tous les objets contenus dans \textit{unlockData}. Je génère ensuite un nombre rationnel aléatoire entre 0 et 100. Si le nombre aléatoire est plus petit que la probabilité de déblocage de la centrale, j'ajoute le titre de la centrale dans un \textit{array} des noms de centrales débloquées pour pouvoir l'indiquer au joueur. J'assigne ensuite la valeur \textit{-Infinity} à la probabilité pour que la centrale ne puisse pas être débloquée plusieurs fois. Je finis par appeler la méthode \textit{unlockFacType} qui s'occupe de débloquer le type de centrale.
         
         \section{Conclusion}
-        \subsection{Ce que j'aurais aimé rajouter dans le jeu} \label{ajoutJeu}
+        \subsection{Ce que j'aurais encore aimé ajouter au jeu} \label{ajoutJeu}
 		Par manque de temps, il m'a été impossible d'implémenter tout ce que j'aurais voulu dans mon jeu. J'explique dans cette section quels auraient été ces ajouts.
 		
 		\subsubsection{Différents modes de difficulté}
@@ -390,18 +391,18 @@
 		Afin de rendre le jeu plus agréable, j'aurais voulu ajouter une musique dans le jeu et des effets sonores (lors d'un clic sur un bouton par exemple). J'aurais notamment voulu ajouter la chanson \textit{Imagine} de John Lennon comme musique principale. 
 		
 		\subsubsection{Réalisme et évènements historiques}
-		Il était originalement prévu que le jeu contienne des évènement historiques qui agissent sur le déroulement de la partie mais cela aurait demandé un investissement considérable en temps que je n'avais pas.
+		Il était originalement prévu que le jeu contienne des évènement historiques qui agissent sur le déroulement de la partie mais cela aurait demandé un investissement considérable en temps.
 		J'aurais voulu ajouter également l'explosion aléatoire des centrales nucléaires à fission pour ajouter du réalisme au jeu. Un site de production sur lequel se trouvait une centrale nucléaire explosée aurait coûté très cher à nettoyer (et aurait donc été difficilement réutilisable).
 		
 		\subsubsection{Actions écologiques}
-		Une fonctionnalité majeure du jeu (que j'avais d'ailleurs commencé à développer) aurait été un onglet avec différentes actions en faveur (ou en défaveur) de l'environnement. Le joueur aurait pu accepter d'investir dans des actions en faveur de l'environnement, ce qui aurait eu un impact sur le jeu (par exemple, une action en faveur de la préservation de la forêt amazonienne aurait diminué la quantité de CO$_{2}$ dans l'atmosphère).
+		Une fonctionnalité majeure du jeu (que j'avais d'ailleurs commencé à dével-\\opper) aurait été un onglet avec différentes actions en faveur (ou en défaveur) de l'environnement. Le joueur aurait pu accepter d'investir dans des actions en faveur de l'environnement, ce qui aurait eu un impact sur le jeu (par exemple, une action en faveur de la préservation de la forêt amazonienne aurait diminué la quantité de CO$_{2}$ dans l'atmosphère).
 
 				
 		\subsection{Ce que m'a apporté ce travail de maturité}
 		Ce travail de maturité m'a appris plusieurs choses par rapport à la programmation. J'ai notamment appris à organiser et structurer un code d'une taille importante en différents scripts, classes et méthodes. J'ai aussi l'impression d'avoir acquis de l'expérience pour ce qui est de prévoir comment concevoir le fonctionnement d'un morceau de code pour qu'il puisse être adaptable dans le futur.
 		
 		
-		J'ai acquis également un certaine expérience dans la création de jeu vidéo (par exemple pour ce qui est de la création d'images et d'animations). Il a été également intéressant d'entendre l'avis de personnes ayant pu jouer à mon jeu. Certaines personnes m'ont fourni des critiques intéressantes grâce auxquelles j'ai parfois pu améliorer mon jeu.
+		J'ai acquis également un certaine expérience dans la création de jeux vidéos (par exemple pour ce qui est de la création d'images et d'animations). Il a également été intéressant d'entendre des critiques de personnes ayant joué à mon jeu. Grâce à ces remarques, j'ai parfois pu remettre en question et améliorer des éléments du jeu.
 		
 		\subsection{Continuation du jeu}
 		J'espère pouvoir continuer à développer mon jeu après l'avoir rendu dans cette version qui manque certaines fonctionnalités (citées dans la section \ref{ajoutJeu}). Ce travail m'a grandement plu et j'aimerais beaucoup le continuer dans le but de peut-être un jour publier mon jeu afin de contribuer à transmettre le message de l'importance de l'écologie.
@@ -436,7 +437,7 @@
   			2015.
   			
   			\bibitem{font}
-  			Police de caractère utilisée dans le jeu,
+  			La police de caractère utilisée dans le jeu,
   			\url{https://www.searchfreefonts.com/font/advancedpixel-7.htm},
   			consulté le 23.09.2017.
   			
