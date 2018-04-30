@@ -10,6 +10,7 @@
 ### Objectifs initiaux
 
 - Jeu de gestion présentant différents aspects de l'écologie
+- Idéé initiale: Ecosia
 - informations historiques au cours du jeu
 - jouer doit réfléchir à ses actions -> le fait réfléchir à des solutions pour l'écologie
 
