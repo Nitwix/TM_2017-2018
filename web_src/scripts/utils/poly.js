@@ -9,7 +9,7 @@ function makePoly(points){
     return poly;
 }
 
-/*prototype de Phaser.Polygon permettant de calculer le point central d'un polygone*/
+// prototype de Phaser.Polygon permettant de calculer le point central d'un polygone
 Phaser.Polygon.prototype.midPoint = function(){
     let sx = 0, sy = 0;
     for(let point of this.points){

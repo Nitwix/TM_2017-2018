@@ -1,0 +1,101 @@
+\documentclass[11pt]{beamer}
+\usetheme{Warsaw}
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+%\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\input{../../documents/tex/lstset_js}
+
+\author{Niels Lachat, \\ Mentor : Patrick Rickli}
+\title{Soutenance : \\ De Révolution à Evolution}
+%\setbeamercovered{transparent} 
+\setbeamertemplate{navigation symbols}{} 
+\logo{\includegraphics[scale=.1]{../../documents/images/logo}} 
+\institute{Lycée Denis-de-Rougemont} 
+\date{17 mai 2018} 
+%\subject{} 
+\begin{document}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+\begin{frame}
+\tableofcontents
+\end{frame}
+
+\section{Choix du sujet}
+
+\begin{frame}{Choix du sujet}
+
+\begin{itemize}
+	\item Intérêt pour l'informatique et les jeux vidéos
+	\item Ecosia $\Rightarrow$ on peut changer le monde réel grâce au monde virtuel
+\end{itemize}
+
+\begin{center}
+\includegraphics[scale=.1]{../images/ecosia}
+\end{center}
+
+\end{frame}
+
+
+\section{Objectifs initiaux}
+
+\begin{frame}{Objectifs initiaux}
+
+\begin{itemize}
+	\item Jeu de gestion avec aspects écologiques
+	\item Événements historiques
+	\item $\Rightarrow$ Engendre une réflexion
+\end{itemize}
+
+\end{frame}
+
+\section{Objectifs finaux}
+
+\begin{frame}{Objectifs finaux}
+
+\begin{itemize}
+	\item Un aspect de l'écologie: la transition énergétique
+	\item Pas d'événements historiques (trop long)
+	\item Actions écologiques : 
+	\\ \begin{center} \includegraphics[scale=.08]{../images/ecoActions} \end{center}
+	\item Objectifs du jeu calqués sur l'Accord de Paris sur le climat
+\end{itemize}
+
+\end{frame}
+
+\section{Difficultés rencontrées}
+
+\begin{frame}{Difficultés rencontrées}
+
+\begin{itemize}
+	\item Mise à jour du \textit{Newspaper} (onglets)
+	\item Ajustements des valeurs
+\end{itemize}
+
+\end{frame}
+
+\section{Codes intéressants pas montrés dans le TM} %ATTENTION : PLURIEL, PAS PLURIEL?
+
+\begin{frame}{poly.js}
+
+\lstinputlisting[language=JavaScript, basicstyle=\tiny, lastline=10]{../../web_src/scripts/utils/poly.js}
+
+\end{frame}
+
+\begin{frame}{Les régions}
+Les polygones définissent des régions:
+\begin{center} \includegraphics[scale=.3]{../images/regionsPoly} \end{center}
+\end{frame}
+
+\begin{frame}{globReg.js}
+
+\lstinputlisting[language=JavaScript, basicstyle=\tiny, firstline=70, lastline=83]{../../web_src/scripts/utils/globReg.js}
+
+\end{frame}
+
+\end{document}

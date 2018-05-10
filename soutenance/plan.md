@@ -5,40 +5,47 @@
 ### Choix du sujet
 
 - intérêt pour info. et jv
-- Transition énergétique -> écologie -> jeu vidéo engagé
+- Idéé initiale: Ecosia: on peut changer le monde réel grâce au monde virtuel
 
 ### Objectifs initiaux
 
 - Jeu de gestion présentant différents aspects de l'écologie
-- Idéé initiale: Ecosia
-- informations historiques au cours du jeu
-- jouer doit réfléchir à ses actions -> le fait réfléchir à des solutions pour l'écologie
+- évènements historiques au cours du jeu
+- => joueur doit réfléchir à ses actions -> le fait réfléchir à des solutions pour l'écologie
 
 ### Objectifs finaux
 
-- Jeu de gestion présentant un aspect de l'écologie: transition énergétique
-- info. historiques abandonnées car trop long
-- si encore temps: présentation d'autres aspects de l'écologie
-  - actions écologiques (voyager moins, manger moins/pas de viande, transports publics, acheter local, ...)
-  - image bouton action écologiques
-- objs. du jeu calqués sur accords de Paris sur le climat (1800-2100, <2°C)
+- Jeu de gestion présentant **un aspect** de l'écologie: transition énergétique
+- evènements historiques abandonnées car trop long
+- actions écologiques (voyager moins en avion, manger moins/pas de viande, transports publics, acheter local, ...)
+  - [image bouton action écologiques]
+- objs. du jeu calqués sur Accord de Paris sur le climat (1800-2100, <2°C)
 
 ## Présentation des résultats de la recherche
 
-- le jeu tel que vous l'avez vu...
+### Difficultés rencontrées
+
+- mise à jour du newspaper
+  - erreur de conception: pas prévu pour être mis à jour
+  - 1ère version: détruire tous les éléments du newspaper et tous les recréer (le plus simple du point du vue du code) => **lent**
+  - 2ème version: juste mettre à jour textes du newspaper (plus compliqué car il faut parcourir tous les objets de texte et les mettre à jour) => **rapide**
+
+- ajustements des valeurs
+  - bcp. de tests nécessaires pour ajuster les valeurs et obtenir un jeu équilibré
+  - jeu équilibré != jeu réaliste -> très difficile de trouver des valeurs réalistes
+
+<!-- ### Jeu fini
+
+- le jeu tel que vous l'avez vu... -->
 
 ## Présentation de choses intéressantes dans le code
 
-- idée: parler de newspaper.softUpdate vs hardUpdate
 - parler de poly.js & montrer les polygones des régions (en rose)
-
-
-<!-- TODO -->
 
 ## Possibles questions & réponses
 
 - 2.1.1 : "en effet, ce n’est pas ce que l’on produit et ce que l’on consomme qui pose un problème, c’est la façon dont nous le faisons."
-  - ce que je voulais dire par là: on ne peut pas arrêter le cycle économique en faveur de l'écologie, il faut l'adapter.
+  - ce que je voulais dire par là: on ne peut pas arrêter le cycle économique, il faut l'adapter.
 - 2.1.2 : "montrer que n’importe qui peut agir pour le bien de la planète."
   - n'importe qui a le pouvoir d'un président
 - 2.2 : manque : Le joueur doit rechercher de nouvelles centrales énergétiques

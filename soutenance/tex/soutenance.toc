@@ -1,0 +1,7 @@
+\beamer@endinputifotherversion {3.36pt}
+\select@language {french}
+\beamer@sectionintoc {1}{Choix du sujet}{3}{0}{1}
+\beamer@sectionintoc {2}{Objectifs initiaux}{4}{0}{2}
+\beamer@sectionintoc {3}{Objectifs finaux}{5}{0}{3}
+\beamer@sectionintoc {4}{Difficult\IeC {\'e}s rencontr\IeC {\'e}es}{6}{0}{4}
+\beamer@sectionintoc {5}{Codes int\IeC {\'e}ressants pas montr\IeC {\'e}s dans le TM}{7}{0}{5}

@@ -69,18 +69,11 @@ globReg.goto = {};
 
 globReg.goto.region = function(region){
     gameEls.stopTmpEls();
-
     globals.currentRegion = region.name;
-
     game.input.enabled = false; //désactive pendant le zoom
-
     this.zoom = game.add.tween(gameEls.earthMap);
-
-    let mp = region.poly.midPoint();
-
     let scale = region.scale;
     let zoomVector = region.zoomVector;
-
     this.zoom.to({
         x: game.world.centerX + zoomVector.x,
         y: game.world.centerY + zoomVector.y,
