@@ -1,7 +1,11 @@
 \beamer@endinputifotherversion {3.36pt}
 \select@language {french}
 \beamer@sectionintoc {1}{Choix du sujet}{3}{0}{1}
-\beamer@sectionintoc {2}{Objectifs initiaux}{4}{0}{2}
-\beamer@sectionintoc {3}{Objectifs finaux}{5}{0}{3}
-\beamer@sectionintoc {4}{Difficult\IeC {\'e}s rencontr\IeC {\'e}es}{6}{0}{4}
-\beamer@sectionintoc {5}{Codes int\IeC {\'e}ressants pas montr\IeC {\'e}s dans le TM}{7}{0}{5}
+\beamer@sectionintoc {2}{Objectifs initiaux}{6}{0}{2}
+\beamer@sectionintoc {3}{Objectifs finaux}{10}{0}{3}
+\beamer@sectionintoc {4}{Difficult\IeC {\'e}s rencontr\IeC {\'e}es}{14}{0}{4}
+\beamer@sectionintoc {5}{Codes int\IeC {\'e}ressants pas montr\IeC {\'e}s dans le TM}{17}{0}{5}
+\beamer@sectionintoc {6}{Conclusion}{20}{0}{6}
+\beamer@subsectionintoc {6}{1}{Elements appris durant le TM}{20}{0}{6}
+\beamer@subsectionintoc {6}{2}{Continuation}{34}{0}{6}
+\beamer@sectionintoc {7}{Questions}{36}{0}{7}

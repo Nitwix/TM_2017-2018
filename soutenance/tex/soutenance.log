@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.2.19)  10 MAY 2018 17:27
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.2.19)  16 MAY 2018 08:54
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1099,20 +1099,20 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (./soutenance.aux)
 \openout1 = `soutenance.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1178,7 +1178,7 @@ e
 ))
 ABD: EveryShipout initializing macros
 \AtBeginShipoutBox=\box56
-Package hyperref Info: Link coloring OFF on input line 19.
+Package hyperref Info: Link coloring OFF on input line 23.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
@@ -1188,56 +1188,56 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count171
 )
-LaTeX Info: Redefining \ref on input line 19.
-LaTeX Info: Redefining \pageref on input line 19.
-LaTeX Info: Redefining \nameref on input line 19.
+LaTeX Info: Redefining \ref on input line 23.
+LaTeX Info: Redefining \pageref on input line 23.
+LaTeX Info: Redefining \nameref on input line 23.
 
 (./soutenance.out) (./soutenance.out)
 \@outlinefile=\write5
 \openout5 = `soutenance.out'.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 19.
+(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 23.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 19.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 23.
 \symnumbers=\mathgroup6
 \sympureletters=\mathgroup7
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/cmss/m/n --> OT1/cmr/m/n on input line 19.
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 19.
+(Font)                  OT1/cmss/m/n --> OT1/cmr/m/n on input line 23.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 23.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 19.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 23.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 19.
-LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 19.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 23.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 23.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> OT1/cmss/m/n on input line 19.
+(Font)                  OT1/cmss/m/n --> OT1/cmss/m/n on input line 23.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> OT1/cmss/m/n on input line 19.
-LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 19.
+(Font)                  OT1/cmss/bx/n --> OT1/cmss/m/n on input line 23.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 23.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> OT1/cmss/m/it on input line 19.
+(Font)                  OT1/cmr/m/it --> OT1/cmss/m/it on input line 23.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmr/bx/it --> OT1/cmss/m/it on input line 19.
-LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 19.
+(Font)                  OT1/cmr/bx/it --> OT1/cmss/m/it on input line 23.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 23.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 19.
+(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 23.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 19.
+(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 23.
 LaTeX Font Info:    Overwriting symbol font `numbers' in version `bold'
-(Font)                  OT1/cmss/m/n --> OT1/cmss/bx/n on input line 19.
+(Font)                  OT1/cmss/m/n --> OT1/cmss/bx/n on input line 23.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  OT1/cmss/m/it --> OT1/cmss/bx/it on input line 19.
+(Font)                  OT1/cmss/m/it --> OT1/cmss/bx/it on input line 23.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
-(Font)                  OT1/cmss/bx/n --> OT1/cmr/bx/n on input line 19.
+(Font)                  OT1/cmss/bx/n --> OT1/cmr/bx/n on input line 23.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> OT1/cmss/bx/n on input line 19.
+(Font)                  OT1/cmss/bx/n --> OT1/cmss/bx/n on input line 23.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/m/n --> OT1/cmss/bx/n on input line 19.
+(Font)                  OT1/cmss/m/n --> OT1/cmss/bx/n on input line 23.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmss/m/it --> OT1/cmss/bx/it on input line 19.
+(Font)                  OT1/cmss/m/it --> OT1/cmss/bx/it on input line 23.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> OT1/cmtt/bx/n on input line 19.
+(Font)                  OT1/cmtt/m/n --> OT1/cmtt/bx/n on input line 23.
 
 (/usr/share/texlive/texmf-dist/tex/latex/beamer/translator/dicts/translator-bas
 ic-dictionary/translator-basic-dictionary-English.dict
@@ -1263,27 +1263,27 @@ Dictionary: translator-numbers-dictionary, Language: English
 orem-dictionary/translator-theorem-dictionary-English.dict
 Dictionary: translator-theorem-dictionary, Language: English 
 )
-LaTeX Info: Redefining \includegraphics on input line 19.
-LaTeX Info: Redefining \degres on input line 19.
-LaTeX Info: Redefining \dots on input line 19.
-LaTeX Info: Redefining \up on input line 19.
+LaTeX Info: Redefining \includegraphics on input line 23.
+LaTeX Info: Redefining \degres on input line 23.
+LaTeX Info: Redefining \dots on input line 23.
+LaTeX Info: Redefining \up on input line 23.
 
 
 Package frenchb.ldf Warning: OT1 encoding should not be used for French.
 (frenchb.ldf)                Add \usepackage[T1]{fontenc} to the preamble
-(frenchb.ldf)                of your document, on input line 19.
+(frenchb.ldf)                of your document, on input line 23.
 
 \c@lstlisting=\count172
 (./soutenance.nav)
 
 LaTeX Font Warning: Font shape `OT1/cmss/m/n' in size <4> not available
-(Font)              size <5> substituted on input line 23.
+(Font)              size <5> substituted on input line 27.
 
-<../../documents/images/logo.png, id=47, 381.67593pt x 381.67593pt>
+<../../documents/images/logo.png, id=65, 381.67593pt x 381.67593pt>
 File: ../../documents/images/logo.png Graphic file (type png)
 
 <use ../../documents/images/logo.png>
-Package pdftex.def Info: ../../documents/images/logo.png used on input line 23.
+Package pdftex.def Info: ../../documents/images/logo.png used on input line 27.
 
 (pdftex.def)             Requested size: 38.16982pt x 38.16982pt.
  [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
@@ -1292,70 +1292,162 @@ Package pdftex.def Info: ../../documents/images/logo.png used on input line 23.
 File: ../../documents/images/logo.png Graphic file (type png)
 
 <use ../../documents/images/logo.png>
-Package pdftex.def Info: ../../documents/images/logo.png used on input line 27.
+Package pdftex.def Info: ../../documents/images/logo.png used on input line 31.
 
 (pdftex.def)             Requested size: 38.16982pt x 38.16982pt.
  [2
 
 ]
-LaTeX Font Info:    Try loading font information for U+msa on input line 42.
+LaTeX Font Info:    Try loading font information for U+msa on input line 45.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 42.
+LaTeX Font Info:    Try loading font information for U+msb on input line 45.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-<../images/ecosia.png, id=89, 1927.2pt x 897.3525pt>
+<../images/ecosia.png, id=117, 1927.2pt x 897.3525pt>
 File: ../images/ecosia.png Graphic file (type png)
 
 <use ../images/ecosia.png>
-Package pdftex.def Info: ../images/ecosia.png used on input line 42.
+Package pdftex.def Info: ../images/ecosia.png used on input line 45.
 (pdftex.def)             Requested size: 192.7313pt x 89.7405pt.
 File: ../../documents/images/logo.png Graphic file (type png)
  <use ../../documents/images/logo.png>
-Package pdftex.def Info: ../../documents/images/logo.png used on input line 42.
+Package pdftex.def Info: ../../documents/images/logo.png used on input line 45.
 
 (pdftex.def)             Requested size: 38.16982pt x 38.16982pt.
  [3
 
  <../images/ecosia.png>]
+File: ../images/ecosia.png Graphic file (type png)
+ <use ../images/ecosia.png>
+Package pdftex.def Info: ../images/ecosia.png used on input line 45.
+(pdftex.def)             Requested size: 192.7313pt x 89.7405pt.
 File: ../../documents/images/logo.png Graphic file (type png)
  <use ../../documents/images/logo.png>
-Package pdftex.def Info: ../../documents/images/logo.png used on input line 55.
+Package pdftex.def Info: ../../documents/images/logo.png used on input line 45.
 
 (pdftex.def)             Requested size: 38.16982pt x 38.16982pt.
- [4
+
+[4
 
 ]
-<../images/ecoActions.png, id=115, 1835.85875pt x 607.26875pt>
-File: ../images/ecoActions.png Graphic file (type png)
-
-<use ../images/ecoActions.png>
-Package pdftex.def Info: ../images/ecoActions.png used on input line 69.
-(pdftex.def)             Requested size: 146.87169pt x 48.58249pt.
+File: ../images/ecosia.png Graphic file (type png)
+ <use ../images/ecosia.png>
+Package pdftex.def Info: ../images/ecosia.png used on input line 45.
+(pdftex.def)             Requested size: 192.7313pt x 89.7405pt.
 File: ../../documents/images/logo.png Graphic file (type png)
  <use ../../documents/images/logo.png>
-Package pdftex.def Info: ../../documents/images/logo.png used on input line 69.
+Package pdftex.def Info: ../../documents/images/logo.png used on input line 45.
 
 (pdftex.def)             Requested size: 38.16982pt x 38.16982pt.
  [5
 
- <../images/ecoActions.png>]
+]
 File: ../../documents/images/logo.png Graphic file (type png)
- <use ../../documents/images/logo.png>
-Package pdftex.def Info: ../../documents/images/logo.png used on input line 80.
+
+<use ../../documents/images/logo.png>
+Package pdftex.def Info: ../../documents/images/logo.png used on input line 58.
 
 (pdftex.def)             Requested size: 38.16982pt x 38.16982pt.
  [6
 
 ]
-(../../web_src/scripts/utils/poly.js
+File: ../../documents/images/logo.png Graphic file (type png)
+
+<use ../../documents/images/logo.png>
+Package pdftex.def Info: ../../documents/images/logo.png used on input line 58.
+
+(pdftex.def)             Requested size: 38.16982pt x 38.16982pt.
+ [7
+
+]
+File: ../../documents/images/logo.png Graphic file (type png)
+
+<use ../../documents/images/logo.png>
+Package pdftex.def Info: ../../documents/images/logo.png used on input line 58.
+
+(pdftex.def)             Requested size: 38.16982pt x 38.16982pt.
+ [8
+
+]
+File: ../../documents/images/logo.png Graphic file (type png)
+
+<use ../../documents/images/logo.png>
+Package pdftex.def Info: ../../documents/images/logo.png used on input line 58.
+
+(pdftex.def)             Requested size: 38.16982pt x 38.16982pt.
+ [9
+
+]
+File: ../../documents/images/logo.png Graphic file (type png)
+
+<use ../../documents/images/logo.png>
+Package pdftex.def Info: ../../documents/images/logo.png used on input line 70.
+
+(pdftex.def)             Requested size: 38.16982pt x 38.16982pt.
+ [10
+
+]
+File: ../../documents/images/logo.png Graphic file (type png)
+
+<use ../../documents/images/logo.png>
+Package pdftex.def Info: ../../documents/images/logo.png used on input line 70.
+
+(pdftex.def)             Requested size: 38.16982pt x 38.16982pt.
+ [11
+
+]
+File: ../../documents/images/logo.png Graphic file (type png)
+
+<use ../../documents/images/logo.png>
+Package pdftex.def Info: ../../documents/images/logo.png used on input line 70.
+
+(pdftex.def)             Requested size: 38.16982pt x 38.16982pt.
+ [12
+
+]
+File: ../../documents/images/logo.png Graphic file (type png)
+
+<use ../../documents/images/logo.png>
+Package pdftex.def Info: ../../documents/images/logo.png used on input line 70.
+
+(pdftex.def)             Requested size: 38.16982pt x 38.16982pt.
+ [13
+
+]
+File: ../../documents/images/logo.png Graphic file (type png)
+
+<use ../../documents/images/logo.png>
+Package pdftex.def Info: ../../documents/images/logo.png used on input line 81.
+
+(pdftex.def)             Requested size: 38.16982pt x 38.16982pt.
+ [14
+
+]
+File: ../../documents/images/logo.png Graphic file (type png)
+
+<use ../../documents/images/logo.png>
+Package pdftex.def Info: ../../documents/images/logo.png used on input line 81.
+
+(pdftex.def)             Requested size: 38.16982pt x 38.16982pt.
+ [15
+
+]
+File: ../../documents/images/logo.png Graphic file (type png)
+
+<use ../../documents/images/logo.png>
+Package pdftex.def Info: ../../documents/images/logo.png used on input line 81.
+
+(pdftex.def)             Requested size: 38.16982pt x 38.16982pt.
+ [16
+
+] (../../web_src/scripts/utils/poly.js
 LaTeX Font Info:    Try loading font information for OMS+cmss on input line 2.
 LaTeX Font Info:    No file OMScmss.fd. on input line 2.
-
 
 LaTeX Font Warning: Font shape `OMS/cmss/m/n' undefined
 (Font)              using `OMS/cmsy/m/n' instead
@@ -1364,33 +1456,236 @@ LaTeX Font Warning: Font shape `OMS/cmss/m/n' undefined
 )
 File: ../../documents/images/logo.png Graphic file (type png)
  <use ../../documents/images/logo.png>
-Package pdftex.def Info: ../../documents/images/logo.png used on input line 88.
+Package pdftex.def Info: ../../documents/images/logo.png used on input line 89.
 
 (pdftex.def)             Requested size: 38.16982pt x 38.16982pt.
- [7
+ [17
 
 ]
-<../images/regionsPoly.png, id=152, 803.0pt x 451.6875pt>
+<../images/regionsPoly.png, id=322, 803.0pt x 451.6875pt>
 File: ../images/regionsPoly.png Graphic file (type png)
 
 <use ../images/regionsPoly.png>
-Package pdftex.def Info: ../images/regionsPoly.png used on input line 93.
+Package pdftex.def Info: ../images/regionsPoly.png used on input line 94.
 (pdftex.def)             Requested size: 240.90186pt x 135.5073pt.
 File: ../../documents/images/logo.png Graphic file (type png)
  <use ../../documents/images/logo.png>
-Package pdftex.def Info: ../../documents/images/logo.png used on input line 93.
+Package pdftex.def Info: ../../documents/images/logo.png used on input line 94.
 
 (pdftex.def)             Requested size: 38.16982pt x 38.16982pt.
- [8
+ [18
 
  <../images/regionsPoly.png>] (../../web_src/scripts/utils/globReg.js)
 File: ../../documents/images/logo.png Graphic file (type png)
 
 <use ../../documents/images/logo.png>
-Package pdftex.def Info: ../../documents/images/logo.png used on input line 99.
-
+Package pdftex.def Info: ../../documents/images/logo.png used on input line 100
+.
 (pdftex.def)             Requested size: 38.16982pt x 38.16982pt.
- [9
+ [19
+
+]
+<../images/es6.png, id=351, 1061.9675pt x 776.9025pt>
+File: ../images/es6.png Graphic file (type png)
+ <use ../images/es6.png>
+Package pdftex.def Info: ../images/es6.png used on input line 111.
+(pdftex.def)             Requested size: 212.38974pt x 155.37775pt.
+File: ../../documents/images/logo.png Graphic file (type png)
+
+<use ../../documents/images/logo.png>
+Package pdftex.def Info: ../../documents/images/logo.png used on input line 111
+.
+(pdftex.def)             Requested size: 38.16982pt x 38.16982pt.
+ [20
+
+ <../images/es6.png>]
+File: ../../documents/images/logo.png Graphic file (type png)
+
+<use ../../documents/images/logo.png>
+Package pdftex.def Info: ../../documents/images/logo.png used on input line 121
+.
+(pdftex.def)             Requested size: 38.16982pt x 38.16982pt.
+ [21
+
+]
+File: ../../documents/images/logo.png Graphic file (type png)
+
+<use ../../documents/images/logo.png>
+Package pdftex.def Info: ../../documents/images/logo.png used on input line 121
+.
+(pdftex.def)             Requested size: 38.16982pt x 38.16982pt.
+ [22
+
+]
+File: ../../documents/images/logo.png Graphic file (type png)
+
+<use ../../documents/images/logo.png>
+Package pdftex.def Info: ../../documents/images/logo.png used on input line 121
+.
+(pdftex.def)             Requested size: 38.16982pt x 38.16982pt.
+ [23
+
+]
+File: ../../documents/images/logo.png Graphic file (type png)
+
+<use ../../documents/images/logo.png>
+Package pdftex.def Info: ../../documents/images/logo.png used on input line 121
+.
+(pdftex.def)             Requested size: 38.16982pt x 38.16982pt.
+ [24
+
+]
+File: ../../documents/images/logo.png Graphic file (type png)
+
+<use ../../documents/images/logo.png>
+Package pdftex.def Info: ../../documents/images/logo.png used on input line 130
+.
+(pdftex.def)             Requested size: 38.16982pt x 38.16982pt.
+ [25
+
+]
+File: ../../documents/images/logo.png Graphic file (type png)
+
+<use ../../documents/images/logo.png>
+Package pdftex.def Info: ../../documents/images/logo.png used on input line 130
+.
+(pdftex.def)             Requested size: 38.16982pt x 38.16982pt.
+ [26
+
+]
+File: ../../documents/images/logo.png Graphic file (type png)
+
+<use ../../documents/images/logo.png>
+Package pdftex.def Info: ../../documents/images/logo.png used on input line 130
+.
+(pdftex.def)             Requested size: 38.16982pt x 38.16982pt.
+ [27
+
+]
+<../images/Think-Twice-Code-Once.jpg, id=474, 451.6875pt x 304.88907pt>
+File: ../images/Think-Twice-Code-Once.jpg Graphic file (type jpg)
+
+<use ../images/Think-Twice-Code-Once.jpg>
+Package pdftex.def Info: ../images/Think-Twice-Code-Once.jpg used on input line
+ 145.
+(pdftex.def)             Requested size: 135.5073pt x 91.46742pt.
+File: ../../documents/images/logo.png Graphic file (type png)
+
+<use ../../documents/images/logo.png>
+Package pdftex.def Info: ../../documents/images/logo.png used on input line 145
+.
+(pdftex.def)             Requested size: 38.16982pt x 38.16982pt.
+ [28
+
+ <../images/Think-Twice-Code-Once.jpg>]
+File: ../images/Think-Twice-Code-Once.jpg Graphic file (type jpg)
+ <use ../images/Think-Twice-Code-Once.jpg>
+Package pdftex.def Info: ../images/Think-Twice-Code-Once.jpg used on input line
+ 145.
+(pdftex.def)             Requested size: 135.5073pt x 91.46742pt.
+File: ../../documents/images/logo.png Graphic file (type png)
+
+<use ../../documents/images/logo.png>
+Package pdftex.def Info: ../../documents/images/logo.png used on input line 145
+.
+(pdftex.def)             Requested size: 38.16982pt x 38.16982pt.
+ [29
+
+]
+File: ../images/Think-Twice-Code-Once.jpg Graphic file (type jpg)
+
+<use ../images/Think-Twice-Code-Once.jpg>
+Package pdftex.def Info: ../images/Think-Twice-Code-Once.jpg used on input line
+ 145.
+(pdftex.def)             Requested size: 135.5073pt x 91.46742pt.
+File: ../../documents/images/logo.png Graphic file (type png)
+
+<use ../../documents/images/logo.png>
+Package pdftex.def Info: ../../documents/images/logo.png used on input line 145
+.
+(pdftex.def)             Requested size: 38.16982pt x 38.16982pt.
+ [30
+
+]
+File: ../images/Think-Twice-Code-Once.jpg Graphic file (type jpg)
+
+<use ../images/Think-Twice-Code-Once.jpg>
+Package pdftex.def Info: ../images/Think-Twice-Code-Once.jpg used on input line
+ 145.
+(pdftex.def)             Requested size: 135.5073pt x 91.46742pt.
+File: ../../documents/images/logo.png Graphic file (type png)
+
+<use ../../documents/images/logo.png>
+Package pdftex.def Info: ../../documents/images/logo.png used on input line 145
+.
+(pdftex.def)             Requested size: 38.16982pt x 38.16982pt.
+ [31
+
+]
+File: ../images/Think-Twice-Code-Once.jpg Graphic file (type jpg)
+
+<use ../images/Think-Twice-Code-Once.jpg>
+Package pdftex.def Info: ../images/Think-Twice-Code-Once.jpg used on input line
+ 145.
+(pdftex.def)             Requested size: 135.5073pt x 91.46742pt.
+File: ../../documents/images/logo.png Graphic file (type png)
+
+<use ../../documents/images/logo.png>
+Package pdftex.def Info: ../../documents/images/logo.png used on input line 145
+.
+(pdftex.def)             Requested size: 38.16982pt x 38.16982pt.
+ [32
+
+]
+File: ../images/Think-Twice-Code-Once.jpg Graphic file (type jpg)
+
+<use ../images/Think-Twice-Code-Once.jpg>
+Package pdftex.def Info: ../images/Think-Twice-Code-Once.jpg used on input line
+ 145.
+(pdftex.def)             Requested size: 135.5073pt x 91.46742pt.
+File: ../../documents/images/logo.png Graphic file (type png)
+
+<use ../../documents/images/logo.png>
+Package pdftex.def Info: ../../documents/images/logo.png used on input line 145
+.
+(pdftex.def)             Requested size: 38.16982pt x 38.16982pt.
+ [33
+
+]
+<../images/ecoActions.png, id=567, 1835.85875pt x 607.26875pt>
+File: ../images/ecoActions.png Graphic file (type png)
+
+<use ../images/ecoActions.png>
+Package pdftex.def Info: ../images/ecoActions.png used on input line 158.
+(pdftex.def)             Requested size: 146.87169pt x 48.58249pt.
+File: ../../documents/images/logo.png Graphic file (type png)
+ <use ../../documents/images/logo.png>
+Package pdftex.def Info: ../../documents/images/logo.png used on input line 158
+.
+(pdftex.def)             Requested size: 38.16982pt x 38.16982pt.
+ [34
+
+ <../images/ecoActions.png>]
+File: ../images/ecoActions.png Graphic file (type png)
+ <use ../images/ecoActions.png>
+Package pdftex.def Info: ../images/ecoActions.png used on input line 158.
+(pdftex.def)             Requested size: 146.87169pt x 48.58249pt.
+File: ../../documents/images/logo.png Graphic file (type png)
+
+<use ../../documents/images/logo.png>
+Package pdftex.def Info: ../../documents/images/logo.png used on input line 158
+.
+(pdftex.def)             Requested size: 38.16982pt x 38.16982pt.
+ [35
+
+]
+File: ../../documents/images/logo.png Graphic file (type png)
+
+<use ../../documents/images/logo.png>
+Package pdftex.def Info: ../../documents/images/logo.png used on input line 166
+.
+(pdftex.def)             Requested size: 38.16982pt x 38.16982pt.
+ [36
 
 ]
 \tf@nav=\write6
@@ -1402,13 +1697,13 @@ Package pdftex.def Info: ../../documents/images/logo.png used on input line 99.
 \tf@snm=\write8
 \openout8 = `soutenance.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 101.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 101.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 169.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 169.
  (./soutenance.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 101.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 101.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 169.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 169.
 Package rerunfilecheck Info: File `soutenance.out' has not changed.
-(rerunfilecheck)             Checksum: 88AD3CF4AA526CC45F465BA1D605A50C;299.
+(rerunfilecheck)             Checksum: 14E37E90CA26629C019D415E70695F38;528.
 
 
 LaTeX Font Warning: Size substitutions with differences
@@ -1417,29 +1712,30 @@ LaTeX Font Warning: Size substitutions with differences
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 101.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 169.
  ) 
 Here is how much of TeX's memory you used:
- 19828 strings out of 494883
- 362478 string characters out of 6178693
- 514135 words of memory out of 5000000
- 22647 multiletter control sequences out of 15000+600000
- 12022 words of font info for 45 fonts, out of 8000000 for 9000
+ 19949 strings out of 494883
+ 364290 string characters out of 6178693
+ 514157 words of memory out of 5000000
+ 22706 multiletter control sequences out of 15000+600000
+ 12328 words of font info for 46 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 48i,20n,60p,424b,1457s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 48i,20n,62p,424b,1457s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/share/texli
-ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/share/texlive/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/ty
-pe1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmtt8.pfb>
-Output written on soutenance.pdf (9 pages, 386651 bytes).
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss17.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmssi10.pfb></usr/share/texlive/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmtt8.pfb>
+Output written on soutenance.pdf (36 pages, 521722 bytes).
 PDF statistics:
- 213 PDF objects out of 1000 (max. 8388607)
- 166 compressed objects within 2 object streams
- 24 named destinations out of 1000 (max. 500000)
- 145 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 664 PDF objects out of 1000 (max. 8388607)
+ 580 compressed objects within 6 object streams
+ 82 named destinations out of 1000 (max. 500000)
+ 187 words of extra memory for PDF output out of 10000 (max. 10000000)
 
