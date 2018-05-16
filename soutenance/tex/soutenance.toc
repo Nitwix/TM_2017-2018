@@ -6,5 +6,5 @@
 \beamer@sectionintoc {4}{Element int\IeC {\'e}ressant pas expliqu\IeC {\'e} dans le TM}{15}{0}{4}
 \beamer@sectionintoc {5}{Conclusion}{18}{0}{5}
 \beamer@subsectionintoc {5}{1}{Elements appris durant le TM}{18}{0}{5}
-\beamer@subsectionintoc {5}{2}{Continuation}{32}{0}{5}
-\beamer@sectionintoc {6}{Questions}{34}{0}{6}
+\beamer@subsectionintoc {5}{2}{Continuation}{29}{0}{5}
+\beamer@sectionintoc {6}{Questions}{31}{0}{6}
