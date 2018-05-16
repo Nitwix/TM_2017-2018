@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.2.19)  16 MAY 2018 08:54
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.2.19)  16 MAY 2018 10:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1279,7 +1279,7 @@ Package frenchb.ldf Warning: OT1 encoding should not be used for French.
 LaTeX Font Warning: Font shape `OT1/cmss/m/n' in size <4> not available
 (Font)              size <5> substituted on input line 27.
 
-<../../documents/images/logo.png, id=65, 381.67593pt x 381.67593pt>
+<../../documents/images/logo.png, id=60, 381.67593pt x 381.67593pt>
 File: ../../documents/images/logo.png Graphic file (type png)
 
 <use ../../documents/images/logo.png>
@@ -1308,12 +1308,12 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 45.
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-<../images/ecosia.png, id=117, 1927.2pt x 897.3525pt>
+<../images/ecosia.png, id=108, 772.8875pt x 468.75125pt>
 File: ../images/ecosia.png Graphic file (type png)
 
 <use ../images/ecosia.png>
 Package pdftex.def Info: ../images/ecosia.png used on input line 45.
-(pdftex.def)             Requested size: 192.7313pt x 89.7405pt.
+(pdftex.def)             Requested size: 193.22139pt x 117.18752pt.
 File: ../../documents/images/logo.png Graphic file (type png)
  <use ../../documents/images/logo.png>
 Package pdftex.def Info: ../../documents/images/logo.png used on input line 45.
@@ -1325,7 +1325,7 @@ Package pdftex.def Info: ../../documents/images/logo.png used on input line 45.
 File: ../images/ecosia.png Graphic file (type png)
  <use ../images/ecosia.png>
 Package pdftex.def Info: ../images/ecosia.png used on input line 45.
-(pdftex.def)             Requested size: 192.7313pt x 89.7405pt.
+(pdftex.def)             Requested size: 193.22139pt x 117.18752pt.
 File: ../../documents/images/logo.png Graphic file (type png)
  <use ../../documents/images/logo.png>
 Package pdftex.def Info: ../../documents/images/logo.png used on input line 45.
@@ -1338,7 +1338,7 @@ Package pdftex.def Info: ../../documents/images/logo.png used on input line 45.
 File: ../images/ecosia.png Graphic file (type png)
  <use ../images/ecosia.png>
 Package pdftex.def Info: ../images/ecosia.png used on input line 45.
-(pdftex.def)             Requested size: 192.7313pt x 89.7405pt.
+(pdftex.def)             Requested size: 193.22139pt x 117.18752pt.
 File: ../../documents/images/logo.png Graphic file (type png)
  <use ../../documents/images/logo.png>
 Package pdftex.def Info: ../../documents/images/logo.png used on input line 45.
@@ -1350,7 +1350,7 @@ Package pdftex.def Info: ../../documents/images/logo.png used on input line 45.
 File: ../../documents/images/logo.png Graphic file (type png)
 
 <use ../../documents/images/logo.png>
-Package pdftex.def Info: ../../documents/images/logo.png used on input line 58.
+Package pdftex.def Info: ../../documents/images/logo.png used on input line 61.
 
 (pdftex.def)             Requested size: 38.16982pt x 38.16982pt.
  [6
@@ -1359,7 +1359,7 @@ Package pdftex.def Info: ../../documents/images/logo.png used on input line 58.
 File: ../../documents/images/logo.png Graphic file (type png)
 
 <use ../../documents/images/logo.png>
-Package pdftex.def Info: ../../documents/images/logo.png used on input line 58.
+Package pdftex.def Info: ../../documents/images/logo.png used on input line 61.
 
 (pdftex.def)             Requested size: 38.16982pt x 38.16982pt.
  [7
@@ -1368,7 +1368,7 @@ Package pdftex.def Info: ../../documents/images/logo.png used on input line 58.
 File: ../../documents/images/logo.png Graphic file (type png)
 
 <use ../../documents/images/logo.png>
-Package pdftex.def Info: ../../documents/images/logo.png used on input line 58.
+Package pdftex.def Info: ../../documents/images/logo.png used on input line 61.
 
 (pdftex.def)             Requested size: 38.16982pt x 38.16982pt.
  [8
@@ -1377,7 +1377,7 @@ Package pdftex.def Info: ../../documents/images/logo.png used on input line 58.
 File: ../../documents/images/logo.png Graphic file (type png)
 
 <use ../../documents/images/logo.png>
-Package pdftex.def Info: ../../documents/images/logo.png used on input line 58.
+Package pdftex.def Info: ../../documents/images/logo.png used on input line 61.
 
 (pdftex.def)             Requested size: 38.16982pt x 38.16982pt.
  [9
@@ -1386,7 +1386,7 @@ Package pdftex.def Info: ../../documents/images/logo.png used on input line 58.
 File: ../../documents/images/logo.png Graphic file (type png)
 
 <use ../../documents/images/logo.png>
-Package pdftex.def Info: ../../documents/images/logo.png used on input line 70.
+Package pdftex.def Info: ../../documents/images/logo.png used on input line 61.
 
 (pdftex.def)             Requested size: 38.16982pt x 38.16982pt.
  [10
@@ -1395,7 +1395,7 @@ Package pdftex.def Info: ../../documents/images/logo.png used on input line 70.
 File: ../../documents/images/logo.png Graphic file (type png)
 
 <use ../../documents/images/logo.png>
-Package pdftex.def Info: ../../documents/images/logo.png used on input line 70.
+Package pdftex.def Info: ../../documents/images/logo.png used on input line 61.
 
 (pdftex.def)             Requested size: 38.16982pt x 38.16982pt.
  [11
@@ -1404,7 +1404,7 @@ Package pdftex.def Info: ../../documents/images/logo.png used on input line 70.
 File: ../../documents/images/logo.png Graphic file (type png)
 
 <use ../../documents/images/logo.png>
-Package pdftex.def Info: ../../documents/images/logo.png used on input line 70.
+Package pdftex.def Info: ../../documents/images/logo.png used on input line 72.
 
 (pdftex.def)             Requested size: 38.16982pt x 38.16982pt.
  [12
@@ -1413,7 +1413,7 @@ Package pdftex.def Info: ../../documents/images/logo.png used on input line 70.
 File: ../../documents/images/logo.png Graphic file (type png)
 
 <use ../../documents/images/logo.png>
-Package pdftex.def Info: ../../documents/images/logo.png used on input line 70.
+Package pdftex.def Info: ../../documents/images/logo.png used on input line 72.
 
 (pdftex.def)             Requested size: 38.16982pt x 38.16982pt.
  [13
@@ -1422,87 +1422,94 @@ Package pdftex.def Info: ../../documents/images/logo.png used on input line 70.
 File: ../../documents/images/logo.png Graphic file (type png)
 
 <use ../../documents/images/logo.png>
-Package pdftex.def Info: ../../documents/images/logo.png used on input line 81.
+Package pdftex.def Info: ../../documents/images/logo.png used on input line 72.
 
 (pdftex.def)             Requested size: 38.16982pt x 38.16982pt.
  [14
 
 ]
-File: ../../documents/images/logo.png Graphic file (type png)
+<../images/regionsPoly.png, id=258, 803.0pt x 451.6875pt>
+File: ../images/regionsPoly.png Graphic file (type png)
 
-<use ../../documents/images/logo.png>
-Package pdftex.def Info: ../../documents/images/logo.png used on input line 81.
+<use ../images/regionsPoly.png>
+Package pdftex.def Info: ../images/regionsPoly.png used on input line 86.
+(pdftex.def)             Requested size: 240.90186pt x 135.5073pt.
+File: ../../documents/images/logo.png Graphic file (type png)
+ <use ../../documents/images/logo.png>
+Package pdftex.def Info: ../../documents/images/logo.png used on input line 86.
 
 (pdftex.def)             Requested size: 38.16982pt x 38.16982pt.
  [15
 
-]
+ <../images/regionsPoly.png>]
+File: ../images/regionsPoly.png Graphic file (type png)
+ <use ../images/regionsPoly.png>
+Package pdftex.def Info: ../images/regionsPoly.png used on input line 86.
+(pdftex.def)             Requested size: 240.90186pt x 135.5073pt.
 File: ../../documents/images/logo.png Graphic file (type png)
 
 <use ../../documents/images/logo.png>
-Package pdftex.def Info: ../../documents/images/logo.png used on input line 81.
+Package pdftex.def Info: ../../documents/images/logo.png used on input line 86.
 
 (pdftex.def)             Requested size: 38.16982pt x 38.16982pt.
  [16
 
-] (../../web_src/scripts/utils/poly.js
-LaTeX Font Info:    Try loading font information for OMS+cmss on input line 2.
-LaTeX Font Info:    No file OMScmss.fd. on input line 2.
+]
+(../../web_src/scripts/utils/globReg.js
+LaTeX Font Info:    Try loading font information for OMS+cmss on input line 70.
+
+LaTeX Font Info:    No file OMScmss.fd. on input line 70.
+
 
 LaTeX Font Warning: Font shape `OMS/cmss/m/n' undefined
 (Font)              using `OMS/cmsy/m/n' instead
-(Font)              for symbol `textbraceleft' on input line 2.
+(Font)              for symbol `textbraceleft' on input line 70.
 
 )
 File: ../../documents/images/logo.png Graphic file (type png)
  <use ../../documents/images/logo.png>
-Package pdftex.def Info: ../../documents/images/logo.png used on input line 89.
+Package pdftex.def Info: ../../documents/images/logo.png used on input line 92.
 
 (pdftex.def)             Requested size: 38.16982pt x 38.16982pt.
  [17
 
 ]
-<../images/regionsPoly.png, id=322, 803.0pt x 451.6875pt>
-File: ../images/regionsPoly.png Graphic file (type png)
-
-<use ../images/regionsPoly.png>
-Package pdftex.def Info: ../images/regionsPoly.png used on input line 94.
-(pdftex.def)             Requested size: 240.90186pt x 135.5073pt.
-File: ../../documents/images/logo.png Graphic file (type png)
- <use ../../documents/images/logo.png>
-Package pdftex.def Info: ../../documents/images/logo.png used on input line 94.
-
-(pdftex.def)             Requested size: 38.16982pt x 38.16982pt.
- [18
-
- <../images/regionsPoly.png>] (../../web_src/scripts/utils/globReg.js)
-File: ../../documents/images/logo.png Graphic file (type png)
-
-<use ../../documents/images/logo.png>
-Package pdftex.def Info: ../../documents/images/logo.png used on input line 100
-.
-(pdftex.def)             Requested size: 38.16982pt x 38.16982pt.
- [19
-
-]
-<../images/es6.png, id=351, 1061.9675pt x 776.9025pt>
+<../images/es6.png, id=300, 1061.9675pt x 776.9025pt>
 File: ../images/es6.png Graphic file (type png)
  <use ../images/es6.png>
-Package pdftex.def Info: ../images/es6.png used on input line 111.
+Package pdftex.def Info: ../images/es6.png used on input line 103.
 (pdftex.def)             Requested size: 212.38974pt x 155.37775pt.
 File: ../../documents/images/logo.png Graphic file (type png)
 
 <use ../../documents/images/logo.png>
-Package pdftex.def Info: ../../documents/images/logo.png used on input line 111
+Package pdftex.def Info: ../../documents/images/logo.png used on input line 103
 .
 (pdftex.def)             Requested size: 38.16982pt x 38.16982pt.
- [20
+ [18
 
  <../images/es6.png>]
 File: ../../documents/images/logo.png Graphic file (type png)
 
 <use ../../documents/images/logo.png>
-Package pdftex.def Info: ../../documents/images/logo.png used on input line 121
+Package pdftex.def Info: ../../documents/images/logo.png used on input line 113
+.
+(pdftex.def)             Requested size: 38.16982pt x 38.16982pt.
+ [19
+
+]
+File: ../../documents/images/logo.png Graphic file (type png)
+
+<use ../../documents/images/logo.png>
+Package pdftex.def Info: ../../documents/images/logo.png used on input line 113
+.
+(pdftex.def)             Requested size: 38.16982pt x 38.16982pt.
+ [20
+
+]
+File: ../../documents/images/logo.png Graphic file (type png)
+
+<use ../../documents/images/logo.png>
+Package pdftex.def Info: ../../documents/images/logo.png used on input line 113
 .
 (pdftex.def)             Requested size: 38.16982pt x 38.16982pt.
  [21
@@ -1511,7 +1518,7 @@ Package pdftex.def Info: ../../documents/images/logo.png used on input line 121
 File: ../../documents/images/logo.png Graphic file (type png)
 
 <use ../../documents/images/logo.png>
-Package pdftex.def Info: ../../documents/images/logo.png used on input line 121
+Package pdftex.def Info: ../../documents/images/logo.png used on input line 113
 .
 (pdftex.def)             Requested size: 38.16982pt x 38.16982pt.
  [22
@@ -1520,7 +1527,7 @@ Package pdftex.def Info: ../../documents/images/logo.png used on input line 121
 File: ../../documents/images/logo.png Graphic file (type png)
 
 <use ../../documents/images/logo.png>
-Package pdftex.def Info: ../../documents/images/logo.png used on input line 121
+Package pdftex.def Info: ../../documents/images/logo.png used on input line 122
 .
 (pdftex.def)             Requested size: 38.16982pt x 38.16982pt.
  [23
@@ -1529,7 +1536,7 @@ Package pdftex.def Info: ../../documents/images/logo.png used on input line 121
 File: ../../documents/images/logo.png Graphic file (type png)
 
 <use ../../documents/images/logo.png>
-Package pdftex.def Info: ../../documents/images/logo.png used on input line 121
+Package pdftex.def Info: ../../documents/images/logo.png used on input line 122
 .
 (pdftex.def)             Requested size: 38.16982pt x 38.16982pt.
  [24
@@ -1538,55 +1545,67 @@ Package pdftex.def Info: ../../documents/images/logo.png used on input line 121
 File: ../../documents/images/logo.png Graphic file (type png)
 
 <use ../../documents/images/logo.png>
-Package pdftex.def Info: ../../documents/images/logo.png used on input line 130
+Package pdftex.def Info: ../../documents/images/logo.png used on input line 122
 .
 (pdftex.def)             Requested size: 38.16982pt x 38.16982pt.
  [25
 
 ]
-File: ../../documents/images/logo.png Graphic file (type png)
-
-<use ../../documents/images/logo.png>
-Package pdftex.def Info: ../../documents/images/logo.png used on input line 130
-.
-(pdftex.def)             Requested size: 38.16982pt x 38.16982pt.
- [26
-
-]
-File: ../../documents/images/logo.png Graphic file (type png)
-
-<use ../../documents/images/logo.png>
-Package pdftex.def Info: ../../documents/images/logo.png used on input line 130
-.
-(pdftex.def)             Requested size: 38.16982pt x 38.16982pt.
- [27
-
-]
-<../images/Think-Twice-Code-Once.jpg, id=474, 451.6875pt x 304.88907pt>
+<../images/Think-Twice-Code-Once.jpg, id=418, 451.6875pt x 304.88907pt>
 File: ../images/Think-Twice-Code-Once.jpg Graphic file (type jpg)
 
 <use ../images/Think-Twice-Code-Once.jpg>
 Package pdftex.def Info: ../images/Think-Twice-Code-Once.jpg used on input line
- 145.
+ 137.
 (pdftex.def)             Requested size: 135.5073pt x 91.46742pt.
 File: ../../documents/images/logo.png Graphic file (type png)
 
 <use ../../documents/images/logo.png>
-Package pdftex.def Info: ../../documents/images/logo.png used on input line 145
+Package pdftex.def Info: ../../documents/images/logo.png used on input line 137
 .
 (pdftex.def)             Requested size: 38.16982pt x 38.16982pt.
- [28
+ [26
 
  <../images/Think-Twice-Code-Once.jpg>]
 File: ../images/Think-Twice-Code-Once.jpg Graphic file (type jpg)
  <use ../images/Think-Twice-Code-Once.jpg>
 Package pdftex.def Info: ../images/Think-Twice-Code-Once.jpg used on input line
- 145.
+ 137.
 (pdftex.def)             Requested size: 135.5073pt x 91.46742pt.
 File: ../../documents/images/logo.png Graphic file (type png)
 
 <use ../../documents/images/logo.png>
-Package pdftex.def Info: ../../documents/images/logo.png used on input line 145
+Package pdftex.def Info: ../../documents/images/logo.png used on input line 137
+.
+(pdftex.def)             Requested size: 38.16982pt x 38.16982pt.
+ [27
+
+]
+File: ../images/Think-Twice-Code-Once.jpg Graphic file (type jpg)
+
+<use ../images/Think-Twice-Code-Once.jpg>
+Package pdftex.def Info: ../images/Think-Twice-Code-Once.jpg used on input line
+ 137.
+(pdftex.def)             Requested size: 135.5073pt x 91.46742pt.
+File: ../../documents/images/logo.png Graphic file (type png)
+
+<use ../../documents/images/logo.png>
+Package pdftex.def Info: ../../documents/images/logo.png used on input line 137
+.
+(pdftex.def)             Requested size: 38.16982pt x 38.16982pt.
+ [28
+
+]
+File: ../images/Think-Twice-Code-Once.jpg Graphic file (type jpg)
+
+<use ../images/Think-Twice-Code-Once.jpg>
+Package pdftex.def Info: ../images/Think-Twice-Code-Once.jpg used on input line
+ 137.
+(pdftex.def)             Requested size: 135.5073pt x 91.46742pt.
+File: ../../documents/images/logo.png Graphic file (type png)
+
+<use ../../documents/images/logo.png>
+Package pdftex.def Info: ../../documents/images/logo.png used on input line 137
 .
 (pdftex.def)             Requested size: 38.16982pt x 38.16982pt.
  [29
@@ -1596,12 +1615,12 @@ File: ../images/Think-Twice-Code-Once.jpg Graphic file (type jpg)
 
 <use ../images/Think-Twice-Code-Once.jpg>
 Package pdftex.def Info: ../images/Think-Twice-Code-Once.jpg used on input line
- 145.
+ 137.
 (pdftex.def)             Requested size: 135.5073pt x 91.46742pt.
 File: ../../documents/images/logo.png Graphic file (type png)
 
 <use ../../documents/images/logo.png>
-Package pdftex.def Info: ../../documents/images/logo.png used on input line 145
+Package pdftex.def Info: ../../documents/images/logo.png used on input line 137
 .
 (pdftex.def)             Requested size: 38.16982pt x 38.16982pt.
  [30
@@ -1611,81 +1630,51 @@ File: ../images/Think-Twice-Code-Once.jpg Graphic file (type jpg)
 
 <use ../images/Think-Twice-Code-Once.jpg>
 Package pdftex.def Info: ../images/Think-Twice-Code-Once.jpg used on input line
- 145.
+ 137.
 (pdftex.def)             Requested size: 135.5073pt x 91.46742pt.
 File: ../../documents/images/logo.png Graphic file (type png)
 
 <use ../../documents/images/logo.png>
-Package pdftex.def Info: ../../documents/images/logo.png used on input line 145
+Package pdftex.def Info: ../../documents/images/logo.png used on input line 137
 .
 (pdftex.def)             Requested size: 38.16982pt x 38.16982pt.
  [31
 
 ]
-File: ../images/Think-Twice-Code-Once.jpg Graphic file (type jpg)
+<../images/ecoActions.png, id=504, 1835.85875pt x 607.26875pt>
+File: ../images/ecoActions.png Graphic file (type png)
 
-<use ../images/Think-Twice-Code-Once.jpg>
-Package pdftex.def Info: ../images/Think-Twice-Code-Once.jpg used on input line
- 145.
-(pdftex.def)             Requested size: 135.5073pt x 91.46742pt.
+<use ../images/ecoActions.png>
+Package pdftex.def Info: ../images/ecoActions.png used on input line 150.
+(pdftex.def)             Requested size: 146.87169pt x 48.58249pt.
 File: ../../documents/images/logo.png Graphic file (type png)
-
-<use ../../documents/images/logo.png>
-Package pdftex.def Info: ../../documents/images/logo.png used on input line 145
+ <use ../../documents/images/logo.png>
+Package pdftex.def Info: ../../documents/images/logo.png used on input line 150
 .
 (pdftex.def)             Requested size: 38.16982pt x 38.16982pt.
  [32
 
-]
-File: ../images/Think-Twice-Code-Once.jpg Graphic file (type jpg)
-
-<use ../images/Think-Twice-Code-Once.jpg>
-Package pdftex.def Info: ../images/Think-Twice-Code-Once.jpg used on input line
- 145.
-(pdftex.def)             Requested size: 135.5073pt x 91.46742pt.
+ <../images/ecoActions.png>]
+File: ../images/ecoActions.png Graphic file (type png)
+ <use ../images/ecoActions.png>
+Package pdftex.def Info: ../images/ecoActions.png used on input line 150.
+(pdftex.def)             Requested size: 146.87169pt x 48.58249pt.
 File: ../../documents/images/logo.png Graphic file (type png)
 
 <use ../../documents/images/logo.png>
-Package pdftex.def Info: ../../documents/images/logo.png used on input line 145
+Package pdftex.def Info: ../../documents/images/logo.png used on input line 150
 .
 (pdftex.def)             Requested size: 38.16982pt x 38.16982pt.
  [33
 
 ]
-<../images/ecoActions.png, id=567, 1835.85875pt x 607.26875pt>
-File: ../images/ecoActions.png Graphic file (type png)
-
-<use ../images/ecoActions.png>
-Package pdftex.def Info: ../images/ecoActions.png used on input line 158.
-(pdftex.def)             Requested size: 146.87169pt x 48.58249pt.
 File: ../../documents/images/logo.png Graphic file (type png)
- <use ../../documents/images/logo.png>
+
+<use ../../documents/images/logo.png>
 Package pdftex.def Info: ../../documents/images/logo.png used on input line 158
 .
 (pdftex.def)             Requested size: 38.16982pt x 38.16982pt.
  [34
-
- <../images/ecoActions.png>]
-File: ../images/ecoActions.png Graphic file (type png)
- <use ../images/ecoActions.png>
-Package pdftex.def Info: ../images/ecoActions.png used on input line 158.
-(pdftex.def)             Requested size: 146.87169pt x 48.58249pt.
-File: ../../documents/images/logo.png Graphic file (type png)
-
-<use ../../documents/images/logo.png>
-Package pdftex.def Info: ../../documents/images/logo.png used on input line 158
-.
-(pdftex.def)             Requested size: 38.16982pt x 38.16982pt.
- [35
-
-]
-File: ../../documents/images/logo.png Graphic file (type png)
-
-<use ../../documents/images/logo.png>
-Package pdftex.def Info: ../../documents/images/logo.png used on input line 166
-.
-(pdftex.def)             Requested size: 38.16982pt x 38.16982pt.
- [36
 
 ]
 \tf@nav=\write6
@@ -1697,14 +1686,20 @@ Package pdftex.def Info: ../../documents/images/logo.png used on input line 166
 \tf@snm=\write8
 \openout8 = `soutenance.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 169.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 169.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 161.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 161.
  (./soutenance.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 169.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 169.
-Package rerunfilecheck Info: File `soutenance.out' has not changed.
-(rerunfilecheck)             Checksum: 14E37E90CA26629C019D415E70695F38;528.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 161.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 161.
 
+
+Package rerunfilecheck Warning: File `soutenance.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `soutenance.out':
+(rerunfilecheck)             Before: 47CA47A9BF694AA9A4ECC2D811CA92C4;470
+(rerunfilecheck)             After:  8E974CF2241FFB47DADACF5E2D5016D5;470.
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 1.0pt have occurred.
@@ -1712,30 +1707,36 @@ LaTeX Font Warning: Size substitutions with differences
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 169.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 161.
  ) 
 Here is how much of TeX's memory you used:
- 19949 strings out of 494883
- 364290 string characters out of 6178693
+ 19916 strings out of 494883
+ 363935 string characters out of 6178693
  514157 words of memory out of 5000000
- 22706 multiletter control sequences out of 15000+600000
- 12328 words of font info for 46 fonts, out of 8000000 for 9000
+ 22681 multiletter control sequences out of 15000+600000
+ 11332 words of font info for 42 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 48i,20n,62p,424b,1457s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss17.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmssi10.pfb></usr/share/texlive/texmf-dist/fonts/ty
-pe1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
-blic/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmtt8.pfb>
-Output written on soutenance.pdf (36 pages, 521722 bytes).
+ 48i,20n,62p,424b,1443s stack positions out of 5000i,500n,10000p,200000b,80000s
+pdfTeX warning (dest): name{Outline0.5.2.30} has been referenced but does not
+ exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{Outline0.5.1.16} has been referenced but does not e
+xist, replaced by a fixed one
+
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/
+share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/share/
+texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss17.pfb></usr/share/texliv
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/share/texlive/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb></usr/share/texlive/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmssi10.pfb></usr/share/texlive/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmtt8.pfb>
+Output written on soutenance.pdf (34 pages, 304440 bytes).
 PDF statistics:
- 664 PDF objects out of 1000 (max. 8388607)
- 580 compressed objects within 6 object streams
- 82 named destinations out of 1000 (max. 500000)
- 187 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 600 PDF objects out of 1000 (max. 8388607)
+ 519 compressed objects within 6 object streams
+ 79 named destinations out of 1000 (max. 500000)
+ 179 words of extra memory for PDF output out of 10000 (max. 10000000)
 
