@@ -3,8 +3,7 @@
 \beamer@sectionintoc {1}{Choix du sujet}{3}{0}{1}
 \beamer@sectionintoc {2}{Objectifs}{6}{0}{2}
 \beamer@sectionintoc {3}{Difficult\IeC {\'e}s rencontr\IeC {\'e}es}{12}{0}{3}
-\beamer@sectionintoc {4}{Element int\IeC {\'e}ressant pas expliqu\IeC {\'e} dans le TM}{15}{0}{4}
-\beamer@sectionintoc {5}{Conclusion}{18}{0}{5}
-\beamer@subsectionintoc {5}{1}{Elements appris durant le TM}{18}{0}{5}
-\beamer@subsectionintoc {5}{2}{Continuation}{29}{0}{5}
-\beamer@sectionintoc {6}{Questions}{31}{0}{6}
+\beamer@sectionintoc {4}{Conclusion}{15}{0}{4}
+\beamer@subsectionintoc {4}{1}{Elements appris durant le TM}{15}{0}{4}
+\beamer@subsectionintoc {4}{2}{Continuation}{26}{0}{4}
+\beamer@sectionintoc {5}{Questions}{28}{0}{5}
